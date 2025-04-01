@@ -1,6 +1,11 @@
 # geonative-ui
 Shadcn based components library and Tailwind CSS V4
 
+### Documention
+
+- [Shadcn Vue](https://www.shadcn-vue.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
 ### CSS Variations
 
 - Text Primary
