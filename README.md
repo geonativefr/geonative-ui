@@ -1,5 +1,58 @@
-# Vue 3 + TypeScript + Vite
+# geonative-ui
+Shadcn based components library and Tailwind CSS V4
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### Documention
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+- [VueJS + Vite](???)
+- [Shadcn Vue](https://www.shadcn-vue.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+### CSS Variations
+
+- Text Primary
+- Background Primary
+- Text Secondary
+- Background Secondary
+- `dark:` variants
+
+## Components list
+
+- Layout Pre-Auth
+- Layout Auth
+    - Sidebar
+    - Breadcrumb
+- Sidebar
+    - NavUser
+    - AccountSwitcher
+    - Navigation (slot)
+    - Version number
+- Breadcrumb
+- Navigation (inline + list)
+- Command Palette
+- DataTable
+- Card List
+- Pagination
+- Dropdown Menu
+- Dialog (Modal) (Simple/Validation/Confirmation)
+- Drawer (up/down/right/left)
+- Accordion
+- Button
+- Toast (Vue Sonner)
+- Flash Message
+- Form
+    - Input (text, number)
+    - Select
+    - Combobox (mono/multi)
+    - Datepicker / Datepicker range
+    - ColorPicker
+    - Textarea + Optionnal(WYSIWYG + Markdown)
+    - Checkbox
+    - Radio
+    - Toggle
+- Loader
+- Tooltip
+- Avatar
+
+
+
+
