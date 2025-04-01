@@ -3,6 +3,7 @@ Shadcn based components library and Tailwind CSS V4
 
 ### Documention
 
+- [VueJS + Vite](???)
 - [Shadcn Vue](https://www.shadcn-vue.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
