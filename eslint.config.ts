@@ -10,9 +10,9 @@ export default defineConfigWithVueTs(
     },
     {
         name: 'app/files-to-ignore',
-        ignores: ['**/dist/**', '**/coverage/**', '**/shadcn/**'],
+        ignores: ['/dist/**', '/src/shadcn/**'],
     },
-    globalIgnores(['**/dist/**', '**/coverage/**']),
+    globalIgnores(['dist/**', '/src/shadcn/**']),
     pluginVue.configs['flat/essential'],
     vueTsConfigs.recommended,
     skipFormatting,
