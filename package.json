@@ -8,7 +8,7 @@
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ./**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts} --ignore-path .prettierignore"  
+    "format": "prettier --write ./**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts} --ignore-path .prettierignore"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.1",
@@ -39,6 +39,7 @@
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
     "vite-plugin-eslint": "^1.8.1",
+    "vue-eslint-parser": "^10.1.1",
     "vue-tsc": "^2.2.4"
   }
 }
