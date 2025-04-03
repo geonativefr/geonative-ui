@@ -1,4 +1,5 @@
 # geonative-ui
+
 Shadcn based components library and Tailwind CSS V4
 
 ### Documention
@@ -19,13 +20,13 @@ Shadcn based components library and Tailwind CSS V4
 
 - Layout Pre-Auth
 - Layout Auth
-    - Sidebar
-    - Breadcrumb
+  - Sidebar
+  - Breadcrumb
 - Sidebar
-    - NavUser
-    - AccountSwitcher
-    - Navigation (slot)
-    - Version number
+  - NavUser
+  - AccountSwitcher
+  - Navigation (slot)
+  - Version number
 - Breadcrumb
 - Navigation (inline + list)
 - Command Palette
@@ -40,19 +41,15 @@ Shadcn based components library and Tailwind CSS V4
 - Toast (Vue Sonner)
 - Flash Message
 - Form
-    - Input (text, number)
-    - Select
-    - Combobox (mono/multi)
-    - Datepicker / Datepicker range
-    - ColorPicker
-    - Textarea + Optionnal(WYSIWYG + Markdown)
-    - Checkbox
-    - Radio
-    - Toggle
+  - Input (text, number)
+  - Select
+  - Combobox (mono/multi)
+  - Datepicker / Datepicker range
+  - ColorPicker
+  - Textarea + Optionnal(WYSIWYG + Markdown)
+  - Checkbox
+  - Radio
+  - Toggle
 - Loader
 - Tooltip
 - Avatar
-
-
-
-
