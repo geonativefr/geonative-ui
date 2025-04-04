@@ -1,6 +1,6 @@
 <template>
   <template v-for="(item, index) in items" :key="index">
-    <ShadcnBreadcrumbItem v-if="index < itemLength" class="hidden md:block">
+    <ShadcnBreadcrumbItem v-if="isLastIndex(index)" class="hidden md:block">
       <ShadcnBreadcrumbLink v-if="!isDisabled(item)" :href="item.link">
         {{ item.title }}
       </ShadcnBreadcrumbLink>
@@ -15,7 +15,7 @@
       </ShadcnBreadcrumbPage>
     </ShadcnBreadcrumbItem>
 
-    <ShadcnBreadcrumbSeparator v-if="index < itemLength" class="hidden md:block" />
+    <ShadcnBreadcrumbSeparator v-if="isLastIndex(index)" class="hidden md:block" />
   </template>
 </template>
 
@@ -34,10 +34,10 @@ const props = defineProps<{
 
 const itemLength = props.items.length - 1;
 
+const isLastIndex = (index: number) => index < itemLength;
 const isDisabled = (item: BreadcrumbItem) => {
   return item.disabled === true || item.link === undefined;
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
