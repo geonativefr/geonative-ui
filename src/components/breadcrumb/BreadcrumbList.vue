@@ -15,5 +15,3 @@ const props = defineProps<{
   items: BreadcrumbItem[];
 }>();
 </script>
-
-<style scoped></style>
