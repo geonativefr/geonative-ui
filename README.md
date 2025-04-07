@@ -63,7 +63,7 @@ createRoute({
   name: 'your-component',
   component: () => import('./views/YourComponent.vue'),
   menuLabel: 'Your Component',
-})
+});
 ```
 
 ## Path Aliases

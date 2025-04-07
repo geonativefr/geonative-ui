@@ -8,11 +8,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, '../src'),
-      '@demo': resolve(__dirname, './src')
-    }
+      '@demo': resolve(__dirname, './src'),
+    },
   },
   root: './demo',
   build: {
-    outDir: resolve(__dirname, '../demo-dist')
-  }
+    outDir: resolve(__dirname, '../demo-dist'),
+  },
 });
