@@ -1,18 +1,24 @@
 <template>
-  <h1 class="mb-3">BREADCRUMB :</h1>
-  <Breadcrumb :items="breadcrumbItems" />
+  <div class="flex flex-col items-center bg-gray-100">
+    <h1 class="text-2xl mb-3">Components demo :</h1>
+    <ul class="list-disc">
+      <li v-for="(route, index) in componentRoutes" :key="index">
+        <router-link :to="{ name: route.routeName }">{{ route.title }}</router-link>
+      </li>
+    </ul>
+    <p class="text-sm text-gray-500 mt-2">Click on the links above to see the components in action.</p>
+    <div class="flex flex-col min-h-screen justify-center  mt-4">
+      <!-- This is important! This is where your routed components will be displayed -->
+      <router-view class="mt-8" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import Breadcrumb from '@/components/breadcrumb/Breadcrumb.vue';
-
-const breadcrumbItems = [
-  { title: 'Home', link: '/' },
-  { title: 'About' },
-  { title: 'Contact', link: '/contact' },
-  { title: 'Mail', link: '/mail', disabled: true },
-  { title: 'Message', link: '/message' },
-  { title: 'More' },
-  { title: 'Test', link: '/test' },
+const componentRoutes = [
+  {
+    title: "Breadcrumb",
+    routeName: "breadcrumb",
+  },
 ];
 </script>
