@@ -23,7 +23,7 @@ import {
   BreadcrumbPage as ShadcnBreadcrumbPage,
   BreadcrumbSeparator as ShadcnBreadcrumbSeparator,
 } from '@/shadcn/ui/breadcrumb';
-import type { BreadcrumbItem } from '@/type.ts';
+import type { BreadcrumbItem } from '@/types/components.ts';
 
 const props = withDefaults(
   defineProps<{
