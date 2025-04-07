@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { Breadcrumb as ShadcnBreadcrumb, BreadcrumbList as ShadcnBreadcrumbList } from '@/shadcn/ui/breadcrumb';
 import BreadcrumbItem from '@/components/breadcrumb/BreadcrumbItem.vue';
-import type { BreadcrumbItem as BreadcrumbItemType } from '@/type.ts';
+import type { BreadcrumbItem as BreadcrumbItemType } from '@/types/components.ts';
 
 const props = defineProps<{
   items: BreadcrumbItemType[];
