@@ -39,5 +39,3 @@ const isDisabled = (item: BreadcrumbItem) => {
   return item.disabled === true || item.link === undefined;
 };
 </script>
-
-<style scoped></style>
