@@ -1,11 +1,10 @@
 <template>
-  <h1>BREADCRUMB :</h1>
-  <br />
-  <BreadcrumbList :items="breadcrumbItems" />
+  <h1 class="mb-3">BREADCRUMB :</h1>
+  <Breadcrumb :items="breadcrumbItems" />
 </template>
 
 <script setup lang="ts">
-import BreadcrumbList from '@/components/breadcrumb/BreadcrumbList.vue';
+import Breadcrumb from '@/components/breadcrumb/Breadcrumb.vue';
 
 const breadcrumbItems = [
   { title: 'Home', link: '/' },
