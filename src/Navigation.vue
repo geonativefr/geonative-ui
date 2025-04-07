@@ -1,6 +1,6 @@
 <template>
   <ul class="list-disc">
-    <li v-for="(route, index) in menuRoutes"  :key="index">
+    <li v-for="(route, index) in menuRoutes" :key="index">
       <router-link :to="{ name: route.name }">{{ route.menuLabel }}</router-link>
     </li>
   </ul>
