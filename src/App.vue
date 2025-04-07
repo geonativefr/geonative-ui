@@ -7,7 +7,7 @@
       </li>
     </ul>
     <p class="text-sm text-gray-500 mt-2">Click on the links above to see the components in action.</p>
-    <div class="flex flex-col min-h-screen justify-center  mt-4">
+    <div class="flex flex-col min-h-screen justify-center mt-4">
       <!-- This is important! This is where your routed components will be displayed -->
       <router-view class="mt-8" />
     </div>
@@ -17,8 +17,8 @@
 <script setup lang="ts">
 const componentRoutes = [
   {
-    title: "Breadcrumb",
-    routeName: "breadcrumb",
+    title: 'Breadcrumb',
+    routeName: 'breadcrumb',
   },
 ];
 </script>

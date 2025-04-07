@@ -25,12 +25,15 @@ import {
 } from '@/shadcn/ui/breadcrumb';
 import type { BreadcrumbItem } from '@/type.ts';
 
-const props = withDefaults(defineProps<{
-  item: BreadcrumbItem,
-  isCurrentPage: boolean
-}>(), {
-  isCurrentPage: false
-});
+const props = withDefaults(
+  defineProps<{
+    item: BreadcrumbItem;
+    isCurrentPage: boolean;
+  }>(),
+  {
+    isCurrentPage: false,
+  }
+);
 
 const isDisabled = (item: BreadcrumbItem) => {
   return item.disabled === true || item.link === undefined;
