@@ -32,9 +32,9 @@ const props = defineProps<{
   items: BreadcrumbItem[];
 }>();
 
-const itemLength = props.items.length - 1;
+const breadcrumbLength = props.items.length;
 
-const isLastIndex = (index: number) => index < itemLength;
+const isLastIndex = (index: number) => index < breadcrumbLength - 1;
 const isDisabled = (item: BreadcrumbItem) => {
   return item.disabled === true || item.link === undefined;
 };
