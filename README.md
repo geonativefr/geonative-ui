@@ -7,7 +7,7 @@ Shadcn based components library and Tailwind CSS V4
 ### Prerequisites
 
 - Node.js 18+ (recommended)
-- npm or yarn
+- yarn
 
 ### Documentation
 
@@ -20,9 +20,6 @@ Shadcn based components library and Tailwind CSS V4
 ### Installation
 
 ```bash
-# Install dependencies from the root directory
-npm install
-# OR
 yarn install
 ```
 
@@ -31,8 +28,6 @@ yarn install
 To start the demo development server:
 
 ```bash
-npm run dev:demo
-# OR
 yarn dev:demo
 ```
 
@@ -41,8 +36,6 @@ yarn dev:demo
 To build the demo for production:
 
 ```bash
-npm run build:demo
-# OR
 yarn build:demo
 ```
 
