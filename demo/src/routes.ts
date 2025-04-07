@@ -6,7 +6,7 @@ const routes: Array<RouteRecord> = [
     path: '/',
     name: 'home',
     component: () => import('@demo/views/Home.vue'),
-    showInMenu: false,
+    showInMenu: true,
   }),
   createRoute({
     path: '/breadcrumb',
