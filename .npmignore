@@ -1,5 +1,2 @@
 demo/
-tests/
-.vscode/
 .github/
-vite.config.demo.ts

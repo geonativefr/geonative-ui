@@ -4,11 +4,11 @@
     <Navigation />
     <p class="text-sm text-gray-500 mt-2">Click on the links above to see the components in action.</p>
     <div class="flex flex-col min-h-screen justify-center mt-4">
-      <router-view class="mt-8" />
+      <router-view />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Navigation from './Navigation.vue';
+import Navigation from '@demo/Navigation.vue';
 </script>
