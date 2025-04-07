@@ -1,5 +1,5 @@
 <template>
-  <ShadcnAvatar :class="props.isSquare ? 'h-8 w-8 rounded-lg' : ''">
+  <ShadcnAvatar class="h-8 w-8 rounded-lg">
     <ShadcnAvatarImage :src="data.avatar" :alt="data.name" />
     <ShadcnAvatarFallback>?</ShadcnAvatarFallback>
   </ShadcnAvatar>
