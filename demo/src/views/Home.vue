@@ -12,5 +12,4 @@ import { ref } from 'vue';
 import readmeContent from '../../../README.md?raw'; // Import the README file as raw text using Vite's raw loader
 
 const content = ref(readmeContent);
-
 </script>

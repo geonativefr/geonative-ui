@@ -15,13 +15,12 @@ const props = defineProps<{
 const htmlContent = computed(() => {
   // Use marked.parse() with a callback to handle both sync and async cases
   const rawHtml = marked.parse(props.content, {
-    async: false
+    async: false,
   }) as string;
 
   return DOMPurify.sanitize(rawHtml);
 });
 </script>
-
 
 <style>
 .markdown-body {
