@@ -1,5 +1,5 @@
-import type { RouteRecord } from './types/routes';
-import { createRoute } from './types/routes';
+import type { RouteRecord } from '@/types/routes';
+import { createRoute } from '@/types/routes';
 
 const routes: Array<RouteRecord> = [
   createRoute({
