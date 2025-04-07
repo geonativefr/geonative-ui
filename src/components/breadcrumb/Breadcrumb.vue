@@ -17,5 +17,4 @@ const props = defineProps<{
 
 const breadcrumbLength = props.items.length;
 const isLastIndex = (index: number) => index === breadcrumbLength - 1;
-
 </script>
