@@ -1,7 +1,7 @@
 <template>
-  <ShadcnAvatar :class="isSquare ? 'h-8 w-8 rounded-lg' : ''">
-    <ShadcnAvatarImage src="data.avatar" alt="user.name" />
-    <ShadcnAvatarFallback></ShadcnAvatarFallback>
+  <ShadcnAvatar :class="props.isSquare ? 'h-8 w-8 rounded-lg' : ''">
+    <ShadcnAvatarImage :src="data.avatar" :alt="data.name" />
+    <ShadcnAvatarFallback>?</ShadcnAvatarFallback>
   </ShadcnAvatar>
 </template>
 
@@ -18,16 +18,9 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  data: {
+    type: Object,
+    required: true,
+  },
 });
-
-const data = {
-  user: {
-    name: 'Melio',
-    email: 'melio@example.com',
-    avatar: 'https://avatars.githubusercontent.com/u/167002380?v=4',
-  }
-};
 </script>
-
-<style scoped>
-</style>
