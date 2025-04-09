@@ -1,9 +1,9 @@
 <template>
   <h1 class="mb-3">AVATAR :</h1>
-  <p class="mb-3"> not square :</p>
+  <p class="mb-3">not square :</p>
   <Avatar class="mb-3" :data="dataUser" />
-  <p class="mb-3"> square :</p>
-  <Avatar class="mb-3" :data="dataUser" :isSquare="true"/>
+  <p class="mb-3">square :</p>
+  <Avatar class="mb-3" :data="dataUser" :isSquare="true" />
 </template>
 
 <script setup lang="ts">
