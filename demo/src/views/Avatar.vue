@@ -3,7 +3,7 @@
   <p class="mb-3">not square :</p>
   <Avatar class="mb-3" :data="dataUser" />
   <p class="mb-3">square :</p>
-  <Avatar class="mb-3" :data="dataUser" :isSquare="true" />
+  <Avatar class="mb-3" :data="dataUser" :is-square="true" :bg-color="'#ff0000'"/>
 </template>
 
 <script setup lang="ts">
@@ -13,6 +13,10 @@ const dataUser = {
   name: 'Alice',
   email: 'alice@example.com',
   avatar:
-    'https://st5.depositphotos.com/1001941/66147/v/450/depositphotos_661475956-stock-illustration-anonymous-hacker-using-laptop-desk.jpg',
+    'https://avataaars.io/?avatarStyle=Transparent&topType=NoHair&accessoriesType=Blank&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light',
 };
 </script>
+
+<style scoped>
+
+</style>

@@ -1,12 +1,15 @@
 <template>
-  <ShadcnAvatar :class="props.isSquare ? 'h-8 w-8 rounded-lg' : ''">
-    <ShadcnAvatarImage :src="data.avatar" :alt="data.name" />
+  <ShadcnAvatar
+    :class="props.isSquare ? 'h-8 w-8 rounded-lg' : ''"
+    :style="{ backgroundColor: props.bgColor }"
+  >
+    <ShadcnAvatarImage :src="props.data.avatar" :alt="props.data.name" />
     <ShadcnAvatarFallback>?</ShadcnAvatarFallback>
   </ShadcnAvatar>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, type PropType } from 'vue';
 import {
   Avatar as ShadcnAvatar,
   AvatarImage as ShadcnAvatarImage,
@@ -22,5 +25,16 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  bgColor: {
+    type: String as PropType<string | null>,
+    required: false,
+    default: null,
+    validator: (value: string | null): boolean => {
+      // Allow null values
+      if (value === null) return true;
+      // Validate that the string is a valid hex color
+      return /^#([0-9A-F]{3}){1,2}$/i.test(value);
+    }
+  }
 });
 </script>
