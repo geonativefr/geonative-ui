@@ -1,7 +1,12 @@
 <template>
   <ShadcnBreadcrumb>
     <ShadcnBreadcrumbList>
-      <BreadcrumbItem v-for="(item, index) in props.items" :key="index" :item="item" :is-current-page="isLastIndex(index)" />
+      <BreadcrumbItem
+        v-for="(item, index) in props.items"
+        :key="index"
+        :item="item"
+        :is-current-page="isLastIndex(index)"
+      />
     </ShadcnBreadcrumbList>
   </ShadcnBreadcrumb>
 </template>

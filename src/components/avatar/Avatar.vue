@@ -30,7 +30,7 @@ const props = defineProps({
       if (value === null) return true;
       // Check if the value is a string of 1 or 2 letters
       return /^[a-zA-Z]{1,2}$/.test(value);
-    }
+    },
   },
   bgColor: {
     type: String as PropType<string | null>,
