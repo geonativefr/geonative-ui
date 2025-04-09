@@ -1,8 +1,5 @@
 <template>
-  <ShadcnAvatar
-    :class="props.isSquare ? 'h-8 w-8 rounded-lg' : ''"
-    :style="{ backgroundColor: props.bgColor }"
-  >
+  <ShadcnAvatar :class="props.isSquare ? 'h-8 w-8 rounded-lg' : ''" :style="{ backgroundColor: props.bgColor }">
     <ShadcnAvatarImage :src="props.data.avatar" :alt="props.data.name" />
     <ShadcnAvatarFallback>?</ShadcnAvatarFallback>
   </ShadcnAvatar>
@@ -34,7 +31,7 @@ const props = defineProps({
       if (value === null) return true;
       // Validate that the string is a valid hex color
       return /^#([0-9A-F]{3}){1,2}$/i.test(value);
-    }
-  }
+    },
+  },
 });
 </script>

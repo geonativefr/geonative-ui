@@ -3,7 +3,7 @@
   <p class="mb-3">not square :</p>
   <Avatar class="mb-3" :data="dataUser" />
   <p class="mb-3">square :</p>
-  <Avatar class="mb-3" :data="dataUser" :is-square="true" :bg-color="'#ff0000'"/>
+  <Avatar class="mb-3" :data="dataUser" :is-square="true" :bg-color="'#ff0000'" />
 </template>
 
 <script setup lang="ts">
@@ -17,6 +17,4 @@ const dataUser = {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
