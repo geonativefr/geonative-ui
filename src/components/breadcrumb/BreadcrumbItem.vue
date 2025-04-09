@@ -1,16 +1,16 @@
 <template>
   <ShadcnBreadcrumbItem v-if="props.isCurrentPage" class="hidden md:block">
     <ShadcnBreadcrumbPage>
-      {{ item.title }}
+      {{ props.item.title }}
     </ShadcnBreadcrumbPage>
   </ShadcnBreadcrumbItem>
 
   <ShadcnBreadcrumbItem v-else class="hidden md:block">
     <ShadcnBreadcrumbLink v-if="!isDisabled(item)" :href="item.link">
-      {{ item.title }}
+      {{ props.item.title }}
     </ShadcnBreadcrumbLink>
     <p v-else>
-      {{ item.title }}
+      {{ props.item.title }}
     </p>
   </ShadcnBreadcrumbItem>
   <ShadcnBreadcrumbSeparator v-if="!props.isCurrentPage" class="hidden md:block" />
