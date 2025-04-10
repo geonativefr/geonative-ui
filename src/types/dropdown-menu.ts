@@ -1,5 +1,5 @@
 export interface DropdownMenu {
-  name: string;
+  name?: string;
   sections: DropdownMenuSection[];
 }
 
