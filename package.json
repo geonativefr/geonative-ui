@@ -37,9 +37,7 @@
     "build:storybook": "storybook build --output-dir storybook-dist",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "format": "prettier --write .",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@storybook/vue3-vite": "^8.6.12",
