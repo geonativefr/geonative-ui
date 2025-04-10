@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import type { RouteRecord } from '@/types/routes';
+import type { RouteRecord } from '@/types';
 import routes from '@demo/routes';
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
