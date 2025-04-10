@@ -106,6 +106,18 @@ const dropdownMenu: DropdownMenuType = {
         url: '/avatar',
       },
     ],
+    [
+      {
+        label: 'Pas url',
+      },
+      {
+        label: 'Url vide',
+        url: '',
+      },
+      {
+        url: '/pas-de-label',
+      },
+    ],
   ],
 };
 </script>

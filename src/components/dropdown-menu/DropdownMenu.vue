@@ -5,7 +5,7 @@
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
-      :side="isMobile ? 'bottom' : 'right'"
+      :side="'right'"
       align="end"
       :side-offset="4"
     >
