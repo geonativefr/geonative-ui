@@ -11,7 +11,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@demo/*": ["demo/src/*"],
-      "@storybook/*": ["storybook/src/*"],
+      "@storybook/*": ["storybook/src/*"]
     }
   }
 }

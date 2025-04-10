@@ -19,11 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     breadcrumb: {
-      items: [
-        { title: 'Home', link: '/' },
-        { title: 'Components' },
-        { title: 'Breadcrumb' },
-      ],
+      items: [{ title: 'Home', link: '/' }, { title: 'Components' }, { title: 'Breadcrumb' }],
       separator: '>',
     } as BreadcrumbType,
   },
