@@ -20,6 +20,7 @@ demo-dist
 
 # Storybook
 storybook-dist
+*storybook.log
 
 # Editor directories and files
 .vscode/*
@@ -34,3 +35,4 @@ storybook-dist
 
 # Package distribution
 geonative-ui-*.tgz
+
