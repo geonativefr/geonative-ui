@@ -57,6 +57,7 @@
     "@storybook/addon-links": "^8.6.12",
     "@storybook/builder-vite": "^8.6.12",
     "@storybook/vue3": "^8.6.12",
+    "@storybook/vue3-vite": "^8.6.12",
     "@types/node": "^22.13.17",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/eslint-config-prettier": "^10.2.0",
@@ -71,6 +72,5 @@
     "vite-plugin-dts": "^4.5.3",
     "vue-router": "^4.5.0",
     "vue-tsc": "^2.2.4"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  }
 }
