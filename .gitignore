@@ -31,3 +31,5 @@ storybook-dist
 *.njsproj
 *.sln
 *.sw?
+
+*storybook.log
