@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "@geonative/ui/*": ["src/*"],
-      "@/*": ["demo/src/*"]
+      "@/*": ["demo/src/*"],
       "@storybook/*": ["storybook/src/*"],
     }
   }
