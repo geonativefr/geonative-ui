@@ -1,47 +1,21 @@
-import { StorybookConfig } from '@storybook/vue3-vite';
-import { resolve } from 'path';
+import path from 'node:path';
+import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
 // Add this to avoid TypeScript errors when importing tailwindcss plugin
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import tailwindcss from '@tailwindcss/vite';
 
-// This is a Vite configuration file for Storybook.
-const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-  ],
-  framework: {
-    name: '@storybook/vue3-vite',
-    options: {},
+export default defineConfig({
+  plugins: [vue(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+      '@storybook': path.resolve(__dirname, './src'),
+    },
   },
-  docs: {
-    autodocs: 'tag',
+  build: {
+    outDir: path.resolve(__dirname, '../storybook-dist'),
   },
-  viteFinal: async (config) => {
-    // Add path aliases
-    if (config.resolve && config.resolve.alias) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': resolve(__dirname, '../', '../src'),
-        '@storybook': resolve(__dirname, '../src'),
-      };
-    }
-    // Add tailwindcss plugin
-    if (config.plugins) {
-      const tailwindPlugin = config.plugins.find(plugin => plugin.name === 'tailwindcss');
-      if (!tailwindPlugin) {
-        config.plugins.push(tailwindcss());
-      }
-    }
-    // Root directory
-    config.root = resolve(__dirname, '../storybook');
-    config.build = {
-      outDir: resolve(__dirname, '../storybook-dist'),
-    }
-    return config;
-  },
-};
-
-export default config;
+  root: path.resolve(__dirname, '.'),
+});
