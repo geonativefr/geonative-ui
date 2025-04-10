@@ -3,9 +3,14 @@
     <ShadcnDropdownMenuTrigger v-if="props.name">
       <Button>{{ props.name }}</Button>
     </ShadcnDropdownMenuTrigger>
-    <ShadcnDropdownMenuContent>
+    <ShadcnDropdownMenuContent
+      class="w-full min-w-56 rounded-lg"
+      :side="isMobile ? 'bottom' : 'right'"
+      align="end"
+      :side-offset="4"
+    >
       <div v-if="props.label != null">
-        <ShadcnDropdownMenuLabel>{{ props.label }}</ShadcnDropdownMenuLabel>
+        <ShadcnDropdownMenuLabel class="text-center">{{ props.label }}</ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />
       </div>
       <div v-for="(section, index) in props.sections" :key="index">
