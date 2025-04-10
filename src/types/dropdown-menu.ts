@@ -1,17 +1,14 @@
+export interface DropdownMenu {
+  name: string;
+  sections: DropdownSection[];
+}
+
+export type DropdownSection = DropdownMenuItem[];
+
 export interface DropdownMenuItem {
-  title: string;
-  shortcut?: string;
-  link?: string;
-  submenu?: DropdownMenuItem[];
-  separator?: boolean;
+  label: string;
+  url?: string;
   disabled?: boolean;
-}
-
-export interface DropdownMenuGroup {
-  group: DropdownMenuItem[];
-}
-
-export interface DropdownMenuCategory {
-  category: string;
-  items: DropdownMenuGroup[];
+  shortcut?: string;
+  sections?: DropdownSection[];
 }

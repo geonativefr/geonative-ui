@@ -6,8 +6,8 @@
     <ShadcnDropdownMenuContent>
       <ShadcnDropdownMenuLabel>{{ props.label }}</ShadcnDropdownMenuLabel>
       <ShadcnDropdownMenuSeparator />
-      <div v-for="(category, categoryIndex) in props.items" :key="categoryIndex">
-        <DropdownMenuCategory :category="category" :show-separator="categoryIndex > 0" />
+      <div v-for="(section, index) in props.sections" :key="index">
+        <DropdownMenuSection :section="section" :show-separator="index > 0" />
       </div>
     </ShadcnDropdownMenuContent>
   </ShadcnDropdownMenu>
@@ -22,12 +22,12 @@ import {
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@/shadcn/ui/dropdown-menu';
 import { Button } from '@/shadcn/ui/button';
-import DropdownMenuCategory from '@/components/dropdown-menu/DropdownMenuCategory.vue';
-import type { DropdownMenuCategory as CategoryType } from '@/types/dropdown-menu.ts';
+import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
+import type { DropdownSection } from '@/types/dropdown-menu.ts';
 
 const props = defineProps({
-  items: {
-    type: Array as () => CategoryType[],
+  sections: {
+    type: Array as () => DropdownSection[], // Vérification stricte
     required: true,
   },
   name: {
