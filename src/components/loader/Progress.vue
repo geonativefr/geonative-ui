@@ -1,9 +1,10 @@
 <template>
   <Progress
     :model-value="props.progress"
-    class="w-full border"
-    :class="`${sizeClass} bg-[${props.bgColor}]  border-[${props.borderColor}]`"
-  />
+    color="blue-500"
+    class="w-full"
+    :class="[sizeClass, bgColorClass]"
+  ></Progress>
 </template>
 
 <script setup lang="ts">
@@ -29,27 +30,13 @@ const props = defineProps({
   color: {
     type: String,
     required: false,
-    default: '#000000',
-    validator: (value: string) => {
-      return /^#[0-9A-F]{6}$/i.test(value)
-    }
+    default: 'black',
   },
   bgColor: {
     type: String,
     required: false,
-    default: '#ffffff',
-    validator: (value: string) => {
-      return /^#[0-9A-F]{6}$/i.test(value)
-    }
+    default: 'white',
   },
-  borderColor: {
-    type: String,
-    required: false,
-    default: '#ffffff',
-    validator: (value: string) => {
-      return /^#[0-9A-F]{6}$/i.test(value)
-    }
-  }
 });
 const sizeClass = computed(() => {
   switch (props.size) {
@@ -62,5 +49,8 @@ const sizeClass = computed(() => {
     default:
       return 'h-4';
   }
+});
+const bgColorClass = computed(() => {
+  return `bg-blue-50`;
 });
 </script>

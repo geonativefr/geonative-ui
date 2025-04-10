@@ -3,9 +3,9 @@
     <div class="flex flex-col gap-2">
       <h2 class="text-2xl font-bold mb-5">Spinner</h2>
       <div class="flex gap-5">
-        <Spinner size="sm" color="#ffff00" />
+        <Spinner size="sm" color="red-500" />
         <Spinner size="md" />
-        <Spinner size="lg" color="#00ff00" />
+        <Spinner size="lg" color="blue-500" />
       </div>
     </div>
     <div class="flex flex-col gap-2 w-xl">
@@ -15,13 +15,21 @@
           <Progress size="md" :progress="progress" />
           <Progress size="lg" :progress="progress" />
       </div>
+      <div class="flex flex-col gap-2 w-xl">
+        <h2 class="text-2xl font-bold mb-5">Ping</h2>
+        <div class="grid grid-cols-1 gap-5">
+          <Ping size="sm" color="red" />
+          <Ping size="md" />
+          <Ping size="lg" color="blue-500" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Spinner, Progress } from '@/components/loader';
+import { Spinner, Progress, Ping } from '@/components/loader';
 
 const progress = ref(0  );
 function makeProgress(){

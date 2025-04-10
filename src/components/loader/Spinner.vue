@@ -2,8 +2,8 @@
   <div role="status">
     <svg
       aria-hidden="true"
-      class="text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
-      :class="`${sizeClass} fill-[${props.color}]`"
+      class="text-gray-200 animate-spin"
+      :class="[sizeClass, colorClass]"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,12 +28,9 @@ const props = defineProps({
     }
   },
   color: {
-    type: [String, null],
+    type: String,
     required: false,
-    default: '#000000',
-    validator: (value: string | null) => {
-      return value === null || /^#[0-9A-F]{6}$/i.test(value);
-    }
+    default: 'white',
   },
 });
 const sizeClass = computed(() => {
@@ -47,5 +44,8 @@ const sizeClass = computed(() => {
     default:
       return 'h-6 w-6';
   }
+});
+const colorClass = computed(() => {
+  return `fill-blue-500`;
 });
 </script>
