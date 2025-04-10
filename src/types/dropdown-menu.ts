@@ -1,6 +1,6 @@
 export interface DropdownMenu {
   name: string;
-  sections: DropdownSection[];
+  sections: DropdownMenuSection[];
 }
 
 export type DropdownMenuSection = DropdownMenuItem[];
@@ -10,5 +10,5 @@ export interface DropdownMenuItem {
   url?: string;
   disabled?: boolean;
   shortcut?: string;
-  sections?: DropdownSection[];
+  sections?: DropdownMenuSection[];
 }
