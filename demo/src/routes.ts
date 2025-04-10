@@ -9,16 +9,22 @@ const routes: Array<RouteRecord> = [
     menuLabel: 'Home',
   }),
   createRoute({
+    path: '/avatar',
+    name: 'avatar',
+    component: () => import('@demo/views/Avatar.vue'),
+    menuLabel: 'Avatar',
+  }),
+  createRoute({
     path: '/breadcrumb',
     name: 'breadcrumb',
     component: () => import('@demo/views/Breadcrumb.vue'),
     menuLabel: 'Breadcrumb',
   }),
   createRoute({
-    path: '/avatar',
-    name: 'avatar',
-    component: () => import('@demo/views/Avatar.vue'),
-    menuLabel: 'Avatar',
+    path: '/loader',
+    name: 'loader',
+    component: () => import('@demo/views/Loader.vue'),
+    menuLabel: 'Loader',
   }),
   // Catch all unmatched routes
   createRoute({
