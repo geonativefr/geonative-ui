@@ -23,11 +23,11 @@ import {
 } from '@/shadcn/ui/dropdown-menu';
 import { Button } from '@/shadcn/ui/button';
 import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
-import type { DropdownSection } from '@/types/dropdown-menu.ts';
+import type { DropdownSection as DropdownSectionType } from '@/types/dropdown-menu.ts';
 
 const props = defineProps({
   sections: {
-    type: Array as () => DropdownSection[], // Vérification stricte
+    type: Array as () => DropdownSectionType[],
     required: true,
   },
   name: {

@@ -10,7 +10,6 @@
           <ShadcnDropdownMenuPortal>
             <ShadcnDropdownMenuSubContent>
               <DropdownMenuSection :section="item.sections[0]" :show-separator="false" />
-
               <div v-if="item.sections.length > 1">
                 <div v-for="(section, index) in item.sections.slice(1)" :key="index">
                   <DropdownMenuSection :section="section" :show-separator="true" />
@@ -29,7 +28,8 @@
 
 <script setup lang="ts">
 import DropdownMenuItem from '@/components/dropdown-menu/DropdownMenuItem.vue';
-import type { DropdownSection } from '@/types/dropdown-menu.ts';
+import type { DropdownMenuSection as DropdownMenuSectionType } from '@/types/dropdown-menu.ts';
+
 import {
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
   DropdownMenuSub as ShadcnDropdownMenuSub,
@@ -40,7 +40,7 @@ import {
 
 const props = defineProps({
   section: {
-    type: Array as () => DropdownSection, // Correspond au type DropdownSection
+    type: Array as () => DropdownMenuSectionType,
     required: true,
   },
   showSeparator: {
