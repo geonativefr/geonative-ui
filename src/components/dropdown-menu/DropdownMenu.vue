@@ -1,11 +1,13 @@
 <template>
   <ShadcnDropdownMenu>
-    <ShadcnDropdownMenuTrigger>
+    <ShadcnDropdownMenuTrigger v-if="props.name">
       <Button>{{ props.name }}</Button>
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent>
-      <ShadcnDropdownMenuLabel>{{ props.label }}</ShadcnDropdownMenuLabel>
-      <ShadcnDropdownMenuSeparator />
+      <div v-if="props.label != null">
+        <ShadcnDropdownMenuLabel>{{ props.label }}</ShadcnDropdownMenuLabel>
+        <ShadcnDropdownMenuSeparator />
+      </div>
       <div v-for="(section, index) in props.sections" :key="index">
         <DropdownMenuSection :section="section" :show-separator="index > 0" />
       </div>
@@ -32,11 +34,11 @@ const props = defineProps({
   },
   name: {
     type: String,
-    required: false,
+    required: true,
   },
   label: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 </script>
