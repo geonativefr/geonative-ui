@@ -43,8 +43,9 @@ const dropdownMenu: DropdownMenuType = {
                   { label: 'Send', url: '/invite/link/send' },
                 ],
                 [
-                  { label: 'Email', url: '/invite/link/share/email' },
-                  { label: 'Message', url: '/invite/link/share/message' },
+                  { label: 'Image', url: '/invite/link/share/image' },
+                  { label: 'Text', url: '/invite/link/share/text' },
+                  { label: 'Video', url: '/invite/link/share/video' },
                 ],
               ],
             },
