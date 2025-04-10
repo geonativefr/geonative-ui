@@ -3,7 +3,7 @@ export interface DropdownMenu {
   sections: DropdownSection[];
 }
 
-export type DropdownSection = DropdownMenuItem[];
+export type DropdownMenuSection = DropdownMenuItem[];
 
 export interface DropdownMenuItem {
   label: string;
