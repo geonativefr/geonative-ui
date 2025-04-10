@@ -20,10 +20,6 @@
           {{ props.item.label }}
           <span v-if="props.item.shortcut" class="ml-auto text-xs text-gray-500">{{ props.item.shortcut }}</span>
         </a>
-        <span v-else>
-          {{ props.item.label }}
-          <span v-if="props.item.shortcut" class="ml-auto text-xs text-gray-500">{{ props.item.shortcut }}</span>
-        </span>
       </ShadcnDropdownMenuItem>
     </div>
   </div>
