@@ -18,7 +18,7 @@ import BreadcrumbItem from '@/components/breadcrumb/BreadcrumbItem.vue';
 import type { Breadcrumb as BreadcrumbType } from '@/types';
 
 const props = defineProps<{
-  breadcrumb: BreadcrumbType,
+  breadcrumb: BreadcrumbType;
 }>();
 
 const breadcrumbLength = props.breadcrumb.items.length;

@@ -13,7 +13,9 @@
       {{ props.item.title }}
     </p>
   </ShadcnBreadcrumbItem>
-  <ShadcnBreadcrumbSeparator v-if="!props.isCurrentPage" class="hidden md:block">{{separator}}</ShadcnBreadcrumbSeparator>
+  <ShadcnBreadcrumbSeparator v-if="!props.isCurrentPage" class="hidden md:block">{{
+    separator
+  }}</ShadcnBreadcrumbSeparator>
 </template>
 
 <script setup lang="ts">
