@@ -1,11 +1,23 @@
 <template>
-  <div>
+  <div v-if="props.item.label">
     <div>
-      <ShadcnDropdownMenuItem :disabled="props.item.disabled">
-        <a v-if="props.item.url" :href="props.item.url" class="flex justify-between items-center w-full">
-          <span>{{ props.item.label }}</span>
-          <ShadcnDropdownMenuShortcut class="ml-10">{{ props.item.shortcut }}</ShadcnDropdownMenuShortcut>
-        </a>
+      <ShadcnDropdownMenuItem :disabled="!props.item.url || props.item.url === '' || props.item.disabled">
+        <template v-if="props.item.url">
+          <a
+            :href="props.item.url"
+            class="flex justify-between items-center w-full"
+          >
+            <span>{{ props.item.label }}</span>
+            <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+              {{ props.item.shortcut }}
+            </ShadcnDropdownMenuShortcut>
+          </a>
+        </template>
+        <template v-else>
+          <span class="flex justify-between items-center w-full">
+            {{ props.item.label }}
+          </span>
+        </template>
       </ShadcnDropdownMenuItem>
     </div>
   </div>
