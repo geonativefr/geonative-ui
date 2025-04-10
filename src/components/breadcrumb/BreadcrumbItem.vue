@@ -13,7 +13,7 @@
       {{ props.item.title }}
     </p>
   </ShadcnBreadcrumbItem>
-  <ShadcnBreadcrumbSeparator v-if="!props.isCurrentPage" class="hidden md:block" />
+  <ShadcnBreadcrumbSeparator v-if="!props.isCurrentPage" class="hidden md:block">{{separator}}</ShadcnBreadcrumbSeparator>
 </template>
 
 <script setup lang="ts">
@@ -28,10 +28,12 @@ import type { BreadcrumbItem } from '@/types';
 const props = withDefaults(
   defineProps<{
     item: BreadcrumbItem;
-    isCurrentPage: boolean;
+    isCurrentPage?: boolean;
+    separator?: string;
   }>(),
   {
     isCurrentPage: false,
+    separator: '>',
   }
 );
 
