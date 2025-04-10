@@ -4,5 +4,3 @@ export type RouteRecord = RouteRecordRaw & {
   showInMenu?: boolean;
   menuLabel?: string;
 };
-
-
