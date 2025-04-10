@@ -1,7 +1,7 @@
 <template>
-  <ShadcnDropdownMenuSeparator v-if="showSeparator" />
-  <div v-for="(group, groupIndex) in category.items" :key="groupIndex">
-    <DropdownMenuItem :group="group" />
+  <ShadcnDropdownMenuSeparator v-if="props.showSeparator" />
+  <div v-for="(group, groupIndex) in props.category.items" :key="groupIndex">
+    <DropdownMenuItem :group="group.group" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import DropdownMenuItem from '@/components/dropdown-menu/DropdownMenuItem.vue';
 import type { DropdownMenuCategory as CategoryType } from '@/types/dropdown-menu.ts';
 import { DropdownMenuSeparator as ShadcnDropdownMenuSeparator } from '@/shadcn/ui/dropdown-menu';
 
-defineProps({
+const props = defineProps({
   category: {
     type: Object as () => CategoryType,
     required: true,
