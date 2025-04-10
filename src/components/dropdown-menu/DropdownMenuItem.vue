@@ -1,20 +1,6 @@
 <template>
   <div>
-    <div v-if="props.item.sections && props.item.sections.length > 0">
-      <ShadcnDropdownMenuSub>
-        <ShadcnDropdownMenuSubTrigger>
-          <span>{{ props.item.label }}</span>
-        </ShadcnDropdownMenuSubTrigger>
-        <ShadcnDropdownMenuPortal>
-          <ShadcnDropdownMenuSubContent>
-            <div v-for="(subSection, index) in props.item.sections" :key="index">
-              <DropdownMenuSection :section="subSection" :show-separator="index > 0" />
-            </div>
-          </ShadcnDropdownMenuSubContent>
-        </ShadcnDropdownMenuPortal>
-      </ShadcnDropdownMenuSub>
-    </div>
-    <div v-else>
+    <div>
       <ShadcnDropdownMenuItem :disabled="props.item.disabled">
         <a v-if="props.item.url" :href="props.item.url" class="flex items-center w-full">
           {{ props.item.label }}
@@ -26,19 +12,12 @@
 </template>
 
 <script setup lang="ts">
-import type { DropdownMenuItem as ItemType } from '@/types/dropdown-menu.ts';
-import {
-  DropdownMenuItem as ShadcnDropdownMenuItem,
-  DropdownMenuSub as ShadcnDropdownMenuSub,
-  DropdownMenuSubTrigger as ShadcnDropdownMenuSubTrigger,
-  DropdownMenuPortal as ShadcnDropdownMenuPortal,
-  DropdownMenuSubContent as ShadcnDropdownMenuSubContent,
-} from '@/shadcn/ui/dropdown-menu';
-import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
+import type { DropdownMenuItem as DropdownItemType } from '@/types/dropdown-menu.ts';
+import { DropdownMenuItem as ShadcnDropdownMenuItem } from '@/shadcn/ui/dropdown-menu';
 
 const props = defineProps({
   item: {
-    type: Object as () => ItemType,
+    type: Object as () => DropdownItemType,
     required: true,
   },
 });
