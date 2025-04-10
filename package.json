@@ -13,6 +13,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@storybook/vue3-vite": "^8.6.12",
     "@tailwindcss/vite": "^4.1.1",
     "@vueuse/core": "^13.0.0",
     "class-variance-authority": "^0.7.1",
