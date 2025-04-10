@@ -33,15 +33,16 @@
     "build": "vue-tsc -b && vite build",
     "dev:demo": "vite --config demo/vite.config.ts",
     "build:demo": "vite build --config demo/vite.config.ts",
-    "storybook": "storybook dev -p 6006 -c storybook",
-    "build-storybook": "storybook build -c storybook -o storybook-dist",
-    "dev:storybook": "vite --config storybook/vite.config.ts",
-    "build:storybook": "vite build --config storybook/vite.config.ts",
+    "dev:storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build --output-dir storybook-dist",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@storybook/vue3-vite": "^8.6.12",
     "@heroicons/vue": "^2.2.0",
     "@tailwindcss/vite": "^4.1.1",
     "@vueuse/core": "^13.0.0",
@@ -57,26 +58,41 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-links": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
     "@storybook/builder-vite": "^8.6.12",
     "@storybook/cli": "^8.6.12",
+    "@storybook/experimental-addon-test": "^8.6.12",
+    "@storybook/test": "^8.6.12",
     "@storybook/vue3": "^8.6.12",
     "@storybook/vue3-vite": "^8.6.12",
     "@types/node": "^22.13.17",
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/browser": "^3.1.1",
+    "@vitest/coverage-v8": "^3.1.1",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.5.0",
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.23.0",
+    "eslint-plugin-storybook": "^0.12.0",
     "eslint-plugin-vue": "^10.0.0",
     "jiti": "^2.4.2",
+    "playwright": "^1.51.1",
     "prettier": "^3.5.3",
     "storybook": "^8.6.12",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
+    "vitest": "^3.1.1",
     "vite-plugin-dts": "^4.5.3",
     "vue-router": "^4.5.0",
     "vue-tsc": "^2.2.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
