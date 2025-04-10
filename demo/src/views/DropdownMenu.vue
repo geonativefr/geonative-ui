@@ -47,6 +47,10 @@ const dropdownMenu: DropdownMenuType = {
                   { label: 'Text', url: '/invite/link/share/text' },
                   { label: 'Video', url: '/invite/link/share/video' },
                 ],
+                [
+                  { label: 'Friends', url: '/invite/link/share/friends' },
+                  { label: 'Everyone', url: '/invite/link/share/everyone' },
+                ],
               ],
             },
           ],
