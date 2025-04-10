@@ -2,9 +2,9 @@
   <div>
     <div>
       <ShadcnDropdownMenuItem :disabled="props.item.disabled">
-        <a v-if="props.item.url" :href="props.item.url" class="flex items-center w-full">
-          {{ props.item.label }}
-          <ShadcnDropdownMenuShortcut>{{ props.item.shortcut }}</ShadcnDropdownMenuShortcut>
+        <a v-if="props.item.url" :href="props.item.url" class="flex justify-between items-center w-full">
+          <span>{{ props.item.label }}</span>
+          <ShadcnDropdownMenuShortcut class="ml-10">{{ props.item.shortcut }}</ShadcnDropdownMenuShortcut>
         </a>
       </ShadcnDropdownMenuItem>
     </div>
