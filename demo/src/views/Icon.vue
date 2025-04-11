@@ -18,7 +18,11 @@
     </div>
     <div class="flex justify-between gap-10">
       <span>Lucide icon</span>
-      <Icon name="AlertCircle" type="lucide" class="w-5 h-5 text-green-500" />
+      <Icon name="AlertCircle" source="lucide" class="w-5 h-5 text-pink-700" />
+    </div>
+    <div class="flex justify-between gap-10">
+      <span>Heroicon</span>
+      <Icon name="academic-cap" source="heroicons" class="w-5 h-5 text-yellow-500" />
     </div>
   </div>
 </template>
