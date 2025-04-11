@@ -4,7 +4,7 @@
     <Button
       class="text-blue-500 bg-blue-100 hover:bg-blue-200 rounded-full px-4 py-2 shadow-md"
       :disabled="false"
-      @click="clickMethod()"
+      @click="clickMethod"
       size="lg"
     >
       Hello world !
@@ -19,6 +19,6 @@ import Button from '@/components/button/Button.vue';
 
 const clickedMessage = ref('');
 const clickMethod = () => {
-  clickedMessage.value = 'button clicked !';
+  clickedMessage.value = clickedMessage.value ? '' : 'button clicked !';
 };
 </script>
