@@ -13,6 +13,7 @@
 <script lang="ts" setup>
 import { computed, h } from 'vue';
 import type { Component } from 'vue';
+import * as lucideIcons from 'lucide-vue-next';
 
 const props = defineProps({
   name: {
@@ -25,11 +26,35 @@ const props = defineProps({
   },
   class: {
     type: String,
+    required: false,
     default: '',
+  },
+  type: {
+    type: String as () => 'svg' | 'lucide' | 'heroicons',
+    required: false,
+    default: 'svg',
+    validator: (value: string): boolean => {
+      // Check if the value is a valid type
+      return ['svg', 'lucide', 'heroicons'].includes(value);
+    },
   },
 });
 
 const iconComponent: Component = computed(() => {
+
+  // Handle lucide icons
+  if (props.type === 'lucide') {
+    // Handle lucide icons here
+    return lucideIcons[props.name as keyof typeof lucideIcons];
+  }
+
+  // Handle heroicons
+  if (props.type === 'heroicons') {
+    // Handle heroicons here
+    return null;
+  }
+
+  // Handle SVG icons
   try {
     // Use Vite's dynamic import.meta.glob feature to load SVG files
     const icons = import.meta.glob('@/assets/icons/**/*.svg', {
