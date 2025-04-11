@@ -5,8 +5,8 @@
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
-      :side="'right'"
-      align="end"
+      :side="props.position"
+      :align="props.align"
       :side-offset="4"
     >
       <div v-if="props.label != null">
@@ -42,6 +42,14 @@ const props = defineProps({
     required: true,
   },
   label: {
+    type: String,
+    required: false,
+  },
+  position: {
+    type: String,
+    required: false,
+  },
+  align: {
     type: String,
     required: false,
   },

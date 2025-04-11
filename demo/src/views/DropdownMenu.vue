@@ -1,7 +1,10 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">DROPDOWNMENU :</h1>
-    <DropdownMenu :sections="dropdownMenu.sections" name="Menu" :label="dropdownMenu.name" />
+    <p class="mb-3">default:</p>
+    <DropdownMenu :sections="dropdownMenu.sections" name="Menu 1" :label="dropdownMenu.name"/>
+    <p class="mb-3 mt-30">position right + align end :</p>
+    <DropdownMenu :sections="dropdownMenu.sections" name="Menu 2" :label="dropdownMenu.name" position="right" align="end"/>
   </div>
 </template>
 
