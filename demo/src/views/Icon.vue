@@ -21,8 +21,12 @@
       <Icon name="AlertCircle" source="lucide" class="w-5 h-5 text-pink-700" />
     </div>
     <div class="flex justify-between gap-10">
-      <span>Heroicon</span>
-      <Icon name="academic-cap" source="heroicons" class="w-5 h-5 text-yellow-500" />
+      <span>Heroicon solid</span>
+      <Icon name="academic-cap" source="heroicons" type="solid" class="w-5 h-5 text-yellow-500" />
+    </div>
+    <div class="flex justify-between gap-10">
+      <span>Heroicon outline</span>
+      <Icon name="academic-cap" source="heroicons" type="outline" class="w-5 h-5 text-orange-500" />
     </div>
   </div>
 </template>
