@@ -5,8 +5,8 @@
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
-      :side="props.position"
-      :align="props.align"
+      :side="safePosition"
+      :align="safeAlign"
       :side-offset="4"
     >
       <div v-if="props.label != null">
@@ -31,7 +31,7 @@ import {
 import { Button } from '@/shadcn/ui/button';
 import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
 import type { DropdownMenuSection as DropdownMenuSectionType } from '@/types/dropdown-menu.ts';
-import type { PropType } from 'vue';
+import { computed, type PropType } from 'vue';
 
 const props = defineProps({
   sections: {
@@ -49,10 +49,30 @@ const props = defineProps({
   position: {
     type: String as PropType<'right' | 'top' | 'bottom' | 'left'>,
     required: false,
+    default: 'right',
+    validator: (value: string) => {
+      return ['right', 'top', 'bottom', 'left'].includes(value);
+    },
   },
   align: {
     type: String as PropType<'start' | 'center' | 'end'>,
     required: false,
+    default: 'start',
+    validator: (value: string) => {
+      return ['start', 'center', 'end'].includes(value);
+    },
   },
+});
+
+// Manage default values for position and align props if wrong values are passed
+const safePosition = computed(() => {
+  return ['right', 'top', 'bottom', 'left'].includes(props.position || '')
+    ? props.position
+    : 'right';
+});
+const safeAlign = computed(() => {
+  return ['start', 'center', 'end'].includes(props.align || '')
+    ? props.align
+    : 'start';
 });
 </script>
