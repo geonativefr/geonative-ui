@@ -4,7 +4,6 @@
       'transition-all',
       props.disabled ? 'opacity-50 cursor-not-allowed' : '',
       props.size === 'lg' ? 'px-6 py-3 text-lg' : props.size === 'sm' ? 'px-2 py-1 text-sm' : 'px-4 py-2 text-base',
-      customClasses,
     ]"
     :disabled="props.disabled"
     @click="handleClick"
@@ -20,7 +19,6 @@ const props = defineProps<{
   label?: string;
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
-  customClasses?: string;
   onClick?: () => void;
 }>();
 
