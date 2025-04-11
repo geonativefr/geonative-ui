@@ -6,6 +6,7 @@ export interface DropdownMenu {
 export type DropdownMenuSection = DropdownMenuItem[];
 
 export interface DropdownMenuItem {
+  icon?: any;
   label: string;
   url?: string;
   disabled?: boolean;
