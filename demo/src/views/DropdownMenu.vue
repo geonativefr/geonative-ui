@@ -1,6 +1,6 @@
 <template>
   <div class="p-5">
-    <h1 class="mb-3">DROPDOWNMENU :</h1>
+    <h1 class="mb-3">Dropdown Menu :</h1>
     <p class="mb-3">default:</p>
     <DropdownMenu :sections="dropdownMenu.sections" name="Menu 1" :label="dropdownMenu.name" />
     <p class="mb-3 mt-30">position right + align end :</p>
@@ -19,7 +19,6 @@ import DropdownMenu from '@/components/dropdown-menu/DropdownMenu.vue';
 import type { DropdownMenu as DropdownMenuType } from '@/types/dropdown-menu.ts';
 
 const dropdownMenu: DropdownMenuType = {
-  name: 'Menu Label',
   sections: [
     [
       {
