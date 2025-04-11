@@ -1,7 +1,14 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">BUTTON :</h1>
-    <Button :button="buttonConfig" class="bg-blue-500 text-white rounded-lg hover:bg-blue-600" />
+    <Button
+      class="text-blue-500 bg-blue-100 hover:bg-blue-200 rounded-full px-4 py-2 shadow-md"
+      :disabled="false"
+      @click="clickMethod()"
+      size="lg"
+    >
+      Hello world !
+    </Button>
     <p v-if="clickedMessage" class="mt-3 text-green-500">{{ clickedMessage }}</p>
   </div>
 </template>
@@ -9,15 +16,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Button from '@/components/button/Button.vue';
-import type { Button as ButtonType } from '@/types/button';
 
 const clickedMessage = ref('');
-const buttonConfig: ButtonType = {
-  label: 'Click me',
-  size: 'lg',
-  onClick: () => {
-    clickedMessage.value = 'Button clicked';
-  },
-  disabled: false,
+const clickMethod = () => {
+  clickedMessage.value = 'button clicked !';
 };
 </script>
