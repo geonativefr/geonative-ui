@@ -38,6 +38,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
     "@tailwindcss/vite": "^4.1.1",
     "@vueuse/core": "^13.0.0",
     "class-variance-authority": "^0.7.1",
