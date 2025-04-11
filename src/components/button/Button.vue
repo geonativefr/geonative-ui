@@ -2,7 +2,7 @@
   <button
     :class="[
       'transition-all',
-      props.disabled ? 'opacity-50 cursor-not-allowed' : '',
+      props.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
       props.size === 'lg' ? 'px-6 py-3 text-lg' : props.size === 'sm' ? 'px-2 py-1 text-sm' : 'px-4 py-2 text-base',
     ]"
     :disabled="props.disabled"
