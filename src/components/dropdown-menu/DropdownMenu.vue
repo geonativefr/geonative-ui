@@ -31,6 +31,7 @@ import {
 import { Button } from '@/shadcn/ui/button';
 import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
 import type { DropdownMenuSection as DropdownMenuSectionType } from '@/types/dropdown-menu.ts';
+import type { PropType } from 'vue';
 
 const props = defineProps({
   sections: {
@@ -46,11 +47,11 @@ const props = defineProps({
     required: false,
   },
   position: {
-    type: String,
+    type: String as PropType<'right' | 'top' | 'bottom' | 'left'>,
     required: false,
   },
   align: {
-    type: String,
+    type: String as PropType<'start' | 'center' | 'end'>,
     required: false,
   },
 });
