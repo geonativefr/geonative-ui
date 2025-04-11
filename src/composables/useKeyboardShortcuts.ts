@@ -1,5 +1,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
-import type { Shortcut, ModifierKeys, UseKeyboardShortcutsReturn } from '@/types';
+import type { ModifierKeys, Shortcut, ShortcutKeyConfig, UseKeyboardShortcutsReturn } from '@/types';
+import { ModifierKeyStringMap, SHORTCUT_STRING_SEPARATOR } from '@/constants/shortcut';
+
 /**
  * Vue composable for managing keyboard shortcuts that redirect to specific links
  *
@@ -148,9 +150,23 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
     return new Map(shortcuts.value);
   };
 
+  /**
+   * Return string representation of shortcut keys
+   * @param keyConfig The shortcut key configuration
+   * @returns A string representation of the shortcut keys
+   */
+  const getShortcutKeysString = (keyConfig: ShortcutKeyConfig): string => {
+    // Check if keyConfig has modifiers
+    if (keyConfig.modifiers && keyConfig.modifiers.length > 0) {
+      const modifiersString = keyConfig.modifiers
+        .map((modifier) => ModifierKeyStringMap[modifier])
+        .join(SHORTCUT_STRING_SEPARATOR);
+      return `${modifiersString}${SHORTCUT_STRING_SEPARATOR}${keyConfig.key}`;
+    }
+  };
+
   // Setup and cleanup
   onMounted(() => {
-    console.log('useKeyboardShortcuts mounted');
     if (autoEnable) {
       enable();
     }
@@ -168,5 +184,6 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
     enable,
     disable,
     getShortcuts,
+    getShortcutKeysString,
   };
 }
