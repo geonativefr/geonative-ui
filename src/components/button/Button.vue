@@ -2,11 +2,15 @@
   <button
     :class="[
       'transition-all',
-      props.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
+      !props.class?.includes('rounded-') ? 'rounded-md' : '',
+      !props.class?.includes('bg-') ? 'bg-primary' : '',
+      !props.class?.includes('text-') ? 'text-white' : '',
+      !props.class?.includes('shadow-') ? 'shadow-md' : '',
+      props.disabled ? 'opacity-50 cursor-not-allowed' : '',
       props.size === 'lg' ? 'px-6 py-3 text-lg' : props.size === 'sm' ? 'px-2 py-1 text-sm' : 'px-4 py-2 text-base',
+      props.class,
     ]"
     :disabled="props.disabled"
-    @click="handleClick"
   >
     <slot>{{ props.label }}</slot>
   </button>
@@ -18,13 +22,8 @@ import { defineProps } from 'vue';
 const props = defineProps<{
   label?: string;
   size?: 'sm' | 'md' | 'lg';
+  class?: string;
   disabled?: boolean;
-  onClick?: () => void;
 }>();
 
-const handleClick = () => {
-  if (!props.disabled) {
-    props.onClick?.();
-  }
-};
 </script>
