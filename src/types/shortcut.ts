@@ -5,6 +5,13 @@ import type { Ref } from 'vue';
  */
 export type ModifierKeys = 'ctrl' | 'control' | 'alt' | 'shift' | 'meta' | 'cmd' | 'command';
 
+/*
+ * Map of modifier keys to their string representations
+ */
+export type ModifierKeyString = {
+  [key in ModifierKeys]: string;
+}
+
 /**
  * Interface for keyboard shortcut
  */
@@ -41,4 +48,6 @@ export interface UseKeyboardShortcutsReturn {
   disable: () => void;
   /** Get all registered shortcuts */
   getShortcuts: () => Map<string, Shortcut>;
+  /** Get a string version of the keyboard shortcut keys */
+  getShortcutKeysString: (keyConfig: ShortcutKeyConfig) => string;
 }
