@@ -1,13 +1,8 @@
 <template>
-  <component
-    v-if="iconComponent"
-    :is="iconComponent"
-    :class="props.class"
-  />
-  <span
-    v-else
-    class="rounded-md bg-gray-50 px-2 py-1 text-xs text-gray-600 ring-1 ring-gray-500/10"
-  >{{ props.name }}</span>
+  <component v-if="iconComponent" :is="iconComponent" :class="props.class" />
+  <span v-else class="rounded-md bg-gray-50 px-2 py-1 text-xs text-gray-600 ring-1 ring-gray-500/10">{{
+    props.name
+  }}</span>
 </template>
 
 <script lang="ts" setup>
@@ -50,7 +45,6 @@ const props = defineProps({
 });
 
 const iconComponent: Component = computed(() => {
-
   // Handle lucide icons
   if (props.source === 'lucide') {
     return lucideIcons[props.name as keyof typeof lucideIcons];
@@ -61,7 +55,7 @@ const iconComponent: Component = computed(() => {
     // Transform the icon name to match the naming convention in HeroIcons academic-cap => AcademicCapIcon
     const iconName = `${props.name
       .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join('')}`;
     // Add the icon type (solid or outline) to the name
     const iconType = props.type === 'solid' ? 'Solid' : 'Outline';
@@ -74,15 +68,13 @@ const iconComponent: Component = computed(() => {
   try {
     // Use Vite's dynamic import.meta.glob feature to load SVG files
     const icons = import.meta.glob('@/assets/icons/**/*.svg', {
-      query: "?raw",
-      import: "default",
+      query: '?raw',
+      import: 'default',
       eager: true,
     });
     // Find the icon by matching the end of the path replace _ by /
     const targetPath = `/${props.name.replace(/_/g, '/')}.svg`;
-    const matchedIconPath = Object.keys(icons).find(path =>
-      path.endsWith(targetPath)
-    );
+    const matchedIconPath = Object.keys(icons).find((path) => path.endsWith(targetPath));
     if (matchedIconPath && icons[matchedIconPath]) {
       // Create a VueJS component from the SVG file
       const svgContent = icons[matchedIconPath] as string;
@@ -115,7 +107,7 @@ function createSvgComponent(svgContent: string): Component | null {
 
   // Get all attributes from the SVG
   const attrs: Record<string, string> = {};
-  Array.from(svgElement.attributes).forEach(attr => {
+  Array.from(svgElement.attributes).forEach((attr) => {
     attrs[attr.name] = attr.value;
   });
 
@@ -128,11 +120,10 @@ function createSvgComponent(svgContent: string): Component | null {
         innerHTML: svgElement.innerHTML,
         // This ensures the SVG renders correctly
         domProps: {
-          innerHTML: svgElement.innerHTML
-        }
+          innerHTML: svgElement.innerHTML,
+        },
       });
-    }
+    },
   };
 }
-
 </script>
