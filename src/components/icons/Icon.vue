@@ -14,6 +14,7 @@
 import { computed, h } from 'vue';
 import type { Component } from 'vue';
 import * as lucideIcons from 'lucide-vue-next';
+import HeroIcons from './heroicons.ts';
 
 const props = defineProps({
   name: {
@@ -29,13 +30,21 @@ const props = defineProps({
     required: false,
     default: '',
   },
-  type: {
+  source: {
     type: String as () => 'svg' | 'lucide' | 'heroicons',
     required: false,
     default: 'svg',
     validator: (value: string): boolean => {
-      // Check if the value is a valid type
       return ['svg', 'lucide', 'heroicons'].includes(value);
+    },
+  },
+  // Type for heroicons
+  type: {
+    type: String as () => 'solid' | 'outline',
+    required: false,
+    default: 'solid',
+    validator: (value: string): boolean => {
+      return ['solid', 'outline'].includes(value);
     },
   },
 });
@@ -43,15 +52,22 @@ const props = defineProps({
 const iconComponent: Component = computed(() => {
 
   // Handle lucide icons
-  if (props.type === 'lucide') {
-    // Handle lucide icons here
+  if (props.source === 'lucide') {
     return lucideIcons[props.name as keyof typeof lucideIcons];
   }
 
   // Handle heroicons
-  if (props.type === 'heroicons') {
-    // Handle heroicons here
-    return null;
+  if (props.source === 'heroicons') {
+    // Transform the icon name to match the naming convention in HeroIcons academic-cap => AcademicCapIcon
+    const iconName = `${props.name
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join('')}`;
+    // Add the icon type (solid or outline) to the name
+    const iconType = props.type === 'solid' ? 'Solid' : 'Outline';
+    // Construct the full icon name
+    const fullIconName = `${iconType}${iconName}Icon`;
+    return HeroIcons[fullIconName] as Component;
   }
 
   // Handle SVG icons
