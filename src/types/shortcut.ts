@@ -5,7 +5,6 @@ import type { Ref } from 'vue';
  */
 export type ModifierKeys = 'ctrl' | 'control' | 'alt' | 'shift' | 'meta' | 'cmd' | 'command';
 
-
 /**
  * Interface for keyboard shortcut
  */
@@ -13,7 +12,7 @@ export interface Shortcut {
   /** The URL to redirect to when the shortcut is triggered */
   url: string;
   /** Optional modifier keys for this specific shortcut */
-  keyConfig: ShortcutKeyConfig
+  keyConfig: ShortcutKeyConfig;
 }
 
 /**

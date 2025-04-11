@@ -6,9 +6,7 @@ import type { Shortcut, ModifierKeys, UseKeyboardShortcutsReturn } from '@/types
  * @param autoEnable Whether to automatically enable the listener on mount (default: true)
  * @returns An object with methods to manage keyboard shortcuts
  */
-export function useKeyboardShortcuts(
-  autoEnable: boolean = true
-): UseKeyboardShortcutsReturn {
+export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardShortcutsReturn {
   const shortcuts = ref<Map<string, Shortcut>>(new Map());
   const isEnabled = ref<boolean>(false);
 
@@ -21,7 +19,7 @@ export function useKeyboardShortcuts(
    */
   const register = (key: string, url: string, modifiers?: ModifierKeys[]): void => {
     const normalizedKey = key.toLowerCase();
-    const normalizedModifiers = modifiers?.map(modifier => modifier.toLowerCase()) || []
+    const normalizedModifiers = modifiers?.map((modifier) => modifier.toLowerCase()) || [];
     shortcuts.value.set(normalizedKey, {
       url,
       keyConfig: {
@@ -54,7 +52,7 @@ export function useKeyboardShortcuts(
     }
 
     // Check that all required modifiers are pressed
-    return requiredModifiers.every(modifier => {
+    return requiredModifiers.every((modifier) => {
       switch (modifier.toLowerCase()) {
         case 'ctrl':
         case 'control':
@@ -169,6 +167,6 @@ export function useKeyboardShortcuts(
     unregister,
     enable,
     disable,
-    getShortcuts
+    getShortcuts,
   };
 }
