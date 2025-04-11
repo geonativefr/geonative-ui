@@ -16,6 +16,10 @@
       <span>Missing icon</span>
       <Icon name="alert" class="w-5 h-5 text-green-500" />
     </div>
+    <div class="flex justify-between gap-10">
+      <span>Lucide icon</span>
+      <Icon name="AlertCircle" type="lucide" class="w-5 h-5 text-green-500" />
+    </div>
   </div>
 </template>
 
