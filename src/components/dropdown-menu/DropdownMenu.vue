@@ -66,13 +66,9 @@ const props = defineProps({
 
 // Manage default values for position and align props if wrong values are passed
 const safePosition = computed(() => {
-  return ['right', 'top', 'bottom', 'left'].includes(props.position || '')
-    ? props.position
-    : 'right';
+  return ['right', 'top', 'bottom', 'left'].includes(props.position || '') ? props.position : 'right';
 });
 const safeAlign = computed(() => {
-  return ['start', 'center', 'end'].includes(props.align || '')
-    ? props.align
-    : 'start';
+  return ['start', 'center', 'end'].includes(props.align || '') ? props.align : 'start';
 });
 </script>
