@@ -18,5 +18,4 @@ import { ref } from 'vue';
 import Button from '@/components/button/Button.vue';
 
 const isClickedButton = ref(false);
-
 </script>
