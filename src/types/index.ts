@@ -1,6 +1,14 @@
 // Breadcrumb
-export type { Breadcrumb } from './breadcrumb';
-export type { BreadcrumbItem } from './breadcrumb';
+export type { Breadcrumb, BreadcrumbItem } from './breadcrumb';
 
 // Routes
 export type { RouteRecord } from './routes';
+
+// Shortcuts
+export type {
+  ModifierKeys,
+  ModifierKeyString,
+  Shortcut,
+  ShortcutKeyConfig,
+  UseKeyboardShortcutsReturn
+} from './shortcut';
