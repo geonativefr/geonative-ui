@@ -85,8 +85,7 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Support',
         url: '/support',
-        sections: [
-        ],
+        sections: [],
       },
       {
         label: 'API',
