@@ -23,8 +23,7 @@
 
 <script setup lang="ts">
 import { defineProps, withDefaults } from 'vue';
-
-export type ButtonSize = 'sm' | 'md' | 'lg';
+import type { ButtonSize } from '@/types/button.ts';
 
 const props = withDefaults(
   defineProps<{
@@ -35,7 +34,6 @@ const props = withDefaults(
     loading?: boolean;
   }>(),
   {
-    label: 'Button',
     size: 'md',
     class: '',
     disabled: false,
