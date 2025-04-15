@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import type { DropdownMenuItem as DropdownItemType } from '@/types/dropdown-menu.ts';
+import type { DropdownMenuItem as DropdownItemType } from '@/types/dropdown-menu';
 import {
   DropdownMenuItem as ShadcnDropdownMenuItem,
   DropdownMenuShortcut as ShadcnDropdownMenuShortcut,
