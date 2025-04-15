@@ -23,12 +23,12 @@
 
 <script setup lang="ts">
 import { defineProps, withDefaults } from 'vue';
-import type { ButtonSize } from '@/types/button.ts';
+import type { CustomSize } from '@/types/customsize.ts';
 
 const props = withDefaults(
   defineProps<{
     label?: string;
-    size?: ButtonSize;
+    size?: CustomSize;
     class?: string;
     disabled?: boolean;
     loading?: boolean;
