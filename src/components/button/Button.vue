@@ -19,13 +19,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, withDefaults } from 'vue';
-import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { ref, onMounted, onUnmounted, watch, defineProps, withDefaults } from 'vue';
+
+export type ButtonSize = 'sm' | 'md' | 'lg';
 
 const props = withDefaults(
   defineProps<{
     label?: string;
-    size?: 'sm' | 'md' | 'lg';
+    size?: ButtonSize;
     class?: string;
     disabled?: boolean;
     loading?: boolean;
@@ -39,7 +40,7 @@ const props = withDefaults(
   }
 );
 
-// Better loading button
+// Better loading button animation
 
 const loadingText = ref('Loading');
 let interval: number | undefined;
