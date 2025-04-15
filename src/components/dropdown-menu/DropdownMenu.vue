@@ -1,7 +1,7 @@
 <template>
   <ShadcnDropdownMenu>
     <ShadcnDropdownMenuTrigger v-if="props.name">
-      <Button>{{ props.name }}</Button>
+      <ShadcnButton>{{ props.name }}</ShadcnButton>
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
@@ -28,7 +28,7 @@ import {
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@/shadcn/ui/dropdown-menu';
-import { Button } from '@/shadcn/ui/button';
+import { Button as ShadcnButton } from '@/shadcn/ui/button';
 import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
 import type { DropdownMenuSection as DropdownMenuSectionType } from '@/types/dropdown-menu.ts';
 
