@@ -22,13 +22,14 @@
 import { defineProps, withDefaults } from 'vue';
 import { ref, onMounted, onUnmounted, watch } from 'vue';
 
-const props = withDefaults(defineProps<{
-  label?: string;
-  size?: 'sm' | 'md' | 'lg';
-  class?: string;
-  disabled?: boolean;
-  loading?: boolean;
-}>(),
+const props = withDefaults(
+  defineProps<{
+    label?: string;
+    size?: 'sm' | 'md' | 'lg';
+    class?: string;
+    disabled?: boolean;
+    loading?: boolean;
+  }>(),
   {
     label: 'Button',
     size: 'md',
@@ -37,7 +38,6 @@ const props = withDefaults(defineProps<{
     loading: false,
   }
 );
-
 
 // Better loading button
 
