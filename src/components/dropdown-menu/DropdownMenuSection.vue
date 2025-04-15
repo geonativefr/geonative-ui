@@ -9,11 +9,8 @@
           </ShadcnDropdownMenuSubTrigger>
           <ShadcnDropdownMenuPortal>
             <ShadcnDropdownMenuSubContent>
-              <DropdownMenuSection :section="item.sections[0]" :show-separator="false" />
-              <div v-if="item.sections.length > 1">
-                <div v-for="(section, index) in item.sections.slice(1)" :key="index">
-                  <DropdownMenuSection :section="section" :show-separator="true" />
-                </div>
+              <div v-for="(section, index) in item.sections" :key="index">
+                <DropdownMenuSection :section="section" :show-separator="index !== 0" />
               </div>
             </ShadcnDropdownMenuSubContent>
           </ShadcnDropdownMenuPortal>
