@@ -38,14 +38,8 @@ import {
   DropdownMenuSubContent as ShadcnDropdownMenuSubContent,
 } from '@/shadcn/ui/dropdown-menu';
 
-const props = defineProps({
-  section: {
-    type: Array as () => DropdownMenuSectionType,
-    required: true,
-  },
-  showSeparator: {
-    type: Boolean,
-    required: true,
-  },
-});
+const props = defineProps<{
+  section: DropdownMenuSectionType;
+  showSeparator: boolean;
+}>();
 </script>

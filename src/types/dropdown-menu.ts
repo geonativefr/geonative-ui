@@ -1,3 +1,5 @@
+import type { Component } from 'vue';
+
 export interface DropdownMenu {
   name?: string;
   sections: DropdownMenuSection[];
@@ -6,7 +8,8 @@ export interface DropdownMenu {
 export type DropdownMenuSection = DropdownMenuItem[];
 
 export interface DropdownMenuItem {
-  label: string;
+  icon?: Component;
+  label?: string;
   url?: string;
   disabled?: boolean;
   shortcut?: string;
