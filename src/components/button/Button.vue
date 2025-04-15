@@ -6,7 +6,11 @@
       !props.class?.includes('bg-') ? 'bg-primary' : '',
       !props.class?.includes('text-') ? 'text-white' : '',
       !props.class?.includes('shadow-') ? 'shadow-md' : '',
-      !props.class?.includes('cursor-') ? (props.disabled || props.loading ? 'cursor-not-allowed' : 'cursor-pointer') : '',
+      !props.class?.includes('cursor-')
+        ? props.disabled || props.loading
+          ? 'cursor-not-allowed'
+          : 'cursor-pointer'
+        : '',
       props.disabled || props.loading ? 'opacity-50' : '',
       props.size === 'lg' ? 'px-6 py-3 text-lg' : props.size === 'sm' ? 'px-2 py-1 text-sm' : 'px-4 py-2 text-base',
       props.class,
