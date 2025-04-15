@@ -16,9 +16,6 @@
     <h1 class="mb-3">Exemples de styles de boutons :</h1>
     <Button :disabled="true" size="md" @click="isClickedButton = !isClickedButton"> Bouton désactivé </Button>
   </div>
-  <div class="p-5 space-y-4">
-    <Button :disabled="true" size="md" :loading="true"> Bouton Loading </Button>
-  </div>
 </template>
 
 <script setup lang="ts">
