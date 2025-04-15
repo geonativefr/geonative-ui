@@ -14,7 +14,6 @@
 
   <div class="p-5 space-y-4">
     <h1 class="mb-3">Exemples de styles de boutons :</h1>
-    <!-- Bouton désactivé -->
     <Button
       :disabled="true"
       size="md"
