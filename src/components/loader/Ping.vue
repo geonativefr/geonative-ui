@@ -1,25 +1,32 @@
 <template>
   <span class="relative flex" :class="[sizeClass]">
     <span
-      class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-      :class="[props.color]"
+      class=""
+      :class="twMerge(
+        'absolute bg-blue-500 inline-flex h-full w-full animate-ping rounded-full opacity-75',
+        props.class
+      )"
     ></span>
     <span
-      class="relative inline-flex  rounded-full"
-      :class="[props.color, sizeClass]"
+      class=""
+      :class="twMerge(
+        `relative bg-blue-500 inline-flex rounded-full ${sizeClass}`,
+        props.class
+      )"
     ></span>
   </span>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { twMerge } from "tailwind-merge";
 
 const props = withDefaults(defineProps<{
   size?: 'sm' | 'md' | 'lg';
-  color?: string;
+  class?: string;
 }>(), {
   size: 'md',
-  color: 'bg-blue-500',
+  class: '',
 });
 
 const sizeClass = computed(() => {

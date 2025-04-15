@@ -2,8 +2,10 @@
   <div role="status">
     <svg
       aria-hidden="true"
-      class="text-gray-200 animate-spin"
-      :class="[sizeClass, props.color]"
+      :class="twMerge(
+        `text-gray-200 fill-blue-500 animate-spin ${sizeClass}`,
+        props.class
+      )"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -17,13 +19,13 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { twMerge } from "tailwind-merge";
 
 const props = withDefaults(defineProps<{
   size?: 'sm' | 'md' | 'lg';
-  color?: string;
+  class?: string;
 }>(), {
   size: 'md',
-  color: 'text-blue-600',
 });
 const sizeClass = computed(() => {
   switch (props.size) {

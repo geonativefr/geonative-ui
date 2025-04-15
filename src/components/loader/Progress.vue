@@ -1,26 +1,28 @@
 <template>
   <Progress
     :model-value="props.progress"
-    color="props.color"
-    class="w-full"
-    :class="[sizeClass, props.bgColor]"
+    :class="
+      twMerge(
+        `w-full bg-blue-100 ${sizeClass}`,
+        props.class,
+      )
+    "
   ></Progress>
 </template>
 
 <script setup lang="ts">
 import { Progress } from '@/shadcn/ui/progress';
 import { computed } from 'vue';
+import { twMerge } from "tailwind-merge";
 
 const props = withDefaults(defineProps<{
   progress: number;
   size?: 'sm' | 'md' | 'lg';
-  color?: string;
-  bgColor?: string;
+  class?: string;
 }>(), {
   size: 'md',
-  color: 'bg-blue-500',
-  bgColor: 'bg-blue-50',
 });
+console.log("progress", props.progress);
 
 const sizeClass = computed(() => {
   switch (props.size) {

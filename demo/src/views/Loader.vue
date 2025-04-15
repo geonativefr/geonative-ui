@@ -3,24 +3,24 @@
     <div class="flex flex-col gap-2">
       <h2 class="text-2xl font-bold mb-5">Spinner</h2>
       <div class="flex gap-5">
-        <Spinner size="sm" color="text-red-500" />
+        <Spinner size="sm" class="fill-red-500" />
         <Spinner size="md" />
-        <Spinner size="lg" color="text-blue-600" />
+        <Spinner size="lg" class="fill-green-600" />
       </div>
     </div>
     <div class="flex flex-col gap-2 w-xl">
       <h2 class="text-2xl font-bold mb-5">Progress</h2>
       <div class="grid grid-cols-1 gap-5">
-          <Progress size="sm" :progress="progress" />
+          <Progress size="sm" :progress="progress" class="bg-red-100" />
           <Progress size="md" :progress="progress" />
-          <Progress size="lg" :progress="progress" />
+          <Progress size="lg" :progress="progress" class="bg-green-100" />
       </div>
       <div class="flex flex-col gap-2 w-xl">
         <h2 class="text-2xl font-bold mb-5">Ping</h2>
         <div class="grid grid-cols-1 gap-5">
-          <Ping size="sm" color="red" />
+          <Ping size="sm" class="bg-red-500" />
           <Ping size="md" />
-          <Ping size="lg" color="blue-500" />
+          <Ping size="lg" class="bg-green-500" />
         </div>
       </div>
     </div>

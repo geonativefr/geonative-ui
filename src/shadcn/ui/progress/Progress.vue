@@ -8,15 +8,12 @@ import {
 import { computed, type HTMLAttributes } from 'vue'
 
 const props = withDefaults(
-  defineProps<ProgressRootProps & { class?: HTMLAttributes['class'], color?: string }>(),
+  defineProps<ProgressRootProps & { class?: HTMLAttributes['class'] }>(),
   {
     modelValue: 0,
-    color: 'black',
   },
 )
-const colorClass = computed(() => {
-  return `bg-${props.color}`;
-})
+
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
 
@@ -37,8 +34,7 @@ const delegatedProps = computed(() => {
   >
     <ProgressIndicator
       data-slot="progress-indicator"
-      class="h-full w-full flex-1 transition-all"
-      :class="[colorClass]"
+      class="bg-primary h-full w-full flex-1 transition-all"
       :style="`transform: translateX(-${100 - (props.modelValue ?? 0)}%);`"
     />
   </ProgressRoot>
