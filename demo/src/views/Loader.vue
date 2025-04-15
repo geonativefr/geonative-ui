@@ -3,9 +3,9 @@
     <div class="flex flex-col gap-2">
       <h2 class="text-2xl font-bold mb-5">Spinner</h2>
       <div class="flex gap-5">
-        <Spinner size="sm" color="red-500" />
+        <Spinner size="sm" color="text-red-500" />
         <Spinner size="md" />
-        <Spinner size="lg" color="blue-500" />
+        <Spinner size="lg" color="text-blue-600" />
       </div>
     </div>
     <div class="flex flex-col gap-2 w-xl">

@@ -2,11 +2,11 @@
   <span class="relative flex" :class="[sizeClass]">
     <span
       class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-      :class="[colorClass]"
+      :class="[props.color]"
     ></span>
     <span
       class="relative inline-flex  rounded-full"
-      :class="[colorClass, sizeClass]"
+      :class="[props.color, sizeClass]"
     ></span>
   </span>
 </template>
@@ -14,20 +14,12 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-const props = defineProps({
-  size: {
-    type: String,
-    required: false,
-    default: 'md',
-    validator: (value: string) => {
-      return ['sm', 'md', 'lg'].includes(value);
-    },
-  },
-  color: {
-    type: String,
-    required: false,
-    default: 'black',
-  },
+const props = withDefaults(defineProps<{
+  size?: 'sm' | 'md' | 'lg';
+  color?: string;
+}>(), {
+  size: 'md',
+  color: 'bg-blue-500',
 });
 
 const sizeClass = computed(() => {
@@ -41,8 +33,5 @@ const sizeClass = computed(() => {
     default:
       return 'size-3';
   }
-});
-const colorClass = computed(() => {
-  return `bg-blue-500`;
 });
 </script>

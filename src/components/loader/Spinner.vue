@@ -3,7 +3,7 @@
     <svg
       aria-hidden="true"
       class="text-gray-200 animate-spin"
-      :class="[sizeClass, colorClass]"
+      :class="[sizeClass, props.color]"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,20 +18,12 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-const props = defineProps({
-  size: {
-    type: String,
-    required: false,
-    default: 'md',
-    validator: (value: string) => {
-      return ['sm', 'md', 'lg'].includes(value)
-    }
-  },
-  color: {
-    type: String,
-    required: false,
-    default: 'white',
-  },
+const props = withDefaults(defineProps<{
+  size?: 'sm' | 'md' | 'lg';
+  color?: string;
+}>(), {
+  size: 'md',
+  color: 'text-blue-600',
 });
 const sizeClass = computed(() => {
   switch (props.size) {
@@ -45,7 +37,5 @@ const sizeClass = computed(() => {
       return 'h-6 w-6';
   }
 });
-const colorClass = computed(() => {
-  return `fill-blue-500`;
-});
+
 </script>
