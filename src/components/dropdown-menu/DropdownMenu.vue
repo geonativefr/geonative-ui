@@ -31,28 +31,12 @@ import {
 import { Button } from '@/shadcn/ui/button';
 import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
 import type { DropdownMenuSection as DropdownMenuSectionType } from '@/types/dropdown-menu.ts';
-import type { PropType } from 'vue';
 
-const props = defineProps({
-  sections: {
-    type: Array as () => DropdownMenuSectionType[],
-    required: true,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-  label: {
-    type: String,
-    required: false,
-  },
-  position: {
-    type: String as PropType<'right' | 'top' | 'bottom' | 'left'>,
-    required: false,
-  },
-  align: {
-    type: String as PropType<'start' | 'center' | 'end'>,
-    required: false,
-  },
-});
+const props = defineProps<{
+  sections: Array<DropdownMenuSectionType>;
+  name: string;
+  label?: string;
+  position?: 'right' | 'top' | 'bottom' | 'left';
+  align?: 'start' | 'center' | 'end';
+}>();
 </script>

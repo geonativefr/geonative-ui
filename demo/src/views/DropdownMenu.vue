@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import DropdownMenu from '@/components/dropdown-menu/DropdownMenu.vue';
 import type { DropdownMenu as DropdownMenuType } from '@/types/dropdown-menu.ts';
+import { Users, Mail, Link, Copy, Share, Home, Settings, Shield, Lock } from 'lucide-vue-next';
 
 const dropdownMenu: DropdownMenuType = {
   name: 'Menu Label',
@@ -25,23 +26,26 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Team',
         url: '/team',
+        icon: Users,
       },
       {
         label: 'Invite users',
         url: '/invite',
         sections: [
           [
-            { label: 'Email', url: '/invite/email' },
+            { label: 'Email', url: '/invite/email', icon: Mail },
             { label: 'Message', url: '/invite/message' },
             {
               label: 'Link',
               url: '/invite/link',
+              icon: Link,
               sections: [
                 [
-                  { label: 'Copy', url: '/invite/link/copy' },
+                  { label: 'Copy', url: '/invite/link/copy', icon: Copy },
                   {
                     label: 'Share',
                     url: '/invite/link/share',
+                    icon: Share,
                     sections: [
                       [
                         { label: 'Facebook', url: '/invite/link/share/facebook' },
@@ -89,14 +93,15 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Settings',
         url: '/settings',
+        icon: Settings,
         sections: [
           [
             { label: 'Profile', url: '/settings/profile' },
             { label: 'Account', url: '/settings/account' },
           ],
           [
-            { label: 'Security', url: '/settings/security' },
-            { label: 'Privacy', url: '/settings/privacy' },
+            { label: 'Security', url: '/settings/security', icon: Shield },
+            { label: 'Privacy', url: '/settings/privacy', icon: Lock },
           ],
         ],
       },
@@ -105,6 +110,7 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Home',
         url: '/',
+        icon: Home,
       },
       {
         label: 'Breadcrumb',
