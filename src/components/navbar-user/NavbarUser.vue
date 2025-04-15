@@ -20,7 +20,7 @@
       :side-offset="4"
     >
 
-      <DropdownMenuLabel class="p-0 font-normal">
+      <ShadcnDropdownMenuLabel class="p-0 font-normal">
         <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
           <Avatar v-bind="avatarProps" />
           <div class="grid flex-1 text-left text-sm leading-tight">
@@ -28,7 +28,7 @@
             <span class="truncate text-xs">{{ user.email }}</span>
           </div>
         </div>
-      </DropdownMenuLabel>
+      </ShadcnDropdownMenuLabel>
       <ShadcnDropdownMenuSeparator />
 
       <div v-for="(section, index) in props.dropdown.sections" :key="index">
@@ -40,12 +40,13 @@
 </template>
 
 <script setup lang="ts">
-import DropdownMenu from '@/components/dropdown-menu/DropdownMenu.vue';
+
 import { ChevronsUpDown } from 'lucide-vue-next';
 import { computed } from 'vue';
 import Avatar from '@/components/avatar/Avatar.vue';
 import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
 import {
+  DropdownMenuLabel as ShadcnDropdownMenuLabel,
   DropdownMenu as ShadcnDropdownMenu,
   DropdownMenuContent as ShadcnDropdownMenuContent,
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
