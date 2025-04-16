@@ -11,9 +11,9 @@
     <div class="flex flex-col gap-2 w-xl">
       <h2 class="text-2xl font-bold mb-5">Progress</h2>
       <div class="grid grid-cols-1 gap-5">
-          <Progress size="sm" :progress="progress" class="bg-red-100" />
-          <Progress size="md" :progress="progress" />
-          <Progress size="lg" :progress="progress" class="bg-green-100" />
+        <Progress size="sm" :progress="progress" class="bg-red-100" />
+        <Progress size="md" :progress="progress" />
+        <Progress size="lg" :progress="progress" class="bg-green-100" />
       </div>
       <div class="flex flex-col gap-2 w-xl">
         <h2 class="text-2xl font-bold mb-5">Ping</h2>
@@ -31,8 +31,8 @@
 import { onMounted, ref } from 'vue';
 import { Spinner, Progress, Ping } from '@/components/loader';
 
-const progress = ref(0  );
-function makeProgress(){
+const progress = ref(0);
+function makeProgress() {
   if (progress.value >= 100) {
     progress.value = 0;
   } else {
