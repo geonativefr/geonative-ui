@@ -13,7 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import { Breadcrumb as ShadcnBreadcrumb, BreadcrumbList as ShadcnBreadcrumbList } from '@geonative/ui/shadcn/ui/breadcrumb';
+import {
+  Breadcrumb as ShadcnBreadcrumb,
+  BreadcrumbList as ShadcnBreadcrumbList,
+} from '@geonative/ui/shadcn/ui/breadcrumb';
 import BreadcrumbItem from '@geonative/ui/components/breadcrumb/BreadcrumbItem.vue';
 import type { BreadcrumbType } from '@geonative/ui/types';
 

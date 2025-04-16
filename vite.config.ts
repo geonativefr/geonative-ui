@@ -13,13 +13,15 @@ export default defineConfig({
     sourcemap: true,
     cssCodeSplit: true,
   },
-  plugins: [vue(), tailwindcss(), dts(
-    {
+  plugins: [
+    vue(),
+    tailwindcss(),
+    dts({
       insertTypesEntry: true,
       outDir: path.resolve(__dirname, './dist/types'),
       include: [path.resolve(__dirname, './src')],
-    },
-  )],
+    }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './demo/src'),
