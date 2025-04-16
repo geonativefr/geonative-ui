@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import Breadcrumb from '@/components/breadcrumb/Breadcrumb.vue';
-import type { Breadcrumb as BreadcrumbType } from '@/types';
-import type { BreadcrumbItem as BreadcrumbItemType } from '@/types';
+import Breadcrumb from '@ui/components/breadcrumb/Breadcrumb.vue';
+import type { Breadcrumb as BreadcrumbType } from '@ui/types';
+import type { BreadcrumbItem as BreadcrumbItemType } from '@ui/types';
 
 const breadcrumb: BreadcrumbType = {
   items: [

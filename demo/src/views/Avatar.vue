@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import Avatar from '@/components/avatar/Avatar.vue';
+import Avatar from '@ui/components/avatar/Avatar.vue';
 
 const avatar_url =
   'https://avataaars.io/?avatarStyle=Transparent&topType=NoHair&accessoriesType=Blank&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light';

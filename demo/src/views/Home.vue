@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import Markdown from '@/components/markdown/Markdown.vue';
+import Markdown from '@ui/components/markdown/Markdown.vue';
 import { ref } from 'vue';
 import readmeContent from '../../../README.md?raw'; // Import the README file as raw text using Vite's raw loader
 

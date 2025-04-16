@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import { cn } from '@/shadcn/lib/utils'
+import { cn } from '@ui/shadcn/lib/utils'
 import { AvatarRoot } from 'reka-ui'
 
 const props = defineProps<{

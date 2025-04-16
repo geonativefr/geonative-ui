@@ -10,8 +10,8 @@ export default defineConfig({
   plugins: [vue(), tailwindcss()], // Added tailwindcss plugin
   resolve: {
     alias: {
-      '@': resolve(__dirname, '../src'),
-      '@demo': resolve(__dirname, './src'),
+      '@': resolve(__dirname, './src'),
+      '@ui': resolve(__dirname, '../src'),
     },
   },
   root: './demo',

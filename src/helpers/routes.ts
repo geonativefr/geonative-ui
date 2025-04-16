@@ -1,4 +1,4 @@
-import type { RouteRecord } from '@/types';
+import type { RouteRecord } from '@ui/types';
 
 export function createRoute(route: RouteRecord): RouteRecord {
   return {

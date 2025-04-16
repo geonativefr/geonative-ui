@@ -24,8 +24,8 @@ import {
   BreadcrumbLink as ShadcnBreadcrumbLink,
   BreadcrumbPage as ShadcnBreadcrumbPage,
   BreadcrumbSeparator as ShadcnBreadcrumbSeparator,
-} from '@/shadcn/ui/breadcrumb';
-import type { BreadcrumbItem } from '@/types';
+} from '@ui/shadcn/ui/breadcrumb';
+import type { BreadcrumbItem } from '@ui/types';
 
 const props = withDefaults(
   defineProps<{

@@ -13,9 +13,9 @@
 </template>
 
 <script setup lang="ts">
-import { Breadcrumb as ShadcnBreadcrumb, BreadcrumbList as ShadcnBreadcrumbList } from '@/shadcn/ui/breadcrumb';
-import BreadcrumbItem from '@/components/breadcrumb/BreadcrumbItem.vue';
-import type { Breadcrumb as BreadcrumbType } from '@/types';
+import { Breadcrumb as ShadcnBreadcrumb, BreadcrumbList as ShadcnBreadcrumbList } from '@ui/shadcn/ui/breadcrumb';
+import BreadcrumbItem from '@ui/components/breadcrumb/BreadcrumbItem.vue';
+import type { Breadcrumb as BreadcrumbType } from '@ui/types';
 
 const props = defineProps<{
   breadcrumb: BreadcrumbType;
