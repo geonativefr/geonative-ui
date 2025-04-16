@@ -26,6 +26,12 @@ const routes: Array<RouteRecord> = [
     component: () => import('@/views/Loader.vue'),
     menuLabel: 'Loader',
   }),
+  createRoute({
+    path: '/icon',
+    name: 'icon',
+    component: () => import('@/views/Icon.vue'),
+    menuLabel: 'Icon',
+  }),
   // Catch all unmatched routes
   createRoute({
     path: '/:pathMatch(.*)*',
