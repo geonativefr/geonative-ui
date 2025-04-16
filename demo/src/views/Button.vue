@@ -13,9 +13,32 @@
   </div>
 
   <div class="p-5 space-y-4">
-    <h1 class="mb-3">Exemples de styles de boutons :</h1>
-    <Button :disabled="true" size="md" @click="isClickedButton = !isClickedButton"> Bouton désactivé </Button>
+    <h1 class="mb-5">More examples :</h1>
+
+    <h1 class="mb-3">Disable :</h1>
+    <Button :disabled="true" size="md" @click="isClickedButton = !isClickedButton"> Disable Button </Button>
+
+    <h1 class="mb-3">Loading Spinner :</h1>
+    <Button
+      class="text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg"
+      :loading="true"
+      size="lg"
+      @click="isClickedButton = !isClickedButton"
+    >
+      Spinner Button
+    </Button>
+
+    <h1 class="mb-3">Loading Ping :</h1>
+    <Button
+      class="text-white bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 shadow-lg"
+      :ping="true"
+      size="lg"
+      @click="isClickedButton = !isClickedButton"
+    >
+      Ping Button
+    </Button>
   </div>
+
 </template>
 
 <script setup lang="ts">
