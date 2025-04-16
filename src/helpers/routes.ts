@@ -1,4 +1,4 @@
-import type { RouteRecord } from '@ui/types';
+import type { RouteRecord } from '@geonative/ui/types';
 
 export function createRoute(route: RouteRecord): RouteRecord {
   return {

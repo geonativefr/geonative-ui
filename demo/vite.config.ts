@@ -11,7 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      '@ui': resolve(__dirname, '../src'),
+      '@geonative/ui': resolve(__dirname, '../src'),
     },
   },
   root: './demo',

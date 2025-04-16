@@ -12,7 +12,7 @@
 
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["src/*"],
+      "@geonative/ui/*": ["src/*"],
       "@/*": ["demo/src/*"]
     }
   },

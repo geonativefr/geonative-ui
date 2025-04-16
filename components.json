@@ -10,11 +10,11 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "@ui/shadcn/components",
-    "composables": "@ui/shadcn/composables",
-    "utils": "@ui/shadcn/lib/utils",
-    "ui": "@ui/shadcn/ui",
-    "lib": "@ui/shadcn/lib"
+    "components": "@geonative/ui/shadcn/components",
+    "composables": "@geonative/ui/shadcn/composables",
+    "utils": "@geonative/ui/shadcn/lib/utils",
+    "ui": "@geonative/ui/shadcn/ui",
+    "lib": "@geonative/ui/shadcn/lib"
   },
   "iconLibrary": "lucide"
 }

@@ -1,5 +1,5 @@
-import type { RouteRecord } from '@ui/types';
-import { createRoute } from '@ui/helpers';
+import type { RouteRecord } from '@geonative/ui/types';
+import { createRoute } from '@geonative/ui/helpers';
 
 const routes: Array<RouteRecord> = [
   createRoute({

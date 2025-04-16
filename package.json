@@ -1,8 +1,31 @@
 {
-  "name": "geonative-ui",
-  "private": true,
+  "name": "@geonative/ui",
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/geonative-ui.umd.cjs",
+  "module": "./dist/geonative-ui.js",
+  "types": "./dist/types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": ["./dist/types/*"]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/geonative-ui.js",
+      "require": "./dist/geonative-ui.umd.cjs",
+      "default": "./dist/geonative-ui.js"
+    },
+    "./style": "./dist/index.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/geonativefr/ui-components.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",

@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import type { RouteRecord } from '@ui/types';
+import type { RouteRecord } from '@geonative/ui/types';
 import routes from '@/routes';
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';

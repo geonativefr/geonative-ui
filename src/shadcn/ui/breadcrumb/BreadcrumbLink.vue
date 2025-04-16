@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from 'vue'
-import { cn } from '@ui/shadcn/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { Primitive, type PrimitiveProps } from 'reka-ui'
 
 const props = withDefaults(defineProps<PrimitiveProps & { class?: HTMLAttributes['class'] }>(), {

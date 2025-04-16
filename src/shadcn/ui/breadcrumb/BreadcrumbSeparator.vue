@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from 'vue'
-import { cn } from '@ui/shadcn/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { ChevronRight } from 'lucide-vue-next'
 
 const props = defineProps<{

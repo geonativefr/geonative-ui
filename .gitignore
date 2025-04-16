@@ -23,3 +23,6 @@ demo-dist
 *.njsproj
 *.sln
 *.sw?
+
+# Package distribution
+geonative-ui-*.tgz

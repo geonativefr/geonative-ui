@@ -16,7 +16,7 @@ import {
   Avatar as ShadcnAvatar,
   AvatarImage as ShadcnAvatarImage,
   AvatarFallback as ShadcnAvatarFallback,
-} from '@ui/shadcn/ui/avatar';
+} from '@geonative/ui/shadcn/ui/avatar';
 
 const props = defineProps({
   url: {
