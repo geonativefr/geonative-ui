@@ -11,37 +11,14 @@ import type { Component } from 'vue';
 import * as lucideIcons from 'lucide-vue-next';
 import HeroIcons from './heroicons.ts';
 
-const props = defineProps({
-  name: {
-    type: String,
-    required: true,
-    validator: (value: string): boolean => {
-      // Check if the value is a valid SVG file name
-      return /^[a-zA-Z0-9-_]+$/.test(value);
-    },
-  },
-  class: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  source: {
-    type: String as () => 'svg' | 'lucide' | 'heroicons',
-    required: false,
-    default: 'svg',
-    validator: (value: string): boolean => {
-      return ['svg', 'lucide', 'heroicons'].includes(value);
-    },
-  },
-  // Type for heroicons
-  type: {
-    type: String as () => 'solid' | 'outline',
-    required: false,
-    default: 'solid',
-    validator: (value: string): boolean => {
-      return ['solid', 'outline'].includes(value);
-    },
-  },
+const props = withDefaults(defineProps<{
+  name: string,
+  class?: string,
+  source?: 'svg' | 'lucide' | 'heroicons',
+  type?: 'solid' | 'outline', // Type for heroicons
+}>(), {
+  source: 'svg',
+  type: 'solid',
 });
 
 const iconComponent: Component = computed(() => {
@@ -67,11 +44,22 @@ const iconComponent: Component = computed(() => {
   // Handle SVG icons
   try {
     // Use Vite's dynamic import.meta.glob feature to load SVG files
-    const icons = import.meta.glob('@/assets/icons/**/*.svg', {
+    const iconsOfLib = import.meta.glob('../../assets/icons/**/*.svg', {
       query: '?raw',
       import: 'default',
       eager: true,
     });
+    // Icons
+    const iconsOfProject = import.meta.glob('@/assets/icons/**/*.svg', {
+      query: '?raw',
+      import: 'default',
+      eager: true,
+    });
+    // Merge the two icon sets
+    const icons = {
+      ...iconsOfLib,
+      ...iconsOfProject,
+    };
     // Find the icon by matching the end of the path replace _ by /
     const targetPath = `/${props.name.replace(/_/g, '/')}.svg`;
     const matchedIconPath = Object.keys(icons).find((path) => path.endsWith(targetPath));
