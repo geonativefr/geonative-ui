@@ -17,7 +17,7 @@ const user = {
 
 const dropdownMenuNavbarUser = {
   sections: [
-    [{ label: 'Upgrade to pro', url: '/account' }],
+    [{ label: 'Upgrade to pro', url: '/upgrade' }],
     [
       { label: 'Account', url: '/account' },
       { label: 'Billing', url: '/billing' },
