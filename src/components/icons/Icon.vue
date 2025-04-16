@@ -14,10 +14,9 @@ import HeroIcons from './heroicons.ts';
 const props = withDefaults(defineProps<{
   name: string,
   class?: string,
-  source?: 'svg' | 'lucide' | 'heroicons',
+  source: 'svg' | 'lucide' | 'heroicons',
   type?: 'solid' | 'outline', // Type for heroicons
 }>(), {
-  source: 'svg',
   type: 'solid',
 });
 
