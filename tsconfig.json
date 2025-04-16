@@ -8,8 +8,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@demo/*": ["demo/src/*"]
+      "@ui/*": ["src/*"],
+      "@/*": ["demo/src/*"]
     }
   }
 }

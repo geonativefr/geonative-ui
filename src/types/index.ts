@@ -1,6 +1,6 @@
 // Breadcrumb
-export type { Breadcrumb } from './breadcrumb';
-export type { BreadcrumbItem } from './breadcrumb';
+export type { BreadcrumbType } from './breadcrumb';
+export type { BreadcrumbItemType } from './breadcrumb';
 
 // Routes
 export type { RouteRecord } from './routes';
