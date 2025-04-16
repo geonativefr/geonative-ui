@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/geonativefr/ui-components.git"
+    "url": "ssh://git@github.com/geonativefr/geonative-ui.git"
   },
   "scripts": {
     "dev": "vite",
