@@ -1,16 +1,18 @@
 <template>
   <button
-    :class="twMerge(
-      'relative transition-all flex items-center justify-center',
-      !props.class?.includes('rounded-') ? 'rounded-md' : '',
-      !props.class?.includes('bg-') ? 'bg-primary' : '',
-      !props.class?.includes('text-') ? 'text-white' : '',
-      !props.class?.includes('shadow-') ? 'shadow-md' : '',
-      !props.class?.includes('cursor-') ? (props.disabled ? 'cursor-not-allowed' : 'cursor-pointer') : '',
-      props.disabled ? 'opacity-30' : '',
-      sizeClass,
-      props.class
-    )"
+    :class="
+      twMerge(
+        'relative transition-all flex items-center justify-center',
+        !props.class?.includes('rounded-') ? 'rounded-md' : '',
+        !props.class?.includes('bg-') ? 'bg-primary' : '',
+        !props.class?.includes('text-') ? 'text-white' : '',
+        !props.class?.includes('shadow-') ? 'shadow-md' : '',
+        !props.class?.includes('cursor-') ? (props.disabled ? 'cursor-not-allowed' : 'cursor-pointer') : '',
+        props.disabled ? 'opacity-30' : '',
+        sizeClass,
+        props.class
+      )
+    "
     :disabled="props.disabled || props.loading"
   >
     <div v-if="props.loading">
