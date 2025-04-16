@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import { computed, defineProps, withDefaults } from 'vue';
 import { twMerge } from 'tailwind-merge';
-import type { CustomSize } from '@geonative/ui/types/customsize.ts';
+import type { CustomSize } from '@geonative/ui/types';
 import Spinner from '@geonative/ui/components/loader/Spinner.vue';
 
 const props = withDefaults(
