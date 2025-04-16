@@ -2,6 +2,7 @@
   <div role="status">
     <Icon
       name="loader_spinner"
+      source="svg"
       :class="twMerge(`text-gray-200 fill-primary animate-spin ${sizeClass}`, props.class)"
     />
     <span class="sr-only">Loading...</span>
@@ -11,7 +12,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
-import { Icon } from '@geonative/ui';
+import { Icon } from '@geonative/ui/components';
 
 const props = withDefaults(
   defineProps<{

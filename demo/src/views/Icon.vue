@@ -32,5 +32,5 @@
 </template>
 
 <script setup lang="ts">
-import Icon from '@geonative/ui/components/icons/Icon.vue';
+import { Icon } from '@geonative/ui/components';
 </script>
