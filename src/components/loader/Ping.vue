@@ -3,10 +3,10 @@
     <span
       class=""
       :class="
-        twMerge('absolute bg-blue-500 inline-flex h-full w-full animate-ping rounded-full opacity-75', props.class)
+        twMerge('absolute bg-primary inline-flex h-full w-full animate-ping rounded-full opacity-75', props.class)
       "
     ></span>
-    <span class="" :class="twMerge(`relative bg-blue-500 inline-flex rounded-full ${sizeClass}`, props.class)"></span>
+    <span class="" :class="twMerge(`relative bg-primary inline-flex rounded-full ${sizeClass}`, props.class)"></span>
   </span>
 </template>
 
@@ -21,7 +21,6 @@ const props = withDefaults(
   }>(),
   {
     size: 'md',
-    class: '',
   }
 );
 

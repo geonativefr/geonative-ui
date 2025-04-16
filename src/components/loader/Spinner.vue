@@ -2,7 +2,7 @@
   <div role="status">
     <svg
       aria-hidden="true"
-      :class="twMerge(`text-gray-200 fill-blue-500 animate-spin ${sizeClass}`, props.class)"
+      :class="twMerge(`text-gray-200 fill-primary animate-spin ${sizeClass}`, props.class)"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
