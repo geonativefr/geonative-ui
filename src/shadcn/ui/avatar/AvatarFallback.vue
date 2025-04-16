@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { cn } from '@geonative/ui/shadcn/lib/utils';
-import { AvatarFallback, type AvatarFallbackProps } from 'reka-ui';
-import { computed, type HTMLAttributes } from 'vue';
+import { cn } from '@geonative/ui/shadcn/lib/utils'
+import { AvatarFallback, type AvatarFallbackProps } from 'reka-ui'
+import { computed, type HTMLAttributes } from 'vue'
 
 const props = defineProps<AvatarFallbackProps & { class?: HTMLAttributes['class'] }>()
 
