@@ -38,7 +38,6 @@
       Ping Button
     </Button>
   </div>
-
 </template>
 
 <script setup lang="ts">
