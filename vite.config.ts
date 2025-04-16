@@ -24,7 +24,6 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './demo/src'),
       '@geonative/ui': path.resolve(__dirname, './src'),
     },
   },
