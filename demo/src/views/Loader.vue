@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Spinner, Progress, Ping } from '@/components/loader';
+import { Spinner, Progress, Ping } from '@geonative/ui/components/loader';
 
 const progress = ref(0);
 function makeProgress() {

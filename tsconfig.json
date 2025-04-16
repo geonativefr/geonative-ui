@@ -8,8 +8,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@demo/*": ["demo/src/*"]
+      "@geonative/ui/*": ["src/*"],
+      "@/*": ["demo/src/*"]
     }
   }
 }

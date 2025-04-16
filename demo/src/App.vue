@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import Navigation from '@demo/Navigation.vue';
+import Navigation from '@/Navigation.vue';
 </script>

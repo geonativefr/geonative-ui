@@ -1,9 +1,9 @@
-export interface Breadcrumb {
-  items: BreadcrumbItem[];
+export interface BreadcrumbType {
+  items: BreadcrumbItemType[];
   separator?: string;
 }
 
-export interface BreadcrumbItem {
+export interface BreadcrumbItemType {
   title: string;
   link?: string;
   disabled?: boolean;

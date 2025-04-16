@@ -24,12 +24,12 @@ import {
   BreadcrumbLink as ShadcnBreadcrumbLink,
   BreadcrumbPage as ShadcnBreadcrumbPage,
   BreadcrumbSeparator as ShadcnBreadcrumbSeparator,
-} from '@/shadcn/ui/breadcrumb';
-import type { BreadcrumbItem } from '@/types';
+} from '@geonative/ui/shadcn/ui/breadcrumb';
+import type { BreadcrumbItemType } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
-    item: BreadcrumbItem;
+    item: BreadcrumbItemType;
     isCurrentPage?: boolean;
     separator?: string;
   }>(),
@@ -39,7 +39,7 @@ const props = withDefaults(
   }
 );
 
-const isDisabled = (item: BreadcrumbItem) => {
+const isDisabled = (item: BreadcrumbItemType) => {
   return item.disabled === true || item.link === undefined;
 };
 </script>
