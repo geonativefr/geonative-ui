@@ -70,7 +70,7 @@ Example:
 
 ```typescript
 // Import from the component library
-import { Button } from '@geonative/ui/components/ui';
+import { Button } from '@geonative/ui';
 
 // Import from the demo application
 import DemoLayout from '@/components/DemoLayout.vue';
