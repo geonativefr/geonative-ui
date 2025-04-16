@@ -7,7 +7,11 @@
         !props.class?.includes('bg-') ? 'bg-primary' : '',
         !props.class?.includes('text-') ? 'text-white' : '',
         !props.class?.includes('shadow-') ? 'shadow-md' : '',
-        !props.class?.includes('cursor-') ? (props.disabled || props.loading ? 'cursor-not-allowed' : 'cursor-pointer') : '',
+        !props.class?.includes('cursor-')
+          ? props.disabled || props.loading
+            ? 'cursor-not-allowed'
+            : 'cursor-pointer'
+          : '',
         props.disabled ? 'opacity-30' : '',
         sizeClass,
         props.class

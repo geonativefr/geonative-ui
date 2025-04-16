@@ -20,15 +20,14 @@
 
     <h1 class="mb-3">Loading :</h1>
     <Button
-      class=" text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg"
+      class="text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg"
       :loading="true"
-      :loading-text="'Please wait...'"
+      loading-text="Please wait..."
       size="lg"
       @click="isClickedButton = !isClickedButton"
     >
       Spinner Button
     </Button>
-
   </div>
 </template>
 
