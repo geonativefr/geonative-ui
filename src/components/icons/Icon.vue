@@ -44,7 +44,7 @@ const iconComponent: Component = computed(() => {
   // Handle SVG icons
   try {
     // Use Vite's dynamic import.meta.glob feature to load SVG files
-    const iconsOfLib = import.meta.glob('../../assets/icons/**/*.svg', {
+    const iconsOfLib = import.meta.glob('@geonative/ui/assets/icons/**/*.svg', {
       query: '?raw',
       import: 'default',
       eager: true,
