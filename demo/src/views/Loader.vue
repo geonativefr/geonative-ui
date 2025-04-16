@@ -11,9 +11,9 @@
     <div class="flex flex-col gap-2 w-xl">
       <h2 class="text-2xl font-bold mb-5">Progress</h2>
       <div class="grid grid-cols-1 gap-5">
-        <Progress size="sm" :progress="progress" class="bg-red-100" />
-        <Progress size="md" :progress="progress" />
-        <Progress size="lg" :progress="progress" class="bg-green-100" />
+          <Progress size="sm" :progress="progress" color="bg-red-500" class="bg-red-100" />
+          <Progress size="md" :progress="progress" />
+          <Progress size="lg" :progress="progress" color="bg-green-500" class="bg-green-100" />
       </div>
       <div class="flex flex-col gap-2 w-xl">
         <h2 class="text-2xl font-bold mb-5">Ping</h2>
