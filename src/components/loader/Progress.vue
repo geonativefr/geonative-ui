@@ -1,12 +1,7 @@
 <template>
   <ProgressRoot
     data-slot="progress"
-    :class="
-      twMerge(
-        `bg-primary/20 relative h-2 w-full overflow-hidden rounded-full ${sizeClass}`,
-        props.class,
-      )
-    "
+    :class="twMerge(`bg-primary/20 relative h-2 w-full overflow-hidden rounded-full ${sizeClass}`, props.class)"
   >
     <ProgressIndicator
       data-slot="progress-indicator"
@@ -18,18 +13,21 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { twMerge } from "tailwind-merge";
+import { twMerge } from 'tailwind-merge';
 import { ProgressIndicator, ProgressRoot } from 'reka-ui';
 
-const props = withDefaults(defineProps<{
-  progress: number;
-  size?: 'sm' | 'md' | 'lg';
-  class?: string;
-  color?: string;
-}>(), {
-  size: 'md',
-  color: 'bg-primary',
-});
+const props = withDefaults(
+  defineProps<{
+    progress: number;
+    size?: 'sm' | 'md' | 'lg';
+    class?: string;
+    color?: string;
+  }>(),
+  {
+    size: 'md',
+    color: 'bg-primary',
+  }
+);
 
 const sizeClass = computed(() => {
   switch (props.size) {
