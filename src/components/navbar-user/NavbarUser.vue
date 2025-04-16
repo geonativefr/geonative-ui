@@ -6,20 +6,14 @@
         class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 transition-colors"
       >
         <Avatar v-bind="avatarProps" />
-        <div class="grid flex-1 text-left text-sm leading-tight">
+        <span class="grid flex-1 text-left text-sm leading-tight">
           <span class="truncate font-semibold">{{ user.name }}</span>
           <span class="truncate text-xs">{{ user.email }}</span>
-        </div>
+        </span>
         <ChevronsUpDown class="ml-7 size-5" />
       </button>
     </ShadcnDropdownMenuTrigger>
-    <ShadcnDropdownMenuContent
-      class="w-full min-w-56 rounded-lg"
-      :side="'right'"
-      align="end"
-      :side-offset="4"
-    >
-
+    <ShadcnDropdownMenuContent class="w-full min-w-56 rounded-lg" :side="'right'" align="end" :side-offset="4">
       <ShadcnDropdownMenuLabel class="p-0 font-normal">
         <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
           <Avatar v-bind="avatarProps" />
@@ -40,7 +34,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { ChevronsUpDown } from 'lucide-vue-next';
 import { computed } from 'vue';
 import Avatar from '@/components/avatar/Avatar.vue';
@@ -53,16 +46,22 @@ import {
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@/shadcn/ui/dropdown-menu';
 
-const props = defineProps({
+const props = defineProps<{
   user: {
-    type: Object as () => { name: string; email: string; avatar: string },
-    required: true,
-  },
+    name: string;
+    email: string;
+    avatar: string;
+  };
   dropdown: {
-    type: Object as () => { sections: Array<Array<{ label: string; url?: string; shortcut?: string }>> },
-    required: true,
-  },
-});
+    sections: Array<
+      Array<{
+        label: string;
+        url?: string;
+        shortcut?: string;
+      }>
+    >;
+  };
+}>();
 
 const avatarProps = computed(() => ({
   url: props.user.avatar,
