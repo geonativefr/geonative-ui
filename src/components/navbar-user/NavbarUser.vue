@@ -36,15 +36,15 @@
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
 import { computed } from 'vue';
-import Avatar from '@/components/avatar/Avatar.vue';
-import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
+import Avatar from '@geonative/ui/components/avatar/Avatar.vue';
+import DropdownMenuSection from '@geonative/ui/components/dropdown-menu/DropdownMenuSection.vue';
 import {
   DropdownMenuLabel as ShadcnDropdownMenuLabel,
   DropdownMenu as ShadcnDropdownMenu,
   DropdownMenuContent as ShadcnDropdownMenuContent,
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
-} from '@/shadcn/ui/dropdown-menu';
+} from '@geonative/ui/shadcn/ui/dropdown-menu';
 
 const props = defineProps<{
   user: {
