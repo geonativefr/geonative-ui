@@ -47,7 +47,7 @@ const routes: Array<RouteRecord> = [
   createRoute({
     path: '/navbar-user',
     name: 'navbar-user',
-    component: () => import('@demo/views/NavbarUser.vue'),
+    component: () => import('@/views/NavbarUser.vue'),
     menuLabel: 'Navbar User',
   }),
   // Catch all unmatched routes

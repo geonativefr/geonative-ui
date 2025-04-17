@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import NavbarUser from '@/components/navbar-user/NavbarUser.vue';
+import NavbarUser from '@geonative/ui/components/navbar-user/NavbarUser.vue';
 
 const user = {
   name: 'alice',
