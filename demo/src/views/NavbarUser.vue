@@ -17,13 +17,38 @@ const user = {
 
 const dropdownMenuNavbarUser = {
   sections: [
-    [{ label: 'Upgrade to pro', url: '/upgrade' }],
     [
-      { label: 'Account', url: '/account' },
-      { label: 'Billing', url: '/billing' },
-      { label: 'Notifications', url: '/notifications' },
+      {
+        label: 'Upgrade to pro',
+        url: '/upgrade',
+        shortcut: '⌘+U',
+        iconProps: { name: 'star', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+      },
     ],
-    [{ label: 'Log out', url: '/' }],
+    [
+      {
+        label: 'Account',
+        url: '/account',
+        iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+      },
+      {
+        label: 'Billing',
+        url: '/billing',
+        iconProps: { name: 'credit-card', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+      },
+      {
+        label: 'Notifications',
+        url: '/notifications',
+        iconProps: { name: 'bell', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+      },
+    ],
+    [
+      {
+        label: 'Log out',
+        url: '/',
+        iconProps: { name: 'arrow-left-start-on-rectangle', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+      },
+    ],
   ],
 };
 </script>
