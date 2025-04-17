@@ -9,8 +9,8 @@
         >
           <div class="flex items-center gap-2">
             <component
-              v-if="props.item.icon"
-              :is="props.item.icon"
+              v-if="props.item.iconProps"
+              :is="Icon"
               v-bind="props.item.iconProps"
             />
             <span>{{ props.item.label }}</span>
@@ -25,8 +25,8 @@
         >
           <div class="flex items-center gap-2">
             <component
-              v-if="props.item.icon"
-              :is="props.item.icon"
+              v-if="props.item.iconProps"
+              :is="Icon"
               v-bind="props.item.iconProps"
             />
             <span>{{ props.item.label }}</span>
@@ -38,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+import Icon from '@geonative/ui/components/icons/Icon.vue';
 import type { DropdownMenuItem as DropdownItemType } from '@geonative/ui/types/dropdown-menu';
 import {
   DropdownMenuItem as ShadcnDropdownMenuItem,

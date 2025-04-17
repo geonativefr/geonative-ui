@@ -5,7 +5,14 @@
       <div v-if="item.sections && item.sections.length > 0">
         <ShadcnDropdownMenuSub>
           <ShadcnDropdownMenuSubTrigger>
-            <span>{{ item.label }}</span>
+            <div class="flex items-center gap-2">
+              <component
+                v-if="item.iconProps"
+                :is="Icon"
+                v-bind="item.iconProps"
+              />
+              <span>{{ item.label }}</span>
+            </div>
           </ShadcnDropdownMenuSubTrigger>
           <ShadcnDropdownMenuPortal>
             <ShadcnDropdownMenuSubContent>
@@ -24,6 +31,7 @@
 </template>
 
 <script setup lang="ts">
+import Icon from '@geonative/ui/components/icons/Icon.vue';
 import DropdownMenuItem from '@geonative/ui/components/dropdown-menu/DropdownMenuItem.vue';
 import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu.ts';
 
