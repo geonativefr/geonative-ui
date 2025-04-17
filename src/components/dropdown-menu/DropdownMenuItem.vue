@@ -2,11 +2,7 @@
   <div v-if="props.item.label">
     <div>
       <ShadcnDropdownMenuItem :disabled="!props.item.url || props.item.url === '' || props.item.disabled">
-        <a
-          v-if="props.item.url"
-          :href="props.item.url"
-          class="flex justify-between items-center w-full"
-        >
+        <a v-if="props.item.url" :href="props.item.url" class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
               v-if="item.iconProps"
@@ -20,10 +16,7 @@
             {{ props.item.shortcut }}
           </ShadcnDropdownMenuShortcut>
         </a>
-        <div
-          v-else
-          class="flex justify-between items-center w-full"
-        >
+        <div v-else class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
               v-if="item.iconProps"

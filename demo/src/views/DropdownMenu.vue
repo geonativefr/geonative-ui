@@ -4,7 +4,10 @@
     <div class="grid grid-cols-1 gap-5 place-items-center">
       <p class="mb-3">default:</p>
       <DropdownMenu :sections="dropdownMenu.sections" :label="dropdownMenu.name">
-          <Button class="text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg">Menu 1</Button>
+        <Button
+          class="text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg"
+          >Menu 1</Button
+        >
       </DropdownMenu>
       <p class="mb-3 mt-30">position right + align end :</p>
       <DropdownMenu
@@ -14,8 +17,10 @@
         position="right"
         align="end"
       >
-          <Button class="text-white bg-gradient-to-r from-pink-500 to-pink-700 hover:from-pink-600 hover:to-pink-800 shadow-lg"
-          >Menu 2</Button>
+        <Button
+          class="text-white bg-gradient-to-r from-pink-500 to-pink-700 hover:from-pink-600 hover:to-pink-800 shadow-lg"
+          >Menu 2</Button
+        >
       </DropdownMenu>
     </div>
   </div>
