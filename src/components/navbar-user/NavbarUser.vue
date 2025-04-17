@@ -45,6 +45,8 @@ import {
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
+import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu';
+
 
 const props = defineProps<{
   user: {
@@ -53,13 +55,7 @@ const props = defineProps<{
     avatar: string;
   };
   dropdown: {
-    sections: Array<
-      Array<{
-        label: string;
-        url?: string;
-        shortcut?: string;
-      }>
-    >;
+    sections: DropdownMenuSectionType[];
   };
 }>();
 
