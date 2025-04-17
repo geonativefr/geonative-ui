@@ -8,7 +8,6 @@ export interface DropdownMenu {
 export type DropdownMenuSection = DropdownMenuItem[];
 
 export interface DropdownMenuItem {
-  icon?: Component;
   iconProps?: Record<string, unknown>;
   label?: string;
   url?: string;
