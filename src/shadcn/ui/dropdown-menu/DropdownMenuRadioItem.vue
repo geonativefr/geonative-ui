@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '@/shadcn/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { Circle } from 'lucide-vue-next'
 import {
   DropdownMenuItemIndicator,
