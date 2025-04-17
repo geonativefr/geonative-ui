@@ -1,7 +1,7 @@
 <template>
   <ShadcnDropdownMenu>
     <ShadcnDropdownMenuTrigger>
-        <slot />
+      <slot />
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
