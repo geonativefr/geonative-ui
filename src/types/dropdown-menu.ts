@@ -1,5 +1,3 @@
-import type { Component } from 'vue';
-
 export interface DropdownMenu {
   name?: string;
   sections: DropdownMenuSection[];
@@ -8,7 +6,12 @@ export interface DropdownMenu {
 export type DropdownMenuSection = DropdownMenuItem[];
 
 export interface DropdownMenuItem {
-  iconProps?: Record<string, unknown>;
+  iconProps?: {
+    name: string;
+    source: string;
+    type?: string;
+    class?: string;
+  };
   label?: string;
   url?: string;
   disabled?: boolean;
