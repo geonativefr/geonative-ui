@@ -25,7 +25,6 @@
 import DropdownMenu from '@geonative/ui/components/dropdown-menu/DropdownMenu.vue';
 import type { DropdownMenu as DropdownMenuType } from '@geonative/ui/types/dropdown-menu.ts';
 import Button from '@geonative/ui/components/button/Button.vue';
-import Icon from '@geonative/ui/components/icons/Icon.vue';
 
 const dropdownMenu: DropdownMenuType = {
   name: 'Menu Label',
@@ -47,7 +46,16 @@ const dropdownMenu: DropdownMenuType = {
               url: '/invite/email',
               iconProps: { name: 'Mail', source: 'lucide', type: 'outline', class: 'h-4 w-4' },
             },
-            { label: 'Message', url: '/invite/message' },
+            {
+              label: 'Phone',
+              url: '/invite/phone',
+              iconProps: { name: 'Phone', source: 'lucide', type: 'outline', class: 'h-4 w-4' },
+            },
+            {
+              label: 'Message',
+              url: '/invite/message',
+              iconProps: { name: 'MessageCircle', source: 'lucide', type: 'outline', class: 'h-4 w-4' },
+            },
             {
               label: 'Link',
               url: '/invite/link',
@@ -143,14 +151,29 @@ const dropdownMenu: DropdownMenuType = {
         iconProps: { name: 'home', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
+        label: 'Avatar',
+        url: '/avatar',
+        iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+      },
+      {
         label: 'Breadcrumb',
         url: '/breadcrumb',
         iconProps: { name: 'AlertCircle', source: 'lucide', class: 'h-4 w-4' },
       },
       {
-        label: 'Avatar',
-        url: '/avatar',
-        iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+        label: 'Loader',
+        url: '/loader',
+        iconProps: { name: 'arrow-path', source: 'heroicons', class: 'h-4 w-4' },
+      },
+      {
+        label: 'Icon',
+        url: '/icon',
+        iconProps: { name: 'beaker', source: 'heroicons', class: 'h-4 w-4' },
+      },
+      {
+        label: 'Button',
+        url: '/button',
+        iconProps: { name: 'rectangle-stack', source: 'heroicons', class: 'h-4 w-4' },
       },
     ],
     [
