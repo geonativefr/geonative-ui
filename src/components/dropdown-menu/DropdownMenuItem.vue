@@ -8,10 +8,11 @@
           class="flex justify-between items-center w-full"
         >
           <div class="flex items-center gap-2">
-            <component
-              v-if="props.item.iconProps"
-              :is="Icon"
-              v-bind="props.item.iconProps"
+            <Icon
+              v-if="item.iconProps"
+              :name="item.iconProps.name"
+              :source="item.iconProps.source"
+              v-bind="item.iconProps"
             />
             <span>{{ props.item.label }}</span>
           </div>
@@ -24,10 +25,11 @@
           class="flex justify-between items-center w-full"
         >
           <div class="flex items-center gap-2">
-            <component
-              v-if="props.item.iconProps"
-              :is="Icon"
-              v-bind="props.item.iconProps"
+            <Icon
+              v-if="item.iconProps"
+              :name="item.iconProps.name"
+              :source="item.iconProps.source"
+              v-bind="item.iconProps"
             />
             <span>{{ props.item.label }}</span>
           </div>

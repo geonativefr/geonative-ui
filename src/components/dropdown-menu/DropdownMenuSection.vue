@@ -6,9 +6,10 @@
         <ShadcnDropdownMenuSub>
           <ShadcnDropdownMenuSubTrigger>
             <div class="flex items-center gap-2">
-              <component
+              <Icon
                 v-if="item.iconProps"
-                :is="Icon"
+                :name="item.iconProps.name"
+                :source="item.iconProps.source"
                 v-bind="item.iconProps"
               />
               <span>{{ item.label }}</span>
