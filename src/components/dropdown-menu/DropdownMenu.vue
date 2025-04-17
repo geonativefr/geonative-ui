@@ -27,10 +27,10 @@ import {
   DropdownMenuLabel as ShadcnDropdownMenuLabel,
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
-} from '@/shadcn/ui/dropdown-menu';
-import { Button as ShadcnButton } from '@/shadcn/ui/button';
-import DropdownMenuSection from '@/components/dropdown-menu/DropdownMenuSection.vue';
-import type { DropdownMenuSection as DropdownMenuSectionType } from '@/types/dropdown-menu.ts';
+} from '@geonative/ui/shadcn/ui/dropdown-menu';
+import { Button as ShadcnButton } from '@geonative/ui/shadcn/ui/button';
+import DropdownMenuSection from '@geonative/ui/components/dropdown-menu/DropdownMenuSection.vue';
+import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu.ts';
 
 const props = defineProps<{
   sections: Array<DropdownMenuSectionType>;

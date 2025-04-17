@@ -17,8 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import DropdownMenu from '@/components/dropdown-menu/DropdownMenu.vue';
-import type { DropdownMenu as DropdownMenuType } from '@/types/dropdown-menu.ts';
+import DropdownMenu from '@geonative/ui/components/dropdown-menu/DropdownMenu.vue';
+import type { DropdownMenu as DropdownMenuType } from '@geonative/ui/types/dropdown-menu.ts';
 import { Users, Mail, Link, Copy, Share, Home, Settings, Shield, Lock } from 'lucide-vue-next';
 
 const dropdownMenu: DropdownMenuType = {

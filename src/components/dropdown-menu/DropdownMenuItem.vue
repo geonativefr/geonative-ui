@@ -27,11 +27,11 @@
 </template>
 
 <script setup lang="ts">
-import type { DropdownMenuItem as DropdownItemType } from '@/types/dropdown-menu';
+import type { DropdownMenuItem as DropdownItemType } from '@geonative/ui/types/dropdown-menu';
 import {
   DropdownMenuItem as ShadcnDropdownMenuItem,
   DropdownMenuShortcut as ShadcnDropdownMenuShortcut,
-} from '@/shadcn/ui/dropdown-menu';
+} from '@geonative/ui/shadcn/ui/dropdown-menu';
 
 const props = defineProps<{
   item: DropdownItemType;

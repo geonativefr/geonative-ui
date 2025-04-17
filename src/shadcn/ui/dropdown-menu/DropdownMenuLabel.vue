@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import { cn } from '@/shadcn/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { reactiveOmit } from '@vueuse/core'
 import { DropdownMenuLabel, type DropdownMenuLabelProps, useForwardProps } from 'reka-ui'
 

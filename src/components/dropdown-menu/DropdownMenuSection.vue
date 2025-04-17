@@ -24,8 +24,8 @@
 </template>
 
 <script setup lang="ts">
-import DropdownMenuItem from '@/components/dropdown-menu/DropdownMenuItem.vue';
-import type { DropdownMenuSection as DropdownMenuSectionType } from '@/types/dropdown-menu.ts';
+import DropdownMenuItem from '@geonative/ui/components/dropdown-menu/DropdownMenuItem.vue';
+import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu.ts';
 
 import {
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
@@ -33,7 +33,7 @@ import {
   DropdownMenuSubTrigger as ShadcnDropdownMenuSubTrigger,
   DropdownMenuPortal as ShadcnDropdownMenuPortal,
   DropdownMenuSubContent as ShadcnDropdownMenuSubContent,
-} from '@/shadcn/ui/dropdown-menu';
+} from '@geonative/ui/shadcn/ui/dropdown-menu';
 
 const props = defineProps<{
   section: DropdownMenuSectionType;
