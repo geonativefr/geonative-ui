@@ -3,7 +3,9 @@
     <h1 class="mb-3">DROPDOWNMENU :</h1>
     <div class="grid grid-cols-1 gap-5 place-items-center">
       <p class="mb-3">default:</p>
-      <DropdownMenu :sections="dropdownMenu.sections" name="Menu 1" :label="dropdownMenu.name" />
+      <DropdownMenu :sections="dropdownMenu.sections" :label="dropdownMenu.name">
+          <Button class="text-blue-500 bg-blue-100 hover:bg-blue-200 rounded-full px-4 py-2 shadow-md">Menu 1</Button>
+      </DropdownMenu>
       <p class="mb-3 mt-30">position right + align end :</p>
       <DropdownMenu
         :sections="dropdownMenu.sections"
@@ -11,7 +13,9 @@
         :label="dropdownMenu.name"
         position="right"
         align="end"
-      />
+      >
+          <Button class="text-lg text-pink-500">Menu 2</Button>
+      </DropdownMenu>
     </div>
   </div>
 </template>
@@ -19,7 +23,8 @@
 <script setup lang="ts">
 import DropdownMenu from '@geonative/ui/components/dropdown-menu/DropdownMenu.vue';
 import type { DropdownMenu as DropdownMenuType } from '@geonative/ui/types/dropdown-menu.ts';
-import { Users, Mail, Link, Copy, Share, Home, Settings, Shield, Lock } from 'lucide-vue-next';
+import Button from '@geonative/ui/components/button/Button.vue';
+import Icon from '@geonative/ui/components/icons/Icon.vue';
 
 const dropdownMenu: DropdownMenuType = {
   name: 'Menu Label',
@@ -28,26 +33,39 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Team',
         url: '/team',
-        icon: Users,
+        icon: Icon,
+        iconProps: { name: 'users', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Invite users',
         url: '/invite',
         sections: [
           [
-            { label: 'Email', url: '/invite/email', icon: Mail },
+            {
+              label: 'Email',
+              url: '/invite/email',
+              icon: Icon,
+              iconProps: { name: 'Mail', source: 'lucide', type: 'outline', class: 'h-4 w-4' },
+            },
             { label: 'Message', url: '/invite/message' },
             {
               label: 'Link',
               url: '/invite/link',
-              icon: Link,
+              icon: Icon,
+              iconProps: { name: 'link', source: 'lucide', class: 'h-4 w-4' },
               sections: [
                 [
-                  { label: 'Copy', url: '/invite/link/copy', icon: Copy },
+                  {
+                    label: 'Copy',
+                    url: '/invite/link/copy',
+                    icon: Icon,
+                    iconProps: { name: 'Clipboard', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+                  },
                   {
                     label: 'Share',
                     url: '/invite/link/share',
-                    icon: Share,
+                    icon: Icon,
+                    iconProps: { name: 'Share', source: 'lucide', class: 'h-4 w-4' },
                     sections: [
                       [
                         { label: 'Facebook', url: '/invite/link/share/facebook' },
@@ -74,6 +92,8 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Create team',
         url: '/create-team',
+        icon: Icon,
+        iconProps: { name: 'PlusCircle', source: 'lucide', class: 'h-4 w-4' },
       },
     ],
     [
@@ -81,10 +101,14 @@ const dropdownMenu: DropdownMenuType = {
         label: 'GitHub',
         shortcut: '⌘+G',
         url: 'https://github.com',
+        icon: Icon,
+        iconProps: { name: 'Code', source: 'lucide', class: 'h-4 w-4' },
       },
       {
         label: 'Support',
         url: '/support',
+        icon: Icon,
+        iconProps: { name: 'HelpCircle', source: 'lucide', class: 'h-4 w-4' },
         sections: [],
       },
       {
@@ -92,19 +116,32 @@ const dropdownMenu: DropdownMenuType = {
         shortcut: '⌘+A',
         disabled: true,
         url: '/api',
+        icon: Icon,
+        iconProps: { name: 'server', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Settings',
         url: '/settings',
-        icon: Settings,
+        icon: Icon,
+        iconProps: { name: 'cog', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
         sections: [
           [
             { label: 'Profile', url: '/settings/profile' },
             { label: 'Account', url: '/settings/account' },
           ],
           [
-            { label: 'Security', url: '/settings/security', icon: Shield },
-            { label: 'Privacy', url: '/settings/privacy', icon: Lock },
+            {
+              label: 'Security',
+              url: '/settings/security',
+              icon: Icon,
+              iconProps: { name: 'shield-check', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+            },
+            {
+              label: 'Privacy',
+              url: '/settings/privacy',
+              icon: Icon,
+              iconProps: { name: 'lock-closed', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+            },
           ],
         ],
       },
@@ -113,15 +150,20 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Home',
         url: '/',
-        icon: Home,
+        icon: Icon,
+        iconProps: { name: 'home', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Breadcrumb',
         url: '/breadcrumb',
+        icon: Icon,
+        iconProps: { name: 'AlertCircle', source: 'lucide', class: 'h-4 w-4' },
       },
       {
         label: 'Avatar',
         url: '/avatar',
+        icon: Icon,
+        iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
     ],
     [

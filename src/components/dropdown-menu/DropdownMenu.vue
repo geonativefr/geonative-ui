@@ -1,7 +1,7 @@
 <template>
   <ShadcnDropdownMenu>
-    <ShadcnDropdownMenuTrigger v-if="props.name">
-      <ShadcnButton>{{ props.name }}</ShadcnButton>
+    <ShadcnDropdownMenuTrigger>
+        <slot />
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
@@ -13,8 +13,10 @@
         <ShadcnDropdownMenuLabel class="text-center">{{ props.label }}</ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />
       </div>
-      <div v-for="(section, index) in props.sections" :key="index">
-        <DropdownMenuSection :section="section" :show-separator="index > 0" />
+      <div>
+        <div v-for="(section, index) in props.sections" :key="index">
+          <DropdownMenuSection :section="section" :show-separator="index > 0" />
+        </div>
       </div>
     </ShadcnDropdownMenuContent>
   </ShadcnDropdownMenu>
@@ -28,13 +30,11 @@ import {
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
-import { Button as ShadcnButton } from '@geonative/ui/shadcn/ui/button';
 import DropdownMenuSection from '@geonative/ui/components/dropdown-menu/DropdownMenuSection.vue';
 import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu.ts';
 
 const props = defineProps<{
   sections: Array<DropdownMenuSectionType>;
-  name: string;
   label?: string;
   position?: 'right' | 'top' | 'bottom' | 'left';
   align?: 'start' | 'center' | 'end';

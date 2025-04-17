@@ -9,8 +9,8 @@
           </ShadcnDropdownMenuSubTrigger>
           <ShadcnDropdownMenuPortal>
             <ShadcnDropdownMenuSubContent>
-              <div v-for="(section, index) in item.sections" :key="index">
-                <DropdownMenuSection :section="section" :show-separator="index !== 0" />
+              <div v-for="(section, subIndex) in item.sections" :key="subIndex">
+                <DropdownMenuSection :section="section" :show-separator="subIndex !== 0" />
               </div>
             </ShadcnDropdownMenuSubContent>
           </ShadcnDropdownMenuPortal>

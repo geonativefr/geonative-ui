@@ -2,25 +2,36 @@
   <div v-if="props.item.label">
     <div>
       <ShadcnDropdownMenuItem :disabled="!props.item.url || props.item.url === '' || props.item.disabled">
-        <template v-if="props.item.url">
-          <a :href="props.item.url" class="flex justify-between items-center w-full">
-            <div class="flex items-center gap-2">
-              <component v-if="props.item.icon" :is="props.item.icon" class="h-4 w-4" />
-              <span>{{ props.item.label }}</span>
-            </div>
-            <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
-              {{ props.item.shortcut }}
-            </ShadcnDropdownMenuShortcut>
-          </a>
-        </template>
-        <template v-else>
-          <div class="flex justify-between items-center w-full">
-            <div class="flex items-center gap-2">
-              <component v-if="props.item.icon" :is="props.item.icon" class="h-4 w-4" />
-              <span>{{ props.item.label }}</span>
-            </div>
+        <a
+          v-if="props.item.url"
+          :href="props.item.url"
+          class="flex justify-between items-center w-full"
+        >
+          <div class="flex items-center gap-2">
+            <component
+              v-if="props.item.icon"
+              :is="props.item.icon"
+              v-bind="props.item.iconProps"
+            />
+            <span>{{ props.item.label }}</span>
           </div>
-        </template>
+          <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+            {{ props.item.shortcut }}
+          </ShadcnDropdownMenuShortcut>
+        </a>
+        <div
+          v-else
+          class="flex justify-between items-center w-full"
+        >
+          <div class="flex items-center gap-2">
+            <component
+              v-if="props.item.icon"
+              :is="props.item.icon"
+              v-bind="props.item.iconProps"
+            />
+            <span>{{ props.item.label }}</span>
+          </div>
+        </div>
       </ShadcnDropdownMenuItem>
     </div>
   </div>
