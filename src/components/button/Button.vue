@@ -23,7 +23,7 @@
       <Spinner :size="props.size" class="fill-red-600" />
       <span>{{ props.loadingText }}</span>
     </div>
-    <div :class="{'invisible': props.loading}">
+    <div :class="{ invisible: props.loading }">
       <slot>{{ props.label }}</slot>
     </div>
   </button>
