@@ -2,16 +2,8 @@
   <button
     :class="
       twMerge(
-        'relative transition-all flex-col items-center justify-center',
-        !props.class?.includes('rounded-') ? 'rounded-md' : '',
-        !props.class?.includes('bg-') ? 'bg-primary' : '',
-        !props.class?.includes('text-') ? 'text-white' : '',
-        !props.class?.includes('shadow-') ? 'shadow-md' : '',
-        !props.class?.includes('cursor-')
-          ? props.disabled || props.loading
-            ? 'cursor-not-allowed'
-            : 'cursor-pointer'
-          : '',
+        'transition-all flex-col justify-center items-center bg-stone-950 rounded-md text-white shadow-md',
+        props.disabled || props.loading ? 'cursor-not-allowed' : 'cursor-pointer hover:bg-stone-700',
         props.disabled ? 'opacity-30' : '',
         sizeClass,
         props.class
@@ -19,9 +11,9 @@
     "
     :disabled="props.disabled || props.loading"
   >
-    <div v-if="props.loading" class="flex items-center gap-2 px-2">
+    <div v-if="props.loading" class="flex justify-center items-center px-2 gap-2">
       <Spinner :size="props.size" class="fill-red-600" />
-      <span>{{ props.loadingText }}</span>
+      <span v-if="props.loadingText">{{ props.loadingText }}</span>
     </div>
     <div :class="{ 'invisible h-0': props.loading }">
       <slot>{{ props.label }}</slot>
@@ -58,11 +50,11 @@ const sizeClass = computed(() => {
     case 'sm':
       return 'px-2 py-1 text-sm';
     case 'md':
-      return 'px-4 py-2 text-base';
+      return 'px-3 py-2 text-base';
     case 'lg':
-      return 'px-6 py-3 text-lg';
+      return 'px-4 py-3 text-lg';
     default:
-      return 'px-4 py-2 text-base';
+      return 'px-2 py-2 text-base';
   }
 });
 </script>
