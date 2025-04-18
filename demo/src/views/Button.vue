@@ -1,36 +1,57 @@
 <template>
-  <div class="p-5 text-center">
-    <Button
-      size="sm"
-      @click="isClickedButton = !isClickedButton"
-    >Default SM</Button>
-    <Button
-      @click="isClickedButton = !isClickedButton"
-    >Default</Button>
-    <Button
-      size="lg"
-      @click="isClickedButton = !isClickedButton"
-    >Default LG</Button>
-    <Button
-      class="text-blue-500 bg-blue-100 rounded-full"
-      :disabled="false"
-      @click="isClickedButton = !isClickedButton"
-    >Custom</Button>
-    <Button
-      :disabled="true"
-      @click="isClickedButton = !isClickedButton"
-    >MD Disable</Button>
-    <Button
-      :loading="true"
-      loading-text="Loading..."
-      @click="isClickedButton = !isClickedButton"
-    >Loading...</Button>
-    <Button
-      :loading="true"
-      size="sm"
-      @click="isClickedButton = !isClickedButton"
-    >Loading...</Button>
-    <p v-if="isClickedButton" class="mt-3 text-green-500">Button clicked !</p>
+  <div class="flex flex-col gap-4 p-5">
+    <div>
+      <Button
+        size="sm"
+        @click="isClickedButton = !isClickedButton"
+      >Default SM</Button>
+    </div>
+    <div>
+      <Button
+        @click="isClickedButton = !isClickedButton"
+      >Default</Button>
+    </div>
+    <div>
+      <Button
+        size="lg"
+        @click="isClickedButton = !isClickedButton"
+      >Default LG</Button>
+    </div>
+    <div>
+      <Button
+        class="text-blue-500 bg-blue-100 rounded-full"
+        :disabled="false"
+        @click="isClickedButton = !isClickedButton"
+      >Custom</Button>
+    </div>
+    <div>
+      <Button
+        :disabled="true"
+        @click="isClickedButton = !isClickedButton"
+      >MD Disable</Button>
+    </div>
+    <div>
+      <Button
+        :loading="true"
+        loading-text="Loading..."
+        @click="isClickedButton = !isClickedButton"
+      >Loading...</Button>
+    </div>
+    <div>
+      <Button
+        :loading="true"
+        size="sm"
+        @click="isClickedButton = !isClickedButton"
+      >Loading...</Button>
+      <p v-if="isClickedButton" class="mt-3 text-green-500">Button clicked !</p>
+    </div>
+    <div>
+      <Button
+        :loading="true"
+        loading-text="Loading..."
+        @click="isClickedButton = !isClickedButton"
+      >Loading...</Button>
+    </div>
   </div>
 </template>
 
