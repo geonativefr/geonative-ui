@@ -13,10 +13,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
+import type { CustomSize } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
-    size?: 'sm' | 'md' | 'lg';
+    size?: CustomSize;
     class?: string;
   }>(),
   {
@@ -33,7 +34,7 @@ const sizeClass = computed(() => {
     case 'lg':
       return 'size-4';
     default:
-      return 'size-3';
+      return '';
   }
 });
 </script>

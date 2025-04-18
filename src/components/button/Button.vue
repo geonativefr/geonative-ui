@@ -53,6 +53,8 @@ const sizeClass = computed(() => {
       return 'text-base';
     case 'lg':
       return 'text-lg';
+    default:
+      return '';
   }
 });
 

@@ -15,11 +15,12 @@
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import { ProgressIndicator, ProgressRoot } from 'reka-ui';
+import type { CustomSize } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
     progress: number;
-    size?: 'sm' | 'md' | 'lg';
+    size?: CustomSize;
     class?: string;
     color?: string;
   }>(),
@@ -38,7 +39,7 @@ const sizeClass = computed(() => {
     case 'lg':
       return 'h-6';
     default:
-      return 'h-4';
+      return '';
   }
 });
 </script>
