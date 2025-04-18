@@ -2,72 +2,75 @@
   <div class="flex flex-col items-center gap-4 p-5">
     <div>
       <Button
-        @click="isClickedButton = !isClickedButton"
+        :loading="isClickedButton"
+        @click="handleClick"
       >Default</Button>
-    </div>
-    <div>
       <Button
         class="bg-blue-500"
-        size="sm"
-        @click="isClickedButton = !isClickedButton"
-      >Button SM</Button>
+        :loading="isClickedButton"
+        @click="handleClick"
+      >Button</Button>
     </div>
     <div>
       <Button
         class="bg-red-500"
         size="md"
-        @click="isClickedButton = !isClickedButton"
+        :loading="isClickedButton"
+        @click="handleClick"
       >Button MD</Button>
     </div>
     <div>
       <Button
         class="bg-green-500"
         size="lg"
-        @click="isClickedButton = !isClickedButton"
+        :loading="isClickedButton"
+        @click="handleClick"
       >Button LG</Button>
     </div>
     <div>
       <Button
         class="text-blue-500 bg-blue-100 rounded-full"
         :disabled="false"
-        @click="isClickedButton = !isClickedButton"
+        :loading="isClickedButton"
+        @click="handleClick"
       >Custom</Button>
     </div>
     <div>
       <Button
         :disabled="true"
-        @click="isClickedButton = !isClickedButton"
+        :loading="isClickedButton"
+        @click="handleClick"
       >MD Disable</Button>
     </div>
     <div>
       <Button
         class="bg-blue-500"
-        :loading="true"
+        :loading="isClickedButton"
         loading-text="Loading..."
-        @click="isClickedButton = !isClickedButton"
-      >Loading...</Button>
+        @click="handleClick"
+      >Button</Button>
     </div>
     <div>
       <Button
         class="bg-red-500"
-        :loading="true"
+        :loading="isClickedButton"
         size="sm"
-        @click="isClickedButton = !isClickedButton"
-      >Loading...</Button>
-      <p v-if="isClickedButton" class="mt-3 text-green-500">Button clicked !</p>
+        @click="handleClick"
+      >Button</Button>
     </div>
     <div>
       <Button
         class="bg-green-500"
-        :loading="true"
+        :loading="isClickedButton"
         loading-text="Loading..."
-        @click="isClickedButton = !isClickedButton"
-      >Loading...</Button>
+        @click="handleClick"
+      >Button</Button>
     </div>
     <div>
       <Button
         class="bg-green-500"
-        @click="isClickedButton = !isClickedButton"
+        :loading="isClickedButton"
+        @click="handleClick"
       ><Icon name="bell" source="heroicons" /></Button>
     </div>
   </div>
@@ -78,4 +81,13 @@ import { ref } from 'vue';
 import { Button, Icon } from '@geonative/ui/components';
 
 const isClickedButton = ref(false);
+
+function handleClick() {
+  isClickedButton.value = true;
+  setTimeout(() => {
+    isClickedButton.value = false;
+  }, 2000);
+}
+
+
 </script>
