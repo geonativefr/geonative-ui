@@ -1,7 +1,10 @@
 <template>
   <ProgressRoot
     data-slot="progress"
-    :class="twMerge(`bg-primary/20 relative h-2 w-full overflow-hidden rounded-full ${sizeClass}`, props.class)"
+    :class="twMerge(
+      `relative h-2 w-full overflow-hidden rounded-full ${sizeClass} ${bgColorClass}`,
+      props.class
+    )"
   >
     <ProgressIndicator
       data-slot="progress-indicator"
@@ -15,11 +18,12 @@
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import { ProgressIndicator, ProgressRoot } from 'reka-ui';
+import type { CustomSize } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
     progress: number;
-    size?: 'sm' | 'md' | 'lg';
+    size?: CustomSize;
     class?: string;
     color?: string;
   }>(),
@@ -38,7 +42,11 @@ const sizeClass = computed(() => {
     case 'lg':
       return 'h-6';
     default:
-      return 'h-4';
+      return '';
   }
+});
+
+const bgColorClass = computed(() => {
+  return `${props.color}/10`;
 });
 </script>

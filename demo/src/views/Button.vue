@@ -1,39 +1,93 @@
 <template>
-  <div class="p-5">
-    <h1 class="mb-3">Button :</h1>
-    <Button
-      class="text-blue-500 bg-blue-100 hover:bg-blue-200 rounded-full px-4 py-2 shadow-md"
-      :disabled="false"
-      @click="isClickedButton = !isClickedButton"
-      size="lg"
-    >
-      Hello world !
-    </Button>
-    <p v-if="isClickedButton" class="mt-3 text-green-500">Button clicked !</p>
-  </div>
-
-  <div class="p-5 space-y-4">
-    <h1 class="mb-5">More examples :</h1>
-
-    <h1 class="mb-3">Disable :</h1>
-    <Button :disabled="true" size="md" @click="isClickedButton = !isClickedButton"> Disable Button </Button>
-
-    <h1 class="mb-3">Loading :</h1>
-    <Button
-      class="text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg"
-      :loading="true"
-      loading-text="Please wait..."
-      size="lg"
-      @click="isClickedButton = !isClickedButton"
-    >
-      Spinner Button
-    </Button>
+  <div class="flex flex-col items-center gap-4 p-5">
+    <div>
+      <Button
+        :loading="isClickedButton"
+        @click="handleClick"
+      >Default</Button>
+      <Button
+        class="bg-blue-500"
+        :loading="isClickedButton"
+        @click="handleClick"
+      >Button</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-red-500"
+        size="md"
+        :loading="isClickedButton"
+        @click="handleClick"
+      >Button MD</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-green-500"
+        size="lg"
+        :loading="isClickedButton"
+        @click="handleClick"
+      >Button LG</Button>
+    </div>
+    <div>
+      <Button
+        class="text-blue-500 bg-blue-100 rounded-full"
+        :disabled="false"
+        :loading="isClickedButton"
+        @click="handleClick"
+      >Custom</Button>
+    </div>
+    <div>
+      <Button
+        :disabled="true"
+        :loading="isClickedButton"
+        @click="handleClick"
+      >MD Disable</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-blue-500"
+        :loading="isClickedButton"
+        loading-text="Loading..."
+        @click="handleClick"
+      >Button</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-red-500"
+        :loading="isClickedButton"
+        size="sm"
+        @click="handleClick"
+      >Button</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-green-500"
+        :loading="isClickedButton"
+        loading-text="Loading..."
+        @click="handleClick"
+      >Button</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-green-500"
+        :loading="isClickedButton"
+        @click="handleClick"
+      ><Icon name="bell" source="heroicons" /></Button>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Button from '@geonative/ui/components/button/Button.vue';
+import { Button, Icon } from '@geonative/ui/components';
 
 const isClickedButton = ref(false);
+
+function handleClick() {
+  isClickedButton.value = true;
+  setTimeout(() => {
+    isClickedButton.value = false;
+  }, 2000);
+}
+
+
 </script>
