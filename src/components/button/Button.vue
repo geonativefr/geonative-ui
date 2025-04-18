@@ -2,7 +2,7 @@
   <button
     :class="
       twMerge(
-        'relative transition-all flex items-center justify-center',
+        'relative transition-all flex-col items-center justify-center',
         !props.class?.includes('rounded-') ? 'rounded-md' : '',
         !props.class?.includes('bg-') ? 'bg-primary' : '',
         !props.class?.includes('text-') ? 'text-white' : '',
@@ -19,11 +19,11 @@
     "
     :disabled="props.disabled || props.loading"
   >
-    <div v-if="props.loading" class="absolute flex items-center gap-2">
+    <div v-if="props.loading" class="flex items-center gap-2 px-2">
       <Spinner :size="props.size" class="fill-red-600" />
       <span>{{ props.loadingText }}</span>
     </div>
-    <div :class="{ invisible: props.loading }">
+    <div :class="{ 'invisible h-0': props.loading }">
       <slot>{{ props.label }}</slot>
     </div>
   </button>
