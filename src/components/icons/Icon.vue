@@ -11,14 +11,17 @@ import type { Component } from 'vue';
 import * as lucideIcons from 'lucide-vue-next';
 import HeroIcons from './heroicons.ts';
 
-const props = withDefaults(defineProps<{
-  name: string,
-  class?: string,
-  source: 'svg' | 'lucide' | 'heroicons',
-  type?: 'solid' | 'outline', // Type for heroicons
-}>(), {
-  type: 'solid',
-});
+const props = withDefaults(
+  defineProps<{
+    name: string;
+    class?: string;
+    source: 'svg' | 'lucide' | 'heroicons';
+    type?: 'solid' | 'outline'; // Type for heroicons
+  }>(),
+  {
+    type: 'solid',
+  }
+);
 
 const iconComponent: Component = computed(() => {
   // Handle lucide icons
