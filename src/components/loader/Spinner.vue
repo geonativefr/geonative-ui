@@ -27,11 +27,11 @@ const props = withDefaults(
 const sizeClass = computed(() => {
   switch (props.size) {
     case 'sm':
-      return 'h-4 w-4';
+      return 'size-4';
     case 'md':
-      return 'h-5 w-5';
+      return 'size-5';
     case 'lg':
-      return 'h-6 w-6';
+      return 'size-6';
     default:
       return '';
   }

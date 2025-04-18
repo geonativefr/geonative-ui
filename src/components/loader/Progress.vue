@@ -1,7 +1,10 @@
 <template>
   <ProgressRoot
     data-slot="progress"
-    :class="twMerge(`bg-primary/20 relative h-2 w-full overflow-hidden rounded-full ${sizeClass}`, props.class)"
+    :class="twMerge(
+      `relative h-2 w-full overflow-hidden rounded-full ${sizeClass} ${bgColorClass}`,
+      props.class
+    )"
   >
     <ProgressIndicator
       data-slot="progress-indicator"
@@ -41,5 +44,9 @@ const sizeClass = computed(() => {
     default:
       return '';
   }
+});
+
+const bgColorClass = computed(() => {
+  return `${props.color}/10`;
 });
 </script>
