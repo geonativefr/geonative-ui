@@ -19,11 +19,11 @@
     "
     :disabled="props.disabled || props.loading"
   >
-    <div v-if="props.loading" class="opacity-100 absolute inset-0 flex items-center justify-between z-20 w-full px-2">
+    <div v-if="props.loading" class="absolute flex items-center gap-2">
       <Spinner :size="props.size" class="fill-red-600" />
-      <span class="mr-auto ml-auto">{{ props.loadingText }}</span>
+      <span>{{ props.loadingText }}</span>
     </div>
-    <div :class="twMerge(props.loading ? 'opacity-0 z-10' : 'opacity-100 z-20')">
+    <div :class="{'invisible': props.loading}">
       <slot>{{ props.label }}</slot>
     </div>
   </button>
