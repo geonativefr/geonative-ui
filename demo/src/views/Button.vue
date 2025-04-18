@@ -1,11 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4 p-5">
-    <div>
-      <Button
-        size="sm"
-        @click="isClickedButton = !isClickedButton"
-      >Default SM</Button>
-    </div>
+  <div class="flex flex-col items-center gap-4 p-5">
     <div>
       <Button
         @click="isClickedButton = !isClickedButton"
@@ -13,9 +7,24 @@
     </div>
     <div>
       <Button
+        class="bg-blue-500"
+        size="sm"
+        @click="isClickedButton = !isClickedButton"
+      >Button SM</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-red-500"
+        size="md"
+        @click="isClickedButton = !isClickedButton"
+      >Button MD</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-green-500"
         size="lg"
         @click="isClickedButton = !isClickedButton"
-      >Default LG</Button>
+      >Button LG</Button>
     </div>
     <div>
       <Button
@@ -32,6 +41,7 @@
     </div>
     <div>
       <Button
+        class="bg-blue-500"
         :loading="true"
         loading-text="Loading..."
         @click="isClickedButton = !isClickedButton"
@@ -39,6 +49,7 @@
     </div>
     <div>
       <Button
+        class="bg-red-500"
         :loading="true"
         size="sm"
         @click="isClickedButton = !isClickedButton"
@@ -47,17 +58,24 @@
     </div>
     <div>
       <Button
+        class="bg-green-500"
         :loading="true"
         loading-text="Loading..."
         @click="isClickedButton = !isClickedButton"
       >Loading...</Button>
+    </div>
+    <div>
+      <Button
+        class="bg-green-500"
+        @click="isClickedButton = !isClickedButton"
+      ><Icon name="bell" source="heroicons" /></Button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Button from '@geonative/ui/components/button/Button.vue';
+import { Button, Icon } from '@geonative/ui/components';
 
 const isClickedButton = ref(false);
 </script>

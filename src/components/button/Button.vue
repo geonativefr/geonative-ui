@@ -12,7 +12,7 @@
       :disabled="props.disabled || props.loading"
     >
     <div class="flex items-center gap-2 whitespace-nowrap" :class="{ 'invisible': props.loading }">
-      <span v-if="!props.loadingText"><slot>{{ props.label }}</slot></span>
+      <span v-if="!props.loadingText"><slot /></span>
       <span v-else class="flex items-center gap-2">
         <Spinner :size="props.size" />
         <span>{{ props.loadingText }}</span>
