@@ -12,6 +12,7 @@
   >
     <div class="flex items-center gap-2 whitespace-nowrap" :class="{ invisible: props.loading }">
       <slot>{{ props.label }}</slot>
+
     </div>
     <div v-if="props.loading" class="absolute inset-0 flex items-center justify-center gap-2">
       <Spinner :size="props.size" />
