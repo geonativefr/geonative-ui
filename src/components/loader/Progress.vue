@@ -18,7 +18,7 @@
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import { ProgressIndicator, ProgressRoot } from 'reka-ui';
-import type { CustomSize } from '@geonative/ui/types';
+import type { CustomSize } from '@geonative/ui';
 
 const props = withDefaults(
   defineProps<{
@@ -46,7 +46,5 @@ const sizeClass = computed(() => {
   }
 });
 
-const bgColorClass = computed(() => {
-  return `${props.color}/10`;
-});
+const bgColorClass = computed(() => `${props.color}/10`);
 </script>

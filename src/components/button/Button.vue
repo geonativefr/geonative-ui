@@ -1,6 +1,6 @@
 <template>
   <div class="inline-block" :style="{ width: width ? `${width}px` : 'auto' }">
-      <Button
+      <ShadcnButton
         :class="
           twMerge(
             `relative flex w-full items-center justify-center rounded-md bg-primary text-white shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
@@ -19,12 +19,12 @@
           <Spinner :size="props.size" />
           <span v-if="props.loadingText">{{ props.loadingText }}</span>
         </div>
-      </Button>
+      </ShadcnButton>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Button } from '@geonative/ui/shadcn/ui/button';
+import { Button as ShadcnButton } from '@geonative/ui/shadcn/ui/button';
 import { computed, defineProps, onMounted, ref, withDefaults } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import type { CustomSize } from '@geonative/ui/types';
