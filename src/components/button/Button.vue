@@ -68,8 +68,6 @@ const hoverBgClass = computed(() => {
   return '';
 });
 
-console.log(hoverBgClass.value);
-
 const slotRef = ref<HTMLElement | null>(null);
 const loaderRef = ref<HTMLElement | null>(null);
 const width = ref<number | null>(null);

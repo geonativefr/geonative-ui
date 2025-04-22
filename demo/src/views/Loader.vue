@@ -14,7 +14,7 @@
       <h2 class="text-2xl font-bold mb-5">Progress</h2>
       <div class="grid grid-cols-1 gap-5">
         <Progress size="sm" :progress="progress" color="bg-red-500" />
-        <Progress size="md" :progress="progress"/>
+        <Progress size="md" :progress="progress" />
         <Progress size="lg" :progress="progress" color="bg-green-500" />
         <Progress :progress="progress" color="bg-purple-500" class="h-7" />
         <Progress :progress="progress" color="bg-fuchsia-500" class="h-8" />
