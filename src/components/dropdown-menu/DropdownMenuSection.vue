@@ -43,8 +43,13 @@ import {
   DropdownMenuSubContent as ShadcnDropdownMenuSubContent,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
 
-const props = defineProps<{
-  section: DropdownMenuSectionType;
-  showSeparator: boolean;
-}>();
+const props = withDefaults(
+  defineProps<{
+    section: DropdownMenuSectionType;
+    showSeparator?: boolean;
+  }>(),
+  {
+    showSeparator: false,
+  }
+);
 </script>

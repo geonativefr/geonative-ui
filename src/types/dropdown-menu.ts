@@ -1,5 +1,7 @@
+import type { IconSource, IconType } from './icon.ts';
+
 export interface DropdownMenuType {
-  name?: string;
+  label?: string;
   sections: DropdownMenuSectionType[];
 }
 
@@ -18,6 +20,3 @@ export interface DropdownMenuItemType {
   shortcut?: string;
   sections?: DropdownMenuSectionType[];
 }
-
-export type IconSource = 'svg' | 'lucide' | 'heroicons';
-export type IconType = 'solid' | 'outline' | undefined;
