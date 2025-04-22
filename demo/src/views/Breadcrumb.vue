@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import Breadcrumb from '@geonative/ui/components/breadcrumb/Breadcrumb.vue';
+import { Breadcrumb } from '@geonative/ui/components';
 import type { BreadcrumbType, BreadcrumbItemType } from '@geonative/ui/types';
 
 const breadcrumb: BreadcrumbType = {

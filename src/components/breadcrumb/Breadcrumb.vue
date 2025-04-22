@@ -17,7 +17,7 @@ import {
   Breadcrumb as ShadcnBreadcrumb,
   BreadcrumbList as ShadcnBreadcrumbList,
 } from '@geonative/ui/shadcn/ui/breadcrumb';
-import BreadcrumbItem from '@geonative/ui/components/breadcrumb/BreadcrumbItem.vue';
+import { BreadcrumbItem } from '@geonative/ui/components';
 import type { BreadcrumbType } from '@geonative/ui/types';
 
 const props = defineProps<{
