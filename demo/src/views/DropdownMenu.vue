@@ -5,7 +5,7 @@
       <p class="mb-3">default:</p>
       <DropdownMenu :sections="dropdownMenu.sections" :label="dropdownMenu.name">
         <Button
-          class="text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg"
+          class="text-blue-500 bg-blue-100 rounded-full"
           >Menu 1</Button
         >
       </DropdownMenu>
