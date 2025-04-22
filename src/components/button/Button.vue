@@ -1,25 +1,29 @@
 <template>
   <div class="inline-block" :style="{ width: width ? `${width}px` : 'auto' }">
-      <ShadcnButton
-        :class="
-          twMerge(
-            `relative flex w-full items-center justify-center rounded-md bg-primary text-white shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
-            props.disabled || props.loading ? 'cursor-not-allowed' : 'hover:opacity-80',
-            props.disabled ? 'opacity-80' : '',
-            props.class
-          )
-        "
-        :disabled="props.disabled || props.loading"
+    <ShadcnButton
+      :class="
+        twMerge(
+          `relative flex w-full items-center justify-center rounded-md bg-primary text-white shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
+          props.disabled || props.loading ? 'cursor-not-allowed' : 'hover:opacity-80',
+          props.disabled ? 'opacity-80' : '',
+          props.class
+        )
+      "
+      :disabled="props.disabled || props.loading"
+    >
+      <div
+        ref="slotRef"
+        class="flex items-center gap-2 whitespace-nowrap px-4 py-2"
+        :class="{ invisible: props.loading }"
       >
-        <div ref="slotRef" class="flex items-center gap-2 whitespace-nowrap px-4 py-2" :class="{ 'invisible': props.loading }">
-          <span><slot /></span>
-        </div>
+        <span><slot /></span>
+      </div>
 
-        <div ref="loaderRef" class="absolute flex items-center gap-2 px-4 py-2" :class="{ 'invisible': !props.loading }">
-          <Spinner :size="props.size" />
-          <span v-if="props.loadingText">{{ props.loadingText }}</span>
-        </div>
-      </ShadcnButton>
+      <div ref="loaderRef" class="absolute flex items-center gap-2 px-4 py-2" :class="{ invisible: !props.loading }">
+        <Spinner :size="props.size" />
+        <span v-if="props.loadingText">{{ props.loadingText }}</span>
+      </div>
+    </ShadcnButton>
   </div>
 </template>
 
@@ -78,7 +82,4 @@ onMounted(() => {
   const maxWidth = Math.max(loaderWidth || 0, slotWidth || 0);
   width.value = maxWidth ? maxWidth : null;
 });
-
-
-
 </script>
