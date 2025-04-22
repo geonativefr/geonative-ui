@@ -1,5 +1,4 @@
 <template>
-  <div>
     <ShadcnDropdownMenuSeparator v-if="props.showSeparator" />
     <div v-for="(item, index) in props.section" :key="index">
       <div v-if="item.sections && item.sections.length > 0">
@@ -29,7 +28,6 @@
         <DropdownMenuItem :item="item" />
       </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
