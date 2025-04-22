@@ -1,6 +1,6 @@
 <template>
   <div class="p-5">
-    <h1 class="mb-3">DROPDOWNMENU :</h1>
+    <h1 class="mb-3">Dropdown Menu :</h1>
     <div class="place-items-center">
       <p class="mb-3">default:</p>
       <DropdownMenu :sections="dropdownMenu.sections">

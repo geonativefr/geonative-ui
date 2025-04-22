@@ -1,12 +1,18 @@
 <template>
-  <div v-if="props.section && props.section.length > 0">
+  <div>
     <ShadcnDropdownMenuSeparator v-if="props.showSeparator" />
     <div v-for="(item, index) in props.section" :key="index">
       <div v-if="item.sections && item.sections.length > 0">
         <ShadcnDropdownMenuSub>
           <ShadcnDropdownMenuSubTrigger>
             <div class="flex items-center gap-2">
-              <Icon v-if="item.iconProps" v-bind="item.iconProps" />
+              <Icon
+                v-if="item.iconProps"
+                :name="item.iconProps.name"
+                :class="item.iconProps.class"
+                :source="item.iconProps.source"
+                :type="item.iconProps.type"
+              />
               <span>{{ item.label }}</span>
             </div>
           </ShadcnDropdownMenuSubTrigger>
