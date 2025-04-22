@@ -1,33 +1,33 @@
 <template>
-    <ShadcnDropdownMenuSeparator v-if="props.showSeparator" />
-    <div v-for="(item, index) in props.section" :key="index">
-      <div v-if="item.sections && item.sections.length > 0">
-        <ShadcnDropdownMenuSub>
-          <ShadcnDropdownMenuSubTrigger>
-            <div class="flex items-center gap-2">
-              <Icon
-                v-if="item.iconProps"
-                :name="item.iconProps.name"
-                :class="item.iconProps.class"
-                :source="item.iconProps.source"
-                :type="item.iconProps.type"
-              />
-              <span>{{ item.label }}</span>
+  <ShadcnDropdownMenuSeparator v-if="props.showSeparator" />
+  <div v-for="(item, index) in props.section" :key="index">
+    <div v-if="item.sections && item.sections.length > 0">
+      <ShadcnDropdownMenuSub>
+        <ShadcnDropdownMenuSubTrigger>
+          <div class="flex items-center gap-2">
+            <Icon
+              v-if="item.iconProps"
+              :name="item.iconProps.name"
+              :class="item.iconProps.class"
+              :source="item.iconProps.source"
+              :type="item.iconProps.type"
+            />
+            <span>{{ item.label }}</span>
+          </div>
+        </ShadcnDropdownMenuSubTrigger>
+        <ShadcnDropdownMenuPortal>
+          <ShadcnDropdownMenuSubContent>
+            <div v-for="(section, subIndex) in item.sections" :key="subIndex">
+              <DropdownMenuSection :section="section" :show-separator="subIndex !== 0" />
             </div>
-          </ShadcnDropdownMenuSubTrigger>
-          <ShadcnDropdownMenuPortal>
-            <ShadcnDropdownMenuSubContent>
-              <div v-for="(section, subIndex) in item.sections" :key="subIndex">
-                <DropdownMenuSection :section="section" :show-separator="subIndex !== 0" />
-              </div>
-            </ShadcnDropdownMenuSubContent>
-          </ShadcnDropdownMenuPortal>
-        </ShadcnDropdownMenuSub>
-      </div>
-      <div v-else>
-        <DropdownMenuItem :item="item" />
-      </div>
+          </ShadcnDropdownMenuSubContent>
+        </ShadcnDropdownMenuPortal>
+      </ShadcnDropdownMenuSub>
     </div>
+    <div v-else>
+      <DropdownMenuItem :item="item" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
