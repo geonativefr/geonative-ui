@@ -9,7 +9,7 @@ export interface DropdownMenuItem {
   iconProps?: {
     name: string;
     source: 'svg' | 'lucide' | 'heroicons';
-    type?: string;
+    type?: 'solid' | 'outline' | undefined;
     class?: string;
   };
   label?: string;
