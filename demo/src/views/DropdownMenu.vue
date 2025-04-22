@@ -49,17 +49,17 @@ const dropdownMenu: DropdownMenuType = {
             {
               label: 'Email',
               url: '/invite/email',
-              iconProps: { name: 'Mail', source: 'lucide', type: 'outline', class: 'h-4 w-4' },
+              iconProps: { name: 'Mail', source: 'lucide', class: 'h-4 w-4' },
             },
             {
               label: 'Phone',
               url: '/invite/phone',
-              iconProps: { name: 'Phone', source: 'lucide', type: 'outline', class: 'h-4 w-4' },
+              iconProps: { name: 'Phone', source: 'lucide', class: 'h-4 w-4' },
             },
             {
               label: 'Message',
               url: '/invite/message',
-              iconProps: { name: 'MessageCircle', source: 'lucide', type: 'outline', class: 'h-4 w-4' },
+              iconProps: { name: 'MessageCircle', source: 'lucide', class: 'h-4 w-4' },
             },
             {
               label: 'Link',
