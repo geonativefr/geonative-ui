@@ -34,7 +34,7 @@ import DropdownMenuSection from '@geonative/ui/components/dropdown-menu/Dropdown
 import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu.ts';
 
 const props = defineProps<{
-  sections: Array<DropdownMenuSectionType>;
+  sections?: Array<DropdownMenuSectionType>;
   label?: string;
   position?: 'right' | 'top' | 'bottom' | 'left';
   align?: 'start' | 'center' | 'end';

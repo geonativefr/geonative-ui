@@ -8,8 +8,6 @@
             <div class="flex items-center gap-2">
               <Icon
                 v-if="item.iconProps"
-                :name="item.iconProps.name"
-                :source="item.iconProps.source"
                 v-bind="item.iconProps"
               />
               <span>{{ item.label }}</span>

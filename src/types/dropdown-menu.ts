@@ -8,7 +8,7 @@ export type DropdownMenuSection = DropdownMenuItem[];
 export interface DropdownMenuItem {
   iconProps?: {
     name: string;
-    source: string;
+    source: 'svg' | 'lucide' | 'heroicons';
     type?: string;
     class?: string;
   };
