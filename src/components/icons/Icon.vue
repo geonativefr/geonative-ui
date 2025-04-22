@@ -1,5 +1,12 @@
 <template>
-  <component v-if="iconComponent" :is="iconComponent" :class="props.class" />
+  <component
+    v-if="iconComponent"
+    :is="iconComponent"
+    :class="twMerge(
+      'h-5 w-5',
+      props.class,
+    )"
+  />
   <span v-else class="rounded-md bg-gray-50 px-2 py-1 text-xs text-gray-600 ring-1 ring-gray-500/10">{{
     props.name
   }}</span>
@@ -10,15 +17,19 @@ import { computed, h } from 'vue';
 import type { Component } from 'vue';
 import * as lucideIcons from 'lucide-vue-next';
 import HeroIcons from './heroicons.ts';
+import { twMerge } from 'tailwind-merge';
 
-const props = withDefaults(defineProps<{
-  name: string,
-  class?: string,
-  source: 'svg' | 'lucide' | 'heroicons',
-  type?: 'solid' | 'outline', // Type for heroicons
-}>(), {
-  type: 'solid',
-});
+const props = withDefaults(
+  defineProps<{
+    name: string;
+    class?: string;
+    source: 'svg' | 'lucide' | 'heroicons';
+    type?: 'solid' | 'outline'; // Type for heroicons
+  }>(),
+  {
+    type: 'solid',
+  }
+);
 
 const iconComponent: Component = computed(() => {
   // Handle lucide icons

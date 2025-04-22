@@ -1,22 +1,29 @@
 <template>
   <span class="relative flex" :class="[sizeClass]">
     <span
-      class=""
       :class="
-        twMerge('absolute bg-primary inline-flex h-full w-full animate-ping rounded-full opacity-75', props.class)
+        twMerge(
+          `absolute bg-primary inline-flex animate-ping rounded-full opacity-75 ${sizeClass}`,
+          props.class
+        )
       "
     ></span>
-    <span class="" :class="twMerge(`relative bg-primary inline-flex rounded-full ${sizeClass}`, props.class)"></span>
+    <span
+      :class="twMerge(
+        `relative bg-primary inline-flex rounded-full ${sizeClass}`,
+        props.class
+      )"></span>
   </span>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
+import type { CustomSize } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
-    size?: 'sm' | 'md' | 'lg';
+    size?: CustomSize;
     class?: string;
   }>(),
   {
@@ -33,7 +40,7 @@ const sizeClass = computed(() => {
     case 'lg':
       return 'size-4';
     default:
-      return 'size-3';
+      return '';
   }
 });
 </script>

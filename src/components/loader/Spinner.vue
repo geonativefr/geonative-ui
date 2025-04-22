@@ -13,10 +13,11 @@
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import { Icon } from '@geonative/ui/components';
+import type { CustomSize } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
-    size?: 'sm' | 'md' | 'lg';
+    size?: CustomSize;
     class?: string;
   }>(),
   {
@@ -26,13 +27,13 @@ const props = withDefaults(
 const sizeClass = computed(() => {
   switch (props.size) {
     case 'sm':
-      return 'h-4 w-4';
+      return 'size-4';
     case 'md':
-      return 'h-6 w-6';
+      return 'size-5';
     case 'lg':
-      return 'h-8 w-8';
+      return 'size-6';
     default:
-      return 'h-6 w-6';
+      return '';
   }
 });
 </script>
