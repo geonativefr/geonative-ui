@@ -11,13 +11,14 @@ import type { Component } from 'vue';
 import * as lucideIcons from 'lucide-vue-next';
 import HeroIcons from './heroicons.ts';
 import { twMerge } from 'tailwind-merge';
+import type { IconType, IconSource } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
     name: string;
     class?: string;
-    source: 'svg' | 'lucide' | 'heroicons';
-    type?: 'solid' | 'outline'; // Type for heroicons
+    source: IconSource;
+    type?: IconType; // Type for heroicons
   }>(),
   {
     type: 'solid',
