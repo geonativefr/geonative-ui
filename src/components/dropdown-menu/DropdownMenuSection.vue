@@ -27,9 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import Icon from '@geonative/ui/components/icons/Icon.vue';
-import DropdownMenuItem from '@geonative/ui/components/dropdown-menu/DropdownMenuItem.vue';
-import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu.ts';
+import { Icon } from '@geonative/ui/components';
+import { DropdownMenuItem } from '@geonative/ui/components';
+import type { DropdownMenuSectionType } from '@geonative/ui/types';
 
 import {
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,

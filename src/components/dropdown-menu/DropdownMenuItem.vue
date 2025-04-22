@@ -23,14 +23,14 @@
 </template>
 
 <script setup lang="ts">
-import Icon from '@geonative/ui/components/icons/Icon.vue';
-import type { DropdownMenuItem as DropdownItemType } from '@geonative/ui/types/dropdown-menu';
+import { Icon } from '@geonative/ui/components';
 import {
   DropdownMenuItem as ShadcnDropdownMenuItem,
   DropdownMenuShortcut as ShadcnDropdownMenuShortcut,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
+import type { DropdownMenuItemType } from '@geonative/ui/types';
 
 const props = defineProps<{
-  item: DropdownItemType;
+  item: DropdownMenuItemType;
 }>();
 </script>

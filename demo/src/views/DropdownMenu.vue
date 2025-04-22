@@ -1,35 +1,23 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">DROPDOWNMENU :</h1>
-    <div class="grid grid-cols-1 gap-5 place-items-center">
+    <div class="place-items-center">
       <p class="mb-3">default:</p>
-      <DropdownMenu :sections="dropdownMenu.sections" :label="dropdownMenu.name">
-        <Button
-          class="text-blue-500 bg-blue-100 rounded-full"
-          >Menu 1</Button
-        >
+      <DropdownMenu :sections="dropdownMenu.sections">
+        <Button class="text-blue-500 bg-blue-100 rounded-full">Menu 1</Button>
       </DropdownMenu>
       <p class="mb-3 mt-30">position right + align end :</p>
-      <DropdownMenu
-        :sections="dropdownMenu.sections"
-        name="Menu 2"
-        :label="dropdownMenu.name"
-        position="right"
-        align="end"
-      >
-        <Button
-          class="text-white bg-gradient-to-r from-pink-500 to-pink-700 hover:from-pink-600 hover:to-pink-800 shadow-lg"
-          >Menu 2</Button
-        >
+      <DropdownMenu :sections="dropdownMenu.sections" :label="dropdownMenu.name" position="right" align="end">
+        <Button class="text-pink-500 bg-pink-100 rounded-full">Menu 2</Button>
       </DropdownMenu>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import DropdownMenu from '@geonative/ui/components/dropdown-menu/DropdownMenu.vue';
-import type { DropdownMenu as DropdownMenuType } from '@geonative/ui/types/dropdown-menu.ts';
-import Button from '@geonative/ui/components/button/Button.vue';
+import { DropdownMenu } from '@geonative/ui/components';
+import type { DropdownMenuType } from '@geonative/ui/types';
+import { Button } from '@geonative/ui/components';
 
 const dropdownMenu: DropdownMenuType = {
   name: 'Menu Label',

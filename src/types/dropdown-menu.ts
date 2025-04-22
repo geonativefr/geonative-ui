@@ -1,20 +1,23 @@
-export interface DropdownMenu {
+export interface DropdownMenuType {
   name?: string;
-  sections: DropdownMenuSection[];
+  sections: DropdownMenuSectionType[];
 }
 
-export type DropdownMenuSection = DropdownMenuItem[];
+export type DropdownMenuSectionType = DropdownMenuItemType[];
 
-export interface DropdownMenuItem {
+export interface DropdownMenuItemType {
   iconProps?: {
     name: string;
-    source: 'svg' | 'lucide' | 'heroicons';
-    type?: 'solid' | 'outline' | undefined;
+    source: IconSource;
+    type?: IconType;
     class?: string;
   };
   label?: string;
   url?: string;
   disabled?: boolean;
   shortcut?: string;
-  sections?: DropdownMenuSection[];
+  sections?: DropdownMenuSectionType[];
 }
+
+export type IconSource = 'svg' | 'lucide' | 'heroicons';
+export type IconType = 'solid' | 'outline' | undefined;

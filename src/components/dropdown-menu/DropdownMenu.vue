@@ -9,7 +9,7 @@
       :align="props.align"
       :side-offset="4"
     >
-      <div v-if="props.label != null">
+      <div v-if="props.label">
         <ShadcnDropdownMenuLabel class="text-center">{{ props.label }}</ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />
       </div>
@@ -30,13 +30,20 @@ import {
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
-import DropdownMenuSection from '@geonative/ui/components/dropdown-menu/DropdownMenuSection.vue';
-import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu.ts';
+import { DropdownMenuSection } from '@geonative/ui/components';
+import type { DropdownMenuSectionType } from '@geonative/ui/types';
 
-const props = defineProps<{
-  sections?: Array<DropdownMenuSectionType>;
-  label?: string;
-  position?: 'right' | 'top' | 'bottom' | 'left';
-  align?: 'start' | 'center' | 'end';
-}>();
+const props = withDefaults(
+  defineProps<{
+    sections: Array<DropdownMenuSectionType>;
+    label?: string;
+    position?: 'right' | 'top' | 'bottom' | 'left';
+    align?: 'start' | 'center' | 'end';
+  }>(),
+  {
+    label: '',
+    position: 'bottom',
+    align: 'center',
+  }
+);
 </script>
