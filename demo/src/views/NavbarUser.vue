@@ -1,12 +1,22 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">NAVBAR USER :</h1>
+    <p class="mb-3">with avatar:</p>
+    <NavbarUser :user="user" :dropdown="dropdownMenuNavbarUser">
+      <template #avatar>
+        <Avatar :url="user.avatar" :is-square="true" bg-color="red" :initials="user.name.slice(0, 2)" />
+      </template>
+    </NavbarUser>
+
+    <p class="mb-3 mt-10">without avatar:</p>
     <NavbarUser :user="user" :dropdown="dropdownMenuNavbarUser" />
   </div>
 </template>
 
 <script setup lang="ts">
-import NavbarUser from '@geonative/ui/components/navbar-user/NavbarUser.vue';
+import { Avatar, NavbarUser } from '@geonative/ui/components';
+import { computed } from 'vue';
+import type { DropdownMenuType } from '@geonative/ui/types';
 
 const user = {
   name: 'alice',
@@ -15,7 +25,7 @@ const user = {
     'https://avataaars.io/?avatarStyle=Transparent&topType=NoHair&accessoriesType=Blank&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light',
 };
 
-const dropdownMenuNavbarUser = {
+const dropdownMenuNavbarUser: DropdownMenuType = {
   sections: [
     [
       {
