@@ -1,6 +1,6 @@
 <template>
-  <ShadcnDropdownMenu>
-    <ShadcnDropdownMenuTrigger as-child>
+  <DropdownMenu :sections="props.sections">
+    <template #trigger>
       <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
         <div class="flex items-center gap-2">
           <slot name="avatar" />
@@ -11,37 +11,31 @@
           <ChevronsUpDown class="size-5 ml-6" />
         </div>
       </Button>
-    </ShadcnDropdownMenuTrigger>
-    <ShadcnDropdownMenuContent class="w-full min-w-56 rounded-lg" :side="'right'" align="end" :side-offset="4">
-      <ShadcnDropdownMenuLabel class="p-0">
-        <div class="flex items-center px-1 py-1.5 gap-2">
-          <slot name="avatar" />
-          <div class="grid">
-            <span class="font-semibold">{{ props.user.name }}</span>
-            <span class="text-xs">{{ props.user.email }}</span>
+    </template>
+
+      <div class="w-full min-w-56 rounded-lg">
+        <div class="p-0">
+          <div class="flex items-center px-1 py-1.5 gap-2">
+            <slot name="avatar" />
+            <div class="grid">
+              <span class="font-semibold">{{ props.user.name }}</span>
+              <span class="text-xs">{{ props.user.email }}</span>
+            </div>
           </div>
         </div>
-      </ShadcnDropdownMenuLabel>
-      <ShadcnDropdownMenuSeparator />
+        <hr class="my-2" />
 
-      <div v-for="(section, index) in props.sections" :key="index">
-        <DropdownMenuSection :section="section" :showSeparator="false" />
-        <ShadcnDropdownMenuSeparator v-if="index < props.sections.length - 1" />
+        <div v-for="(section, index) in props.sections" :key="index">
+          <DropdownMenuSection :section="section" :show-separator="false" />
+          <hr v-if="index < props.sections.length - 1" class="my-2" />
+        </div>
       </div>
-    </ShadcnDropdownMenuContent>
-  </ShadcnDropdownMenu>
+  </DropdownMenu>
 </template>
 
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
-import { Button, DropdownMenuSection } from '@geonative/ui/components';
-import {
-  DropdownMenuLabel as ShadcnDropdownMenuLabel,
-  DropdownMenu as ShadcnDropdownMenu,
-  DropdownMenuContent as ShadcnDropdownMenuContent,
-  DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
-  DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
-} from '@geonative/ui/shadcn/ui/dropdown-menu';
+import { Button, DropdownMenu, DropdownMenuSection } from '@geonative/ui/components';
 import type { NavbarUserType } from '@geonative/ui/types';
 
 const props = defineProps<NavbarUserType>();
