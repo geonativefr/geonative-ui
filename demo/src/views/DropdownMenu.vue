@@ -181,18 +181,6 @@ const dropdownMenu: DropdownMenuType = {
         url: '/pas-de-label',
       },
     ],
-    [
-      {
-        label: 'Pas url',
-      },
-      {
-        label: 'Url vide',
-        url: '',
-      },
-      {
-        url: '/pas-de-label',
-      },
-    ],
   ],
 };
 </script>
