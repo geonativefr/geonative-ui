@@ -48,6 +48,4 @@ import {
 import type { NavbarUserType } from '@geonative/ui/types';
 
 const props = defineProps<NavbarUserType>();
-
-
 </script>
