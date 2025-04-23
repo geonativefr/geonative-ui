@@ -37,10 +37,8 @@
 
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
-import Button from '@geonative/ui/components/button/Button.vue';
+import { Button, Avatar, DropdownMenuSection } from '@geonative/ui/components';
 import { computed } from 'vue';
-import Avatar from '@geonative/ui/components/avatar/Avatar.vue';
-import DropdownMenuSection from '@geonative/ui/components/dropdown-menu/DropdownMenuSection.vue';
 import {
   DropdownMenuLabel as ShadcnDropdownMenuLabel,
   DropdownMenu as ShadcnDropdownMenu,
@@ -48,19 +46,11 @@ import {
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
-import type { DropdownMenuSection as DropdownMenuSectionType } from '@geonative/ui/types/dropdown-menu';
+import type { NavbarUserType } from '@geonative/ui/types';
 
-
-const props = defineProps<{
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-  dropdown: {
-    sections: DropdownMenuSectionType[];
-  };
-}>();
+const props = defineProps<
+  NavbarUserType
+>();
 
 const avatarProps = computed(() => ({
   url: props.user.avatar,
