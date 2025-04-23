@@ -27,9 +27,9 @@
       </ShadcnDropdownMenuLabel>
       <ShadcnDropdownMenuSeparator />
 
-      <div v-for="(section, index) in props.dropdown.sections" :key="index">
+      <div v-for="(section, index) in props.sections" :key="index">
         <DropdownMenuSection :section="section" :showSeparator="false" />
-        <ShadcnDropdownMenuSeparator v-if="index < props.dropdown.sections.length - 1" />
+        <ShadcnDropdownMenuSeparator v-if="index < props.sections.length - 1" />
       </div>
     </ShadcnDropdownMenuContent>
   </ShadcnDropdownMenu>
