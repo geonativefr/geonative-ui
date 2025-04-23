@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 import { Avatar, NavbarUser } from '@geonative/ui/components';
-import { computed } from 'vue';
 import type { DropdownMenuType } from '@geonative/ui/types';
 
 const user = {
