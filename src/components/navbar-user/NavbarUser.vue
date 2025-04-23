@@ -3,7 +3,7 @@
     <ShadcnDropdownMenuTrigger as-child>
       <Button
         size="lg"
-        class="hover:bg-gray-100 text-black rounded-lg px-2 py-2"
+        class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6"
       >
         <div class="flex items-center gap-2">
           <Avatar v-bind="avatarProps" />
@@ -11,7 +11,7 @@
             <span class="font-semibold">{{ user.name }}</span>
             <span class="text-xs">{{ user.email }}</span>
           </span>
-          <ChevronsUpDown class="size-5 ml-4" />
+          <ChevronsUpDown class="size-5 ml-6" />
         </div>
       </Button>
     </ShadcnDropdownMenuTrigger>
