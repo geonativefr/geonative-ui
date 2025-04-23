@@ -6,5 +6,5 @@ export interface NavbarUserType {
     email: string;
     avatar?: string;
   };
-    sections: DropdownMenuSectionType[];
+  sections: DropdownMenuSectionType[];
 }
