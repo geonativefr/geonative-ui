@@ -8,8 +8,8 @@
         <div class="flex items-center gap-2">
           <slot name="avatar" />
           <span class="flex flex-col text-left text-sm">
-            <span class="font-semibold">{{ user.name }}</span>
-            <span class="text-xs">{{ user.email }}</span>
+            <span class="font-semibold">{{ props.user.name }}</span>
+            <span class="text-xs">{{ props.user.email }}</span>
           </span>
           <ChevronsUpDown class="size-5 ml-6" />
         </div>
@@ -20,8 +20,8 @@
         <div class="flex items-center px-1 py-1.5 gap-2">
           <slot name="avatar" />
           <div class="grid">
-            <span class="font-semibold">{{ user.name }}</span>
-            <span class="text-xs">{{ user.email }}</span>
+            <span class="font-semibold">{{ props.user.name }}</span>
+            <span class="text-xs">{{ props.user.email }}</span>
           </div>
         </div>
       </ShadcnDropdownMenuLabel>
