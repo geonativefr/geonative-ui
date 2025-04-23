@@ -1,6 +1,5 @@
 <template>
   <DropdownMenu :sections="props.sections" position="right" align="end">
-    <template #trigger>
       <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
         <div class="flex items-center gap-2">
           <slot name="avatar" />
@@ -11,7 +10,6 @@
           <ChevronsUpDown class="size-5 ml-6" />
         </div>
       </Button>
-    </template>
   </DropdownMenu>
 </template>
 
