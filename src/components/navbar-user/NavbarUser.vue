@@ -1,25 +1,27 @@
 <template>
   <ShadcnDropdownMenu>
     <ShadcnDropdownMenuTrigger as-child>
-      <button
+      <Button
         size="lg"
-        class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        class="hover:bg-gray-100 text-black rounded-lg px-2 py-2"
       >
-        <Avatar v-bind="avatarProps" />
-        <span class="grid flex-1 text-left text-sm leading-tight">
-          <span class="truncate font-semibold">{{ user.name }}</span>
-          <span class="truncate text-xs">{{ user.email }}</span>
-        </span>
-        <ChevronsUpDown class="ml-7 size-5" />
-      </button>
+        <div class="flex items-center gap-2">
+          <Avatar v-bind="avatarProps" />
+          <span class="flex flex-col text-left text-sm">
+            <span class="font-semibold">{{ user.name }}</span>
+            <span class="text-xs">{{ user.email }}</span>
+          </span>
+          <ChevronsUpDown class="size-5 ml-4" />
+        </div>
+      </Button>
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent class="w-full min-w-56 rounded-lg" :side="'right'" align="end" :side-offset="4">
-      <ShadcnDropdownMenuLabel class="p-0 font-normal">
-        <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+      <ShadcnDropdownMenuLabel class="p-0">
+        <div class="flex items-center px-1 py-1.5 gap-2">
           <Avatar v-bind="avatarProps" />
-          <div class="grid flex-1 text-left text-sm leading-tight">
-            <span class="truncate font-semibold">{{ user.name }}</span>
-            <span class="truncate text-xs">{{ user.email }}</span>
+          <div class="grid">
+            <span class="font-semibold">{{ user.name }}</span>
+            <span class="text-xs">{{ user.email }}</span>
           </div>
         </div>
       </ShadcnDropdownMenuLabel>
@@ -35,6 +37,7 @@
 
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
+import Button from '@geonative/ui/components/button/Button.vue';
 import { computed } from 'vue';
 import Avatar from '@geonative/ui/components/avatar/Avatar.vue';
 import DropdownMenuSection from '@geonative/ui/components/dropdown-menu/DropdownMenuSection.vue';
