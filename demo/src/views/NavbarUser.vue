@@ -2,14 +2,14 @@
   <div class="p-5">
     <h1 class="mb-3">NAVBAR USER :</h1>
     <p class="mb-3">with avatar:</p>
-    <NavbarUser :user="user" :dropdown="dropdownMenuNavbarUser">
+    <NavbarUser :user="user" :sections="dropdownMenuNavbarUser.sections">
       <template #avatar>
         <Avatar :url="user.avatar" :is-square="true" bg-color="red" :initials="user.name.slice(0, 2)" />
       </template>
     </NavbarUser>
 
     <p class="mb-3 mt-10">without avatar:</p>
-    <NavbarUser :user="user" :dropdown="dropdownMenuNavbarUser" />
+    <NavbarUser :user="user" :sections="dropdownMenuNavbarUser.sections" />
   </div>
 </template>
 
