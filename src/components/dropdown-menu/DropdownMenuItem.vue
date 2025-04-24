@@ -2,7 +2,7 @@
   <div v-if="props.item.label">
       <ShadcnDropdownMenuItem :disabled="props.item.action == '' || props.item.disabled">
 
-        <div v-if="typeof props.item.action === 'function'" @click="props.item.action" class="flex justify-between items-center w-full">
+        <div v-if="isFunctionLink" @click="props.item.action" class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
               v-if="item.iconProps"
@@ -18,7 +18,7 @@
           </ShadcnDropdownMenuShortcut>
         </div>
 
-        <a v-else-if="typeof props.item.action === 'string' && props.item.action.startsWith('http')" :href="props.item.action" class="flex justify-between items-center w-full">
+        <a v-else-if="isExternalLink" :href="props.item.action" class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
               v-if="item.iconProps"
@@ -34,7 +34,7 @@
           </ShadcnDropdownMenuShortcut>
         </a>
 
-        <router-link v-else-if="typeof props.item.action === 'string'" :to="props.item.action" class="flex justify-between items-center w-full">
+        <router-link v-else-if="isInternalLink" :to="props.item.action" class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
               v-if="item.iconProps"
@@ -77,4 +77,8 @@ import type { DropdownMenuItemType } from '@geonative/ui/types';
 const props = defineProps<{
   item: DropdownMenuItemType;
 }>();
+
+const isInternalLink = typeof props.item.action === 'string';
+const isExternalLink = typeof props.item.action === 'string' && props.item.action.startsWith('http');
+const isFunctionLink = typeof props.item.action === 'function';
 </script>
