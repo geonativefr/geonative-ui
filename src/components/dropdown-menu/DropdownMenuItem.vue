@@ -1,68 +1,75 @@
 <template>
   <div v-if="props.item.label">
-      <ShadcnDropdownMenuItem :disabled="props.item.action == '' || props.item.disabled">
-
-        <div v-if="isFunctionLink" @click="props.item.action" class="flex justify-between items-center w-full">
-          <div class="flex items-center gap-2">
-            <Icon
-              v-if="item.iconProps"
-              :name="item.iconProps.name"
-              :class="item.iconProps.class"
-              :source="item.iconProps.source"
-              :type="item.iconProps.type"
-            />
-            <span>{{ props.item.label }}</span>
-          </div>
-          <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
-            {{ props.item.shortcut }}
-          </ShadcnDropdownMenuShortcut>
+    <ShadcnDropdownMenuItem :disabled="props.item.action == '' || props.item.disabled">
+      <div v-if="isFunctionLink" @click="props.item.action" class="flex justify-between items-center w-full">
+        <div class="flex items-center gap-2">
+          <Icon
+            v-if="item.iconProps"
+            :name="item.iconProps.name"
+            :class="item.iconProps.class"
+            :source="item.iconProps.source"
+            :type="item.iconProps.type"
+          />
+          <span>{{ props.item.label }}</span>
         </div>
+        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+          {{ props.item.shortcut }}
+        </ShadcnDropdownMenuShortcut>
+      </div>
 
-        <a v-else-if="isExternalLink" :href="props.item.action" class="flex justify-between items-center w-full">
-          <div class="flex items-center gap-2">
-            <Icon
-              v-if="item.iconProps"
-              :name="item.iconProps.name"
-              :class="item.iconProps.class"
-              :source="item.iconProps.source"
-              :type="item.iconProps.type"
-            />
-            <span>{{ props.item.label }}</span>
-          </div>
-          <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
-            {{ props.item.shortcut }}
-          </ShadcnDropdownMenuShortcut>
-        </a>
-
-        <router-link v-else-if="isInternalLink" :to="props.item.action" class="flex justify-between items-center w-full">
-          <div class="flex items-center gap-2">
-            <Icon
-              v-if="item.iconProps"
-              :name="item.iconProps.name"
-              :class="item.iconProps.class"
-              :source="item.iconProps.source"
-              :type="item.iconProps.type"
-            />
-            <span>{{ props.item.label }}</span>
-          </div>
-          <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
-            {{ props.item.shortcut }}
-          </ShadcnDropdownMenuShortcut>
-        </router-link>
-
-        <div v-else class="flex justify-between items-center w-full">
-          <div class="flex items-center gap-2">
-            <Icon
-              v-if="item.iconProps"
-              :name="item.iconProps.name"
-              :class="item.iconProps.class"
-              :source="item.iconProps.source"
-              :type="item.iconProps.type"
-            />
-            <span>{{ props.item.label }}</span>
-          </div>
+      <a
+        v-else-if="isExternalLink"
+        :href="props.item.action as string"
+        class="flex justify-between items-center w-full"
+      >
+        <div class="flex items-center gap-2">
+          <Icon
+            v-if="item.iconProps"
+            :name="item.iconProps.name"
+            :class="item.iconProps.class"
+            :source="item.iconProps.source"
+            :type="item.iconProps.type"
+          />
+          <span>{{ props.item.label }}</span>
         </div>
-      </ShadcnDropdownMenuItem>
+        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+          {{ props.item.shortcut }}
+        </ShadcnDropdownMenuShortcut>
+      </a>
+
+      <router-link
+        v-else-if="isInternalLink"
+        :to="props.item.action as string"
+        class="flex justify-between items-center w-full"
+      >
+        <div class="flex items-center gap-2">
+          <Icon
+            v-if="item.iconProps"
+            :name="item.iconProps.name"
+            :class="item.iconProps.class"
+            :source="item.iconProps.source"
+            :type="item.iconProps.type"
+          />
+          <span>{{ props.item.label }}</span>
+        </div>
+        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+          {{ props.item.shortcut }}
+        </ShadcnDropdownMenuShortcut>
+      </router-link>
+
+      <div v-else class="flex justify-between items-center w-full">
+        <div class="flex items-center gap-2">
+          <Icon
+            v-if="item.iconProps"
+            :name="item.iconProps.name"
+            :class="item.iconProps.class"
+            :source="item.iconProps.source"
+            :type="item.iconProps.type"
+          />
+          <span>{{ props.item.label }}</span>
+        </div>
+      </div>
+    </ShadcnDropdownMenuItem>
   </div>
 </template>
 
