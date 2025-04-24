@@ -2,25 +2,25 @@
   <div class="p-5">
     <h1 class="mb-3">NAVBAR USER :</h1>
     <p class="mb-3">with avatar:</p>
-    <NavbarUser :dropdown="dropdownMenuNavbarUser">
+    <NavbarDropdown :dropdown="dropdown">
       <Avatar :url="user.avatar" :is-square="true" class="bg-red-500" :initials="user.name.slice(0, 2)" />
       <span class="flex flex-col text-left text-sm">
         <span class="font-semibold">{{ user.name }}</span>
         <span class="text-xs">{{ user.email }}</span>
       </span>
-    </NavbarUser>
+    </NavbarDropdown>
     <p class="mb-3 mt-10">without avatar:</p>
-    <NavbarUser :dropdown="dropdownMenuNavbarUser">
+    <NavbarDropdown :dropdown="dropdown">
       <span class="flex flex-col text-left text-sm">
         <span class="font-semibold">{{ user.name }}</span>
         <span class="text-xs">{{ user.email }}</span>
       </span>
-    </NavbarUser>
+    </NavbarDropdown>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Avatar, NavbarUser } from '@geonative/ui/components';
+import { Avatar, NavbarDropdown } from '@geonative/ui/components';
 import type { DropdownMenuType } from '@geonative/ui/types';
 
 const user = {
@@ -30,7 +30,7 @@ const user = {
     'https://avataaars.io/?avatarStyle=Transparent&topType=NoHair&accessoriesType=Blank&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light',
 };
 
-const dropdownMenuNavbarUser: DropdownMenuType = {
+const dropdown: DropdownMenuType = {
   sections: [
     [
       {
