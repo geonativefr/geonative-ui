@@ -11,7 +11,7 @@
     >
       <div v-if="$slots.label">
         <ShadcnDropdownMenuLabel class="text-center">
-          <slot name="label"/>
+          <slot name="label" />
         </ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />
       </div>
