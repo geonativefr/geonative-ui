@@ -3,7 +3,7 @@
     <h1 class="mb-3">NAVBAR USER :</h1>
     <p class="mb-3">with avatar:</p>
     <NavbarUser :user="user" :sections="dropdownMenuNavbarUser.sections">
-        <Avatar :url="user.avatar" :is-square="true" bg-color="red" :initials="user.name.slice(0, 2)" />
+      <Avatar :url="user.avatar" :is-square="true" bg-color="red" :initials="user.name.slice(0, 2)" />
     </NavbarUser>
     <p class="mb-3 mt-10">without avatar:</p>
     <NavbarUser :user="user" :sections="dropdownMenuNavbarUser.sections" />

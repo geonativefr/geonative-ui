@@ -1,15 +1,15 @@
 <template>
   <DropdownMenu :sections="props.sections" position="right" align="end">
-      <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
-        <div class="flex items-center gap-2">
-          <slot />
-          <span class="flex flex-col text-left text-sm">
-            <span class="font-semibold">{{ props.user.name }}</span>
-            <span class="text-xs">{{ props.user.email }}</span>
-          </span>
-          <ChevronsUpDown class="size-5 ml-6" />
-        </div>
-      </Button>
+    <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
+      <div class="flex items-center gap-2">
+        <slot />
+        <span class="flex flex-col text-left text-sm">
+          <span class="font-semibold">{{ props.user.name }}</span>
+          <span class="text-xs">{{ props.user.email }}</span>
+        </span>
+        <ChevronsUpDown class="size-5 ml-6" />
+      </div>
+    </Button>
   </DropdownMenu>
 </template>
 
@@ -22,5 +22,4 @@ const props = defineProps<{
   user: User;
   sections: DropdownMenuSectionType[];
 }>();
-
 </script>
