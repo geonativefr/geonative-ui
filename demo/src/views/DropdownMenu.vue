@@ -4,18 +4,14 @@
     <div class="place-items-center">
       <p class="mb-3">default:</p>
       <DropdownMenu :sections="dropdownMenu">
-        <template #trigger>
           <Button class="text-blue-500 bg-blue-100 rounded-full">Menu 1</Button>
-        </template>
-        <template #label>
-          <p>Menu Label</p>
+        <template #header>
+          <p>Menu Header</p>
         </template>
       </DropdownMenu>
       <p class="mb-3 mt-30">position right + align end :</p>
       <DropdownMenu :sections="dropdownMenu" position="right" align="end">
-        <template #trigger>
           <Button class="text-pink-500 bg-pink-100 rounded-full">Menu 2</Button>
-        </template>
       </DropdownMenu>
     </div>
   </div>
