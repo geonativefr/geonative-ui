@@ -1,7 +1,7 @@
 <template>
   <ShadcnDropdownMenu>
     <ShadcnDropdownMenuTrigger>
-      <slot />
+      <slot name="trigger" />
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
@@ -9,8 +9,10 @@
       :align="props.align"
       :side-offset="4"
     >
-      <div v-if="props.label">
-        <ShadcnDropdownMenuLabel class="text-center">{{ props.label }}</ShadcnDropdownMenuLabel>
+      <div v-if="$slots.header">
+        <ShadcnDropdownMenuLabel class="text-center">
+          <slot name="header" />
+        </ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />
       </div>
       <div>
@@ -36,12 +38,10 @@ import type { DropdownMenuSectionType } from '@geonative/ui/types';
 const props = withDefaults(
   defineProps<{
     sections: Array<DropdownMenuSectionType>;
-    label?: string;
     position?: 'right' | 'top' | 'bottom' | 'left';
     align?: 'start' | 'center' | 'end';
   }>(),
   {
-    label: '',
     position: 'bottom',
     align: 'center',
   }
