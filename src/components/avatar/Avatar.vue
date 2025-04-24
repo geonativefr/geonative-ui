@@ -1,7 +1,5 @@
 <template>
-  <ShadcnAvatar
-    :class="twMerge(props.isSquare ? 'h-8 w-8 rounded-lg' : '', props.class)"
-  >
+  <ShadcnAvatar :class="twMerge(props.isSquare ? 'h-8 w-8 rounded-lg' : '', props.class)">
     <ShadcnAvatarImage :src="props.url ?? ''" alt="Avatar" />
     <ShadcnAvatarFallback :class="props.class">
       <span v-if="props.initials" class="text-md font-bold">
@@ -21,15 +19,18 @@ import {
   AvatarFallback as ShadcnAvatarFallback,
 } from '@geonative/ui/shadcn/ui/avatar';
 
-const props = withDefaults(defineProps<{
-  url?: string;
-  initials?: string;
-  isSquare?: boolean;
-  class?: string;
-}>(), {
-  url: '',
-  initials: '',
-  isSquare: false,
-  class: '',
-});
+const props = withDefaults(
+  defineProps<{
+    url?: string;
+    initials?: string;
+    isSquare?: boolean;
+    class?: string;
+  }>(),
+  {
+    url: '',
+    initials: '',
+    isSquare: false,
+    class: '',
+  }
+);
 </script>
