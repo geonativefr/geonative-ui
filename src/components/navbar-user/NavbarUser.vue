@@ -1,5 +1,5 @@
 <template>
-  <DropdownMenu :sections="props.sections" position="right" align="end">
+  <DropdownMenu :dropdown="props.dropdown" position="right" align="end">
     <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
       <div class="flex items-center gap-2">
         <slot />
@@ -17,9 +17,9 @@
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
 import { Button, DropdownMenu } from '@geonative/ui/components';
-import type { DropdownMenuSectionType } from '@geonative/ui/types';
+import type { DropdownMenuType } from '@geonative/ui/types';
 
 const props = defineProps<{
-  sections: DropdownMenuSectionType[];
+  dropdown: DropdownMenuType;
 }>();
 </script>

@@ -2,7 +2,7 @@
   <div class="p-5">
     <h1 class="mb-3">NAVBAR USER :</h1>
     <p class="mb-3">with avatar:</p>
-    <NavbarUser :sections="dropdownMenuNavbarUser.sections">
+    <NavbarUser :dropdown="dropdownMenuNavbarUser">
       <Avatar :url="user.avatar" :is-square="true" class="bg-red-500" :initials="user.name.slice(0, 2)" />
       <span class="flex flex-col text-left text-sm">
         <span class="font-semibold">{{ user.name }}</span>
@@ -10,7 +10,7 @@
       </span>
     </NavbarUser>
     <p class="mb-3 mt-10">without avatar:</p>
-    <NavbarUser :sections="dropdownMenuNavbarUser.sections">
+    <NavbarUser :dropdown="dropdownMenuNavbarUser.sections">
       <span class="flex flex-col text-left text-sm">
         <span class="font-semibold">{{ user.name }}</span>
         <span class="text-xs">{{ user.email }}</span>
