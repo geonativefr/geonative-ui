@@ -28,62 +28,62 @@ const dropdownMenu: DropdownMenuType = {
     [
       {
         label: 'Team',
-        url: '/team',
+        action: '/team',
         iconProps: { name: 'users', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Invite users',
-        url: '/invite',
+        action: '/invite',
         iconProps: { name: 'UserPlus', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
         sections: [
           [
             {
               label: 'Email',
-              url: '/invite/email',
+              action: '/invite/email',
               iconProps: { name: 'Mail', source: 'lucide', class: 'h-4 w-4' },
             },
             {
               label: 'Phone',
-              url: '/invite/phone',
+              action: '/invite/phone',
               iconProps: { name: 'Phone', source: 'lucide', class: 'h-4 w-4' },
             },
             {
               label: 'Message',
-              url: '/invite/message',
+              action: '/invite/message',
               iconProps: { name: 'MessageCircle', source: 'lucide', class: 'h-4 w-4' },
             },
             {
               label: 'Link',
-              url: '/invite/link',
+              action: '/invite/link',
               iconProps: { name: 'link', source: 'heroicons', class: 'h-4 w-4' },
               sections: [
                 [
                   {
                     label: 'Copy',
-                    url: '/invite/link/copy',
+                    action: '/invite/link/copy',
                     iconProps: { name: 'Clipboard', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
                   },
                   {
                     label: 'Share',
-                    url: '/invite/link/share',
+                    action: '/invite/link/share',
                     iconProps: { name: 'Share', source: 'lucide', class: 'h-4 w-4' },
                     sections: [
                       [
-                        { label: 'Facebook', url: '/invite/link/share/facebook' },
-                        { label: 'Twitter', url: '/invite/link/share/twitter' },
+                        { label: 'Facebook', action: '/invite/link/share/facebook' },
+                        { label: 'Twitter', action: '/invite/link/share/twitter' },
                       ],
                     ],
                   },
-                  { label: 'Send', url: '/invite/link/send' },
+                  { label: 'Send', action: '/invite/link/send' },
                 ],
                 [
-                  { label: 'Image', url: '/invite/link/share/image' },
-                  { label: 'Text', url: '/invite/link/share/text' },
-                  { label: 'Video', url: '/invite/link/share/video' },
+                  { label: 'Image', action: '/invite/link/share/image' },
+                  { label: 'Text', action: '/invite/link/share/text' },
+                  { label: 'Video', action: '/invite/link/share/video' },
                 ],
                 [
-                  { label: 'Friends', url: '/invite/link/share/friends' },
-                  { label: 'Everyone', url: '/invite/link/share/everyone' },
+                  { label: 'Friends', action: '/invite/link/share/friends' },
+                  { label: 'Everyone', action: '/invite/link/share/everyone' },
                 ],
               ],
             },
@@ -92,20 +92,27 @@ const dropdownMenu: DropdownMenuType = {
       },
       {
         label: 'Create team',
-        url: '/create-team',
+        action: '/create-team',
         iconProps: { name: 'PlusCircle', source: 'lucide', class: 'h-4 w-4' },
+      },
+    ],
+    [
+      {
+        label: 'Alert',
+        action: () => alert('Alert'),
+        iconProps: { name: 'bell', source: 'heroicons', type: 'solid', class: 'h-5 w-5 text-red-500' },
       },
     ],
     [
       {
         label: 'GitHub',
         shortcut: '⌘+G',
-        url: 'https://github.com',
+        action: 'https://github.com',
         iconProps: { name: 'Code', source: 'lucide', class: 'h-4 w-4' },
       },
       {
         label: 'Support',
-        url: '/support',
+        action: '/support',
         iconProps: { name: 'HelpCircle', source: 'lucide', class: 'h-4 w-4' },
         sections: [],
       },
@@ -113,27 +120,27 @@ const dropdownMenu: DropdownMenuType = {
         label: 'API',
         shortcut: '⌘+A',
         disabled: true,
-        url: '/api',
+        action: '/api',
         iconProps: { name: 'server', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Settings',
-        url: '/settings',
+        action: '/settings',
         iconProps: { name: 'wrench', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
         sections: [
           [
-            { label: 'Profile', url: '/settings/profile' },
-            { label: 'Account', url: '/settings/account' },
+            { label: 'Profile', action: '/settings/profile' },
+            { label: 'Account', action: '/settings/account' },
           ],
           [
             {
               label: 'Security',
-              url: '/settings/security',
+              action: '/settings/security',
               iconProps: { name: 'shield-check', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
             },
             {
               label: 'Privacy',
-              url: '/settings/privacy',
+              action: '/settings/privacy',
               iconProps: { name: 'lock-closed', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
             },
           ],
@@ -143,32 +150,32 @@ const dropdownMenu: DropdownMenuType = {
     [
       {
         label: 'Home',
-        url: '/',
+        action: '/',
         iconProps: { name: 'home', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Avatar',
-        url: '/avatar',
+        action: '/avatar',
         iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Breadcrumb',
-        url: '/breadcrumb',
+        action: '/breadcrumb',
         iconProps: { name: 'AlertCircle', source: 'lucide', class: 'h-4 w-4' },
       },
       {
         label: 'Loader',
-        url: '/loader',
+        action: '/loader',
         iconProps: { name: 'arrow-path', source: 'heroicons', class: 'h-4 w-4' },
       },
       {
         label: 'Icon',
-        url: '/icon',
+        action: '/icon',
         iconProps: { name: 'beaker', source: 'heroicons', class: 'h-4 w-4' },
       },
       {
         label: 'Button',
-        url: '/button',
+        action: '/button',
         iconProps: { name: 'rectangle-stack', source: 'heroicons', class: 'h-4 w-4' },
       },
     ],
@@ -178,10 +185,10 @@ const dropdownMenu: DropdownMenuType = {
       },
       {
         label: 'Url vide',
-        url: '',
+        action: '',
       },
       {
-        url: '/pas-de-label',
+        action: '/pas-de-label',
       },
     ],
   ],
