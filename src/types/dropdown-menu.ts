@@ -1,7 +1,6 @@
 import type { IconSource, IconType } from './icon.ts';
 
 export interface DropdownMenuType {
-  label?: string;
   sections: DropdownMenuSectionType[];
 }
 

@@ -1,7 +1,7 @@
 <template>
   <ShadcnDropdownMenu>
     <ShadcnDropdownMenuTrigger>
-      <slot />
+      <slot name="trigger" />
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
       class="w-full min-w-56 rounded-lg"
@@ -9,8 +9,10 @@
       :align="props.align"
       :side-offset="4"
     >
-      <div v-if="props.label">
-        <ShadcnDropdownMenuLabel class="text-center">{{ props.label }}</ShadcnDropdownMenuLabel>
+      <div v-if="$slots.label">
+        <ShadcnDropdownMenuLabel class="text-center">
+          <slot name="label"/>
+        </ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />
       </div>
       <div>
