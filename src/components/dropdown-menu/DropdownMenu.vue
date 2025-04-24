@@ -9,12 +9,16 @@
       :align="props.align"
       :side-offset="4"
     >
-      <div v-if="props.label">
-        <ShadcnDropdownMenuLabel class="text-center">{{ props.label }}</ShadcnDropdownMenuLabel>
+      <div v-if="$slots.header || props.dropdown.label">
+        <ShadcnDropdownMenuLabel>
+          <slot name="header">
+            <p>{{ props.dropdown.label }}</p>
+          </slot>
+        </ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />
       </div>
       <div>
-        <div v-for="(section, index) in props.sections" :key="index">
+        <div v-for="(section, index) in props.dropdown.sections" :key="index">
           <DropdownMenuSection :section="section" :show-separator="index > 0" />
         </div>
       </div>
@@ -31,17 +35,15 @@ import {
   DropdownMenuSeparator as ShadcnDropdownMenuSeparator,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
 import { DropdownMenuSection } from '@geonative/ui/components';
-import type { DropdownMenuSectionType } from '@geonative/ui/types';
+import type { DropdownMenuType } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
-    sections: Array<DropdownMenuSectionType>;
-    label?: string;
+    dropdown: DropdownMenuType;
     position?: 'right' | 'top' | 'bottom' | 'left';
     align?: 'start' | 'center' | 'end';
   }>(),
   {
-    label: '',
     position: 'bottom',
     align: 'center',
   }

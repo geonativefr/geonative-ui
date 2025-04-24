@@ -5,3 +5,4 @@ export * from './loader';
 export * from './markdown';
 export * from './icons';
 export * from './dropdown-menu';
+export * from './navbar';

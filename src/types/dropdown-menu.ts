@@ -1,4 +1,4 @@
-import type { IconSource, IconType } from './icon.ts';
+import type { IconProps } from './icon.ts';
 
 export interface DropdownMenuType {
   label?: string;
@@ -8,12 +8,7 @@ export interface DropdownMenuType {
 export type DropdownMenuSectionType = DropdownMenuItemType[];
 
 export interface DropdownMenuItemType {
-  iconProps?: {
-    name: string;
-    source: IconSource;
-    type?: IconType;
-    class?: string;
-  };
+  iconProps?: IconProps;
   label?: string;
   url?: string;
   disabled?: boolean;
