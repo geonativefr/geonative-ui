@@ -16,7 +16,7 @@
             {{ props.item.shortcut }}
           </ShadcnDropdownMenuShortcut>
         </router-link>
-        <a v-else-if="typeof props.item.action === 'function'" @click="props.item.action" class="flex justify-between items-center w-full">
+        <div v-else-if="typeof props.item.action === 'function'" @click="props.item.action" class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
               v-if="item.iconProps"
@@ -30,7 +30,7 @@
           <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
             {{ props.item.shortcut }}
           </ShadcnDropdownMenuShortcut>
-        </a>
+        </div>
         <div v-else class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
