@@ -10,7 +10,7 @@
       :side-offset="4"
     >
       <div v-if="$slots.header">
-        <ShadcnDropdownMenuLabel class="text-center">
+        <ShadcnDropdownMenuLabel>
           <slot name="header" />
         </ShadcnDropdownMenuLabel>
         <ShadcnDropdownMenuSeparator />

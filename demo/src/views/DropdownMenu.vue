@@ -4,6 +4,9 @@
     <div class="place-items-center">
       <p class="mb-3">default:</p>
       <DropdownMenu :sections="dropdownMenu.sections">
+        <template #header>
+          <p class="font-semibold w-full text-center">{{ dropdownMenu.label }}</p>
+        </template>
         <Button class="text-blue-500 bg-blue-100 rounded-full">Menu 1</Button>
       </DropdownMenu>
       <p class="mb-3 mt-30">position right + align end :</p>
