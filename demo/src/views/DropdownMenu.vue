@@ -99,7 +99,7 @@ const dropdownMenu: DropdownMenuType = {
     [
       {
         label: 'Alert',
-        action: () => alert('Alert'),
+        action: () => { alert('Alert'); console.log('Alert'); },
         iconProps: { name: 'bell', source: 'heroicons', type: 'solid', class: 'h-5 w-5 text-red-500' },
       },
     ],
