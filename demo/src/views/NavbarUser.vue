@@ -10,7 +10,7 @@
       </span>
     </NavbarUser>
     <p class="mb-3 mt-10">without avatar:</p>
-    <NavbarUser :dropdown="dropdownMenuNavbarUser.sections">
+    <NavbarUser :dropdown="dropdownMenuNavbarUser">
       <span class="flex flex-col text-left text-sm">
         <span class="font-semibold">{{ user.name }}</span>
         <span class="text-xs">{{ user.email }}</span>
