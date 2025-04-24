@@ -1,8 +1,23 @@
 <template>
   <div v-if="props.item.label">
     <div>
-      <ShadcnDropdownMenuItem :disabled="!props.item.url || props.item.url === '' || props.item.disabled">
-        <a v-if="props.item.url" :href="props.item.url" class="flex justify-between items-center w-full">
+      <ShadcnDropdownMenuItem :disabled="props.item.action == '' || props.item.disabled">
+        <router-link v-if="typeof props.item.action === 'string'" :to="props.item.action" class="flex justify-between items-center w-full">
+          <div class="flex items-center gap-2">
+            <Icon
+              v-if="item.iconProps"
+              :name="item.iconProps.name"
+              :class="item.iconProps.class"
+              :source="item.iconProps.source"
+              :type="item.iconProps.type"
+            />
+            <span>{{ props.item.label }}</span>
+          </div>
+          <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+            {{ props.item.shortcut }}
+          </ShadcnDropdownMenuShortcut>
+        </router-link>
+        <a v-else-if="typeof props.item.action === 'function'" @click="props.item.action" class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
             <Icon
               v-if="item.iconProps"
