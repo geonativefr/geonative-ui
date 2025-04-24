@@ -4,11 +4,11 @@
     <div class="place-items-center">
       <p class="mb-3">default:</p>
       <DropdownMenu :sections="dropdownMenu.sections">
-          <Button class="text-blue-500 bg-blue-100 rounded-full">Menu 1</Button>
+        <Button class="text-blue-500 bg-blue-100 rounded-full">Menu 1</Button>
       </DropdownMenu>
       <p class="mb-3 mt-30">position right + align end :</p>
       <DropdownMenu :sections="dropdownMenu.sections" :label="dropdownMenu.label" position="right" align="end">
-          <Button class="text-pink-500 bg-pink-100 rounded-full">Menu 2</Button>
+        <Button class="text-pink-500 bg-pink-100 rounded-full">Menu 2</Button>
       </DropdownMenu>
     </div>
   </div>
