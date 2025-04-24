@@ -16,7 +16,11 @@
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
 import { Button, DropdownMenu } from '@geonative/ui/components';
-import type { NavbarUserType } from '@geonative/ui/types';
+import type { User, DropdownMenuSectionType } from '@geonative/ui/types';
 
-const props = defineProps<NavbarUserType>();
+const props = defineProps<{
+  user: User;
+  sections: DropdownMenuSectionType[];
+}>();
+
 </script>
