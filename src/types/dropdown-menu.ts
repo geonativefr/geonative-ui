@@ -1,9 +1,5 @@
 import type { IconSource, IconType } from './icon.ts';
 
-export interface DropdownMenuType {
-  sections: DropdownMenuSectionType[];
-}
-
 export type DropdownMenuSectionType = DropdownMenuItemType[];
 
 export interface DropdownMenuItemType {

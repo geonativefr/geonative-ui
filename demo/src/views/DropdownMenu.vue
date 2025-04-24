@@ -3,7 +3,7 @@
     <h1 class="mb-3">Dropdown Menu :</h1>
     <div class="place-items-center">
       <p class="mb-3">default:</p>
-      <DropdownMenu :sections="dropdownMenu.sections">
+      <DropdownMenu :sections="dropdownMenu">
         <template #trigger>
           <Button class="text-blue-500 bg-blue-100 rounded-full">Menu 1</Button>
         </template>
@@ -12,7 +12,7 @@
         </template>
       </DropdownMenu>
       <p class="mb-3 mt-30">position right + align end :</p>
-      <DropdownMenu :sections="dropdownMenu.sections" position="right" align="end">
+      <DropdownMenu :sections="dropdownMenu" position="right" align="end">
         <template #trigger>
           <Button class="text-pink-500 bg-pink-100 rounded-full">Menu 2</Button>
         </template>
@@ -23,11 +23,10 @@
 
 <script setup lang="ts">
 import { DropdownMenu } from '@geonative/ui/components';
-import type { DropdownMenuType } from '@geonative/ui/types';
+import type { DropdownMenuSectionType } from '@geonative/ui/types';
 import { Button } from '@geonative/ui/components';
 
-const dropdownMenu: DropdownMenuType = {
-  sections: [
+const dropdownMenu: DropdownMenuSectionType[] = [
     [
       {
         label: 'Team',
@@ -187,6 +186,5 @@ const dropdownMenu: DropdownMenuType = {
         url: '/pas-de-label',
       },
     ],
-  ],
-};
+]
 </script>
