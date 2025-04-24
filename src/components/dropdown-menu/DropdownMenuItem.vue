@@ -1,6 +1,5 @@
 <template>
   <div v-if="props.item.label">
-    <div>
       <ShadcnDropdownMenuItem :disabled="props.item.action == '' || props.item.disabled">
         <router-link v-if="typeof props.item.action === 'string'" :to="props.item.action" class="flex justify-between items-center w-full">
           <div class="flex items-center gap-2">
@@ -45,7 +44,6 @@
           </div>
         </div>
       </ShadcnDropdownMenuItem>
-    </div>
   </div>
 </template>
 
