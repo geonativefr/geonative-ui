@@ -1,7 +1,7 @@
 <template>
   <div v-if="props.item.label">
     <ShadcnDropdownMenuItem :disabled="props.item.action == '' || props.item.disabled">
-      <div v-if="isFunctionLink" @click="props.item.action" class="flex justify-between items-center w-full">
+      <div v-if="isFunctionLink" @click="AlertFunction" class="flex justify-between items-center w-full">
         <div class="flex items-center gap-2">
           <Icon
             v-if="item.iconProps"
@@ -84,6 +84,12 @@ import type { DropdownMenuItemType } from '@geonative/ui/types';
 const props = defineProps<{
   item: DropdownMenuItemType;
 }>();
+
+const AlertFunction = () => {
+  if (typeof props.item.action === 'function') {
+    props.item.action();
+  }
+};
 
 const isInternalLink = typeof props.item.action === 'string';
 const isExternalLink = typeof props.item.action === 'string' && props.item.action.startsWith('http');
