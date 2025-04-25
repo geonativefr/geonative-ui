@@ -1,7 +1,6 @@
 import { toast } from 'vue-sonner';
-import type { AlertLevel } from '@geonative/ui/types';
-import { ALERT_ERROR, ALERT_INFO, ALERT_SUCCESS, ALERT_WARNING } from '@geonative/ui/constants';
-import type { ActionType } from '@geonative/ui/types';
+import type { ActionType, AlertLevel } from '@geonative/ui/types';
+import { ALERT_DEFAULT, ALERT_ERROR, ALERT_INFO, ALERT_SUCCESS, ALERT_WARNING } from '@geonative/ui/constants';
 
 export function useSonner() {
   /**
@@ -24,6 +23,10 @@ export function useSonner() {
     console.log('Sonner', type, title, description, action);
   };
 
+  const showDefaultSonner = (title: string, description?: string, action?: ActionType) => {
+    showSonner(ALERT_DEFAULT, title, description, action);
+  };
+
   const showSuccessSonner = (title: string, description?: string, action?: ActionType) => {
     showSonner(ALERT_SUCCESS, title, description, action);
   };
@@ -40,11 +43,31 @@ export function useSonner() {
     showSonner(ALERT_INFO, title, description, action);
   };
 
+  const showPromiseSonner = (
+    promise: () => Promise<void>,
+    title: string,
+    description?: string,
+    action?: ActionType
+  ) => {
+    toast.promise(promise, {
+      loading: title,
+      description: description,
+      action: action
+        ? {
+            label: action.label || title,
+            onClick: action.clickAction,
+          }
+        : undefined,
+    });
+    return promise;
+  };
+
   return {
-    showSonner,
+    showDefaultSonner,
     showSuccessSonner,
     showErrorSonner,
     showWarningSonner,
     showInfoSonner,
+    showPromiseSonner,
   };
 }
