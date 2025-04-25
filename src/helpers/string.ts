@@ -1,3 +1,3 @@
-export function startsWithHttp(value: string){
+export function startsWithHttp(value: string) {
   return !value || /^https?:\/\//.test(value);
 }

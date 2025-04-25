@@ -1,9 +1,5 @@
 <template>
-  <component
-    :is="getComponentType"
-    v-bind="getComponentProps"
-    :disabled="disabled"
-  >
+  <component :is="getComponentType" v-bind="getComponentProps" :disabled="disabled">
     <slot />
   </component>
 </template>
