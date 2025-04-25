@@ -10,8 +10,14 @@ export type DropdownMenuSectionType = DropdownMenuItemType[];
 export interface DropdownMenuItemType {
   iconProps?: IconProps;
   label?: string;
-  action: string | (() => void) | (() => Promise<void>) | null;
+  click: clickActionType;
   disabled?: boolean;
   shortcut?: string;
   sections?: DropdownMenuSectionType[];
 }
+
+export type urlType = string;
+export type callbackType = () => void | Promise<void>;
+export type clickActionType = urlType | callbackType | null;
+
+

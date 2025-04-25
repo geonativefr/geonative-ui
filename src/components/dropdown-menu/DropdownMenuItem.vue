@@ -1,6 +1,6 @@
 <template>
   <div v-if="props.item.label">
-    <ShadcnDropdownMenuItem :disabled="!props.item.action || props.item.disabled">
+    <ShadcnDropdownMenuItem :disabled="!props.item.click || props.item.disabled">
       <component :is="getComponentType" v-bind="getComponentProps" class="flex justify-between items-center w-full">
         <div class="flex items-center gap-2">
           <Icon
@@ -33,9 +33,9 @@ const props = defineProps<{
   item: DropdownMenuItemType;
 }>();
 
-const isInternalLink = typeof props.item.action === 'string';
-const isExternalLink = typeof props.item.action === 'string' && props.item.action.startsWith('http');
-const isFunctionLink = typeof props.item.action === 'function';
+const isInternalLink = typeof props.item.click === 'string';
+const isExternalLink = typeof props.item.click === 'string' && props.item.click.startsWith('http');
+const isFunctionLink = typeof props.item.click === 'function';
 
 const getComponentType = computed(() => {
   if (isFunctionLink) {
@@ -51,9 +51,9 @@ const getComponentType = computed(() => {
 });
 
 const getComponentProps = computed(() => {
-  if (isFunctionLink) return { onClick: props.item.action };
-  if (isExternalLink) return { href: props.item.action };
-  if (isInternalLink) return { to: props.item.action };
+  if (isFunctionLink) return { onClick: props.item.click };
+  if (isExternalLink) return { href: props.item.click };
+  if (isInternalLink) return { to: props.item.click };
   return '';
 });
 </script>
