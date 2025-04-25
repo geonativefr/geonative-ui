@@ -13,7 +13,7 @@
       Only 3 toast are visible by default.
     </p>
     <Button
-      class="bg-blue-500"
+      class="bg-white text-black"
       @click="showPromiseSonner(promise, 'Waiting for promise to resolve', 'This is a promise toast message')"
       >Show promise toast</Button
     >
@@ -37,13 +37,14 @@ const isClickedButton = ref(false);
 const { showDefaultSonner, showSuccessSonner, showInfoSonner, showErrorSonner, showWarningSonner, showPromiseSonner } =
   useSonner();
 
-const promise = async () : Promise<void> => {
-  new Promise((resolve) => {
+const promise = () => {
+  return new Promise((resolve) =>{
     setTimeout(() => {
-      resolve('Promise resolved');
-    }, 10000);
+      resolve("Promise resolved");
+      showDefaultSonner('Promise resolved!');
+    }, 2000);
   });
-};
+}
 
 function handleClick() {
   isClickedButton.value = true;
