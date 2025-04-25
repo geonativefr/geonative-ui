@@ -127,7 +127,6 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
       // Fallback
       window.location.pathname = url;
       return;
-
     }
   };
 

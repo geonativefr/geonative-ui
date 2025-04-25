@@ -1,7 +1,6 @@
 import { computed } from 'vue';
 
-export function usePlatformDetect(){
-
+export function usePlatformDetect() {
   // Detect the platform
   const isMacOS = computed(() => navigator.userAgent.includes('Mac'));
   const isWindows = computed(() => navigator.userAgent.includes('Win'));
@@ -14,6 +13,6 @@ export function usePlatformDetect(){
     isWindows,
     isLinux,
     isIOS,
-    isAndroid
-  }
+    isAndroid,
+  };
 }
