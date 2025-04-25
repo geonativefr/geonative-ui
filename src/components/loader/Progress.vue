@@ -15,7 +15,7 @@
 import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import { ProgressIndicator, ProgressRoot } from 'reka-ui';
-import type { CustomSize } from '@geonative/ui';
+import type { CustomSize } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
