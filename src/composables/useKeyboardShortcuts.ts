@@ -1,6 +1,6 @@
 import { ref, onMounted, onUnmounted } from 'vue';
-import type { ModifierKeys, Shortcut, ShortcutKeyConfig, UseKeyboardShortcutsReturn } from '@/types';
-import { ModifierKeyStringMap, SHORTCUT_STRING_SEPARATOR } from '@/constants/shortcut';
+import type { ModifierKeys, Shortcut, ShortcutKeyConfig, UseKeyboardShortcutsReturn } from '@geonative/ui/types';
+import { modifierKeyStringMap, SHORTCUT_STRING_SEPARATOR } from '@geonative/ui/constants/shortcut';
 
 /**
  * Vue composable for managing keyboard shortcuts that redirect to specific links
@@ -22,6 +22,7 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
   const register = (key: string, url: string, modifiers?: ModifierKeys[]): void => {
     const normalizedKey = key.toLowerCase();
     const normalizedModifiers = modifiers?.map((modifier) => modifier.toLowerCase()) || [];
+
     shortcuts.value.set(normalizedKey, {
       url,
       keyConfig: {
@@ -99,24 +100,35 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
       event.preventDefault();
 
       const url = shortcut.url;
-      if (url) {
-        // Navigate to the URL
-        if (url.startsWith('http://') || url.startsWith('https://')) {
-          window.location.href = url;
-        } else {
-          // For Vue Router paths, use router.push
-          // This assumes router is available globally or imported
-          // For a more robust solution, router should be passed as a parameter
-          if (window.history && typeof window.history.pushState === 'function') {
-            window.history.pushState({}, '', url);
-            // Dispatch a popstate event to trigger router navigation
-            window.dispatchEvent(new Event('popstate'));
-          } else {
-            // Fallback
-            window.location.pathname = url;
-          }
-        }
+      if (!url) {
+        console.error(`No URL registered for shortcut: ${key}`);
+        return;
       }
+
+      // Navigate to the URL
+      if (url.startsWith('http://') || url.startsWith('https://')) {
+        window.location.href = url;
+        return;
+      }
+
+      // For SPA navigation, use the history API if available
+      if (window.history && typeof window.history.pushState === 'function') {
+        window.history.pushState({}, '', url);
+        // Dispatch a popstate event to trigger router navigation
+        window.dispatchEvent(new Event('popstate'));
+        return;
+      }
+
+      // For hash-based navigation, use window.location.hash
+      if (url.startsWith('#')) {
+        window.location.hash = url;
+        return;
+      }
+
+      // Fallback
+      window.location.pathname = url;
+      return;
+
     }
   };
 
@@ -153,7 +165,7 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
   /**
    * Return string representation of shortcut keys
    * @param keyConfig The shortcut key configuration
-   * @returns A string representation of the shortcut keys
+   * @returns string - A string representation of the shortcut keys
    */
   const getShortcutKeysString = (keyConfig: ShortcutKeyConfig): string => {
     // Check if keyConfig has modifiers
@@ -163,6 +175,8 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
         .join(SHORTCUT_STRING_SEPARATOR);
       return `${modifiersString}${SHORTCUT_STRING_SEPARATOR}${keyConfig.key}`;
     }
+    // If no modifiers, return the key only
+    return keyConfig.key;
   };
 
   // Setup and cleanup
