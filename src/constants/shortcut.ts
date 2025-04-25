@@ -1,5 +1,7 @@
-import { isMacOS } from '@/utils/platform';
+import { usePlatformDetect } from '@geonative/ui/composables/usePlatformDetect';
 import type { ModifierKeyString } from '@geonative/ui/types/shortcut';
+
+const { isMacOS } = usePlatformDetect();
 
 // Shortcut string separator
 export const SHORTCUT_STRING_SEPARATOR = '+';

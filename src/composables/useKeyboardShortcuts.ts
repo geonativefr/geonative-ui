@@ -1,6 +1,6 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import type { ModifierKeys, Shortcut, ShortcutKeyConfig, UseKeyboardShortcutsReturn } from '@geonative/ui/types';
-import { modifierKeyStringMap, SHORTCUT_STRING_SEPARATOR } from '@geonative/ui/constants/shortcut';
+import { modifierKeyStringMap, SHORTCUT_STRING_SEPARATOR } from '@geonative/ui/constants';
 
 /**
  * Vue composable for managing keyboard shortcuts that redirect to specific links
@@ -80,7 +80,6 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
    * @returns void
    */
   const handleKeyDown = (event: KeyboardEvent): void => {
-    console.log('Key pressed:', event.key);
     const key = event.key.toLowerCase();
 
     // If the pressed key is registered as a shortcut
@@ -171,7 +170,7 @@ export function useKeyboardShortcuts(autoEnable: boolean = true): UseKeyboardSho
     // Check if keyConfig has modifiers
     if (keyConfig.modifiers && keyConfig.modifiers.length > 0) {
       const modifiersString = keyConfig.modifiers
-        .map((modifier) => ModifierKeyStringMap[modifier])
+        .map((modifier) => modifierKeyStringMap[modifier])
         .join(SHORTCUT_STRING_SEPARATOR);
       return `${modifiersString}${SHORTCUT_STRING_SEPARATOR}${keyConfig.key}`;
     }
