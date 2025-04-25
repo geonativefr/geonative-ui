@@ -3,7 +3,6 @@
     :is="getComponentType"
     v-bind="getComponentProps"
     :disabled="disabled"
-    class="flex justify-between items-center w-full"
   >
     <slot />
   </component>
@@ -23,7 +22,7 @@ const isFunctionLink = typeof props.actionClick === 'function';
 
 const getComponentType = computed(() => {
   if (isFunctionLink) {
-    return 'button';
+    return 'span';
   }
   if (isExternalLink) {
     return 'a';
@@ -31,7 +30,7 @@ const getComponentType = computed(() => {
   if (isInternalLink) {
     return 'router-link';
   }
-  return 'button';
+  return 'span';
 });
 
 const getComponentProps = computed(() => {
