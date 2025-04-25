@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { DialogDescription, type DialogDescriptionProps, useForwardProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
