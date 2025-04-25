@@ -9,6 +9,7 @@
           props.class
         )
       "
+      @click="!props.disabled && !props.loading ? emit('click') : null"
       :disabled="props.disabled || props.loading"
     >
       <div
@@ -33,6 +34,8 @@ import { computed, defineProps, onMounted, ref, withDefaults } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import type { CustomSize } from '@geonative/ui/types';
 import { Spinner } from '@geonative/ui/components';
+
+const emit = defineEmits(['click']);
 
 const props = withDefaults(
   defineProps<{
@@ -82,4 +85,5 @@ onMounted(() => {
   const maxWidth = Math.max(loaderWidth || 0, slotWidth || 0);
   width.value = maxWidth ? maxWidth : null;
 });
+
 </script>
