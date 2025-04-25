@@ -1,5 +1,5 @@
 <template>
-  <component :is="getComponentType" v-bind="getComponentProps" :disabled="disabled">
+  <component :is="getComponentType" v-bind="getComponentProps" :disabled="disabled" :class="props.class">
     <slot />
   </component>
 </template>
@@ -11,6 +11,7 @@ import { startsWithHttp } from '@geonative/ui/helpers';
 const props = defineProps<{
   actionClick: string | (() => void) | Promise<void> | null;
   disabled?: boolean;
+  class?: string;
 }>();
 
 const isInternalLink = typeof props.actionClick === 'string';
