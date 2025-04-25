@@ -101,7 +101,6 @@ const dropdownMenu: DropdownMenuType = {
         label: 'Alert',
         action: () => {
           alert('Alert');
-          console.log('Alert');
         },
         iconProps: { name: 'bell', source: 'heroicons', type: 'solid', class: 'h-5 w-5 text-red-500' },
       },
@@ -184,10 +183,11 @@ const dropdownMenu: DropdownMenuType = {
     ],
     [
       {
-        label: 'Pas url',
+        label: 'Action null',
+        action: null,
       },
       {
-        label: 'Url vide',
+        label: 'Action vide',
         action: '',
       },
       {

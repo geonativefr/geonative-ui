@@ -10,7 +10,7 @@ export type DropdownMenuSectionType = DropdownMenuItemType[];
 export interface DropdownMenuItemType {
   iconProps?: IconProps;
   label?: string;
-  action?: string | (() => void) | (() => Promise<void>);
+  action: string | (() => void) | (() => Promise<void>) | null;
   disabled?: boolean;
   shortcut?: string;
   sections?: DropdownMenuSectionType[];

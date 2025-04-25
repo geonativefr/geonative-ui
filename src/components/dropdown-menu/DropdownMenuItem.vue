@@ -51,13 +51,13 @@ const getComponentType = computed(() => {
 });
 
 const getComponentProps = computed(() => {
-  if (isFunctionLink) return { onClick: AlertFunction };
+  if (isFunctionLink) return { onClick: alertFunction };
   if (isExternalLink) return { href: props.item.action };
   if (isInternalLink) return { to: props.item.action };
   return '';
 });
 
-const AlertFunction = () => {
+const alertFunction = () => {
   if (typeof props.item.action === 'function') {
     props.item.action();
   }
