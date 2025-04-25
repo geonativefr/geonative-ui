@@ -1,4 +1,5 @@
 <template>
+  <h1 class="p-5 text-center">Action :</h1>
   <div class="flex flex-col items-center gap-4 p-5 self">
     <div>
       <Action :actionClick="internalLink">
