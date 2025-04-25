@@ -2,12 +2,12 @@
   <h1 class="p-5 text-center">Action :</h1>
   <div class="flex flex-col items-center gap-4 p-5 self">
     <div>
-      <Action :actionClick="internalLink">
+      <Action actionClick="/">
         <Button>Internal Link</Button>
       </Action>
     </div>
     <div>
-      <Action :actionClick="externalLink">
+      <Action actionClick="https://github.com">
         <Button>External Link</Button>
       </Action>
     </div>
@@ -21,14 +21,6 @@
 
 <script setup lang="ts">
 import { Action, Button } from '@geonative/ui/components';
-
-function internalLink() {
-  window.location.href = '/';
-}
-
-function externalLink() {
-  window.location.href = 'https://github.com';
-}
 
 function callback() {
   alert('Alert from callback action');
