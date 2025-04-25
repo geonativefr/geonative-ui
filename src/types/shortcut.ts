@@ -10,7 +10,7 @@ export type ModifierKeys = 'ctrl' | 'control' | 'alt' | 'shift' | 'meta' | 'cmd'
  */
 export type ModifierKeyString = {
   [key in ModifierKeys]: string;
-}
+};
 
 /**
  * Interface for keyboard shortcut
