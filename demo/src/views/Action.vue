@@ -1,19 +1,19 @@
 <template>
   <div class="flex flex-col items-center gap-4 p-5 self">
     <div>
-    <Action :actionClick="internalLink">
-      <Button>Internal Link</Button>
-    </Action>
+      <Action :actionClick="internalLink">
+        <Button>Internal Link</Button>
+      </Action>
     </div>
     <div>
-    <Action :actionClick="externalLink">
-      <Button>External Link</Button>
-    </Action>
+      <Action :actionClick="externalLink">
+        <Button>External Link</Button>
+      </Action>
     </div>
     <div>
-    <Action :actionClick="callback">
-      <Button>Alert</Button>
-    </Action>
+      <Action :actionClick="callback">
+        <Button>Alert</Button>
+      </Action>
     </div>
   </div>
 </template>

@@ -1,5 +1,10 @@
 <template>
-  <component :is="getComponentType" v-bind="getComponentProps" :disabled="disabled" class="flex justify-between items-center w-full">
+  <component
+    :is="getComponentType"
+    v-bind="getComponentProps"
+    :disabled="disabled"
+    class="flex justify-between items-center w-full"
+  >
     <slot />
   </component>
 </template>
