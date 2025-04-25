@@ -39,6 +39,12 @@ const routes: Array<RouteRecord> = [
     menuLabel: 'Button',
   }),
   createRoute({
+    path: '/action',
+    name: 'action',
+    component: () => import('@/views/Action.vue'),
+    menuLabel: 'Action',
+  }),
+  createRoute({
     path: '/dropdown-menu',
     name: 'dropdown-menu',
     component: () => import('@/views/DropdownMenu.vue'),
