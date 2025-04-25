@@ -1,6 +1,6 @@
 <template>
   <div class="p-5">
-    <h1 class="mb-3">NAVBAR USER :</h1>
+    <h1 class="mb-3">Navbar Dropdown :</h1>
     <p class="mb-3">with avatar:</p>
     <NavbarDropdown :dropdown="dropdown">
       <Avatar :url="user.avatar" :is-square="true" class="bg-red-500" :initials="user.name.slice(0, 2)" />
@@ -35,7 +35,7 @@ const dropdown: DropdownMenuType = {
     [
       {
         label: 'Upgrade to pro',
-        url: '/upgrade',
+        action: '/upgrade',
         shortcut: '⌘+U',
         iconProps: { name: 'star', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
@@ -43,24 +43,24 @@ const dropdown: DropdownMenuType = {
     [
       {
         label: 'Account',
-        url: '/account',
+        action: '/account',
         iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Billing',
-        url: '/billing',
+        action: '/billing',
         iconProps: { name: 'credit-card', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Notifications',
-        url: '/notifications',
+        action: '/notifications',
         iconProps: { name: 'bell', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
     ],
     [
       {
         label: 'Log out',
-        url: '/',
+        action: '/',
         iconProps: { name: 'arrow-left-start-on-rectangle', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
     ],
