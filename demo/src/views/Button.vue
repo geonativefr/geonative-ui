@@ -55,15 +55,11 @@ const { showSuccessSonner } = useSonner();
 
 function handleClick() {
   isClickedButton.value = true;
-  showSuccessSonner(
-    'Button clicked!',
-    'This is a success message.',
-    {
-      label: 'Undo',
-      clickAction: () => {
-        isClickedButton.value = false;
-      },
+  showSuccessSonner('Button clicked!', 'This is a success message.', {
+    label: 'Undo',
+    clickAction: () => {
+      isClickedButton.value = false;
     },
-  );
+  });
 }
 </script>

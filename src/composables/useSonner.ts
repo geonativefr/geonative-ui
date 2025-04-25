@@ -4,7 +4,6 @@ import { ALERT_ERROR, ALERT_INFO, ALERT_SUCCESS, ALERT_WARNING } from '@geonativ
 import type { ActionType } from '@geonative/ui/types';
 
 export function useSonner() {
-
   /**
    * Show a Sonner alert
    * @param type AlertLevel - ALERT_SUCCESS, ALERT_ERROR, ALERT_WARNING, ALERT_INFO
@@ -13,16 +12,15 @@ export function useSonner() {
    * @param action ActionType - Action to be performed on click
    */
   const showSonner = (type: AlertLevel = ALERT_INFO, title: string, description?: string, action?: ActionType) => {
-    toast[type](
-      title,
-      {
-        description: description,
-        action: action ? {
-          label: action.label || title,
-          onClick: action.clickAction,
-        } : undefined,
-      }
-    );
+    toast[type](title, {
+      description: description,
+      action: action
+        ? {
+            label: action.label || title,
+            onClick: action.clickAction,
+          }
+        : undefined,
+    });
     console.log('Sonner', type, title, description, action);
   };
 
