@@ -85,5 +85,4 @@ onMounted(() => {
   const maxWidth = Math.max(loaderWidth || 0, slotWidth || 0);
   width.value = maxWidth ? maxWidth : null;
 });
-
 </script>
