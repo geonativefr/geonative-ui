@@ -56,6 +56,12 @@ const routes: Array<RouteRecord> = [
     component: () => import('@/views/NavbarDropdown.vue'),
     menuLabel: 'Navbar Dropdown',
   }),
+  createRoute({
+    path: '/toaster',
+    name: 'toaster',
+    component: () => import('@/views/Toaster.vue'),
+    menuLabel: 'Toaster',
+  }),
   // Catch all unmatched routes
   createRoute({
     path: '/:pathMatch(.*)*',
