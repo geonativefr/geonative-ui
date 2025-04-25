@@ -39,7 +39,7 @@ const isFunctionLink = typeof props.item.action === 'function';
 
 const getComponentType = computed(() => {
   if (isFunctionLink) {
-    return 'div';
+    return 'button';
   }
   if (isExternalLink) {
     return 'a';
