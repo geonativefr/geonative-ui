@@ -13,7 +13,7 @@
 import { computed } from 'vue';
 
 const props = defineProps<{
-  actionClick: string | (() => void);
+  actionClick: string | (() => void) | Promise<void> | null;
   disabled?: boolean;
 }>();
 
