@@ -1,11 +1,7 @@
 <template>
   <div v-if="props.item.label">
     <ShadcnDropdownMenuItem :disabled="!props.item.action || props.item.disabled">
-      <component
-        :is="getComponentType"
-        v-bind="getComponentProps"
-        class="flex justify-between items-center w-full"
-      >
+      <component :is="getComponentType" v-bind="getComponentProps" class="flex justify-between items-center w-full">
         <div class="flex items-center gap-2">
           <Icon
             v-if="props.item.iconProps"
@@ -56,7 +52,7 @@ const getComponentType = computed(() => {
 
 const getComponentProps = computed(() => {
   if (isFunctionLink) return { onClick: AlertFunction };
-  if (isExternalLink) return { href: props.item.action};
+  if (isExternalLink) return { href: props.item.action };
   if (isInternalLink) return { to: props.item.action };
   return '';
 });
