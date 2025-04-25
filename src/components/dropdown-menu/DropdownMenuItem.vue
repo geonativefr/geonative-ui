@@ -47,7 +47,7 @@ const getComponentType = computed(() => {
   if (isInternalLink) {
     return 'router-link';
   }
-  return '';
+  return 'div';
 });
 
 const getComponentProps = computed(() => {
