@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { startsWithHttp } from '@geonative/ui/helpers';
 
 const props = defineProps<{
   actionClick: string | (() => void) | Promise<void> | null;
@@ -17,7 +18,7 @@ const props = defineProps<{
 }>();
 
 const isInternalLink = typeof props.actionClick === 'string';
-const isExternalLink = typeof props.actionClick === 'string' && props.actionClick.startsWith('http');
+const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
 const isFunctionLink = typeof props.actionClick === 'function';
 
 const getComponentType = computed(() => {
