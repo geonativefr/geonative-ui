@@ -1,74 +1,25 @@
 <template>
   <div v-if="props.item.label">
-    <ShadcnDropdownMenuItem :disabled="props.item.action == '' || props.item.disabled">
-      <div v-if="isFunctionLink" @click="AlertFunction" class="flex justify-between items-center w-full">
-        <div class="flex items-center gap-2">
-          <Icon
-            v-if="item.iconProps"
-            :name="item.iconProps.name"
-            :class="item.iconProps.class"
-            :source="item.iconProps.source"
-            :type="item.iconProps.type"
-          />
-          <span>{{ props.item.label }}</span>
-        </div>
-        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
-          {{ props.item.shortcut }}
-        </ShadcnDropdownMenuShortcut>
-      </div>
-
-      <a
-        v-else-if="isExternalLink"
-        :href="props.item.action as string"
+    <ShadcnDropdownMenuItem :disabled="!props.item.action || props.item.disabled">
+      <component
+        :is="getComponentType"
+        v-bind="getComponentProps"
         class="flex justify-between items-center w-full"
       >
         <div class="flex items-center gap-2">
           <Icon
-            v-if="item.iconProps"
-            :name="item.iconProps.name"
-            :class="item.iconProps.class"
-            :source="item.iconProps.source"
-            :type="item.iconProps.type"
+            v-if="props.item.iconProps"
+            :name="props.item.iconProps.name"
+            :class="props.item.iconProps.class"
+            :source="props.item.iconProps.source"
+            :type="props.item.iconProps.type"
           />
           <span>{{ props.item.label }}</span>
         </div>
         <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
           {{ props.item.shortcut }}
         </ShadcnDropdownMenuShortcut>
-      </a>
-
-      <router-link
-        v-else-if="isInternalLink"
-        :to="props.item.action as string"
-        class="flex justify-between items-center w-full"
-      >
-        <div class="flex items-center gap-2">
-          <Icon
-            v-if="item.iconProps"
-            :name="item.iconProps.name"
-            :class="item.iconProps.class"
-            :source="item.iconProps.source"
-            :type="item.iconProps.type"
-          />
-          <span>{{ props.item.label }}</span>
-        </div>
-        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
-          {{ props.item.shortcut }}
-        </ShadcnDropdownMenuShortcut>
-      </router-link>
-
-      <div v-else class="flex justify-between items-center w-full">
-        <div class="flex items-center gap-2">
-          <Icon
-            v-if="item.iconProps"
-            :name="item.iconProps.name"
-            :class="item.iconProps.class"
-            :source="item.iconProps.source"
-            :type="item.iconProps.type"
-          />
-          <span>{{ props.item.label }}</span>
-        </div>
-      </div>
+      </component>
     </ShadcnDropdownMenuItem>
   </div>
 </template>
@@ -80,18 +31,39 @@ import {
   DropdownMenuShortcut as ShadcnDropdownMenuShortcut,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
 import type { DropdownMenuItemType } from '@geonative/ui/types';
+import { computed } from 'vue';
 
 const props = defineProps<{
   item: DropdownMenuItemType;
 }>();
+
+const isInternalLink = typeof props.item.action === 'string';
+const isExternalLink = typeof props.item.action === 'string' && props.item.action.startsWith('http');
+const isFunctionLink = typeof props.item.action === 'function';
+
+const getComponentType = computed(() => {
+  if (isFunctionLink) {
+    return 'div';
+  }
+  if (isExternalLink) {
+    return 'a';
+  }
+  if (isInternalLink) {
+    return 'router-link';
+  }
+  return '';
+});
+
+const getComponentProps = computed(() => {
+  if (isFunctionLink) return { onClick: AlertFunction };
+  if (isExternalLink) return { href: props.item.action};
+  if (isInternalLink) return { to: props.item.action };
+  return '';
+});
 
 const AlertFunction = () => {
   if (typeof props.item.action === 'function') {
     props.item.action();
   }
 };
-
-const isInternalLink = typeof props.item.action === 'string';
-const isExternalLink = typeof props.item.action === 'string' && props.item.action.startsWith('http');
-const isFunctionLink = typeof props.item.action === 'function';
 </script>
