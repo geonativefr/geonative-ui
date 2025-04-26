@@ -28,7 +28,7 @@ export interface ThemeConfig {
 /**
  * Themes data structure containing multiple named themes
  */
-export type ThemesData = Record<string, ThemeConfig>;
+export type ThemesData = Map<string, ThemeConfig>;
 
 /**
  * Options for theme management

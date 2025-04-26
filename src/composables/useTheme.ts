@@ -13,6 +13,7 @@ export function useTheme(
   themesData: ThemesData,
   options: ThemeOptions,
 ) {
+
   // Extract and set default options
   const {
     defaultTheme,
@@ -21,10 +22,7 @@ export function useTheme(
   } = options;
 
   // Internal storage for themes as a reactive map
-  const themeRegistry = ref<Map<string, ThemeConfig>>(new Map());
-
-  // Error state
-  const error = ref<string | null>(null);
+  const themeRegistry = ref<ThemesData>(new Map());
 
   /**
    * Initializes the theme registry with the provided themes data
@@ -61,7 +59,6 @@ export function useTheme(
     // Validate theme exists
     if (!themeRegistry.value.has(themeName)) {
       console.error(`Theme '${themeName}' not found.`);
-      error.value = `Theme '${themeName}' not found.`;
       return false;
     }
 
@@ -92,11 +89,9 @@ export function useTheme(
       }
 
       currentTheme.value = themeName;
-      error.value = null;
       return true;
     } catch (err) {
       console.error(`Error applying theme '${themeName}':`, err);
-      error.value = `Failed to apply theme '${themeName}'`;
       return false;
     }
   };
@@ -112,7 +107,7 @@ export function useTheme(
     try {
       // Validate theme name
       if (!themeName || themeName.trim() === '') {
-        error.value = 'Theme name cannot be empty';
+        console.error('registerTheme - Theme name cannot be empty');
         return false;
       }
 
@@ -138,11 +133,9 @@ export function useTheme(
       css += '}\n';
       styleEl.textContent = css;
 
-      error.value = null;
       return true;
     } catch (err) {
       console.error(`Error registering theme '${themeName}':`, err);
-      error.value = `Failed to register theme '${themeName}'`;
       return false;
     }
   };
@@ -220,7 +213,6 @@ export function useTheme(
   return {
     currentTheme,
     availableThemes,
-    error,
     applyTheme,
     registerTheme,
     getThemeConfig,
