@@ -1,4 +1,4 @@
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed } from 'vue';
 import type { ThemeConfig, ThemesData, ThemeOptions } from '@geonative/ui/types';
 
 /**
@@ -87,50 +87,6 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
   };
 
   /**
-   * Registers a new theme or updates an existing theme
-   *
-   * @param themeName - Name of the theme
-   * @param themeConfig - Theme configuration object
-   * @returns Boolean indicating if the theme was successfully registered
-   */
-  const registerTheme = (themeName: string, themeConfig: ThemeConfig): boolean => {
-    try {
-      // Validate theme name
-      if (!themeName || themeName.trim() === '') {
-        console.error('registerTheme - Theme name cannot be empty');
-        return false;
-      }
-
-      // Add to registry
-      themeRegistry.value.set(themeName, themeConfig);
-
-      // Create or update CSS rules for the theme
-      const styleId = `theme-style-${themeName}`;
-      let styleEl = document.getElementById(styleId) as HTMLStyleElement;
-
-      if (!styleEl) {
-        styleEl = document.createElement('style');
-        styleEl.id = styleId;
-        document.head.appendChild(styleEl);
-      }
-
-      let css = `.${themeName} {\n`;
-      for (const [key, value] of Object.entries(themeConfig)) {
-        if (value) {
-          css += `  --${key}: ${value};\n`;
-        }
-      }
-      css += '}\n';
-      styleEl.textContent = css;
-
-      return true;
-    } catch (err) {
-      console.error(`Error registering theme '${themeName}':`, err);
-      return false;
-    }
-  };
-
-  /**
    * Gets the configuration for a specific theme
    *
    * @param themeName - Name of the theme to get
@@ -140,73 +96,10 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
     return themeRegistry.value.get(themeName) || null;
   };
 
-  /**
-   * Resets all themes to their initial values from themesData
-   */
-  const resetThemes = (): void => {
-    // Clear existing registry
-    themeRegistry.value.clear();
-
-    // Remove all theme style elements
-    availableThemes.value.forEach((themeName) => {
-      const styleEl = document.getElementById(`theme-style-${themeName}`);
-      if (styleEl) {
-        styleEl.remove();
-      }
-    });
-
-    // Re-initialize from themes data
-    initializeThemes();
-
-    // Reapply current theme or fallback to default
-    if (themeRegistry.value.has(currentTheme.value)) {
-      applyTheme(currentTheme.value);
-    } else {
-      applyTheme(defaultTheme);
-    }
-  };
-
-  /**
-   * Import themes from a themes data object
-   *
-   * @param themes - Record of theme names to their configurations
-   * @returns Number of successfully imported themes
-   */
-  const importThemes = (themes: ThemesData): number => {
-    let importCount = 0;
-
-    for (const [themeName, themeConfig] of Object.entries(themes)) {
-      try {
-        if (registerTheme(themeName, themeConfig)) {
-          importCount++;
-        }
-      } catch (err) {
-        console.error(`Error importing theme '${themeName}':`, err);
-      }
-    }
-
-    return importCount;
-  };
-
-  // Apply theme when component is mounted
-  onMounted(() => {
-    applyTheme(currentTheme.value);
-  });
-
-  // Watch for theme changes and apply them
-  watch(currentTheme, (newTheme) => {
-    if (newTheme !== currentTheme.value) {
-      applyTheme(newTheme);
-    }
-  });
-
   return {
     currentTheme,
     availableThemes,
     applyTheme,
-    registerTheme,
     getThemeConfig,
-    resetThemes,
-    importThemes,
   };
 }
