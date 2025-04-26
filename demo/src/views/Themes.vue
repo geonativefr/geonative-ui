@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-row gap-4 m-4">
     <h2 class="text-center text-lg font-bold">Available themes :</h2>
-    <Theme v-for="themeName in availableThemes" :key="themeName" :label="themeName" @click="applyTheme" />
+    <Theme v-for="themeName in availableThemes" :key="themeName" :name="themeName" />
   </div>
   <div class="flex flex-col gap-4 m-4">
-    <h2 class="text-center text-lg font-bold">{{ ucfirst(currentTheme) }}</h2>
+    <h2 class="text-center text-lg font-bold">{{ currentTheme ? ucfirst(currentTheme) : "No theme selected" }}</h2>
     <div class="bg-background text-foreground border p-4">.bg-background .text-foreground .border</div>
     <div class="bg-primary text-primary-foreground p-4">.bg-primary .text-primary</div>
     <div class="bg-secondary text-secondary-foreground p-4">.bg-secondary .text-secondary-foreground</div>
@@ -18,15 +18,10 @@
 
 <script setup lang="ts">
 import { useTheme } from '@geonative/ui/composables';
-import initialThemes from '@/assets/themes/themes.json';
-import type { ThemesData } from '@geonative/ui/types';
 import Theme from '@geonative/ui/components/theme/Theme.vue';
 import { ucfirst } from '@geonative/ui/helpers';
 
-// Initialize theme manager
-const { currentTheme, availableThemes, applyTheme } = useTheme(initialThemes as ThemesData, {
-  persistTheme: true,
-  defaultTheme: 'dark',
-  storageKey: 'app-theme',
-});
+// Import the useTheme composable from the UI library
+const { currentTheme, availableThemes } = useTheme();
+
 </script>

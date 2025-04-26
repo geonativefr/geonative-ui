@@ -35,7 +35,7 @@ export type ThemesData = Record<string, ThemeConfig>;
  */
 export interface ThemeOptions {
   /** Default theme to use if none is stored */
-  defaultTheme: string;
+  defaultTheme?: string;
   /** Whether to save theme preference to localStorage */
   persistTheme?: boolean;
   /** Local storage key to use for saving theme preference */

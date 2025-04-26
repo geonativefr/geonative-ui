@@ -11,4 +11,13 @@
 
 <script setup lang="ts">
 import Navigation from '@/Navigation.vue';
+import { useTheme } from '@geonative/ui/composables';
+import initialThemes from '@/assets/themes/themes.json';
+import type { ThemesData } from '@geonative/ui/types';
+
+// Import the useTheme composable from the UI library
+const { initializeThemes } = useTheme();
+
+// Initialize themes with the data from the JSON file
+initializeThemes(initialThemes as ThemesData);
 </script>
