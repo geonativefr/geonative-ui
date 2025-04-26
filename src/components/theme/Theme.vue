@@ -3,7 +3,8 @@
     <a class="underline text-foreground" href="#" @click="emit('click', props.label)">{{ ucfirst(props.label) }}</a>
     <ul v-if="props.config" class="flex flex-col gap-1">
       <li v-for="(value, key) in props.config" :key="key">
-        <span class="font-bold">{{ key }}</span>: <span>{{ value }}</span>
+        <span class="font-bold">{{ key }}</span
+        >: <span>{{ value }}</span>
       </li>
     </ul>
   </div>
@@ -17,13 +18,11 @@ import { defineEmits, defineProps, withDefaults } from 'vue';
 const emit = defineEmits(['click']);
 const props = withDefaults(
   defineProps<{
-    label: string,
-    config?: ThemeConfig | null,
-  }>(), {
+    label: string;
+    config?: ThemeConfig | null;
+  }>(),
+  {
     config: null,
   }
 );
-
-
-
 </script>

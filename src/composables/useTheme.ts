@@ -9,17 +9,9 @@ import type { ThemeConfig, ThemesData, ThemeOptions } from '@geonative/ui/types'
  * @param options - Optional configuration options for the theme manager
  * @returns Object with theme management functions and reactive properties
  */
-export function useTheme(
-  themesData: ThemesData,
-  options: ThemeOptions,
-) {
-
+export function useTheme(themesData: ThemesData, options: ThemeOptions) {
   // Extract and set default options
-  const {
-    defaultTheme,
-    persistTheme = true,
-    storageKey = 'app-theme'
-  } = options;
+  const { defaultTheme, persistTheme = true, storageKey = 'app-theme' } = options;
 
   // Internal storage for themes as a reactive map
   const themeRegistry = ref<ThemesData>(new Map());
@@ -45,9 +37,7 @@ export function useTheme(
 
   // Get stored theme preference or use default
   const storedTheme = persistTheme ? localStorage.getItem(storageKey) : null;
-  const currentTheme = ref<string>(
-    storedTheme && themeRegistry.value.has(storedTheme) ? storedTheme : defaultTheme
-  );
+  const currentTheme = ref<string>(storedTheme && themeRegistry.value.has(storedTheme) ? storedTheme : defaultTheme);
 
   /**
    * Applies a theme by setting CSS variables and managing theme classes
@@ -64,7 +54,7 @@ export function useTheme(
 
     try {
       // Remove all existing theme classes
-      availableThemes.value.forEach(theme => {
+      availableThemes.value.forEach((theme) => {
         document.documentElement.classList.remove(theme);
       });
 
@@ -158,7 +148,7 @@ export function useTheme(
     themeRegistry.value.clear();
 
     // Remove all theme style elements
-    availableThemes.value.forEach(themeName => {
+    availableThemes.value.forEach((themeName) => {
       const styleEl = document.getElementById(`theme-style-${themeName}`);
       if (styleEl) {
         styleEl.remove();
