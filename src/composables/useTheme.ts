@@ -14,7 +14,7 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
   const { defaultTheme, persistTheme = true, storageKey = 'app-theme' } = options;
 
   // Internal storage for themes as a reactive map
-  const themeRegistry = ref<ThemesData>(new Map());
+  const themeRegistry = ref<ThemesData>({});
 
   /**
    * Initializes the theme registry with the provided themes data
@@ -22,7 +22,7 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
   const initializeThemes = (): void => {
     for (const [themeName, themeConfig] of Object.entries(themesData)) {
       try {
-        themeRegistry.value.set(themeName, themeConfig);
+        themeRegistry.value[themeName] = themeConfig;
       } catch (err) {
         console.error(`Error initializing theme '${themeName}':`, err);
       }
@@ -33,11 +33,11 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
   initializeThemes();
 
   // Computed list of available themes
-  const availableThemes = computed(() => Array.from(themeRegistry.value.keys()));
+  const availableThemes = computed(() => Object.keys( themeRegistry.value));
 
   // Get stored theme preference or use default
   const storedTheme = persistTheme ? localStorage.getItem(storageKey) : null;
-  const currentTheme = ref<string>(storedTheme && themeRegistry.value.has(storedTheme) ? storedTheme : defaultTheme);
+  const currentTheme = ref<string>(storedTheme && themeRegistry.value[storedTheme] ? storedTheme : defaultTheme);
 
   /**
    * Applies a theme by setting CSS variables and managing theme classes
@@ -47,7 +47,7 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
    */
   const applyTheme = (themeName: string): boolean => {
     // Validate theme exists
-    if (!themeRegistry.value.has(themeName)) {
+    if (!themeRegistry.value[themeName]) {
       console.error(`Theme '${themeName}' not found.`);
       return false;
     }
@@ -64,7 +64,7 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
       }
 
       // Apply CSS variables from theme config
-      const theme = themeRegistry.value.get(themeName);
+      const theme = themeRegistry.value[themeName];
       if (theme) {
         for (const [key, value] of Object.entries(theme)) {
           if (value) {
@@ -93,7 +93,7 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
    * @returns ThemeConfig object or null if theme doesn't exist
    */
   const getThemeConfig = (themeName: string): ThemeConfig | null => {
-    return themeRegistry.value.get(themeName) || null;
+    return themeRegistry.value[themeName] || null;
   };
 
   return {
