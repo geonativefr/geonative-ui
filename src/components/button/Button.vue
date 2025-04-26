@@ -3,7 +3,7 @@
     <ShadcnButton
       :class="
         twMerge(
-          `relative flex w-full items-center justify-center rounded-md bg-primary text-white shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
+          `relative flex w-full items-center justify-center rounded-md bg-background text-foreground shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
           props.disabled || props.loading ? 'cursor-not-allowed' : 'hover:opacity-80',
           props.disabled ? 'opacity-80' : '',
           props.class

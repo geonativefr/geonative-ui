@@ -1,3 +1,2 @@
-// Routes
-export { createRoute } from './routes';
-export { startsWithHttp } from './string';
+export * from './routes';
+export * from './string';
