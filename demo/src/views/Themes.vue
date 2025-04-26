@@ -4,7 +4,7 @@
     <Theme v-for="themeName in availableThemes" :key="themeName" :name="themeName" />
   </div>
   <div class="flex flex-col gap-4 m-4">
-    <h2 class="text-center text-lg font-bold">{{ currentTheme ? ucfirst(currentTheme) : "No theme selected" }}</h2>
+    <h2 class="text-center text-lg font-bold">{{ currentTheme ? ucfirst(currentTheme) : 'No theme selected' }}</h2>
     <div class="bg-background text-foreground border p-4">.bg-background .text-foreground .border</div>
     <div class="bg-primary text-primary-foreground p-4">.bg-primary .text-primary</div>
     <div class="bg-secondary text-secondary-foreground p-4">.bg-secondary .text-secondary-foreground</div>
@@ -23,5 +23,4 @@ import { ucfirst } from '@geonative/ui/helpers';
 
 // Import the useTheme composable from the UI library
 const { currentTheme, availableThemes } = useTheme();
-
 </script>

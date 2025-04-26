@@ -3,8 +3,8 @@ import type { ThemeConfig, ThemesData, ThemeOptions } from '@geonative/ui/types'
 
 // Singleton state - stored outside the function to be shared across all calls
 const themeRegistry = ref<ThemesData>({});
-const currentTheme = ref<string|null>(null);
-let defaultTheme: string|null = null;
+const currentTheme = ref<string | null>(null);
+let defaultTheme: string | null = null;
 let persistTheme: boolean = true;
 let storageKey: string = 'app-theme';
 let isInitialized = false;
@@ -117,7 +117,7 @@ export function useTheme() {
       localStorage.removeItem(storageKey);
     }
     currentTheme.value = null;
-  }
+  };
 
   /**
    * Gets the configuration for a specific theme
