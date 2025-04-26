@@ -33,7 +33,7 @@ export function useTheme(themesData: ThemesData, options: ThemeOptions) {
   initializeThemes();
 
   // Computed list of available themes
-  const availableThemes = computed(() => Object.keys( themeRegistry.value));
+  const availableThemes = computed(() => Object.keys(themeRegistry.value));
 
   // Get stored theme preference or use default
   const storedTheme = persistTheme ? localStorage.getItem(storageKey) : null;
