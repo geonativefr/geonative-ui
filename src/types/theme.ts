@@ -1,7 +1,8 @@
 import {
   type THEME_MODE_DARK,
   type THEME_MODE_LIGHT,
-  type THEME_MODE_SYSTEM, THEME_MODES,
+  type THEME_MODE_SYSTEM,
+  THEME_MODES,
   THEME_MODES_SELECTION,
 } from '@geonative/ui/constants/theme.ts';
 
