@@ -113,11 +113,13 @@ export function useTheme() {
    * @param themeName - Name of the theme to apply
    * @returns Boolean indicating if the theme was successfully applied
    */
-  const applyTheme = (themeName: string): boolean => {
+  const applyTheme = (themeName: string | null): boolean => {
     // Validate theme exists
-    if (!themeRegistry.value[themeName] || !themeRegistry.value[themeName][currentThemeMode.value]) {
-      console.error(`Theme '${themeName}' not found.`);
-      return false;
+    if (themeName) {
+      if (!themeRegistry.value[themeName] || !themeRegistry.value[themeName][currentThemeMode.value]) {
+        console.error(`Theme '${themeName}' not found.`);
+        return false;
+      }
     }
 
     try {
@@ -126,24 +128,23 @@ export function useTheme() {
         document.documentElement.classList.remove(theme);
       });
 
-      // Add the selected theme class (except for default theme)
-      if (themeName !== defaultTheme) {
+      // Add the selected theme class
+      if (themeName !== null) {
         document.documentElement.classList.add(themeName);
-      }
-
-      // Apply CSS variables from theme config
-      const theme = themeRegistry.value[themeName][currentThemeMode.value];
-      if (theme) {
-        for (const [key, value] of Object.entries(theme)) {
-          if (value) {
-            document.documentElement.style.setProperty(`--${key}`, value);
+        // Apply CSS variables from theme config
+        const theme = themeRegistry.value[themeName][currentThemeMode.value];
+        if (theme) {
+          for (const [key, value] of Object.entries(theme)) {
+            if (value) {
+              document.documentElement.style.setProperty(`--${key}`, value);
+            }
           }
         }
-      }
 
-      // Save theme preference if persistence is enabled
-      if (persistTheme) {
-        localStorage.setItem(storageThemeKey, themeName);
+        // Save theme preference if persistence is enabled
+        if (persistTheme) {
+          localStorage.setItem(storageThemeKey, themeName);
+        }
       }
 
       currentTheme.value = themeName;
