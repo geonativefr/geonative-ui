@@ -6,32 +6,14 @@
   <!-- Switch between theme mode light/dark -->
   <div class="flex flex-row gap-4 m-4">
     <h2 class="text-center text-lg font-bold">Theme mode :</h2>
-    <span class="text-center text-lg font-bold">
+    <span v-for="mode in THEME_MODES_SELECTION" :key="mode" class="text-center text-lg font-bold">
       <input
         type="radio"
         class="toggle toggle-primary"
-        :checked="selectedThemeMode === THEME_MODE_LIGHT"
-        @change="setThemeMode(THEME_MODE_LIGHT)"
+        :checked="selectedThemeMode === mode"
+        @change="setThemeMode(mode as ThemeModeSelection)"
       />
-      Light
-    </span>
-    <span class="text-center text-lg font-bold">
-      <input
-        type="radio"
-        class="toggle toggle-primary"
-        :checked="selectedThemeMode === THEME_MODE_DARK"
-        @change="setThemeMode(THEME_MODE_DARK)"
-      />
-      Dark
-    </span>
-    <span class="text-center text-lg font-bold">
-      <input
-        type="radio"
-        class="toggle toggle-primary"
-        :checked="selectedThemeMode === THEME_MODE_SYSTEM"
-        @change="setThemeMode(THEME_MODE_SYSTEM)"
-      />
-      System
+      {{ ucfirst(mode) }}
     </span>
   </div>
   <div class="flex flex-col gap-4 m-4">
@@ -51,8 +33,8 @@
 import { useTheme } from '@geonative/ui/composables';
 import Theme from '@geonative/ui/components/theme/Theme.vue';
 import { ucfirst } from '@geonative/ui/helpers';
-import { ref } from 'vue';
-import { THEME_MODE_DARK, THEME_MODE_LIGHT, THEME_MODE_SYSTEM } from '@geonative/ui/constants/theme.ts';
+import { THEME_MODES_SELECTION } from '@geonative/ui/constants';
+import type { ThemeModeSelection } from '@geonative/ui/types';
 
 // Import the useTheme composable from the UI library
 const { currentTheme, availableThemes, setThemeMode, selectedThemeMode } = useTheme();

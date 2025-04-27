@@ -1,4 +1,9 @@
-import type { THEME_MODE_DARK, THEME_MODE_LIGHT, THEME_MODE_SYSTEM } from '@geonative/ui/constants/theme.ts';
+import {
+  type THEME_MODE_DARK,
+  type THEME_MODE_LIGHT,
+  type THEME_MODE_SYSTEM, THEME_MODES,
+  THEME_MODES_SELECTION,
+} from '@geonative/ui/constants/theme.ts';
 
 /**
  * Theme configuration interface defining color properties for a theme
@@ -33,8 +38,8 @@ export interface ThemeConfig {
 export type ThemeModeLight = typeof THEME_MODE_LIGHT;
 export type ThemeModeDark = typeof THEME_MODE_DARK;
 export type ThemeModeSystem = typeof THEME_MODE_SYSTEM;
-export type ThemeModeSelection = ThemeModeLight | ThemeModeDark | ThemeModeSystem;
-export type ThemeMode = ThemeModeLight | ThemeModeDark;
+export type ThemeMode = typeof THEME_MODES;
+export type ThemeModeSelection = typeof THEME_MODES_SELECTION;
 
 /**
  * Theme configs pair light and dark themes
