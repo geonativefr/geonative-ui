@@ -5,14 +5,34 @@
   </div>
   <!-- Switch between theme mode light/dark -->
   <div class="flex flex-row gap-4 m-4">
-    <h2 class="text-center text-lg font-bold">Dark mode :</h2>
-    <input
-      type="checkbox"
-      ref="dark-mode"
-      class="toggle toggle-primary"
-      v-model="darkModeRef"
-      @change="setDarkMode(darkModeRef)"
-    />
+    <h2 class="text-center text-lg font-bold">Theme mode :</h2>
+    <span class="text-center text-lg font-bold">
+      <input
+        type="radio"
+        class="toggle toggle-primary"
+        :checked="selectedThemeMode === THEME_MODE_LIGHT"
+        @change="setThemeMode(THEME_MODE_LIGHT)"
+      />
+      Light
+    </span>
+    <span class="text-center text-lg font-bold">
+      <input
+        type="radio"
+        class="toggle toggle-primary"
+        :checked="selectedThemeMode === THEME_MODE_DARK"
+        @change="setThemeMode(THEME_MODE_DARK)"
+      />
+      Dark
+    </span>
+    <span class="text-center text-lg font-bold">
+      <input
+        type="radio"
+        class="toggle toggle-primary"
+        :checked="selectedThemeMode === THEME_MODE_SYSTEM"
+        @change="setThemeMode(THEME_MODE_SYSTEM)"
+      />
+      System
+    </span>
   </div>
   <div class="flex flex-col gap-4 m-4">
     <h2 class="text-center text-lg font-bold">{{ currentTheme ? ucfirst(currentTheme) : 'No theme selected' }}</h2>
@@ -32,10 +52,8 @@ import { useTheme } from '@geonative/ui/composables';
 import Theme from '@geonative/ui/components/theme/Theme.vue';
 import { ucfirst } from '@geonative/ui/helpers';
 import { ref } from 'vue';
+import { THEME_MODE_DARK, THEME_MODE_LIGHT, THEME_MODE_SYSTEM } from '@geonative/ui/constants/theme.ts';
 
 // Import the useTheme composable from the UI library
-const { currentTheme, availableThemes, setDarkMode, currentThemeMode } = useTheme();
-
-// Toggle dark mode
-const darkModeRef = ref<boolean>(currentThemeMode.value === 'dark');
+const { currentTheme, availableThemes, setThemeMode, selectedThemeMode } = useTheme();
 </script>

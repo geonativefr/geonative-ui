@@ -1,26 +1,24 @@
-import { ref, computed, watch } from 'vue';
-import type { ThemeConfig, ThemesData, ThemeOptions, ThemeMode } from '@geonative/ui/types';
+import { computed, ref, watch } from 'vue';
+import type { ThemeConfig, ThemeMode, ThemeModeSelection, ThemeOptions, ThemesData } from '@geonative/ui/types';
+import { THEME_MODE_DARK, THEME_MODE_LIGHT, THEME_MODE_SYSTEM } from '@geonative/ui/constants/theme.ts';
 
 // Singleton state - stored outside the function to be shared across all calls
 const themeRegistry = ref<ThemesData>({});
 const currentTheme = ref<string | null>(null);
 const prefersDarkScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-const selectedDarkMode = ref<boolean>(false);
+const selectedThemeMode = ref<ThemeModeSelection>(THEME_MODE_SYSTEM);
 const currentThemeMode = computed<ThemeMode>(() => {
-  // Check if dark mode is explicitly set by the user
-  if (selectedDarkMode.value !== null) {
-    return selectedDarkMode.value ? 'dark' : 'light';
-  }
   // Check if the user has a preference for dark mode in their system settings
-  if (prefersDarkScheme) {
-    return prefersDarkScheme.matches ? 'dark' : 'light';
+  if (selectedThemeMode.value == THEME_MODE_SYSTEM && prefersDarkScheme) {
+    return prefersDarkScheme.matches ? THEME_MODE_DARK : THEME_MODE_LIGHT;
   }
-  // Default to light mode if no preference is set
-  return 'light';
+  // Check if dark mode is explicitly set by the user
+  return selectedThemeMode.value == THEME_MODE_DARK ? THEME_MODE_DARK : THEME_MODE_LIGHT;
 });
 let defaultTheme: string | null = null;
 let persistTheme: boolean = true;
-let storageKey: string = 'app-theme';
+let storageThemeKey: string = 'app-theme';
+let storageThemeModeKey: string = 'app-theme-mode';
 let isInitialized = false;
 
 /**
@@ -47,21 +45,23 @@ export function useTheme() {
         // Update options with provided values
         defaultTheme = options.defaultTheme || defaultTheme;
         persistTheme = options.persistTheme !== undefined ? options.persistTheme : persistTheme;
-        storageKey = options.storageKey || storageKey;
+        storageThemeKey = options.storageThemeKey || storageThemeKey;
+        storageThemeModeKey = options.storageThemeModeKey || storageThemeModeKey;
       }
 
       // Get stored theme preference or use default
-      const storedTheme = persistTheme ? localStorage.getItem(storageKey) : null;
+      const storedTheme = persistTheme ? localStorage.getItem(storageThemeKey) : null;
       currentTheme.value = storedTheme || defaultTheme || null;
 
-      // Get stored dark mode preference
-      const storedDarkMode = persistTheme ? localStorage.getItem('dark-mode') : null;
-      selectedDarkMode.value = storedDarkMode === 'true';
+      // Get stored theme mode preference
+      const storedThemeMode: ThemeMode = (localStorage.getItem(storageThemeModeKey) as ThemeMode) || null;
+      selectedThemeMode.value = storedThemeMode ? storedThemeMode : THEME_MODE_SYSTEM;
 
+      // Apply theme mode preference if set
       if (prefersDarkScheme) {
         prefersDarkScheme.addEventListener('change', () => {
-          // Only update if user hasn't explicitly set a preference
-          if (selectedDarkMode.value === null) {
+          // Only if system mode is selected
+          if (selectedThemeMode.value == THEME_MODE_SYSTEM) {
             // Re-apply current theme with new system preference
             if (currentTheme.value) {
               console.log('System preference changed, re-applying theme:', currentTheme.value);
@@ -86,14 +86,14 @@ export function useTheme() {
       // Light and dark mode themes
       if (themeConfig.light) {
         try {
-          themeRegistry.value[themeName]['light'] = themeConfig.light;
+          themeRegistry.value[themeName][THEME_MODE_LIGHT] = themeConfig.light;
         } catch (err) {
           console.error(`Error initializing light theme '${themeName}':`, err);
         }
       }
       if (themeConfig.dark) {
         try {
-          themeRegistry.value[themeName]['dark'] = themeConfig.dark;
+          themeRegistry.value[themeName][THEME_MODE_DARK] = themeConfig.dark;
         } catch (err) {
           console.error(`Error initializing dark theme '${themeName}':`, err);
         }
@@ -145,7 +145,7 @@ export function useTheme() {
 
       // Save theme preference if persistence is enabled
       if (persistTheme) {
-        localStorage.setItem(storageKey, themeName);
+        localStorage.setItem(storageThemeKey, themeName);
       }
 
       currentTheme.value = themeName;
@@ -170,7 +170,7 @@ export function useTheme() {
     }
     // Clear stored theme preference
     if (persistTheme) {
-      localStorage.removeItem(storageKey);
+      localStorage.removeItem(storageThemeKey);
     }
     currentTheme.value = null;
   };
@@ -194,19 +194,15 @@ export function useTheme() {
   };
 
   /**
-   * Sets the dark mode preference
+   * Sets the theme mode preference
    *
-   * @param isDark - Boolean indicating if dark mode should be enabled
+   * @param themeMode - Theme mode to set (light or dark)
    */
-  const setDarkMode = (isDark: boolean) => {
-    selectedDarkMode.value = isDark;
-
-    if (persistTheme && isDark !== null) {
-      localStorage.setItem('dark-mode', String(isDark));
-    } else if (persistTheme) {
-      localStorage.removeItem('dark-mode');
-    }
-
+  const setThemeMode = (themeMode: ThemeModeSelection) => {
+    // Apply the selected theme mode
+    selectedThemeMode.value = themeMode;
+    // Save the selected theme mode if persistence is enabled
+    localStorage.setItem(storageThemeModeKey, themeMode);
     // Re-apply current theme with new mode if one is active
     if (currentTheme.value) {
       applyTheme(currentTheme.value);
@@ -214,22 +210,21 @@ export function useTheme() {
   };
 
   // Watch for changes to the dark mode preference and apply it
-  watch(selectedDarkMode, (newMode) => {
-    if (newMode !== null) {
-      if (persistTheme) {
-        localStorage.setItem('dark-mode', newMode.toString());
-      }
+  watch(selectedThemeMode, (newMode) => {
+    if (persistTheme) {
+      localStorage.setItem(storageThemeModeKey, newMode.toString());
     }
   });
 
   return {
     currentTheme,
     currentThemeMode,
+    selectedThemeMode,
     availableThemes,
     resetTheme,
     initializeThemes,
     applyTheme,
-    setDarkMode,
+    setThemeMode,
     getThemeConfig,
   };
 }
