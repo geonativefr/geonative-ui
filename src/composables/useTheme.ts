@@ -1,4 +1,4 @@
-import { ref, computed, watch, onMounted } from 'vue';
+import { ref, computed, watch } from 'vue';
 import type { ThemeConfig, ThemesData, ThemeOptions, ThemeMode } from '@geonative/ui/types';
 
 // Singleton state - stored outside the function to be shared across all calls
@@ -58,6 +58,19 @@ export function useTheme() {
       const storedDarkMode = persistTheme ? localStorage.getItem('dark-mode') : null;
       selectedDarkMode.value = storedDarkMode === 'true';
 
+      if (prefersDarkScheme) {
+        prefersDarkScheme.addEventListener('change', () => {
+          // Only update if user hasn't explicitly set a preference
+          if (selectedDarkMode.value === null) {
+            // Re-apply current theme with new system preference
+            if (currentTheme.value) {
+              console.log('System preference changed, re-applying theme:', currentTheme.value);
+              applyTheme(currentTheme.value);
+            }
+          }
+        });
+      }
+
       isInitialized = true;
     }
 
@@ -85,6 +98,13 @@ export function useTheme() {
           console.error(`Error initializing dark theme '${themeName}':`, err);
         }
       }
+    }
+
+    // Apply the stored theme if it exists
+    if (currentTheme.value) {
+      applyTheme(currentTheme.value);
+    } else if (defaultTheme) {
+      applyTheme(defaultTheme);
     }
   };
 
@@ -193,40 +213,12 @@ export function useTheme() {
     }
   };
 
-  // Watch for system preference changes
-  onMounted(() => {
-    if (prefersDarkScheme) {
-      prefersDarkScheme.addEventListener('change', () => {
-        // Only update if user hasn't explicitly set a preference
-        if (selectedDarkMode.value === null) {
-          // Re-apply current theme with new system preference
-          if (currentTheme.value) {
-            applyTheme(currentTheme.value);
-          }
-        }
-      });
-    }
-
-    // Apply the current theme on mount if it exists
-    if (currentTheme.value) {
-      applyTheme(currentTheme.value);
-    }
-  });
-
-  // Watch for changes to the current theme and apply it
-  watch(currentTheme, (newTheme) => {
-    if (newTheme) {
-      applyTheme(newTheme);
-    }
-  });
-
   // Watch for changes to the dark mode preference and apply it
   watch(selectedDarkMode, (newMode) => {
     if (newMode !== null) {
       if (persistTheme) {
         localStorage.setItem('dark-mode', newMode.toString());
       }
-      applyTheme(currentTheme.value || defaultTheme || '');
     }
   });
 

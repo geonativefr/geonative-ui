@@ -6,7 +6,13 @@
   <!-- Switch between theme mode light/dark -->
   <div class="flex flex-row gap-4 m-4">
     <h2 class="text-center text-lg font-bold">Dark mode :</h2>
-    <input type="checkbox" ref="dark-mode" class="toggle toggle-primary" @click="toggleDarkMode()" />
+    <input
+      type="checkbox"
+      ref="dark-mode"
+      class="toggle toggle-primary"
+      v-model="darkModeRef"
+      @change="setDarkMode(darkModeRef)"
+    />
   </div>
   <div class="flex flex-col gap-4 m-4">
     <h2 class="text-center text-lg font-bold">{{ currentTheme ? ucfirst(currentTheme) : 'No theme selected' }}</h2>
@@ -25,21 +31,12 @@
 import { useTheme } from '@geonative/ui/composables';
 import Theme from '@geonative/ui/components/theme/Theme.vue';
 import { ucfirst } from '@geonative/ui/helpers';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
 // Import the useTheme composable from the UI library
 const { currentTheme, availableThemes, setDarkMode, currentThemeMode } = useTheme();
 
 // Toggle dark mode
-const darkModeRef = ref<boolean>(false);
-onMounted(() => {
-  if (darkModeRef.value) {
-    darkModeRef.value = currentThemeMode.value === 'dark';
-  }
-});
+const darkModeRef = ref<boolean>(currentThemeMode.value === 'dark');
 
-const toggleDarkMode = () => {
-  darkModeRef.value = !darkModeRef.value;
-  setDarkMode(darkModeRef.value);
-};
 </script>
