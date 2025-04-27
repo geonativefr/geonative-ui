@@ -38,5 +38,4 @@ const { currentTheme, availableThemes, setDarkMode, currentThemeMode } = useThem
 
 // Toggle dark mode
 const darkModeRef = ref<boolean>(currentThemeMode.value === 'dark');
-
 </script>
