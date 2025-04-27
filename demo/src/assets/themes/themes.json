@@ -1,34 +1,38 @@
 {
-  "light": {
-    "background": "#ffffff",
-    "foreground": "#000000",
-    "primary": "#3b82f6",
-    "primary-foreground": "#000444",
-    "secondary": "#f1e6c3",
-    "secondary-foreground": "#f97316"
+  "default": {
+    "light": {
+      "background": "#ffffff",
+      "foreground": "#000000",
+      "primary": "#3b82f6",
+      "primary-foreground": "#000444",
+      "secondary": "#f1e6c3",
+      "secondary-foreground": "#f97316"
+    },
+    "dark": {
+      "background": "#000000",
+      "foreground": "#ffffff",
+      "primary": "#000444",
+      "primary-foreground": "#3b82f6",
+      "secondary": "#f97316",
+      "secondary-foreground": "#f1e6c3"
+    }
   },
-  "dark": {
-    "background": "#000000",
-    "foreground": "#ffffff",
-    "primary": "#000444",
-    "primary-foreground": "#3b82f6",
-    "secondary": "#f97316",
-    "secondary-foreground": "#f1e6c3"
-  },
-  "blue-light": {
-    "background": "#e0f2fe",
-    "foreground": "#000000",
-    "primary": "#3b82f6",
-    "primary-foreground": "#000444",
-    "secondary": "#f1e6c3",
-    "secondary-foreground": "#f97316"
-  },
-  "blue-dark": {
-    "background": "#0f172a",
-    "foreground": "#ffffff",
-    "primary": "#3b82f6",
-    "primary-foreground": "#000444",
-    "secondary": "#f97316",
-    "secondary-foreground": "#f1e6c3"
+  "blue": {
+    "light": {
+      "background": "#e0f2fe",
+      "foreground": "#000000",
+      "primary": "#3b82f6",
+      "primary-foreground": "#000444",
+      "secondary": "#f1e6c3",
+      "secondary-foreground": "#f97316"
+    },
+    "dark": {
+      "background": "#0f172a",
+      "foreground": "#ffffff",
+      "primary": "#3b82f6",
+      "primary-foreground": "#000444",
+      "secondary": "#f97316",
+      "secondary-foreground": "#f1e6c3"
+    }
   }
 }

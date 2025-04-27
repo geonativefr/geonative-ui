@@ -26,9 +26,22 @@ export interface ThemeConfig {
 }
 
 /**
+ * ThemeMode
+ */
+export type ThemeMode = 'light' | 'dark';
+
+/**
+ * Theme configs pair light and dark themes
+ */
+export interface ThemeModesConfig {
+  light: ThemeConfig|null; // Light theme configuration
+  dark: ThemeConfig|null; // Dark theme configuration
+}
+
+/**
  * Themes data structure containing multiple named themes
  */
-export type ThemesData = Record<string, ThemeConfig>;
+export type ThemesData = Record<string, ThemeModesConfig>;
 
 /**
  * Options for theme management
