@@ -64,7 +64,6 @@ export function useTheme() {
           if (selectedThemeMode.value == THEME_MODE_SYSTEM) {
             // Re-apply current theme with new system preference
             if (currentTheme.value) {
-              console.log('System preference changed, re-applying theme:', currentTheme.value);
               applyTheme(currentTheme.value);
             }
           }
@@ -120,7 +119,6 @@ export function useTheme() {
       console.error(`Theme '${themeName}' not found.`);
       return false;
     }
-    console.log('Applying theme:', themeName, 'mode:', currentThemeMode.value);
 
     try {
       // Remove all existing theme classes
