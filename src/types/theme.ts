@@ -34,8 +34,8 @@ export type ThemeMode = 'light' | 'dark';
  * Theme configs pair light and dark themes
  */
 export interface ThemeModesConfig {
-  light: ThemeConfig|null; // Light theme configuration
-  dark: ThemeConfig|null; // Dark theme configuration
+  light: ThemeConfig | null; // Light theme configuration
+  dark: ThemeConfig | null; // Dark theme configuration
 }
 
 /**

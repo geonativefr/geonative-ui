@@ -4,7 +4,7 @@ import type { ThemeConfig, ThemesData, ThemeOptions, ThemeMode } from '@geonativ
 // Singleton state - stored outside the function to be shared across all calls
 const themeRegistry = ref<ThemesData>({});
 const currentTheme = ref<string | null>(null);
-const prefersDarkScheme = window.matchMedia &&  window.matchMedia('(prefers-color-scheme: dark)');
+const prefersDarkScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 const selectedDarkMode = ref<boolean>(false);
 const currentThemeMode = computed<ThemeMode>(() => {
   // Check if dark mode is explicitly set by the user
@@ -22,8 +22,6 @@ let defaultTheme: string | null = null;
 let persistTheme: boolean = true;
 let storageKey: string = 'app-theme';
 let isInitialized = false;
-
-
 
 /**
  * Composable for managing dynamic themes in a Vue application.
@@ -170,7 +168,7 @@ export function useTheme() {
       return null;
     }
     // Use provided mode or fall back to current mode
-    const mode = themeMode || currentThemeMode.value as ThemeMode;
+    const mode = themeMode || (currentThemeMode.value as ThemeMode);
     // Return the theme config for the specified mode
     return themeRegistry.value[themeName][mode] || null;
   };
@@ -231,7 +229,6 @@ export function useTheme() {
       applyTheme(currentTheme.value || defaultTheme || '');
     }
   });
-
 
   return {
     currentTheme,
