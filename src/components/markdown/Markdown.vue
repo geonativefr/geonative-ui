@@ -27,24 +27,24 @@ const htmlContent = computed(() => {
 const { currentTheme, getThemeConfig } = useTheme();
 const themeConfig = getThemeConfig(currentTheme.value) as ThemeConfig;
 // Retrieve theme values for styling
-const background = themeConfig['background'];
-const foreground = themeConfig['foreground'];
-const primaryBackground = themeConfig['primary'];
-const primaryForeground = themeConfig['primary-foreground'];
-const secondaryBackground = themeConfig['secondary'];
-const secondaryForeground = themeConfig['secondary-foreground'];
-const accentBackground = themeConfig['accent'];
-const accentForeground = themeConfig['accent-foreground'];
-const popoverBackground = themeConfig['popover'];
-const popoverForeground = themeConfig['popover-foreground'];
-const cardBackground = themeConfig['card'];
-const cardForeground = themeConfig['card-foreground'];
-const mutedBackground = themeConfig['muted'];
-const mutedForeground = themeConfig['muted-foreground'];
-const borderColor = themeConfig['border'];
-const inputColor = themeConfig['input'];
-const ringColor = themeConfig['ring'];
-const radius = themeConfig['radius'];
+const background = themeConfig['background'] || '#ffffff';
+const foreground = themeConfig['foreground'] || '#000000';
+const primaryBackground = themeConfig['primary'] || '#f0f0f0';
+const primaryForeground = themeConfig['primary-foreground'] || '#000000';
+const secondaryBackground = themeConfig['secondary'] || '#e0e0e0';
+const secondaryForeground = themeConfig['secondary-foreground'] || '#000000';
+const accentBackground = themeConfig['accent'] || '#d0d0d0';
+const accentForeground = themeConfig['accent-foreground'] || '#000000';
+const popoverBackground = themeConfig['popover'] || '#c0c0c0';
+const popoverForeground = themeConfig['popover-foreground'] || '#000000';
+const cardBackground = themeConfig['card'] || '#b0b0b0';
+const cardForeground = themeConfig['card-foreground'] || '#000000';
+const mutedBackground = themeConfig['muted'] || '#a0a0a0';
+const mutedForeground = themeConfig['muted-foreground'] || '#000000';
+const borderColor = themeConfig['border'] || '#909090';
+const inputColor = themeConfig['input'] || '#808080';
+const ringColor = themeConfig['ring'] || '#707070';
+const radius = themeConfig['radius'] || '0.25rem';
 </script>
 
 <style>
