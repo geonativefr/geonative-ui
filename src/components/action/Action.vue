@@ -13,7 +13,6 @@
 import type { ActionType, clickActionType } from '@geonative/ui/types';
 import { startsWithHttp } from '@geonative/ui/helpers';
 
-
 const props = defineProps<{
   actionType?: ActionType;
   actionClick: clickActionType;
@@ -25,8 +24,6 @@ const isInternalLink = typeof props.actionClick === 'string';
 const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
 const isFunctionLink = typeof props.actionClick === 'function';
 function getAction(clickAction: ActionType | undefined) {
-
-
   if (isFunctionLink) {
     return {
       as: 'span',

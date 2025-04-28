@@ -6,4 +6,3 @@ export type ActionType = {
   attr?: string;
   clickAction: clickActionType;
 };
-
