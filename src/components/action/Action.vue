@@ -1,15 +1,21 @@
 <template>
-  <component :is="getComponentType" v-bind="getComponentProps" :disabled="disabled" :class="props.class">
+  <component
+    :is="getAction(props.actionType).as"
+    v-bind="getAction(props.actionType).attr"
+    :disabled="props.disabled"
+    :class="props.class"
+  >
     <slot />
   </component>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { startsWithHttp } from '@geonative/ui/helpers';
+import type { ActionType, clickActionType } from '@geonative/ui/types';
 
 const props = defineProps<{
-  actionClick: string | (() => void) | Promise<void> | null;
+  actionType?: ActionType;
+  actionClick: clickActionType;
   disabled?: boolean;
   class?: string;
 }>();
@@ -18,23 +24,32 @@ const isInternalLink = typeof props.actionClick === 'string';
 const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
 const isFunctionLink = typeof props.actionClick === 'function';
 
-const getComponentType = computed(() => {
+function getAction(clickAction: ActionType | undefined) {
   if (isFunctionLink) {
-    return 'span';
+    return {
+      as: 'span',
+      attr: { onClick: props.actionClick },
+      clickAction: clickAction,
+    };
   }
   if (isExternalLink) {
-    return 'a';
+    return {
+      as: 'a',
+      attr: { href: props.actionClick },
+      clickAction: clickAction,
+    };
   }
   if (isInternalLink) {
-    return 'router-link';
+    return {
+      as: 'router-link',
+      attr: { to: props.actionClick },
+      clickAction: clickAction,
+    };
   }
-  return 'span';
-});
-
-const getComponentProps = computed(() => {
-  if (isFunctionLink) return { onClick: props.actionClick };
-  if (isExternalLink) return { href: props.actionClick };
-  if (isInternalLink) return { to: props.actionClick };
-  return {};
-});
+  return {
+    as: 'span',
+    attr: {},
+    clickAction: clickAction,
+  };
+}
 </script>
