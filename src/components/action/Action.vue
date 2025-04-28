@@ -20,29 +20,29 @@ const props = defineProps<{
   class?: string;
 }>();
 
-const isInternalLink = typeof props.actionClick.type === 'string';
-const isExternalLink = typeof props.actionClick.type === 'string' && startsWithHttp(props.actionClick.type);
-const isFunctionLink = typeof props.actionClick.type === 'function';
+const isInternalLink = typeof props.actionClick === 'string';
+const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
+const isFunctionLink = typeof props.actionClick === 'function';
 
 function getAction(clickAction: ActionType | undefined) {
   if (isFunctionLink) {
     return {
       as: 'span',
-      attr: { onClick: props.actionClick.type },
+      attr: { onClick: props.actionClick },
       clickAction: clickAction,
     };
   }
   if (isExternalLink) {
     return {
       as: 'a',
-      attr: { href: props.actionClick.type },
+      attr: { href: props.actionClick },
       clickAction: clickAction,
     };
   }
   if (isInternalLink) {
     return {
       as: 'router-link',
-      attr: { to: props.actionClick.type },
+      attr: { to: props.actionClick },
       clickAction: clickAction,
     };
   }
