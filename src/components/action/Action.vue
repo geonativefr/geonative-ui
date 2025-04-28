@@ -23,6 +23,7 @@ const props = defineProps<{
 const isInternalLink = typeof props.actionClick === 'string';
 const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
 const isFunctionLink = typeof props.actionClick === 'function';
+
 function getAction(clickAction: ActionType | undefined) {
   if (isFunctionLink) {
     return {
