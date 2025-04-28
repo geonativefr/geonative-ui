@@ -1,10 +1,7 @@
 <template>
   <div v-if="props.item.label">
     <ShadcnDropdownMenuItem :disabled="!props.item.click || props.item.disabled">
-      <Action
-        :actionClick="props.item.click"
-        class="flex justify-between items-center w-full"
-      >
+      <Action :actionClick="props.item.click" class="flex justify-between items-center w-full">
         <div class="flex items-center gap-2">
           <Icon
             v-if="props.item.iconProps"
@@ -34,5 +31,4 @@ import type { DropdownMenuItemType } from '@geonative/ui/types';
 const props = defineProps<{
   item: DropdownMenuItemType;
 }>();
-
 </script>

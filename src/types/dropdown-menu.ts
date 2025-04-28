@@ -16,7 +16,3 @@ export interface DropdownMenuItemType {
   shortcut?: string;
   sections?: DropdownMenuSectionType[];
 }
-
-
-
-
