@@ -181,9 +181,9 @@ export function useTheme() {
    * @param themeMode - Mode of the theme (light or dark)
    * @returns ThemeConfig object or null if theme doesn't exist
    */
-  const getThemeConfig = (themeName: string, themeMode?: ThemeMode): ThemeConfig | null => {
+  const getThemeConfig = (themeName: string | null, themeMode?: ThemeMode): ThemeConfig | null => {
     // Check if theme exists
-    if (!themeRegistry.value[themeName]) {
+    if (!themeName || !themeRegistry.value[themeName]) {
       return null;
     }
     // Use provided mode or fall back to current mode
