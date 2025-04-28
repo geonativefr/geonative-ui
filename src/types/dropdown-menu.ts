@@ -1,4 +1,5 @@
 import type { IconProps } from './icon.ts';
+import type { clickActionType } from './action.ts';
 
 export interface DropdownMenuType {
   label?: string;
@@ -16,8 +17,6 @@ export interface DropdownMenuItemType {
   sections?: DropdownMenuSectionType[];
 }
 
-export type urlType = string;
-export type callbackType = () => void | Promise<void>;
-export type clickActionType = urlType | callbackType | null;
+
 
 

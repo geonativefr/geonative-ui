@@ -1,7 +1,10 @@
 <template>
   <div v-if="props.item.label">
     <ShadcnDropdownMenuItem :disabled="!props.item.click || props.item.disabled">
-      <component :is="getComponentType" v-bind="getComponentProps" class="flex justify-between items-center w-full">
+      <Action
+        :actionClick="props.item.click"
+        class="flex justify-between items-center w-full"
+      >
         <div class="flex items-center gap-2">
           <Icon
             v-if="props.item.iconProps"
@@ -15,45 +18,21 @@
         <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
           {{ props.item.shortcut }}
         </ShadcnDropdownMenuShortcut>
-      </component>
+      </Action>
     </ShadcnDropdownMenuItem>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@geonative/ui/components';
+import { Icon, Action } from '@geonative/ui/components';
 import {
   DropdownMenuItem as ShadcnDropdownMenuItem,
   DropdownMenuShortcut as ShadcnDropdownMenuShortcut,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
 import type { DropdownMenuItemType } from '@geonative/ui/types';
-import { computed } from 'vue';
 
 const props = defineProps<{
   item: DropdownMenuItemType;
 }>();
 
-const isInternalLink = typeof props.item.click === 'string';
-const isExternalLink = typeof props.item.click === 'string' && props.item.click.startsWith('http');
-const isFunctionLink = typeof props.item.click === 'function';
-
-const getComponentType = computed(() => {
-  if (isFunctionLink) {
-    return 'button';
-  }
-  if (isExternalLink) {
-    return 'a';
-  }
-  if (isInternalLink) {
-    return 'router-link';
-  }
-  return 'div';
-});
-
-const getComponentProps = computed(() => {
-  if (isFunctionLink) return { onClick: props.item.click };
-  if (isExternalLink) return { href: props.item.click };
-  if (isInternalLink) return { to: props.item.click };
-  return '';
-});
 </script>
