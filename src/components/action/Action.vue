@@ -19,5 +19,4 @@ const props = defineProps<{
   disabled?: boolean;
   class?: string;
 }>();
-
 </script>
