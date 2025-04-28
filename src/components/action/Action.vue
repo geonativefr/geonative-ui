@@ -10,39 +10,39 @@
 </template>
 
 <script setup lang="ts">
-import type { ActionType, clickActionType } from '@geonative/ui/types';
+import type { ActionType, ClickActionType } from '@geonative/ui/types';
 import { startsWithHttp } from '@geonative/ui/helpers';
 
 const props = defineProps<{
   actionType?: ActionType;
-  actionClick: clickActionType;
+  actionClick: ClickActionType;
   disabled?: boolean;
   class?: string;
 }>();
 
-const isInternalLink = typeof props.actionClick === 'string';
-const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
-const isFunctionLink = typeof props.actionClick === 'function';
+const isInternalLink = typeof props.actionClick.type === 'string';
+const isExternalLink = typeof props.actionClick.type === 'string' && startsWithHttp(props.actionClick.type);
+const isFunctionLink = typeof props.actionClick.type === 'function';
 
 function getAction(clickAction: ActionType | undefined) {
   if (isFunctionLink) {
     return {
       as: 'span',
-      attr: { onClick: props.actionClick },
+      attr: { onClick: props.actionClick.type },
       clickAction: clickAction,
     };
   }
   if (isExternalLink) {
     return {
       as: 'a',
-      attr: { href: props.actionClick },
+      attr: { href: props.actionClick.type },
       clickAction: clickAction,
     };
   }
   if (isInternalLink) {
     return {
       as: 'router-link',
-      attr: { to: props.actionClick },
+      attr: { to: props.actionClick.type },
       clickAction: clickAction,
     };
   }

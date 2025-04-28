@@ -1,8 +1,10 @@
-export type clickActionType = string | (() => void) | Promise<void> | null;
+export interface ClickActionType {
+  type: string | (() => void) | Promise<void> | null;
+}
 
-export type ActionType = {
+export interface ActionType {
   label?: string;
   as?: string;
   attr?: string;
-  clickAction: clickActionType;
-};
+  clickAction: ClickActionType;
+}
