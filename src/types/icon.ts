@@ -1,4 +1,4 @@
-export type IconSource = 'svg' | 'lucide' | 'heroicons';
+export type IconSource = 'svg' | 'lucide' | 'heroicons' | 'avatar';
 export type IconType = 'solid' | 'outline' | undefined;
 
 export interface IconProps {

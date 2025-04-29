@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import { Button as ShadcnButton } from '@geonative/ui/shadcn/ui/button';
-import { computed, defineProps, onMounted, ref, withDefaults } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import type { CustomSize } from '@geonative/ui/types';
 import { Spinner } from '@geonative/ui/components';

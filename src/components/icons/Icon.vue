@@ -1,5 +1,5 @@
 <template>
-  <component v-if="iconComponent" :is="iconComponent" :class="twMerge('h-5 w-5', props.class)" />
+  <component v-if="iconComponent" :is="iconComponent" :class="twMerge('size-5', props.class)" />
   <span v-else class="rounded-md bg-gray-50 px-2 py-1 text-xs text-gray-600 ring-1 ring-gray-500/10">{{
     props.name
   }}</span>
@@ -11,7 +11,8 @@ import type { Component } from 'vue';
 import * as lucideIcons from 'lucide-vue-next';
 import HeroIcons from './heroicons.ts';
 import { twMerge } from 'tailwind-merge';
-import type { IconType, IconSource } from '@geonative/ui/types';
+import type { IconType, IconSource, AvatarProps } from '@geonative/ui/types';
+import { Avatar } from '@geonative/ui/components';
 
 const props = withDefaults(
   defineProps<{
@@ -19,6 +20,7 @@ const props = withDefaults(
     class?: string;
     source: IconSource;
     type?: IconType; // Type for heroicons
+    avatarProps?: AvatarProps; // Props for avatar
   }>(),
   {
     type: 'solid',
@@ -43,6 +45,16 @@ const iconComponent: Component = computed(() => {
     // Construct the full icon name
     const fullIconName = `${iconType}${iconName}Icon`;
     return HeroIcons[fullIconName] as Component;
+  }
+
+  // Handle avatar
+  if (props.source === 'avatar') {
+    // Check if the avatarProps are provided
+    if (props.avatarProps) {
+      return () => h(Avatar, props.avatarProps);
+    }
+    console.warn('Avatar props are required for avatar source');
+    return null;
   }
 
   // Handle SVG icons
@@ -71,10 +83,9 @@ const iconComponent: Component = computed(() => {
       // Create a VueJS component from the SVG file
       const svgContent = icons[matchedIconPath] as string;
       return createSvgComponent(svgContent);
-    } else {
-      console.warn(`Icon "${props.name}" not found in assets/icons directory`);
-      return null;
     }
+    console.warn(`Icon "${props.name}" not found in assets/icons directory`);
+    return null;
   } catch (error) {
     console.error(`Error loading icon "${props.name}":`, error);
     return null;
