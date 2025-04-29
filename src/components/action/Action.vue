@@ -23,7 +23,7 @@ const isInternalLink = typeof props.actionClick === 'string';
 const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
 const isFunctionLink = typeof props.actionClick === 'function';
 
-function getAction(clickAction : ClickActionType) : ActionType {
+function getAction(clickAction: ClickActionType): ActionType {
   if (isFunctionLink) {
     return {
       as: 'span',
