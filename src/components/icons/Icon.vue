@@ -19,6 +19,7 @@ const props = withDefaults(
     class?: string;
     source: IconSource;
     type?: IconType; // Type for heroicons
+    avatarProps?: AvatarProps; // Props for avatar
   }>(),
   {
     type: 'solid',
@@ -43,6 +44,16 @@ const iconComponent: Component = computed(() => {
     // Construct the full icon name
     const fullIconName = `${iconType}${iconName}Icon`;
     return HeroIcons[fullIconName] as Component;
+  }
+
+  // Handle avatar
+  if (props.source === 'avatar') {
+    // Check if the avatarProps are provided
+    if (props.avatarProps) {
+      return () => h('Avatar', props.avatarProps);
+    }
+    console.warn('Avatar props are required for avatar source');
+    return null;
   }
 
   // Handle SVG icons
@@ -71,10 +82,9 @@ const iconComponent: Component = computed(() => {
       // Create a VueJS component from the SVG file
       const svgContent = icons[matchedIconPath] as string;
       return createSvgComponent(svgContent);
-    } else {
-      console.warn(`Icon "${props.name}" not found in assets/icons directory`);
-      return null;
     }
+    console.warn(`Icon "${props.name}" not found in assets/icons directory`);
+    return null;
   } catch (error) {
     console.error(`Error loading icon "${props.name}":`, error);
     return null;
