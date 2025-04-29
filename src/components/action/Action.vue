@@ -1,7 +1,7 @@
 <template>
   <component
     :is="action.as"
-    v-bind="{ [action.attr ?? '']: action.clickAction }"
+    v-bind="action.attr ? { [action.attr]: action.clickAction } : {}"
     :disabled="props.disabled"
     :class="props.class"
   >
@@ -48,8 +48,8 @@ function getAction(clickAction: ClickActionType): ActionType {
     };
   }
   return {
-    as: 'span',
-    attr: '',
+    as: undefined,
+    attr: undefined,
     clickAction: clickAction,
   };
 }
