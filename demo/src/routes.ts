@@ -124,14 +124,6 @@ const routes: RouteRecordRaw[] = [
       menuLabel: 'Sidebar',
     },
   }),
-  createRoute({
-    path: '/sidebar',
-    name: 'sidebar',
-    component: () => import('@/views/Sidebar.vue'),
-    meta: {
-      menuLabel: 'Sidebar',
-    },
-  }),
   // Catch all unmatched routes
   createRoute({
     path: '/:pathMatch(.*)*',
