@@ -30,14 +30,17 @@
     </div>
     <div class="flex justify-between gap-10">
       <span>Avatar</span>
-      <Icon name="alice" :avatar-props="{ url: user.avatar, isSquare: true, initials: user.name.slice(0, 2) }" source="avatar" />
+      <Icon
+        name="alice"
+        :avatar-props="{ url: user.avatar, isSquare: true, initials: user.name.slice(0, 2) }"
+        source="avatar"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@geonative/ui/components';
-
 
 const user = {
   name: 'alice',
