@@ -35,7 +35,7 @@ const dropdown: DropdownMenuType = {
     [
       {
         label: 'Upgrade to pro',
-        url: '/upgrade',
+        clickAction: '/upgrade',
         shortcut: '⌘+U',
         iconProps: { name: 'star', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
@@ -43,24 +43,24 @@ const dropdown: DropdownMenuType = {
     [
       {
         label: 'Account',
-        url: '/account',
+        clickAction: '/account',
         iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Billing',
-        url: '/billing',
+        clickAction: '/billing',
         iconProps: { name: 'credit-card', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
       {
         label: 'Notifications',
-        url: '/notifications',
+        clickAction: '/notifications',
         iconProps: { name: 'bell', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
     ],
     [
       {
         label: 'Log out',
-        url: '/',
+        clickAction: '/',
         iconProps: { name: 'arrow-left-start-on-rectangle', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
       },
     ],
