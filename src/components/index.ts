@@ -9,4 +9,5 @@ export * from './markdown';
 export * from './icons';
 export * from './navbar';
 export * from './theme';
+export * from './account-switcher';
 export * from './sonner';
