@@ -7,9 +7,7 @@
       </div>
     </Button>
     <template #header>
-      <div class="flex items-center gap-2">
-        Change Account
-      </div>
+      <div class="flex items-center gap-2">Change Account</div>
     </template>
   </DropdownMenu>
 </template>
