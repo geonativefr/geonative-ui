@@ -1,17 +1,16 @@
 <template>
-  <ShadcnAvatar :class="twMerge(props.isSquare ? 'h-8 w-8 rounded-lg' : '', props.class)">
+  <ShadcnAvatar :class="twMerge(props.isSquare ? 'size-8 rounded-none' : '', props.class)">
     <ShadcnAvatarImage :src="props.url ?? ''" alt="Avatar" />
     <ShadcnAvatarFallback :class="props.class">
-      <span v-if="props.initials" class="text-md font-bold">
-        {{ props.initials.toUpperCase() }}
+      <span class="font-bold" :style="{ fontSize: textSize }">
+        {{ props.initials.slice(0, 2).toUpperCase() }}
       </span>
-      <span v-else>?</span>
     </ShadcnAvatarFallback>
   </ShadcnAvatar>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { computed } from 'vue';
 import { twMerge } from 'tailwind-merge';
 import {
   Avatar as ShadcnAvatar,
@@ -28,9 +27,20 @@ const props = withDefaults(
   }>(),
   {
     url: '',
-    initials: '',
+    initials: '?',
     isSquare: false,
     class: '',
   }
 );
+const textSize = computed((): string => {
+  let sizeMatch = props.class.match(/size-(\d+)/);
+  if (!sizeMatch) {
+    sizeMatch = props.class.match(/w-(\d+)/);
+  }
+  if (!sizeMatch) {
+    sizeMatch = props.class.match(/h-(\d+)/);
+  }
+  const size = parseInt(sizeMatch && sizeMatch[1] ? sizeMatch[1] : '8', 10);
+  return size / 8 + 'rem';
+});
 </script>
