@@ -12,6 +12,7 @@ import * as lucideIcons from 'lucide-vue-next';
 import HeroIcons from './heroicons.ts';
 import { twMerge } from 'tailwind-merge';
 import type { IconType, IconSource, AvatarProps } from '@geonative/ui/types';
+import { Avatar } from '@geonative/ui/components';
 
 const props = withDefaults(
   defineProps<{
@@ -50,7 +51,7 @@ const iconComponent: Component = computed(() => {
   if (props.source === 'avatar') {
     // Check if the avatarProps are provided
     if (props.avatarProps) {
-      return () => h('Avatar', props.avatarProps);
+      return () => h(Avatar, props.avatarProps);
     }
     console.warn('Avatar props are required for avatar source');
     return null;
