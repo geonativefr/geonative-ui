@@ -3,7 +3,7 @@
     <ShadcnAvatarImage :src="props.url ?? ''" alt="Avatar" />
     <ShadcnAvatarFallback :class="props.class">
       <span class="font-bold" :style="{ fontSize: textSize }">
-        {{ props.initials.length > 2 ? props.initials.slice(0, 2).toUpperCase() : props.initials.toUpperCase() }}
+        {{ props.initials.slice(0, 2).toUpperCase() }}
       </span>
     </ShadcnAvatarFallback>
   </ShadcnAvatar>
