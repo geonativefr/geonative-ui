@@ -1,7 +1,7 @@
 <template>
   <component
     :is="getAction(props.actionClick).as"
-    v-bind="getAction(props.actionClick).attr"
+    :v-bind="getAction(props.actionClick).attr"
     :disabled="props.disabled"
     :class="props.class"
   >
@@ -27,27 +27,27 @@ function getAction(clickAction: ClickActionType): ActionType {
   if (isFunctionLink) {
     return {
       as: 'span',
-      attr: { onClick: props.actionClick },
+      attr: 'onClick',
       clickAction: clickAction,
     };
   }
   if (isExternalLink) {
     return {
       as: 'a',
-      attr: { href: props.actionClick },
+      attr: 'href',
       clickAction: clickAction,
     };
   }
   if (isInternalLink) {
     return {
       as: 'router-link',
-      attr: { to: props.actionClick },
+      attr: 'to',
       clickAction: clickAction,
     };
   }
   return {
     as: 'span',
-    attr: {},
+    attr: '',
     clickAction: clickAction,
   };
 }
