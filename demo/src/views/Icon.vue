@@ -32,7 +32,7 @@
       <span>Avatar</span>
       <Icon
         name="alice"
-        :avatar-props="{ url: user.avatar, isSquare: true, initials: user.name.slice(0, 2), class: 'bg-red-500' }"
+        :avatar-props="{ url: user.avatar, initials: user.name.slice(0, 2), class: 'bg-red-500' }"
         source="avatar"
       />
     </div>
