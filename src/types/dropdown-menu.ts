@@ -11,7 +11,7 @@ export type DropdownMenuSectionType = DropdownMenuItemType[];
 export interface DropdownMenuItemType {
   iconProps?: IconProps;
   label?: string;
-  click?: ClickActionType;
+  clickAction?: ClickActionType;
   disabled?: boolean;
   shortcut?: string;
   sections?: DropdownMenuSectionType[];
