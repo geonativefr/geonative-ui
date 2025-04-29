@@ -1,7 +1,7 @@
 <template>
   <component
-    :is="getAction(props.actionClick).as"
-    :v-bind="getAction(props.actionClick).attr"
+    :is="action.as"
+    v-bind="{ attr: action.attr }"
     :disabled="props.disabled"
     :class="props.class"
   >
@@ -22,6 +22,9 @@ const props = defineProps<{
 const isInternalLink = typeof props.actionClick === 'string';
 const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
 const isFunctionLink = typeof props.actionClick === 'function';
+
+
+const action = getAction(props.actionClick);
 
 function getAction(clickAction: ClickActionType): ActionType {
   if (isFunctionLink) {
