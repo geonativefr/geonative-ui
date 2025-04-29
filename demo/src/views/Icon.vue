@@ -28,9 +28,21 @@
       <span>Heroicon outline</span>
       <Icon name="academic-cap" source="heroicons" type="outline" class="w-5 h-5 text-orange-500" />
     </div>
+    <div class="flex justify-between gap-10">
+      <span>Avatar</span>
+      <Icon name="alice" :avatar-props="{ url: user.avatar, isSquare: true, initials: user.name.slice(0, 2) }" source="avatar" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@geonative/ui/components';
+
+
+const user = {
+  name: 'alice',
+  email: 'alice@example.com',
+  avatar:
+    'https://avataaars.io/?avatarStyle=Transparent&topType=NoHair&accessoriesType=Blank&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light',
+};
 </script>
