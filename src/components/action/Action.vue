@@ -48,7 +48,7 @@ function getAction(clickAction: ClickActionType): ActionType {
     };
   }
   return {
-    as: undefined,
+    as: 'span',
     attr: undefined,
     clickAction: clickAction,
   };
