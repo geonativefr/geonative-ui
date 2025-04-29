@@ -1,7 +1,7 @@
 <template>
   <component
-    :is="getAction(props.actionType).as"
-    v-bind="getAction(props.actionType).attr"
+    :is="action.as"
+    v-bind="action.attr ? { [action.attr]: action.clickAction } : {}"
     :disabled="props.disabled"
     :class="props.class"
   >
@@ -14,7 +14,6 @@ import type { ActionType, ClickActionType } from '@geonative/ui/types';
 import { startsWithHttp } from '@geonative/ui/helpers';
 
 const props = defineProps<{
-  actionType?: ActionType;
   actionClick: ClickActionType;
   disabled?: boolean;
   class?: string;
@@ -24,31 +23,33 @@ const isInternalLink = typeof props.actionClick === 'string';
 const isExternalLink = typeof props.actionClick === 'string' && startsWithHttp(props.actionClick);
 const isFunctionLink = typeof props.actionClick === 'function';
 
-function getAction(clickAction: ActionType | undefined) {
+const action = getAction(props.actionClick);
+
+function getAction(clickAction: ClickActionType): ActionType {
   if (isFunctionLink) {
     return {
       as: 'span',
-      attr: { onClick: props.actionClick },
+      attr: 'onClick',
       clickAction: clickAction,
     };
   }
   if (isExternalLink) {
     return {
       as: 'a',
-      attr: { href: props.actionClick },
+      attr: 'href',
       clickAction: clickAction,
     };
   }
   if (isInternalLink) {
     return {
       as: 'router-link',
-      attr: { to: props.actionClick },
+      attr: 'to',
       clickAction: clickAction,
     };
   }
   return {
     as: 'span',
-    attr: {},
+    attr: undefined,
     clickAction: clickAction,
   };
 }

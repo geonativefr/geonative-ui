@@ -1,4 +1,5 @@
 import type { IconProps } from './icon.ts';
+import type { ClickActionType } from './action.ts';
 
 export interface DropdownMenuType {
   label?: string;
@@ -10,7 +11,7 @@ export type DropdownMenuSectionType = DropdownMenuItemType[];
 export interface DropdownMenuItemType {
   iconProps?: IconProps;
   label?: string;
-  url?: string;
+  clickAction?: ClickActionType;
   disabled?: boolean;
   shortcut?: string;
   sections?: DropdownMenuSectionType[];
