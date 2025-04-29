@@ -36,6 +36,14 @@
         source="avatar"
       />
     </div>
+    <div class="flex justify-between gap-10">
+      <span>Avatar no image</span>
+      <Icon
+        name="alice"
+        :avatar-props="{ isSquare: true, initials: user.name.slice(0, 2), class: 'text-primary-foreground bg-primary' }"
+        source="avatar"
+      />
+    </div>
   </div>
 </template>
 
