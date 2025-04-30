@@ -19,7 +19,7 @@ interface Item {
   color?: string;
 }
 
-const items = [
+const items : Item[] = [
   {
     id: 1,
     label: 'alice',
