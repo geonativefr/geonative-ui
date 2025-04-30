@@ -16,9 +16,12 @@ import { useTheme } from '@geonative/ui/composables';
 import { ucfirst } from '@geonative/ui/helpers';
 import { twMerge } from 'tailwind-merge';
 
-const props = withDefaults(defineProps<{
-  class?: string;
-}>(), {});
+const props = withDefaults(
+  defineProps<{
+    class?: string;
+  }>(),
+  {}
+);
 
 // Import the useTheme composable from the UI library
 const { applyTheme, availableThemes, currentTheme } = useTheme();

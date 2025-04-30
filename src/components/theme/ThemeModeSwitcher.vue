@@ -2,12 +2,9 @@
   <span
     v-for="mode in THEME_MODES_SELECTION"
     :key="mode"
-    :class="twMerge('text-center text-lg font-bold toggle toggle-primary', props.class)">
-    <input
-      type="radio"
-      :checked="selectedThemeMode === mode"
-      @change="setThemeMode(mode as ThemeModeSelection)"
-    />
+    :class="twMerge('text-center text-lg font-bold toggle toggle-primary', props.class)"
+  >
+    <input type="radio" :checked="selectedThemeMode === mode" @change="setThemeMode(mode as ThemeModeSelection)" />
     {{ ucfirst(mode) }}
   </span>
 </template>
@@ -21,7 +18,10 @@ import { twMerge } from 'tailwind-merge';
 // Import the useTheme composable from the UI library
 const { setThemeMode, selectedThemeMode } = useTheme();
 
-const props = withDefaults(defineProps<{
-  class?: string;
-}>(), {});
+const props = withDefaults(
+  defineProps<{
+    class?: string;
+  }>(),
+  {}
+);
 </script>
