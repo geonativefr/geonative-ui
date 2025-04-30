@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from 'vue'
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { useFormField } from './useFormField'
 
 const props = defineProps<{

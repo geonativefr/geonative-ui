@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { buttonVariants } from '@geonative/ui/shadcn/ui/button'
 import { ChevronRight } from 'lucide-vue-next'
 import { CalendarNext, type CalendarNextProps, useForwardProps } from 'reka-ui'

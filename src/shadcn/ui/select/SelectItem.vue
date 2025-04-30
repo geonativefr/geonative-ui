@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { Check } from 'lucide-vue-next'
 import {
   SelectItem,

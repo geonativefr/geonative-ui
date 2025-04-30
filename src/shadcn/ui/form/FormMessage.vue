@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { ErrorMessage } from 'vee-validate'
 import { type HTMLAttributes, toValue } from 'vue'
 import { useFormField } from './useFormField'

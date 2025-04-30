@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { FieldProps } from './interface'
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { Button } from '@geonative/ui/shadcn/ui/button'
 import { Calendar } from '@geonative/ui/shadcn/ui/calendar'
 import { FormControl, FormDescription, FormField, FormItem, FormMessage } from '@geonative/ui/shadcn/ui/form'

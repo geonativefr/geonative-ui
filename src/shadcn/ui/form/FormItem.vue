@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { useId } from 'reka-ui'
 import { type HTMLAttributes, provide } from 'vue'
 import { FORM_ITEM_INJECTION_KEY } from './injectionKeys'
