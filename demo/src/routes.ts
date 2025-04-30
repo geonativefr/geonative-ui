@@ -57,9 +57,9 @@ const routes: Array<RouteRecord> = [
     menuLabel: 'Navbar Dropdown',
   }),
   createRoute({
-    path: '/account-switcher',
+    path: '/dropdown-switcher',
     name: 'account-switcher',
-    component: () => import('@/views/AccountSwitcher.vue'),
+    component: () => import('@/views/DropdownSwitcher.vue'),
     menuLabel: 'Account Switcher',
   }),
   createRoute({

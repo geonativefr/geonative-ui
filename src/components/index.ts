@@ -7,5 +7,5 @@ export * from './loader';
 export * from './markdown';
 export * from './icons';
 export * from './navbar';
-export * from './account-switcher';
+export * from './dropdown-switcher';
 export * from './sonner';
