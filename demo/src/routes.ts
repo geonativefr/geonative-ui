@@ -61,6 +61,14 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/action',
+    name: 'action',
+    component: () => import('@/views/Action.vue'),
+    meta: {
+      menuLabel: 'Action',
+    },
+  }),
+  createRoute({
     path: '/dropdown-menu',
     name: 'dropdown-menu',
     component: () => import('@/views/DropdownMenu.vue'),
@@ -85,14 +93,6 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
-      path: '/dropdown-switcher',
-      name: 'account-switcher',
-      component: () => import('@/views/DropdownSwitcher.vue'),
-      meta: {
-        menuLabel: 'Account Switcher',
-      },
-}),
-  createRoute({
     path: '/toaster',
     name: 'toaster',
     component: () => import('@/views/Toaster.vue'),
@@ -107,6 +107,8 @@ const routes: RouteRecordRaw[] = [
     meta: {
       menuLabel: 'Accordion',
     },
+  }),
+  createRoute({
     path: '/account-switcher',
     name: 'account-switcher',
     component: () => import('@/views/AccountSwitcher.vue'),
