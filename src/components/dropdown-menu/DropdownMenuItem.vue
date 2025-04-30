@@ -5,11 +5,7 @@
         <div class="flex items-center gap-2">
           <Icon
             v-if="props.item.iconProps"
-            :name="props.item.iconProps.name"
-            :class="props.item.iconProps.class"
-            :source="props.item.iconProps.source"
-            :type="props.item.iconProps.type"
-            :avatar-props="props.item.iconProps.avatarProps"
+            v-bind="props.item.iconProps"
           />
           <span>{{ props.item.label }}</span>
         </div>
