@@ -96,7 +96,9 @@ const routes: RouteRecordRaw[] = [
     path: '/account-switcher',
     name: 'account-switcher',
     component: () => import('@/views/AccountSwitcher.vue'),
-    menuLabel: 'Account Switcher',
+    meta: {
+      menuLabel: 'Account Switcher',
+    },
   }),
   // Catch all unmatched routes
   createRoute({
