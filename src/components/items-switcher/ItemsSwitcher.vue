@@ -1,15 +1,15 @@
 <template>
-  <DropdownMenu :dropdown="dropdown" :items="props.accounts" position="right" align="start" class="">
+  <DropdownMenu :dropdown="dropdown" :items="props.items" position="right" align="start">
     <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
       <div class="flex items-center justify-between gap-2">
         <Avatar
-          :url="activeAccount.avatar"
+          :url="activeItem.avatar"
           :is-square="true"
-          :class="activeAccount.color"
-          :initials="activeAccount.name.slice(0, 2)"
+          :class="activeItem.color"
+          :initials="activeItem.name.slice(0, 2)"
         />
         <span class="flex-1 text-center text-sm">
-          <span class="font-semibold">{{ activeAccount.name }}</span>
+          <span class="font-semibold">{{ activeItem.name }}</span>
         </span>
         <ChevronsUpDown class="size-5 ml-6" />
       </div>
@@ -28,29 +28,31 @@ import { ref } from 'vue';
 import type { Account } from '@geonative/ui/types';
 
 const props = defineProps<{
-  accounts: Array<Account>;
+  items: Array<Account>;
 }>();
 
-const activeAccount = ref(props.accounts[0]);
+const activeItem = ref(props.items[0]);
 
-const emit = defineEmits(['accountChange']);
+const emit = defineEmits(['itemChange']);
 
-const changeAccount = (AccountId: number | string) => {
-  activeAccount.value = props.accounts.find((account) => account.id === AccountId) || props.accounts[0];
-  emit('accountChange', activeAccount.value);
+const changeItem = (itemId: number | string) => {
+  activeItem.value = props.items.find((item) => item.id === itemId) || props.items[0];
+  emit('itemChange', activeItem.value);
 };
 
 const dropdown: DropdownMenuType = {
   sections: [
-    props.accounts.map((account) => ({
-      label: account.name,
+    props.items.map((items) => ({
+      label: items.name,
+      class: 'flex items-center gap-2',
       clickAction: () => {
-        changeAccount(account.id);
+        changeItem(items.id);
       },
-      avatarProps: {
-        url: account.avatar,
-        initials: account.name.slice(0, 2),
-        class: account.color,
+      iconProps: {
+        name: items.name,
+        source: 'avatar',
+        class: 'size-8',
+        avatarProps: { url: items.avatar, initials: items.name.slice(0, 2), class: items.color },
       },
     })),
     [

@@ -1,19 +1,18 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">Dropdown Switcher:</h1>
-    <DropdownSwitcher :items="accounts" @item-change="accountHasChange" />
+    <ItemsSwitcher :items="items" @item-change="accountHasChange" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { DropdownSwitcher } from '@geonative/ui/components';
+import { ItemsSwitcher } from '@geonative/ui/components';
 
-const accounts = [
+const items = [
   {
     id: 1,
     name: 'alice',
-    icon:
-      'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Kurt&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=White&eyeType=Happy&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light',
+    avatar: 'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Kurt&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=White&eyeType=Happy&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light',
     color: 'bg-pink-500',
   },
   {
