@@ -8,6 +8,6 @@ export * from './loader';
 export * from './markdown';
 export * from './icons';
 export * from './navbar';
+export * from './items-switcher';
 export * from './theme';
-export * from './account-switcher';
 export * from './sonner';
