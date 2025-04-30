@@ -41,18 +41,25 @@
       /></Button>
     </div>
   </div>
+  <Toaster />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Button, Icon } from '@geonative/ui/components';
+import { useSonner } from '@geonative/ui/composables';
+import { Toaster } from 'vue-sonner';
 
 const isClickedButton = ref(false);
+const { showSuccessSonner } = useSonner();
 
 function handleClick() {
   isClickedButton.value = true;
-  setTimeout(() => {
-    isClickedButton.value = false;
-  }, 2000);
+  showSuccessSonner('Button clicked!', 'This is a success message.', {
+    label: 'Undo',
+    clickAction: () => {
+      isClickedButton.value = false;
+    },
+  });
 }
 </script>
