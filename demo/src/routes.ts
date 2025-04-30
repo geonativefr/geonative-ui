@@ -57,16 +57,16 @@ const routes: Array<RouteRecord> = [
     menuLabel: 'Navbar Dropdown',
   }),
   createRoute({
-    path: '/toaster',
-    name: 'toaster',
-    component: () => import('@/views/Toaster.vue'),
-    menuLabel: 'Toaster',
-  }),
-  createRoute({
     path: '/account-switcher',
     name: 'account-switcher',
     component: () => import('@/views/AccountSwitcher.vue'),
     menuLabel: 'Account Switcher',
+  }),
+  createRoute({
+    path: '/toaster',
+    name: 'toaster',
+    component: () => import('@/views/Toaster.vue'),
+    menuLabel: 'Toaster',
   }),
   // Catch all unmatched routes
   createRoute({
