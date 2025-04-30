@@ -1,5 +1,5 @@
 <template>
-  <DropdownMenu :dropdown="dropdown" :accounts="props.accounts" position="right" align="start" class="">
+  <DropdownMenu :dropdown="dropdown" :items="props.accounts" position="right" align="start" class="">
     <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
       <div class="flex items-center justify-between gap-2">
         <Avatar
