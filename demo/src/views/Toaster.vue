@@ -38,13 +38,13 @@ const { showDefaultSonner, showSuccessSonner, showInfoSonner, showErrorSonner, s
   useSonner();
 
 const promise = () => {
-  return new Promise((resolve) =>{
+  return new Promise((resolve) => {
     setTimeout(() => {
-      resolve("Promise resolved");
+      resolve('Promise resolved');
       showDefaultSonner('Promise resolved!');
     }, 2000);
   });
-}
+};
 
 function handleClick() {
   isClickedButton.value = true;
