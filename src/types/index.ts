@@ -7,3 +7,6 @@ export * from './dropdown-menu';
 export * from './icon';
 export * from './shortcut';
 export * from './theme';
+export * from './action';
+export * from './avatar';
+export * from './account';
