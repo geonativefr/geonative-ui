@@ -85,6 +85,14 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+      path: '/dropdown-switcher',
+      name: 'account-switcher',
+      component: () => import('@/views/DropdownSwitcher.vue'),
+      meta: {
+        menuLabel: 'Account Switcher',
+      },
+}),
+  createRoute({
     path: '/toaster',
     name: 'toaster',
     component: () => import('@/views/Toaster.vue'),
