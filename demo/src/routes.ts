@@ -53,6 +53,14 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/action',
+    name: 'action',
+    component: () => import('@/views/Action.vue'),
+    meta: {
+      menuLabel: 'Action',
+    },
+  }),
+  createRoute({
     path: '/dropdown-menu',
     name: 'dropdown-menu',
     component: () => import('@/views/DropdownMenu.vue'),
@@ -106,14 +114,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Toaster.vue'),
     meta: {
       menuLabel: 'Toaster',
-    },
-  }),
-  createRoute({
-    path: '/account-switcher',
-    name: 'account-switcher',
-    component: () => import('@/views/AccountSwitcher.vue'),
-    meta: {
-      menuLabel: 'Account Switcher',
     },
   }),
   // Catch all unmatched routes
