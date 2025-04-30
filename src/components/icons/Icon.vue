@@ -11,21 +11,12 @@ import type { Component } from 'vue';
 import * as lucideIcons from 'lucide-vue-next';
 import HeroIcons from './heroicons.ts';
 import { twMerge } from 'tailwind-merge';
-import type { IconType, IconSource, AvatarProps } from '@geonative/ui/types';
+import type { IconProps } from '@geonative/ui/types';
 import { Avatar } from '@geonative/ui/components';
 
-const props = withDefaults(
-  defineProps<{
-    name: string;
-    class?: string;
-    source: IconSource;
-    type?: IconType; // Type for heroicons
-    avatarProps?: AvatarProps; // Props for avatar
-  }>(),
-  {
-    type: 'solid',
-  }
-);
+const props = withDefaults(defineProps<IconProps>(), {
+  type: 'solid',
+});
 
 const iconComponent: Component = computed(() => {
   // Handle lucide icons
