@@ -76,6 +76,22 @@ import { Button } from '@geonative/ui';
 import DemoLayout from '@/components/DemoLayout.vue';
 ```
 
+## Storybook
+
+Storybook is a tool for developing UI components in isolation. It allows you to create and test components without needing to run the entire application.
+
+To run Storybook, use the following command:
+
+```bash
+yarn dev:storybook
+```
+
+This will start the Storybook development server, allowing you to view and interact with your components in isolation.
+
+### Storybook Configuration
+
+See [STORYBOOK.md](STORYBOOK.md) for more details on Storybook configuration, including how to add new stories and customize the setup.
+
 ## Information
 
 ### CSS Variations

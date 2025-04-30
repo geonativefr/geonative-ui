@@ -3,13 +3,15 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.demo.json" }
+    { "path": "./tsconfig.demo.json" },
+    { "path": "./tsconfig.storybook.json" }
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@geonative/ui/*": ["src/*"],
-      "@/*": ["demo/src/*"]
+      "@/*": ["demo/src/*"],
+      "@storybook/*": ["storybook/src/*"],
     }
   }
 }

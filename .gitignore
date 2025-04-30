@@ -7,11 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node modules
 node_modules
+
+# Build directories
 dist
 dist-ssr
-demo-dist
 *.local
+
+# Demo
+demo-dist
+
+# Storybook
+storybook-dist
+*storybook.log
 
 # Editor directories and files
 .vscode/*
@@ -26,3 +35,4 @@ demo-dist
 
 # Package distribution
 geonative-ui-*.tgz
+
