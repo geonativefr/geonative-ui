@@ -9,6 +9,7 @@
             :class="props.item.iconProps.class"
             :source="props.item.iconProps.source"
             :type="props.item.iconProps.type"
+            :avatar-props="props.item.iconProps.avatarProps"
           />
           <span>{{ props.item.label }}</span>
         </div>
