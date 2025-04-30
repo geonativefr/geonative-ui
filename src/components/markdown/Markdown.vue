@@ -1,5 +1,5 @@
 <template>
-  <div v-html="htmlContent" class="markdown-body"></div>
+  <div v-html="htmlContent" :class="twMerge('markdown-body', props.class)"></div>
 </template>
 
 <script setup lang="ts">
@@ -11,6 +11,7 @@ import type { ThemeConfig } from '@geonative/ui/types';
 
 const props = defineProps<{
   content: string;
+  class?: string;
 }>();
 
 // First render markdown, then sanitize the HTML output

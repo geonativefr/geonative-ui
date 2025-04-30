@@ -4,7 +4,7 @@
       <slot />
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
-      class="w-full min-w-56 rounded-lg"
+      :class="twMerge('w-full min-w-56 rounded-lg', props.class)"
       :side="props.position"
       :align="props.align"
       :side-offset="4"
@@ -36,12 +36,14 @@ import {
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
 import { DropdownMenuSection } from '@geonative/ui/components';
 import type { DropdownMenuType } from '@geonative/ui/types';
+import { twMerge } from 'tailwind-merge';
 
 const props = withDefaults(
   defineProps<{
     dropdown: DropdownMenuType;
     position?: 'right' | 'top' | 'bottom' | 'left';
     align?: 'start' | 'center' | 'end';
+    class?: string;
   }>(),
   {
     position: 'bottom',
