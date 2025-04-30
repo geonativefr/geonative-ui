@@ -4,5 +4,4 @@
 
 <script setup lang="ts">
 import { AutoForm } from '@geonative/ui/shadcn/ui/
-
 </script>
