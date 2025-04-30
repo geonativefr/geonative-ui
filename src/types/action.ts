@@ -6,4 +6,4 @@ export interface ActionType {
   as?: string;
   attr?: string;
   clickAction: ClickActionType;
-};
+}

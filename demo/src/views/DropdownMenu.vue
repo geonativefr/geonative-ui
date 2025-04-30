@@ -158,12 +158,14 @@ const dropdownMenu: DropdownMenuType = {
       {
         label: 'Avatar',
         clickAction: '/avatar',
-        iconProps: { name: 'bob', source: 'avatar',
+        iconProps: {
+          name: 'bob',
+          source: 'avatar',
           avatarProps: {
             url: 'https://avataaars.io/?avatarStyle=Transparent&topType=NoHair&accessoriesType=Blank&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light',
             class: 'bg-green-500',
-          }
-        }
+          },
+        },
       },
       {
         label: 'Breadcrumb',

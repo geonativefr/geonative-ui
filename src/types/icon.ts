@@ -8,5 +8,5 @@ export interface IconProps {
   source: IconSource;
   type?: IconType;
   class?: string;
-  avatarProps?: AvatarProps
+  avatarProps?: AvatarProps;
 }
