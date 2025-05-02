@@ -30,7 +30,7 @@ const activeItem = ref(props.items[0]);
 
 const emit = defineEmits(['itemChange']);
 
-const changeItem = (ItemId: Items['id']) :void => {
+const changeItem = (ItemId: Items['id']): void => {
   activeItem.value = props.items.find((item) => item.id === ItemId) || props.items[0];
   emit('itemChange', activeItem.value);
 };
