@@ -3,13 +3,12 @@
     <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
       <div class="flex items-center justify-between gap-2">
         <Avatar
-          :url="activeItem.avatar"
-          :is-square="true"
+          :url="activeItem.icon"
           :class="activeItem.color"
-          :initials="activeItem.name.slice(0, 2)"
+          :initials="activeItem.label.slice(0, 2)"
         />
         <span class="flex-1 text-center text-sm">
-          <span class="font-semibold">{{ activeItem.name }}</span>
+          <span class="font-semibold">{{ activeItem.label }}</span>
         </span>
         <ChevronsUpDown class="size-5 ml-6" />
       </div>
@@ -25,10 +24,10 @@ import { ChevronsUpDown } from 'lucide-vue-next';
 import { Avatar, Button, DropdownMenu } from '@geonative/ui/components';
 import type { DropdownMenuType } from '@geonative/ui/types';
 import { ref } from 'vue';
-import type { Account } from '@geonative/ui/types';
+import type { Items } from '@geonative/ui/types';
 
 const props = defineProps<{
-  items: Array<Account>;
+  items: Array<Items>;
 }>();
 
 const activeItem = ref(props.items[0]);
@@ -43,16 +42,16 @@ const changeItem = (itemId: number | string) => {
 const dropdown: DropdownMenuType = {
   sections: [
     props.items.map((items) => ({
-      label: items.name,
+      label: items.label,
       class: 'flex items-center gap-2',
       clickAction: () => {
         changeItem(items.id);
       },
       iconProps: {
-        name: items.name,
+        name: items.label,
         source: 'avatar',
         class: 'size-8',
-        avatarProps: { url: items.avatar, initials: items.name.slice(0, 2), class: items.color },
+        avatarProps: { url: items.icon, initials: items.label.slice(0, 2), class: items.color },
       },
     })),
     [
