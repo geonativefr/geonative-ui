@@ -11,4 +11,5 @@ export * from './navbar';
 export * from './items-switcher';
 export * from './theme';
 export * from './sonner';
+export * from './sidebar';
 export * from './accordion';
