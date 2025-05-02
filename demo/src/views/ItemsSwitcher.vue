@@ -1,7 +1,9 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">Dropdown Switcher:</h1>
-    <ItemsSwitcher :items="items" @item-change="accountHasChange" />
+    <ItemsSwitcher :items="items" @item-change="accountHasChange">
+      <span class="flex items-center gap-2 font-bold">Change Account</span>
+    </ItemsSwitcher>
   </div>
 </template>
 
