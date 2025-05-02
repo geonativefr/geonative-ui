@@ -9,4 +9,4 @@ export * from './shortcut';
 export * from './theme';
 export * from './action';
 export * from './avatar';
-export * from './account';
+export * from './items-switcher.ts';
