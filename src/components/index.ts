@@ -1,3 +1,4 @@
+export * from './accordion';
 export * from './action';
 export * from './avatar';
 export * from './button';
@@ -12,4 +13,3 @@ export * from './items-switcher';
 export * from './theme';
 export * from './sonner';
 export * from './sidebar';
-export * from './accordion';
