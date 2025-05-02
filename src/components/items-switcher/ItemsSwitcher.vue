@@ -10,7 +10,7 @@
       </div>
     </Button>
     <template #header>
-      <div class="flex items-center gap-2 font-bold">Change Account</div>
+      <slot />
     </template>
   </DropdownMenu>
 </template>
@@ -30,8 +30,8 @@ const activeItem = ref(props.items[0]);
 
 const emit = defineEmits(['itemChange']);
 
-const changeItem = (itemId: number | string) => {
-  activeItem.value = props.items.find((item) => item.id === itemId) || props.items[0];
+const changeItem = (ItemId: Items['id']) :void => {
+  activeItem.value = props.items.find((item) => item.id === ItemId) || props.items[0];
   emit('itemChange', activeItem.value);
 };
 
