@@ -13,8 +13,8 @@ export function useSonner() {
    */
   const showSonner = (
     type: AlertLevel = ALERT_INFO,
-    title: string|Component,
-    description?: string|Component,
+    title: string | Component,
+    description?: string | Component,
     action?: ActionType
   ) => {
     toast[type](title, {
@@ -28,23 +28,23 @@ export function useSonner() {
     });
   };
 
-  const showDefaultSonner = (title: string|Component, description?: string|Component, action?: ActionType) => {
+  const showDefaultSonner = (title: string | Component, description?: string | Component, action?: ActionType) => {
     showSonner(ALERT_DEFAULT, title, description, action);
   };
 
-  const showSuccessSonner = (title: string|Component, description?: string|Component, action?: ActionType) => {
+  const showSuccessSonner = (title: string | Component, description?: string | Component, action?: ActionType) => {
     showSonner(ALERT_SUCCESS, title, description, action);
   };
 
-  const showErrorSonner = (title: string|Component, description?: string|Component, action?: ActionType) => {
+  const showErrorSonner = (title: string | Component, description?: string | Component, action?: ActionType) => {
     showSonner(ALERT_ERROR, title, description, action);
   };
 
-  const showWarningSonner = (title: string|Component, description?: string|Component, action?: ActionType) => {
+  const showWarningSonner = (title: string | Component, description?: string | Component, action?: ActionType) => {
     showSonner(ALERT_WARNING, title, description, action);
   };
 
-  const showInfoSonner = (title: string|Component, description?: string|Component, action?: ActionType) => {
+  const showInfoSonner = (title: string | Component, description?: string | Component, action?: ActionType) => {
     showSonner(ALERT_INFO, title, description, action);
   };
 
