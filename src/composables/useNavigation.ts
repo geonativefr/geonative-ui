@@ -8,7 +8,6 @@ const route = useRoute();
 const currentRoute = ref<RouteRecord>(() => routes.find((r) => r.name === route.name) as RouteRecord);
 
 export function useNavigation() {
-
   /**
    * Create a RouteRecord with default values
    */
@@ -32,5 +31,5 @@ export function useNavigation() {
   return {
     createRoute,
     currentRoute,
-  }
+  };
 }

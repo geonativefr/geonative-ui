@@ -1,8 +1,5 @@
 <template>
-  <div
-    ref="layout"
-    class="w-screen h-screen overflow-hidden"
-  >
+  <div ref="layout" class="w-screen h-screen overflow-hidden">
     <slot />
   </div>
 </template>
@@ -13,12 +10,12 @@ import { ref, onMounted, onUnmounted, provide, type Ref } from 'vue';
 // Reactive references for dimensions
 const layoutRef: Ref<HTMLElement | null> = ref(null);
 const width: Ref<number> = ref(0);
-const height: Ref<number>  = ref(0);
+const height: Ref<number> = ref(0);
 
 // Make dimensions available via provide/inject
 provide('layout', {
   width,
-  height
+  height,
 });
 
 // Update dimensions function
