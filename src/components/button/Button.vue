@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-block" :style="{ width: width ? `${width}px` : 'auto' }">
+  <div class="inline-block w-full" :style="{ width: width ? `${width}px` : 'auto' }">
     <ShadcnButton
       :class="
         twMerge(
