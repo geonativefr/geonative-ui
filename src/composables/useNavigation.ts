@@ -10,7 +10,6 @@ const currentRoute = ref<RouteRecord>(() => routes.find((r) => r.name === route.
 const defaultLayout = ref<Component>(DefaultLayout);
 
 export function useNavigation() {
-
   /**
    * Create a RouteRecord with default values
    */
