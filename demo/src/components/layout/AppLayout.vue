@@ -18,7 +18,9 @@
     </div>
 
   </div>
+  <slot />
 </template>
 
 <script setup lang="ts">
 </script>
+<script setup lang="ts"></script>
