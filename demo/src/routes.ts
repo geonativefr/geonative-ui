@@ -1,5 +1,7 @@
 import type { RouteRecord } from '@geonative/ui/types';
-import { createRoute } from '@geonative/ui/helpers';
+import { useNavigation } from '@geonative/ui/composables';
+
+const { createRoute } = useNavigation();
 
 const routes: Array<RouteRecord> = [
   createRoute({
