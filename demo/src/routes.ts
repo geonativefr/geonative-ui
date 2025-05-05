@@ -1,8 +1,9 @@
 import type { RouteRecord } from '@geonative/ui/types';
 import { useNavigation } from '@geonative/ui/composables';
 
-const { createRoute } = useNavigation();
+const { setDefaultLayout, createRoute } = useNavigation();
 
+setDefaultLayout(() => import('@/layouts/AppLayout.vue'));
 const routes: Array<RouteRecord> = [
   createRoute({
     path: '/',

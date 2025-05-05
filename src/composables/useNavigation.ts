@@ -6,6 +6,7 @@ import { ref, watch } from 'vue';
 
 const route = useRoute();
 const currentRoute = ref<RouteRecord>(() => routes.find((r) => r.name === route.name) as RouteRecord);
+const defaultLayout = ref<Component>(DefaultLayout);
 
 export function useNavigation() {
   /**
@@ -15,9 +16,16 @@ export function useNavigation() {
     return {
       showInMenu: true, // Default value
       menuLabel: route.name?.toString() || '', // Default label from name
-      layout: route.layout || DefaultLayout, // Default layout
+      layout: route.layout || defaultLayout, // Default layout
       ...route, // This allows overriding the default
     };
+  }
+
+  /**
+   * Set the default layout for all routes
+   */
+  function setDefaultLayout(layout: Component) {
+    defaultLayout.value = layout;
   }
 
   /**
@@ -29,6 +37,7 @@ export function useNavigation() {
   });
 
   return {
+    setDefaultLayout,
     createRoute,
     currentRoute,
   };
