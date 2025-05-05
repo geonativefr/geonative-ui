@@ -1,19 +1,21 @@
 <template>
-  <ShadcnSidebar v-bind="props">
-
+  <ShadcnSidebar :side="props.side" :variant="props.variant" :collapsible="props.collapsible">
     <ShadcnSidebarHeader>
       <slot name="header" />
     </ShadcnSidebarHeader>
 
     <ShadcnSidebarContent>
-      <slot name="content" />
+      <SidebarAccordion :items="data.accordion" />
     </ShadcnSidebarContent>
 
     <ShadcnSidebarFooter>
       <slot name="footer" />
     </ShadcnSidebarFooter>
-
-    <ShadcnSidebarRail />
+    <ShadcnSidebarRail>
+      <Button class="bg-gray-100 text-black rounded hover:bg-gray-200">
+        <Icon name="bars-4" source="heroicons" type="solid" />
+      </Button>
+    </ShadcnSidebarRail>
   </ShadcnSidebar>
 </template>
 
@@ -25,4 +27,37 @@ import {
   SidebarFooter as ShadcnSidebarFooter,
   SidebarRail as ShadcnSidebarRail,
 } from '@geonative/ui/shadcn/ui/sidebar';
+import { Button, Icon, SidebarAccordion } from '@geonative/ui/components';
+
+const props = withDefaults(
+  defineProps<{
+    side?: 'left' | 'right' | 'top' | 'bottom';
+    variant?: 'sidebar' | 'floating' | 'inset';
+    collapsible?: 'offcanvas' | 'icon' | 'none';
+  }>(),
+  {
+    side: 'left',
+    variant: 'sidebar',
+    collapsible: 'offcanvas',
+  }
+);
+
+const data = {
+  accordion: [
+    {
+      title: 'Section 1',
+      items: [
+        { title: 'Item 1.1', icon: 'home' },
+        { title: 'Item 1.2', icon: 'settings' },
+      ],
+    },
+    {
+      title: 'Section 2',
+      items: [
+        { title: 'Item 2.1', icon: 'user' },
+        { title: 'Item 2.2', icon: 'info' },
+      ],
+    },
+  ],
+};
 </script>

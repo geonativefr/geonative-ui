@@ -123,3 +123,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+.sidebar-left {
+  left: 0;
+}
+
+.sidebar-right {
+  right: 0;
+}
+
+.sidebar-top {
+  top: 0;
+}
+
+.sidebar-bottom {
+  bottom: 0;
+}
