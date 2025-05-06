@@ -3,7 +3,7 @@ import { useNavigation } from '@geonative/ui/composables';
 
 const { setDefaultLayout, createRoute } = useNavigation();
 
-setDefaultLayout(() => import('@/layouts/AppLayout.vue'));
+setDefaultLayout(() => import('@/components/layout/AppLayout.vue'));
 const routes: Array<RouteRecord> = [
   createRoute({
     path: '/',
