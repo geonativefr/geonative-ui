@@ -2,11 +2,10 @@ import { useRoute } from 'vue-router';
 import type { RouteRecord } from '@geonative/ui/types';
 import { AppLayout as DefaultLayout } from '@geonative/ui/components';
 import routes from '@/routes';
-import { ref, watch } from 'vue';
-import { type Component } from 'vue';
+import { type Component, ref, watch } from 'vue';
 
 const route = useRoute();
-const currentRoute = ref<RouteRecord>(() => routes.find((r) => r.name === route.name) as RouteRecord);
+const currentRoute = ref<RouteRecord>(routes.find((r) => r.name === route.name) as RouteRecord);
 const defaultLayout = ref<Component>(DefaultLayout);
 
 export function useNavigation() {

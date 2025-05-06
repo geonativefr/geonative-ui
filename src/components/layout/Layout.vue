@@ -15,8 +15,8 @@ import { useNavigation } from '@geonative/ui/composables';
 const { currentRoute } = useNavigation();
 const layoutComponent = computed<Component>((): Component => {
   // Get layout from route meta or use default
-  if (currentRoute.layout) {
-    return currentRoute.layout;
+  if (currentRoute.value.layout) {
+    return currentRoute.value.layout;
   }
   // Fallback to default layout
   return DefaultLayout;

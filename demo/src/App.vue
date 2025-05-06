@@ -13,9 +13,9 @@
     </template>
 
     <template #content>
-        <div class="flex flex-col justify-center mt-15 bg-white">
-          <router-view />
-        </div>
+      <div class="flex flex-col justify-center mt-15 bg-white">
+        <router-view />
+      </div>
     </template>
   </AppLayout>
 </template>
