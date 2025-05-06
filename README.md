@@ -64,7 +64,7 @@ createRoute({
 The demo uses the following path aliases:
 
 - `@geonative/ui/*` - Points to the main `/src` directory (component library)
-- `@/*` - Points to the `/demo/src` directory (demo application)
+- `@/*` - Points to the `/demo/src` directory (demo application or your project using the library)
 
 Example:
 
