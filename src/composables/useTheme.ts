@@ -1,10 +1,16 @@
 import { computed, ref, watch } from 'vue';
 import type { ThemeConfig, ThemeMode, ThemeModeSelection, ThemeOptions, ThemesData } from '@geonative/ui/types';
-import { THEME_MODE_DARK, THEME_MODE_LIGHT, THEME_MODE_SYSTEM } from '@geonative/ui/constants/theme.ts';
+import {
+  THEME_MODE_DARK,
+  THEME_MODE_LIGHT,
+  THEME_MODE_SYSTEM,
+  DEFAULT_THEME,
+  DEFAULT_THEME_MODES_CONFIG,
+} from '@geonative/ui/constants/theme.ts';
 
 // Singleton state - stored outside the function to be shared across all calls
 const themeRegistry = ref<ThemesData>({});
-const currentTheme = ref<string | null>(null);
+const currentTheme = ref<string>(DEFAULT_THEME);
 const prefersDarkScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 const selectedThemeMode = ref<ThemeModeSelection>(THEME_MODE_SYSTEM);
 const currentThemeMode = computed<ThemeMode>(() => {
@@ -15,7 +21,7 @@ const currentThemeMode = computed<ThemeMode>(() => {
   // Check if dark mode is explicitly set by the user
   return selectedThemeMode.value == THEME_MODE_DARK ? THEME_MODE_DARK : THEME_MODE_LIGHT;
 });
-let defaultTheme: string | null = null;
+let defaultTheme: string = DEFAULT_THEME;
 let persistTheme: boolean = true;
 let storageThemeKey: string = 'app-theme';
 let storageThemeModeKey: string = 'app-theme-mode';
@@ -51,7 +57,7 @@ export function useTheme() {
 
       // Get stored theme preference or use default
       const storedTheme = persistTheme ? localStorage.getItem(storageThemeKey) : null;
-      currentTheme.value = storedTheme || defaultTheme || null;
+      currentTheme.value = storedTheme || defaultTheme;
 
       // Get stored theme mode preference
       const storedThemeMode: ThemeMode = (localStorage.getItem(storageThemeModeKey) as ThemeMode) || null;
@@ -71,6 +77,11 @@ export function useTheme() {
       }
 
       isInitialized = true;
+    }
+
+    // Add default theme to the registry if not already present
+    if (!themeRegistry.value[defaultTheme]) {
+      themeRegistry.value[defaultTheme] = DEFAULT_THEME_MODES_CONFIG;
     }
 
     // Update theme registry with provided themes
@@ -147,7 +158,7 @@ export function useTheme() {
         }
       }
 
-      currentTheme.value = themeName;
+      currentTheme.value = themeName || defaultTheme;
       return true;
     } catch (err) {
       console.error(`Error applying theme '${themeName}':`, err);
@@ -164,14 +175,14 @@ export function useTheme() {
       document.documentElement.classList.remove(theme);
     });
     // Reset CSS variables
-    for (const key in themeRegistry.value[defaultTheme || '']) {
+    for (const key in themeRegistry.value[defaultTheme]) {
       document.documentElement.style.removeProperty(`--${key}`);
     }
     // Clear stored theme preference
     if (persistTheme) {
       localStorage.removeItem(storageThemeKey);
     }
-    currentTheme.value = null;
+    currentTheme.value = defaultTheme;
   };
 
   /**
@@ -181,15 +192,11 @@ export function useTheme() {
    * @param themeMode - Mode of the theme (light or dark)
    * @returns ThemeConfig object or null if theme doesn't exist
    */
-  const getThemeConfig = (themeName: string | null, themeMode?: ThemeMode): ThemeConfig | null => {
-    // Check if theme exists
-    if (!themeName || !themeRegistry.value[themeName]) {
-      return null;
-    }
+  const getThemeConfig = (themeName: string, themeMode?: ThemeMode): ThemeConfig => {
     // Use provided mode or fall back to current mode
     const mode = themeMode || (currentThemeMode.value as ThemeMode);
     // Return the theme config for the specified mode
-    return themeRegistry.value[themeName][mode] || null;
+    return themeRegistry.value[themeName][mode] ?? DEFAULT_THEME_MODES_CONFIG[mode];
   };
 
   /**
