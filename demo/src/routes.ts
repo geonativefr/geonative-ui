@@ -9,6 +9,12 @@ const routes: Array<RouteRecord> = [
     menuLabel: 'Home',
   }),
   createRoute({
+    path: '/action',
+    name: 'action',
+    component: () => import('@/views/Action.vue'),
+    menuLabel: 'Action',
+  }),
+  createRoute({
     path: '/avatar',
     name: 'avatar',
     component: () => import('@/views/Avatar.vue'),
@@ -39,12 +45,6 @@ const routes: Array<RouteRecord> = [
     menuLabel: 'Button',
   }),
   createRoute({
-    path: '/action',
-    name: 'action',
-    component: () => import('@/views/Action.vue'),
-    menuLabel: 'Action',
-  }),
-  createRoute({
     path: '/dropdown-menu',
     name: 'dropdown-menu',
     component: () => import('@/views/DropdownMenu.vue'),
@@ -55,6 +55,12 @@ const routes: Array<RouteRecord> = [
     name: 'navbar-dropdown',
     component: () => import('@/views/NavbarDropdown.vue'),
     menuLabel: 'Navbar Dropdown',
+  }),
+  createRoute({
+    path: '/themes',
+    name: 'themes',
+    component: () => import('@/views/Themes.vue'),
+    menuLabel: 'Themes',
   }),
   createRoute({
     path: '/toaster',

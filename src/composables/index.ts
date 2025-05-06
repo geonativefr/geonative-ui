@@ -1,3 +1,4 @@
-export { useKeyboardShortcuts } from './useKeyboardShortcuts';
-export { usePlatformDetect } from './usePlatformDetect';
-export { useSonner } from './useSonner';
+export * from './useKeyboardShortcuts';
+export * from './usePlatformDetect';
+export * from './useTheme';
+export * from './useSonner';
