@@ -14,7 +14,7 @@ export const defaultLayout = ref<Component>(DefaultLayout);
 export function createRoute(route: RouteRecordCreator): RouteRecord {
   return {
     showInMenu: route.showInMenu ?? true, // Default value
-    menuLabel:  route.menuLabel ?? route.name?.toString() ?? '', // Default label from name
+    menuLabel: route.menuLabel ?? route.name?.toString() ?? '', // Default label from name
     layout: route.layout ?? defaultLayout, // Default layout
     ...route, // This allows overriding the default
   };
