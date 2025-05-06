@@ -33,23 +33,22 @@ const {
   background,
   foreground,
   primary: primaryBackground,
-  "primary-foreground": primaryForeground,
+  'primary-foreground': primaryForeground,
   secondary: secondaryBackground,
-  "secondary-foreground": secondaryForeground,
+  'secondary-foreground': secondaryForeground,
   accent: accentBackground,
-  "accent-foreground": accentForeground,
+  'accent-foreground': accentForeground,
   popover: popoverBackground,
-  "popover-foreground": popoverForeground,
+  'popover-foreground': popoverForeground,
   card: cardBackground,
-  "card-foreground": cardForeground,
+  'card-foreground': cardForeground,
   muted: mutedBackground,
-  "muted-foreground": mutedForeground,
+  'muted-foreground': mutedForeground,
   border: borderColor,
   input: inputColor,
   ring: ringColor,
-  radius
+  radius,
 } = themeConfig;
-
 </script>
 
 <style>

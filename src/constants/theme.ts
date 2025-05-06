@@ -47,5 +47,5 @@ export const DEFAULT_THEME_MODES_CONFIG = {
     border: '#444444',
     input: '#333333',
     ring: '#444444',
-  }
-}
+  },
+};

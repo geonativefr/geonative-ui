@@ -1,6 +1,12 @@
 import { computed, ref, watch } from 'vue';
 import type { ThemeConfig, ThemeMode, ThemeModeSelection, ThemeOptions, ThemesData } from '@geonative/ui/types';
-import { THEME_MODE_DARK, THEME_MODE_LIGHT, THEME_MODE_SYSTEM, DEFAULT_THEME, DEFAULT_THEME_MODES_CONFIG } from '@geonative/ui/constants/theme.ts';
+import {
+  THEME_MODE_DARK,
+  THEME_MODE_LIGHT,
+  THEME_MODE_SYSTEM,
+  DEFAULT_THEME,
+  DEFAULT_THEME_MODES_CONFIG,
+} from '@geonative/ui/constants/theme.ts';
 
 // Singleton state - stored outside the function to be shared across all calls
 const themeRegistry = ref<ThemesData>({});
