@@ -8,6 +8,7 @@ import DOMPurify from 'dompurify';
 import { computed } from 'vue';
 import { useTheme } from '@geonative/ui/composables';
 import type { ThemeConfig } from '@geonative/ui/types';
+import { twMerge } from 'tailwind-merge';
 
 const props = defineProps<{
   content: string;
