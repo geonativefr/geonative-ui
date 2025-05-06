@@ -63,8 +63,8 @@ createRoute({
 
 The demo uses the following path aliases:
 
-- `@/*` - Points to the main `/src` directory (component library)
-- `@demo/*` - Points to the `/demo/src` directory (demo application)
+- `@geonative/ui/*` - Points to the main `/src` directory (component library)
+- `@/*` - Points to the `/demo/src` directory (demo application)
 
 Example:
 
@@ -95,7 +95,7 @@ const {
   availableThemes,         // List of available themes (reactive)
   initializeThemes,        // Initialize themes with configuration
   applyTheme,              // Apply a theme by name
-  setThemeMode,            // Set theme mode (light/dark/system)
+  setThemeMode,            // Se@t theme mode (light/dark/system)
   resetTheme,              // Reset to default theme
   getThemeConfig           // Get theme configuration
 } = useTheme();
