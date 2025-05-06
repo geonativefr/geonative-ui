@@ -88,16 +88,16 @@ The `useTheme` composable provides functionality to manage themes:
 import { useTheme } from '@geonative/ui/composables';
 
 // Get theme state and functions
-const { 
-  currentTheme,            // Current selected theme name (reactive)
-  currentThemeMode,        // Current theme mode (light/dark) (reactive)
-  selectedThemeMode,       // User selected theme mode (light/dark/system) (reactive)
-  availableThemes,         // List of available themes (reactive)
-  initializeThemes,        // Initialize themes with configuration
-  applyTheme,              // Apply a theme by name
-  setThemeMode,            // Se@t theme mode (light/dark/system)
-  resetTheme,              // Reset to default theme
-  getThemeConfig           // Get theme configuration
+const {
+  currentTheme, // Current selected theme name (reactive)
+  currentThemeMode, // Current theme mode (light/dark) (reactive)
+  selectedThemeMode, // User selected theme mode (light/dark/system) (reactive)
+  availableThemes, // List of available themes (reactive)
+  initializeThemes, // Initialize themes with configuration
+  applyTheme, // Apply a theme by name
+  setThemeMode, // Se@t theme mode (light/dark/system)
+  resetTheme, // Reset to default theme
+  getThemeConfig, // Get theme configuration
 } = useTheme();
 ```
 
@@ -146,7 +146,7 @@ interface ThemesData {
   [themeName: string]: {
     light: ThemeConfig;
     dark: ThemeConfig;
-  }
+  };
 }
 
 interface ThemeConfig {
@@ -177,6 +177,7 @@ interface ThemeConfig {
 ## Icon System
 
 The library provides a versatile icon system supporting multiple icon sources :
+
 - SVG icons (from src/assets/icons directory of library and src/assets/icons directory of your project)
 - [Lucide icons](https://lucide.dev/)
 - [Heroicons](https://heroicons.com/)
@@ -200,16 +201,19 @@ import { Icon } from '@geonative/ui/components';
 The Icon component supports the following sources:
 
 - **svg**: Custom SVG icons from assets directory
+
   ```vue
   <Icon name="antenna" source="svg" class="size-5 text-blue-500" />
   ```
 
 - **lucide**: Icons from Lucide icon library
+
   ```vue
   <Icon name="AlertCircle" source="lucide" class="size-5 text-red-500" />
   ```
 
 - **heroicons**: Icons from Heroicons (with `type` support: "solid" or "outline")
+
   ```vue
   <Icon name="bell" source="heroicons" type="solid" class="size-5 text-yellow-500" />
   <Icon name="bell" source="heroicons" type="outline" class="size-5 text-green-500" />
@@ -217,14 +221,14 @@ The Icon component supports the following sources:
 
 - **avatar**: Avatar component as an icon
   ```vue
-  <Icon 
-    name="user" 
-    source="avatar" 
-    :avatar-props="{ 
-      url: user.avatar, 
-      initials: user.name.slice(0, 2), 
-      class: 'bg-red-500' 
-    }" 
+  <Icon
+    name="user"
+    source="avatar"
+    :avatar-props="{
+      url: user.avatar,
+      initials: user.name.slice(0, 2),
+      class: 'bg-red-500',
+    }"
   />
   ```
 
@@ -259,11 +263,13 @@ import { Action } from '@geonative/ui/components';
 The `actionClick` prop accepts different types of values:
 
 - **Internal route**: String that doesn't start with `http://` or `https://`
+
   ```vue
   <Action actionClick="/dashboard">Internal Link</Action>
   ```
 
 - **External URL**: String starting with `http://` or `https://`
+
   ```vue
   <Action actionClick="https://github.com">External Link</Action>
   ```
