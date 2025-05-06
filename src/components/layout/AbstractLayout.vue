@@ -1,5 +1,8 @@
 <template>
-  <div ref="layout" class="w-screen h-screen overflow-hidden">
+  <div
+    ref="layout"
+    class="w-screen h-screen overflow-hidden"
+  >
     <slot />
   </div>
 </template>
@@ -15,7 +18,7 @@ const height: Ref<number> = ref(0);
 // Make dimensions available via provide/inject
 provide('layout', {
   width,
-  height,
+  height
 });
 
 // Update dimensions function
