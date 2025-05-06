@@ -95,7 +95,7 @@ const {
   availableThemes, // List of available themes (reactive)
   initializeThemes, // Initialize themes with configuration
   applyTheme, // Apply a theme by name
-  setThemeMode, // Se@t theme mode (light/dark/system)
+  setThemeMode, // Set theme mode (light/dark/system)
   resetTheme, // Reset to default theme
   getThemeConfig, // Get theme configuration
 } = useTheme();
