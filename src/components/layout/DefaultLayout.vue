@@ -1,5 +1,4 @@
 <template>
-  <h1>This is defaultLayout</h1>
   <slot />
 </template>
 
