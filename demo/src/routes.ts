@@ -1,14 +1,15 @@
 import type { RouteRecordRaw } from 'vue-router';
 import { setDefaultLayout, createRoute } from '@geonative/ui/helpers';
+import { AppLayout } from '@/components';
 
-setDefaultLayout(() => import('@/components/layout/AppLayout.vue'));
+setDefaultLayout(AppLayout);
 const routes: RouteRecordRaw[] = [
   createRoute({
     path: '/',
     name: 'home',
     component: () => import('@/views/Home.vue'),
     meta: {
-      menuLabel: 'Home'
+      menuLabel: 'Home',
     },
   }),
   createRoute({
@@ -16,7 +17,7 @@ const routes: RouteRecordRaw[] = [
     name: 'action',
     component: () => import('@/views/Action.vue'),
     meta: {
-      menuLabel: 'Action'
+      menuLabel: 'Action',
     },
   }),
   createRoute({
@@ -24,7 +25,7 @@ const routes: RouteRecordRaw[] = [
     name: 'avatar',
     component: () => import('@/views/Avatar.vue'),
     meta: {
-      menuLabel: 'Avatar'
+      menuLabel: 'Avatar',
     },
   }),
   createRoute({
@@ -32,7 +33,7 @@ const routes: RouteRecordRaw[] = [
     name: 'breadcrumb',
     component: () => import('@/views/Breadcrumb.vue'),
     meta: {
-      menuLabel: 'Breadcrumb'
+      menuLabel: 'Breadcrumb',
     },
   }),
   createRoute({
@@ -40,7 +41,7 @@ const routes: RouteRecordRaw[] = [
     name: 'loader',
     component: () => import('@/views/Loader.vue'),
     meta: {
-      menuLabel: 'Loader'
+      menuLabel: 'Loader',
     },
   }),
   createRoute({
@@ -48,7 +49,7 @@ const routes: RouteRecordRaw[] = [
     name: 'icon',
     component: () => import('@/views/Icon.vue'),
     meta: {
-      menuLabel: 'Icon'
+      menuLabel: 'Icon',
     },
   }),
   createRoute({
@@ -56,7 +57,7 @@ const routes: RouteRecordRaw[] = [
     name: 'button',
     component: () => import('@/views/Button.vue'),
     meta: {
-      menuLabel: 'Button'
+      menuLabel: 'Button',
     },
   }),
   createRoute({
@@ -64,7 +65,7 @@ const routes: RouteRecordRaw[] = [
     name: 'dropdown-menu',
     component: () => import('@/views/DropdownMenu.vue'),
     meta: {
-      menuLabel: 'Dropdown Menu'
+      menuLabel: 'Dropdown Menu',
     },
   }),
   createRoute({
@@ -72,7 +73,7 @@ const routes: RouteRecordRaw[] = [
     name: 'navbar-dropdown',
     component: () => import('@/views/NavbarDropdown.vue'),
     meta: {
-      menuLabel: 'Navbar Dropdown'
+      menuLabel: 'Navbar Dropdown',
     },
   }),
   createRoute({
@@ -80,7 +81,7 @@ const routes: RouteRecordRaw[] = [
     name: 'themes',
     component: () => import('@/views/Themes.vue'),
     meta: {
-      menuLabel: 'Themes'
+      menuLabel: 'Themes',
     },
   }),
   createRoute({
@@ -88,7 +89,7 @@ const routes: RouteRecordRaw[] = [
     name: 'toaster',
     component: () => import('@/views/Toaster.vue'),
     meta: {
-      menuLabel: 'Toaster'
+      menuLabel: 'Toaster',
     },
   }),
   // Catch all unmatched routes
@@ -97,7 +98,7 @@ const routes: RouteRecordRaw[] = [
     name: 'not-found',
     component: () => import('@/views/NotFound.vue'),
     meta: {
-      showInMenu: false
+      showInMenu: false,
     },
   }),
 ];
