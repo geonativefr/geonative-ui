@@ -12,9 +12,7 @@ import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
-const currentRoute = computed(() => router.currentRoute.value);
 const currentLayout = computed(() => {
-  return currentRoute.value.matched[0]?.components?.layout ?? DefaultLayout;
+  return router.currentRoute.value.matched[0]?.components?.layout ?? DefaultLayout;
 });
 </script>
