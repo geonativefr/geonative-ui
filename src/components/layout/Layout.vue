@@ -1,13 +1,11 @@
 <template>
-  <AbstractLayout>
-    <component :is="currentLayout">
-      <router-view />
-    </component>
-  </AbstractLayout>
+  <component :is="currentLayout">
+    <router-view />
+  </component>
 </template>
 
 <script lang="ts" setup>
-import { AbstractLayout, DefaultLayout } from '@geonative/ui/components';
+import { DefaultLayout } from '@geonative/ui/components';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 
