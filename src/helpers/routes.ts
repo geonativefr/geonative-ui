@@ -16,6 +16,8 @@ export function createRoute(route: RouteRecordRaw): RouteRecordRaw {
     (route as any).components = {
       default: route.component,
     };
+    // Remove the component property to avoid confusion
+    delete route.component;
   }
   // Set default layout if not provided
   if (route.components && !route.components.layout) {
