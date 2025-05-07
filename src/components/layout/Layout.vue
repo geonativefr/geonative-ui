@@ -1,24 +1,17 @@
 <template>
   <AbstractLayout>
-    <component :is="layoutComponent">
-      <router-view />
-    </component>
+    <router-view name="layout" v-slot="{ Component }">
+      <component :is="Component">
+        <router-view name="default" v-slot="{ Component }">
+          <component :is="Component">
+            <slot />
+          </component>
+        </router-view>
+      </component>
+    </router-view>
   </AbstractLayout>
 </template>
 
 <script lang="ts" setup>
-import { type Component, computed } from 'vue';
-import { AppLayout as DefaultLayout } from '@geonative/ui/components';
 import { AbstractLayout } from '@geonative/ui/components';
-import { useCurrentRoute } from '@geonative/ui/composables';
-
-const currentRoute = useCurrentRoute();
-const layoutComponent = computed<Component>((): Component => {
-  // Get layout from route meta or use default
-  if (currentRoute?.layout) {
-    return currentRoute.layout;
-  }
-  // Fallback to default layout
-  return DefaultLayout;
-});
 </script>
