@@ -1,79 +1,105 @@
-import type { RouteRecord } from '@geonative/ui/types';
-import { createRoute } from '@geonative/ui/helpers';
+import type { RouteRecordRaw } from 'vue-router';
+import { setDefaultLayout, createRoute } from '@geonative/ui/helpers';
+import { AppLayout } from '@/components';
 
-const routes: Array<RouteRecord> = [
+setDefaultLayout(AppLayout);
+const routes: RouteRecordRaw[] = [
   createRoute({
     path: '/',
     name: 'home',
     component: () => import('@/views/Home.vue'),
-    menuLabel: 'Home',
+    meta: {
+      menuLabel: 'Home',
+    },
   }),
   createRoute({
     path: '/action',
     name: 'action',
     component: () => import('@/views/Action.vue'),
-    menuLabel: 'Action',
+    meta: {
+      menuLabel: 'Action',
+    },
   }),
   createRoute({
     path: '/avatar',
     name: 'avatar',
     component: () => import('@/views/Avatar.vue'),
-    menuLabel: 'Avatar',
+    meta: {
+      menuLabel: 'Avatar',
+    },
   }),
   createRoute({
     path: '/breadcrumb',
     name: 'breadcrumb',
     component: () => import('@/views/Breadcrumb.vue'),
-    menuLabel: 'Breadcrumb',
+    meta: {
+      menuLabel: 'Breadcrumb',
+    },
   }),
   createRoute({
     path: '/loader',
     name: 'loader',
     component: () => import('@/views/Loader.vue'),
-    menuLabel: 'Loader',
+    meta: {
+      menuLabel: 'Loader',
+    },
   }),
   createRoute({
     path: '/icon',
     name: 'icon',
     component: () => import('@/views/Icon.vue'),
-    menuLabel: 'Icon',
+    meta: {
+      menuLabel: 'Icon',
+    },
   }),
   createRoute({
     path: '/button',
     name: 'button',
     component: () => import('@/views/Button.vue'),
-    menuLabel: 'Button',
+    meta: {
+      menuLabel: 'Button',
+    },
   }),
   createRoute({
     path: '/dropdown-menu',
     name: 'dropdown-menu',
     component: () => import('@/views/DropdownMenu.vue'),
-    menuLabel: 'Dropdown Menu',
+    meta: {
+      menuLabel: 'Dropdown Menu',
+    },
   }),
   createRoute({
     path: '/navbar-dropdown',
     name: 'navbar-dropdown',
     component: () => import('@/views/NavbarDropdown.vue'),
-    menuLabel: 'Navbar Dropdown',
+    meta: {
+      menuLabel: 'Navbar Dropdown',
+    },
   }),
   createRoute({
     path: '/themes',
     name: 'themes',
     component: () => import('@/views/Themes.vue'),
-    menuLabel: 'Themes',
+    meta: {
+      menuLabel: 'Themes',
+    },
   }),
   createRoute({
     path: '/toaster',
     name: 'toaster',
     component: () => import('@/views/Toaster.vue'),
-    menuLabel: 'Toaster',
+    meta: {
+      menuLabel: 'Toaster',
+    },
   }),
   // Catch all unmatched routes
   createRoute({
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: () => import('@/views/NotFound.vue'),
-    showInMenu: false,
+    meta: {
+      showInMenu: false,
+    },
   }),
 ];
 

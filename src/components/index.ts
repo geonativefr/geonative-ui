@@ -3,6 +3,7 @@ export * from './avatar';
 export * from './button';
 export * from './breadcrumb';
 export * from './dropdown-menu';
+export * from './layout';
 export * from './loader';
 export * from './markdown';
 export * from './icons';
