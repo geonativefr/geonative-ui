@@ -12,8 +12,8 @@ export let defaultLayout: Component = () => import('@geonative/ui/components/lay
 export function createRoute(route: RouteRecordRaw): RouteRecordRaw {
   // Set default layout if not provided
   if (route.component && !route.components) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (route as any).components = {
-      // eslint-disable-line @typescript-eslint/no-explicit-any
       default: route.component,
     };
   }
