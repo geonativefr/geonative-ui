@@ -3,11 +3,11 @@
     <div class="w-1/5 h-full flex items-center justify-center">
       <Menu />
     </div>
-    <div class="w-4/5 h-full flex flex-col">
-      <div class="h-1/10 w-full flex items-center justify-start pl-4">
+    <div class="w-4/5 h-full flex-col">
+      <div class="w-full p-4">
         <Breadcrumb :breadcrumb="breadcrumb" />
       </div>
-      <div class="flex-1 w-full flex items-center justify-center">
+      <div id="view">
         <slot />
       </div>
     </div>
