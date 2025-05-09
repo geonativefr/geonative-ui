@@ -92,6 +92,14 @@ const routes: RouteRecordRaw[] = [
       menuLabel: 'Toaster',
     },
   }),
+  createRoute({
+    path: '/accordion',
+    name: 'accordion',
+    component: () => import('@/views/Accordion.vue'),
+    meta: {
+      menuLabel: 'Accordion',
+    },
+  }),
   // Catch all unmatched routes
   createRoute({
     path: '/:pathMatch(.*)*',
