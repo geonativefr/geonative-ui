@@ -2,35 +2,38 @@
   <ShadcnSidebarProvider>
     <Sidebar side="left" collapsible="offcanvas">
       <template #header>
-        <ItemsSwitcher :items="items" @itemChange="updateActiveUser" class="w-full">
-          <span class="flex items-center gap-2 font-bold">Change Account</span>
-        </ItemsSwitcher>
+        <div class="w-full flex">
+          <ItemsSwitcher :items="items" @itemChange="updateActiveUser" class="w-full">
+            <span class="flex items-center gap-2 font-bold">Change Account</span>
+          </ItemsSwitcher>
+        </div>
       </template>
 
       <template #footer>
-        <NavbarDropdown :dropdown="dropdownNavbar" class="w-full block">
-          <Avatar
-            :url="activeUser.icon"
-            :is-square="true"
-            :class="activeUser.color"
-            :initials="activeUser.label.slice(0, 2)"
-          />
-          <span class="flex flex-col text-left text-sm">
-            <span class="font-semibold">{{ activeUser.label }}</span>
-            <span class="text-xs">{{ activeUser.email }}</span>
-          </span>
-        </NavbarDropdown>
+        <div class="w-full flex">
+          <NavbarDropdown :dropdown="dropdownNavbar" class="w-full block">
+            <Avatar
+              :url="activeUser.icon"
+              :is-square="true"
+              :class="activeUser.color"
+              :initials="activeUser.label.slice(0, 2)"
+            />
+            <span class="flex flex-col text-left text-sm w-full">
+              <span class="font-semibold truncate">{{ activeUser.label }}</span>
+              <span class="text-xs truncate">{{ activeUser.email }}</span>
+            </span>
+          </NavbarDropdown>
+        </div>
       </template>
     </Sidebar>
   </ShadcnSidebarProvider>
 </template>
 
 <script setup lang="ts">
-import { Sidebar, NavbarDropdown, Avatar, ItemsSwitcher, Button, DropdownMenu } from '@geonative/ui/components';
+import { Sidebar, NavbarDropdown, Avatar, ItemsSwitcher } from '@geonative/ui/components';
 import type { DropdownMenuType } from '@geonative/ui/types';
 import { SidebarProvider as ShadcnSidebarProvider } from '@geonative/ui/shadcn/ui/sidebar';
 import { ref } from 'vue';
-import { useSonner } from '@geonative/ui/composables';
 
 const items = [
   {
@@ -103,30 +106,4 @@ const dropdownNavbar: DropdownMenuType = {
     ],
   ],
 };
-
-const dropdownExample: DropdownMenuType = {
-  sections: [
-    [
-      { label: 'Profile', clickAction: '/profile' },
-      { label: 'Settings', clickAction: '/settings' },
-    ],
-    [
-      { label: 'Help', clickAction: '/help' },
-      { label: 'Log Out', clickAction: '/logout' },
-    ],
-  ],
-};
-
-const isClickedButton = ref(false);
-const { showSuccessSonner } = useSonner();
-
-function handleClick() {
-  isClickedButton.value = true;
-  showSuccessSonner('Button clicked!', 'This is a success message.', {
-    label: 'Undo',
-    clickAction: () => {
-      isClickedButton.value = false;
-    },
-  });
-}
 </script>
