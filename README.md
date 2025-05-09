@@ -55,7 +55,9 @@ createRoute({
   path: '/your-component',
   name: 'your-component',
   component: () => import('./views/YourComponent.vue'),
-  menuLabel: 'Your Component',
+  meta: {
+    menuLabel: 'Your Component',
+  },
 });
 ```
 
