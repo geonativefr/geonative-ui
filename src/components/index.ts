@@ -10,3 +10,4 @@ export * from './icons';
 export * from './navbar';
 export * from './theme';
 export * from './sonner';
+export * from './accordion';
