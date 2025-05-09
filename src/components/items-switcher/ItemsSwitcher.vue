@@ -3,10 +3,9 @@
     <Button size="lg" class="w-full bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
       <div class="flex items-center justify-between w-full gap-2">
         <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
-        <span class="flex-1 text-center text-sm w-full">
+        <span class="flex-1 text-center text-sm">
           <span class="font-semibold">{{ activeItem.label }}</span>
         </span>
-        <div class="flex-1"></div>
         <ChevronsUpDown class="size-5 ml-6" />
       </div>
     </Button>
