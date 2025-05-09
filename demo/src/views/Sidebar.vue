@@ -2,30 +2,9 @@
   <ShadcnSidebarProvider>
     <Sidebar side="left" collapsible="offcanvas">
       <template #header>
-        <ItemsSwitcher :items="items" @itemChange="updateActiveUser">
+        <ItemsSwitcher :items="items" @itemChange="updateActiveUser" class="w-full">
           <span class="flex items-center gap-2 font-bold">Change Account</span>
         </ItemsSwitcher>
-      </template>
-
-      <template #content>
-        <div class="p-4 h-full flex flex-col justify-center space-y-4">
-          <div class="flex justify-center">
-            <div>
-              <Button class="bg-red-500 w-au" size="md" :loading="isClickedButton" @click="handleClick"
-                >Button 1</Button
-              >
-            </div>
-            <div>
-              <Button class="bg-green-500" size="lg" :loading="isClickedButton" @click="handleClick">Button 2</Button>
-            </div>
-          </div>
-
-          <div class="flex justify-center">
-            <DropdownMenu :dropdown="dropdownExample" position="bottom">
-              <Button class="bg-gray-200 text-gray-700 rounded-lg px-4 py-2"> Open Menu </Button>
-            </DropdownMenu>
-          </div>
-        </div>
       </template>
 
       <template #footer>
