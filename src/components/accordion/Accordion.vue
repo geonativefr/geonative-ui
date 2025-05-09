@@ -6,7 +6,15 @@
         {{ item.label }}
       </ShadcnAccordionTrigger>
       <ShadcnAccordionContent>
-        {{ item.content }}
+        <div>
+          {{ item.content }}
+        </div>
+        <Accordion
+          v-if="item.items"
+          :items="item.items"
+          :multiple="props.multiple"
+          :collapsible="props.collapsible"
+        />
       </ShadcnAccordionContent>
     </ShadcnAccordionItem>
   </ShadcnAccordion>
