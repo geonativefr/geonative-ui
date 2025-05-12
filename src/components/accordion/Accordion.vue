@@ -7,11 +7,14 @@
 <script setup lang="ts">
 import { Accordion as ShadcnAccordion } from '@geonative/ui/shadcn/ui/accordion';
 
-const props = withDefaults(defineProps<{
-  multiple?: boolean;
-  collapsible?: boolean;
-}>(), {
-  multiple: false,
-  collapsible: false,
-});
+const props = withDefaults(
+  defineProps<{
+    multiple?: boolean;
+    collapsible?: boolean;
+  }>(),
+  {
+    multiple: false,
+    collapsible: false,
+  }
+);
 </script>

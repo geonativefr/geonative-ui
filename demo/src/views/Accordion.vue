@@ -57,7 +57,7 @@
             <span>Accordion 3</span>
           </template>
 
-            <p>Content 3</p>
+          <p>Content 3</p>
         </AccordionItem>
       </Accordion>
     </div>
@@ -78,7 +78,7 @@
             <span>Accordion 2</span>
           </template>
 
-           <p>Content 2</p>
+          <p>Content 2</p>
         </AccordionItem>
 
         <AccordionItem value="item-3">
@@ -86,7 +86,7 @@
             <span>Accordion 3</span>
           </template>
 
-            <p>Content 3</p>
+          <p>Content 3</p>
         </AccordionItem>
       </Accordion>
     </div>
