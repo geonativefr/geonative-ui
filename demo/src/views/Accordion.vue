@@ -5,26 +5,30 @@
       <Accordion>
         <AccordionItem value="item-1">
           <template #title>
-            <span>Accordion 1</span>
+            <div>
+              <Icon name="AlertCircle" source="lucide" class="text-pink-700" />
+            </div>
           </template>
 
-          <p>Content 1</p>
+          <p>this is an alert icon</p>
         </AccordionItem>
 
         <AccordionItem value="item-2">
           <template #title>
-            <span>Accordion 2</span>
+            <div>
+              <Icon name="antenna" source="svg" class="size-7 fill-blue-500" />
+            </div>
           </template>
 
-          <p>Content 2</p>
+          <span>this is an antenna icon</span>
         </AccordionItem>
 
         <AccordionItem value="item-3">
           <template #title>
-            <span>Accordion 3</span>
+            <span>Click to show a Button</span>
           </template>
 
-            <p>Content 3</p>
+          <Button class="bg-green-500">Button</Button>
         </AccordionItem>
       </Accordion>
     </div>
@@ -90,5 +94,5 @@
 </template>
 
 <script setup lang="ts">
-import { Accordion, AccordionItem } from '@geonative/ui/components';
+import { Accordion, AccordionItem, Icon, Button } from '@geonative/ui/components';
 </script>
