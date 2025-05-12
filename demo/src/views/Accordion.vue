@@ -24,7 +24,7 @@ const items: AccordionItem[] = [
     label: 'Item 1',
     content: 'Content for item 1',
     iconProps: { name: 'star', source: 'heroicons', type: 'solid', class: 'h-4 w-4' },
-    items : [
+    items: [
       {
         label: 'Item 1.1',
         content: 'Content for item 1.1',

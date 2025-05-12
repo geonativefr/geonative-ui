@@ -11,5 +11,4 @@ export interface AccordionProps {
   items: AccordionItem[];
   multiple?: boolean;
   collapsible?: boolean;
-
 }
