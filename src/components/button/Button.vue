@@ -21,7 +21,7 @@
         <span><slot /></span>
       </div>
 
-      <div ref="loaderRef" class="absolute flex items-center gap-2 px-4 py-2" :class="{ invisible: !props.loading }">
+      <div ref="loaderRef" class="absolute flex items-center p-2 gap-2" :class="{ invisible: !props.loading }">
         <Spinner :size="props.size" />
         <span v-if="props.loadingText">{{ props.loadingText }}</span>
       </div>
