@@ -24,7 +24,8 @@ import {
   SidebarGroup,
   SidebarMenu,
   SidebarGroupContent,
-  SidebarGroupLabel, SidebarMenuButton,
+  SidebarGroupLabel,
+  SidebarMenuButton,
   SidebarMenuItem,
 } from '@geonative/ui/shadcn/ui/sidebar';
 
