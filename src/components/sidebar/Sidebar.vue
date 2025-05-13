@@ -5,17 +5,12 @@
     </ShadcnSidebarHeader>
 
     <ShadcnSidebarContent>
-      <SidebarAccordion :items="data.accordion" />
+      <Menu />
     </ShadcnSidebarContent>
 
     <ShadcnSidebarFooter>
       <slot name="footer" />
     </ShadcnSidebarFooter>
-    <ShadcnSidebarRail>
-      <Button class="bg-gray-100 text-black rounded hover:bg-gray-200">
-        <Icon name="bars-4" source="heroicons" type="solid" />
-      </Button>
-    </ShadcnSidebarRail>
   </ShadcnSidebar>
 </template>
 
@@ -25,9 +20,8 @@ import {
   SidebarHeader as ShadcnSidebarHeader,
   SidebarContent as ShadcnSidebarContent,
   SidebarFooter as ShadcnSidebarFooter,
-  SidebarRail as ShadcnSidebarRail,
 } from '@geonative/ui/shadcn/ui/sidebar';
-import { Button, Icon, SidebarAccordion } from '@geonative/ui/components';
+import { Menu } from '@/components';
 
 const props = withDefaults(
   defineProps<{
