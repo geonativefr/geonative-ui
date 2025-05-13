@@ -5,7 +5,7 @@
     </ShadcnSidebarHeader>
 
     <ShadcnSidebarContent>
-      <Menu />
+      <SidebarMenu />
     </ShadcnSidebarContent>
 
     <ShadcnSidebarFooter>
@@ -21,7 +21,7 @@ import {
   SidebarContent as ShadcnSidebarContent,
   SidebarFooter as ShadcnSidebarFooter,
 } from '@geonative/ui/shadcn/ui/sidebar';
-import { Menu } from '@/components';
+import { SidebarMenu } from '@/components';
 
 const props = withDefaults(
   defineProps<{
