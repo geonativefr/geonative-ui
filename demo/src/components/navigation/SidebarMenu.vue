@@ -20,7 +20,6 @@ import routes from '@/routes.ts';
 import { computed } from 'vue';
 import { type RouteRecordRaw, useRoute } from 'vue-router';
 import {
-  SidebarContent,
   SidebarGroup,
   SidebarMenu,
   SidebarGroupContent,
