@@ -64,6 +64,6 @@ function handleClick() {
   // Simulate a delay
   setTimeout(() => {
     isClickedButton.value = false;
-  }, 3000);
+  }, 4000);
 }
 </script>
