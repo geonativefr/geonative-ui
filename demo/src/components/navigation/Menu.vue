@@ -1,8 +1,8 @@
 <template>
   <ul class="list-disc">
-    <li v-for="(route, index) in menuRoutes" :key="index" :class="{ 'text-blue-500': isActive(route) }">
+    <SidebarMenuItem v-for="(route, index) in menuRoutes" :key="index" :class="{ 'text-blue-500': isActive(route) }">
       <router-link :to="{ name: route.name }">{{ route.meta?.menuLabel }}</router-link>
-    </li>
+    </SidebarMenuItem>
   </ul>
 </template>
 
@@ -10,6 +10,7 @@
 import routes from '@/routes.ts';
 import { computed } from 'vue';
 import { type RouteRecordRaw, useRoute } from 'vue-router';
+import { SidebarMenuItem } from '@geonative/ui/shadcn/ui/sidebar';
 
 const route = useRoute();
 const menuRoutes = routes.filter((route) => route.meta?.showInMenu);

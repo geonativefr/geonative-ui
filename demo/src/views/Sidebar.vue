@@ -1,5 +1,4 @@
 <template>
-  <ShadcnSidebarProvider>
     <Sidebar side="left" collapsible="offcanvas">
       <template #header>
         <div class="w-full flex">
@@ -26,13 +25,11 @@
         </div>
       </template>
     </Sidebar>
-  </ShadcnSidebarProvider>
 </template>
 
 <script setup lang="ts">
 import { Sidebar, NavbarDropdown, Avatar, ItemsSwitcher } from '@geonative/ui/components';
 import type { DropdownMenuType } from '@geonative/ui/types';
-import { SidebarProvider as ShadcnSidebarProvider } from '@geonative/ui/shadcn/ui/sidebar';
 import { ref } from 'vue';
 
 const items = [
