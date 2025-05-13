@@ -1,10 +1,8 @@
 <template>
   <DropdownMenu :dropdown="props.dropdown" position="right" :class="props.class" align="end">
-    <Button full-width class="py-6">
-      <div class="flex items-center justify-between gap-2">
-        <span>
-          <slot />
-        </span>
+    <Button class="py-6">
+      <div class="flex items-center gap-2">
+        <slot />
         <ChevronsUpDown class="size-5 ml-6" />
       </div>
     </Button>
