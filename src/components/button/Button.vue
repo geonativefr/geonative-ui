@@ -80,14 +80,14 @@ const hoverBgClass = computed(() => {
 
 const slotRef = ref<HTMLElement | null>(null);
 const loaderRef = ref<HTMLElement | null>(null);
-const width = ref<string>("100%");
+const width = ref<string>('100%');
 
 onMounted(() => {
   if (!props.fullWidth) {
     const loaderWidth = loaderRef.value?.offsetWidth || null;
     const slotWidth = slotRef.value?.offsetWidth || null;
     const maxWidth = Math.max(loaderWidth || 0, slotWidth || 0);
-    width.value = maxWidth ? maxWidth + 'px' : "100%";
+    width.value = maxWidth ? maxWidth + 'px' : '100%';
   }
 });
 </script>
