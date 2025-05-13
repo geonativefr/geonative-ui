@@ -1,9 +1,15 @@
 <template>
+<<<<<<< Updated upstream
   <div class="inline-block" :style="{ width: width ? `${width}px` : 'auto' }">
+||||||| Stash base
+  <div class="inline-block w-full" :style="{ width: width ? `${width}px` : 'auto' }">
+=======
+  <div class="inline-block" :style="{ width: width }">
+>>>>>>> Stashed changes
     <ShadcnButton
       :class="
         twMerge(
-          `relative flex w-full items-center justify-center rounded-md bg-background text-foreground shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
+          `w-full rounded-md bg-background text-foreground shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
           props.disabled || props.loading ? 'cursor-not-allowed' : 'hover:opacity-80',
           props.disabled ? 'opacity-80' : '',
           props.class
@@ -14,8 +20,9 @@
     >
       <div
         ref="slotRef"
-        class="flex items-center gap-2 whitespace-nowrap px-4 py-2"
+        class="items-center whitespace-nowrap p-2 gap-2"
         :class="{ invisible: props.loading }"
+        :style="{ width: width }"
       >
         <span><slot /></span>
       </div>
@@ -44,11 +51,13 @@ const props = withDefaults(
     disabled?: boolean;
     loading?: boolean;
     loadingText?: string;
+    fullWidth?: boolean;
   }>(),
   {
     size: 'md',
     disabled: false,
     loading: false,
+    fullWidth: false,
   }
 );
 
@@ -77,12 +86,14 @@ const hoverBgClass = computed(() => {
 
 const slotRef = ref<HTMLElement | null>(null);
 const loaderRef = ref<HTMLElement | null>(null);
-const width = ref<number | null>(null);
+const width = ref<string>("100%");
 
 onMounted(() => {
-  const loaderWidth = loaderRef.value?.offsetWidth || null;
-  const slotWidth = slotRef.value?.offsetWidth || null;
-  const maxWidth = Math.max(loaderWidth || 0, slotWidth || 0);
-  width.value = maxWidth ? maxWidth : null;
+  if (!props.fullWidth) {
+    const loaderWidth = loaderRef.value?.offsetWidth || null;
+    const slotWidth = slotRef.value?.offsetWidth || null;
+    const maxWidth = Math.max(loaderWidth || 0, slotWidth || 0);
+    width.value = maxWidth ? maxWidth + 'px' : "100%";
+  }
 });
 </script>
