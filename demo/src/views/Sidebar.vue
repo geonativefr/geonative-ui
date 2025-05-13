@@ -9,22 +9,20 @@
     </template>
 
     <template #footer>
-      <div class="w-full flex">
-        <NavbarDropdown :dropdown="dropdownNavbar" class="w-full block">
-          <div class="flex items-center gap-2">
-            <Avatar
-              :url="activeUser.icon"
-              :is-square="true"
-              :class="activeUser.color"
-              :initials="activeUser.label.slice(0, 2)"
-            />
-            <span class="flex flex-col text-left text-sm w-full">
-              <span class="font-semibold truncate">{{ activeUser.label }}</span>
-              <span class="text-xs truncate">{{ activeUser.email }}</span>
-            </span>
-          </div>
-        </NavbarDropdown>
-      </div>
+      <NavbarDropdown :dropdown="dropdownNavbar" class="w-full ">
+        <div class="flex items-center gap-2">
+          <Avatar
+            :url="activeUser.icon"
+            :is-square="true"
+            :class="activeUser.color"
+            :initials="activeUser.label.slice(0, 2)"
+          />
+          <span class="flex flex-col text-left text-sm w-full">
+            <span class="font-semibold truncate">{{ activeUser.label }}</span>
+            <span class="text-xs truncate">{{ activeUser.email }}</span>
+          </span>
+        </div>
+      </NavbarDropdown>
     </template>
   </Sidebar>
 </template>
