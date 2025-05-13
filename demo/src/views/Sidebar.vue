@@ -38,7 +38,7 @@ const items = [
     label: 'alice',
     icon: 'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Kurt&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=White&eyeType=Happy&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light',
     color: 'bg-pink-500',
-    email: 'alice@example.com',
+    email: 'a@ex.com',
   },
   {
     id: '2',
