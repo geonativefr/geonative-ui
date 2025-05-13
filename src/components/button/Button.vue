@@ -1,11 +1,5 @@
 <template>
-<<<<<<< Updated upstream
-  <div class="inline-block" :style="{ width: width ? `${width}px` : 'auto' }">
-||||||| Stash base
-  <div class="inline-block w-full" :style="{ width: width ? `${width}px` : 'auto' }">
-=======
   <div class="inline-block" :style="{ width: width }">
->>>>>>> Stashed changes
     <ShadcnButton
       :class="
         twMerge(
