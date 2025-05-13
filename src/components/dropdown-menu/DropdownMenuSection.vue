@@ -4,7 +4,7 @@
     <div v-if="item.sections && item.sections.length > 0">
       <ShadcnDropdownMenuSub>
         <ShadcnDropdownMenuSubTrigger>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 w-full">
             <Icon v-if="item.iconProps" v-bind="item.iconProps" />
             <span>{{ item.label }}</span>
           </div>
