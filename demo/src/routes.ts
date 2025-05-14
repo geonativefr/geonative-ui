@@ -109,11 +109,11 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
-    path: '/account-switcher',
-    name: 'account-switcher',
-    component: () => import('@/views/AccountSwitcher.vue'),
+    path: '/items-switcher',
+    name: 'items-switcher',
+    component: () => import('@/views/ItemsSwitcher.vue'),
     meta: {
-      menuLabel: 'Account Switcher',
+      menuLabel: 'Items Switcher',
     },
   }),
   // Catch all unmatched routes
