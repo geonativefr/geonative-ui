@@ -28,7 +28,6 @@ import {
   SidebarGroup as ShadcnSidebarGroup,
   SidebarMenu as ShadcnSidebarMenu,
   SidebarGroupContent as ShadcnSidebarGroupContent,
-  SidebarGroupLabel as ShadcnSidebarGroupLabel,
   SidebarMenuButton as ShadcnSidebarMenuButton,
   SidebarMenuItem as ShadcnSidebarMenuItem,
 } from '@geonative/ui/shadcn/ui/sidebar';
