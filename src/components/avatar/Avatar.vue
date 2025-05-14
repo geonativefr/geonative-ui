@@ -33,12 +33,12 @@ const props = withDefaults(
   }
 );
 const textSize = computed((): string => {
-  let sizeMatch = props.class.match(/^size-(\d+)/) ?? props.class.match(/ size-(\d+)/);
+  let sizeMatch = props.class.match(/size-(\d+)/);
   if (!sizeMatch) {
-    sizeMatch = props.class.match(/^w-(\d+)/) ?? props.class.match(/ w-(\d+)/);
+    sizeMatch = props.class.match(/w-(\d+)/);
   }
   if (!sizeMatch) {
-    sizeMatch = props.class.match(/^h-(\d+)/) ?? props.class.match(/ h-(\d+)/);
+    sizeMatch = props.class.match(/h-(\d+)/);
   }
   const size = parseInt(sizeMatch && sizeMatch[1] ? sizeMatch[1] : '8', 10);
   return size / 8 + 'rem';
