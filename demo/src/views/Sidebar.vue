@@ -1,11 +1,9 @@
 <template>
   <Sidebar side="left" collapsible="offcanvas">
     <template #header>
-      <div class="w-full flex">
-        <ItemsSwitcher :items="items" @itemChange="updateActiveUser" class="w-full">
-          <span class="flex items-center gap-2 font-bold">Change Account</span>
-        </ItemsSwitcher>
-      </div>
+      <ItemsSwitcher :items="items" @itemChange="updateActiveUser" class="w-full">
+        <span class="flex items-center gap-2 font-bold">Change Account</span>
+      </ItemsSwitcher>
     </template>
 
     <template #footer>
