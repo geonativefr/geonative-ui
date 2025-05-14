@@ -9,7 +9,9 @@
       </div>
     </Button>
     <template #header>
-      <slot />
+      <div class="flex items-center gap-2">
+        <slot />
+      </div>
     </template>
   </DropdownMenu>
 </template>

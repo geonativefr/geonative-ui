@@ -1,20 +1,20 @@
 <template>
   <Sidebar side="left" collapsible="offcanvas">
     <template #header>
-      <ItemsSwitcher :items="items" @itemChange="updateActiveUser" class="w-full">
+      <ItemsSwitcher :items="items" @itemChange="updateActiveUser">
         <span class="flex items-center gap-2 font-bold">Change Account</span>
       </ItemsSwitcher>
     </template>
 
     <template #footer>
-      <NavbarDropdown :dropdown="dropdownNavbar" class="w-full">
+      <NavbarDropdown :dropdown="dropdownNavbar">
         <Avatar
           :url="activeUser.icon"
           :is-square="true"
           :class="activeUser.color"
           :initials="activeUser.label.slice(0, 2)"
         />
-        <span class="flex flex-col text-left text-sm w-full">
+        <span class="flex flex-col text-left text-sm">
           <span class="font-semibold truncate">{{ activeUser.label }}</span>
           <span class="text-xs truncate">{{ activeUser.email }}</span>
         </span>
