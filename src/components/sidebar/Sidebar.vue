@@ -1,11 +1,11 @@
 <template>
-  <ShadcnSidebar :side="props.side" :variant="props.variant" :collapsible="props.collapsible">
+  <ShadcnSidebar :side="props.side" :variant="props.variant" :collapsible="props.collapsible" :class="twMerge('bg-background text-foreground', props.class)">
     <ShadcnSidebarHeader>
       <slot name="header" />
     </ShadcnSidebarHeader>
 
-    <ShadcnSidebarContent>
-      <SidebarMenu />
+    <ShadcnSidebarContent >
+      <slot name="content"/>
     </ShadcnSidebarContent>
 
     <ShadcnSidebarFooter>
@@ -21,13 +21,14 @@ import {
   SidebarContent as ShadcnSidebarContent,
   SidebarFooter as ShadcnSidebarFooter,
 } from '@geonative/ui/shadcn/ui/sidebar';
-import { SidebarMenu } from '@/components';
+import { twMerge } from 'tailwind-merge';
 
 const props = withDefaults(
   defineProps<{
     side?: 'left' | 'right' | 'top' | 'bottom';
     variant?: 'sidebar' | 'floating' | 'inset';
     collapsible?: 'offcanvas' | 'icon' | 'none';
+    class?: string;
   }>(),
   {
     side: 'left',
