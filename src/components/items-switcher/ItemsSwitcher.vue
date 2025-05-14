@@ -2,10 +2,10 @@
   <DropdownMenu :dropdown="dropdown" :items="props.items" position="right" align="start">
     <Button size="lg" :full-width="true" class="py-6">
       <div class="flex items-center justify-between">
-          <span class="flex items-center gap-2">
-            <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
-            <span class="text-sm font-semibold">{{ activeItem.label }}</span>
-          </span>
+        <span class="flex items-center gap-2">
+          <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
+          <span class="text-sm font-semibold">{{ activeItem.label }}</span>
+        </span>
         <ChevronsUpDown class="size-5 ml-6" />
       </div>
     </Button>
