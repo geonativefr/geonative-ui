@@ -8,6 +8,3 @@ export * from './icon';
 export * from './items-switcher';
 export * from './shortcut';
 export * from './theme';
-export * from './action';
-export * from './avatar';
-export * from './items-switcher.ts';
