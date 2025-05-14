@@ -13,6 +13,14 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/accordion',
+    name: 'accordion',
+    component: () => import('@/views/Accordion.vue'),
+    meta: {
+      menuLabel: 'Accordion',
+    },
+  }),
+  createRoute({
     path: '/action',
     name: 'action',
     component: () => import('@/views/Action.vue'),
@@ -37,11 +45,19 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
-    path: '/loader',
-    name: 'loader',
-    component: () => import('@/views/Loader.vue'),
+    path: '/button',
+    name: 'button',
+    component: () => import('@/views/Button.vue'),
     meta: {
-      menuLabel: 'Loader',
+      menuLabel: 'Button',
+    },
+  }),
+  createRoute({
+    path: '/dropdown-menu',
+    name: 'dropdown-menu',
+    component: () => import('@/views/DropdownMenu.vue'),
+    meta: {
+      menuLabel: 'Dropdown Menu',
     },
   }),
   createRoute({
@@ -53,27 +69,19 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
-    path: '/button',
-    name: 'button',
-    component: () => import('@/views/Button.vue'),
+    path: '/items-switcher',
+    name: 'items-switcher',
+    component: () => import('@/views/ItemsSwitcher.vue'),
     meta: {
-      menuLabel: 'Button',
+      menuLabel: 'Items Switcher',
     },
   }),
   createRoute({
-    path: '/action',
-    name: 'action',
-    component: () => import('@/views/Action.vue'),
+    path: '/loader',
+    name: 'loader',
+    component: () => import('@/views/Loader.vue'),
     meta: {
-      menuLabel: 'Action',
-    },
-  }),
-  createRoute({
-    path: '/dropdown-menu',
-    name: 'dropdown-menu',
-    component: () => import('@/views/DropdownMenu.vue'),
-    meta: {
-      menuLabel: 'Dropdown Menu',
+      menuLabel: 'Loader',
     },
   }),
   createRoute({
@@ -98,22 +106,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Toaster.vue'),
     meta: {
       menuLabel: 'Toaster',
-    },
-  }),
-  createRoute({
-    path: '/accordion',
-    name: 'accordion',
-    component: () => import('@/views/Accordion.vue'),
-    meta: {
-      menuLabel: 'Accordion',
-    },
-  }),
-  createRoute({
-    path: '/items-switcher',
-    name: 'items-switcher',
-    component: () => import('@/views/ItemsSwitcher.vue'),
-    meta: {
-      menuLabel: 'Items Switcher',
     },
   }),
   // Catch all unmatched routes
