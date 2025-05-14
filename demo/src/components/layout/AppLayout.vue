@@ -3,15 +3,15 @@
     <Sidebar />
     <ShadcnSidebarInset>
       <header
-        class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
+        class="flex h-16 shrink-0 items-center"
       >
         <div class="flex items-center gap-2 px-4">
-          <ShadcnSidebarTrigger class="-ml-1" />
-          <ShadcnSeparator orientation="vertical" class="mr-2 h-4" />
+          <ShadcnSidebarTrigger />
+          <ShadcnSeparator orientation="vertical" />
           <Breadcrumb :breadcrumb="breadcrumb" />
         </div>
       </header>
-      <div id="view" class="flex flex-1 flex-col gap-4 p-4 pt-0">
+      <div id="view" class="flex-1 flex-col">
         <slot />
       </div>
     </ShadcnSidebarInset>

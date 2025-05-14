@@ -1,10 +1,10 @@
 <template>
-  <ShadcnDropdownMenu>
+  <ShadcnDropdownMenu >
     <ShadcnDropdownMenuTrigger>
       <slot />
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
-      :class="twMerge('w-full min-w-56 rounded-lg', props.class)"
+      :class="twMerge('w-full min-w-56 rounded-lg bg-background text-foreground', props.class)"
       :side="props.position"
       :align="props.align"
       :side-offset="4"
