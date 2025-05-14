@@ -53,7 +53,7 @@ const items = [
     id: '4',
     label: 'dante',
     color: 'bg-yellow-500',
-    email: 'dante@example.com',
+    email: 'superlongmailfordante@example.com',
   },
 ];
 
