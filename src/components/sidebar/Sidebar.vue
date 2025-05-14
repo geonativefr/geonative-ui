@@ -10,7 +10,7 @@
     </ShadcnSidebarHeader>
 
     <ShadcnSidebarContent>
-      <slot name="content" />
+      <slot />
     </ShadcnSidebarContent>
 
     <ShadcnSidebarFooter>
