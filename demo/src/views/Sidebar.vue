@@ -37,7 +37,6 @@
       </ShadcnSidebarGroup>
     </template>
 
-
     <template #footer>
       <NavbarDropdown :dropdown="dropdownNavbar">
         <Avatar
@@ -56,7 +55,15 @@
 </template>
 
 <script setup lang="ts">
-import { Sidebar, NavbarDropdown, Avatar, ItemsSwitcher, Accordion, AccordionItem, Button } from '@geonative/ui/components';
+import {
+  Sidebar,
+  NavbarDropdown,
+  Avatar,
+  ItemsSwitcher,
+  Accordion,
+  AccordionItem,
+  Button,
+} from '@geonative/ui/components';
 import { SidebarMenu } from '@/components';
 import { SidebarGroup as ShadcnSidebarGroup } from '@geonative/ui/shadcn/ui/sidebar';
 

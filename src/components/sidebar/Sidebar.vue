@@ -1,11 +1,16 @@
 <template>
-  <ShadcnSidebar :side="props.side" :variant="props.variant" :collapsible="props.collapsible" :class="twMerge('bg-background text-foreground', props.class)">
+  <ShadcnSidebar
+    :side="props.side"
+    :variant="props.variant"
+    :collapsible="props.collapsible"
+    :class="twMerge('bg-background text-foreground', props.class)"
+  >
     <ShadcnSidebarHeader>
       <slot name="header" />
     </ShadcnSidebarHeader>
 
-    <ShadcnSidebarContent >
-      <slot name="content"/>
+    <ShadcnSidebarContent>
+      <slot name="content" />
     </ShadcnSidebarContent>
 
     <ShadcnSidebarFooter>
