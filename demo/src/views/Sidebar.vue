@@ -6,6 +6,38 @@
       </ItemsSwitcher>
     </template>
 
+    <template #content>
+      <SidebarMenu />
+      <ShadcnSidebarGroup>
+        <Accordion :multiple="true">
+          <AccordionItem value="item-1">
+            <template #title>
+              <span>Accordion 1</span>
+            </template>
+
+            <p>Content 1</p>
+          </AccordionItem>
+
+          <AccordionItem value="item-2">
+            <template #title>
+              <span>Accordion 2</span>
+            </template>
+
+            <p>Content 2</p>
+          </AccordionItem>
+
+          <AccordionItem value="item-3">
+            <template #title>
+              <span>Accordion 3</span>
+            </template>
+
+            <p>Content 3</p>
+          </AccordionItem>
+        </Accordion>
+      </ShadcnSidebarGroup>
+    </template>
+
+
     <template #footer>
       <NavbarDropdown :dropdown="dropdownNavbar">
         <Avatar
@@ -24,7 +56,10 @@
 </template>
 
 <script setup lang="ts">
-import { Sidebar, NavbarDropdown, Avatar, ItemsSwitcher } from '@geonative/ui/components';
+import { Sidebar, NavbarDropdown, Avatar, ItemsSwitcher, Accordion, AccordionItem, Button } from '@geonative/ui/components';
+import { SidebarMenu } from '@/components';
+import { SidebarGroup as ShadcnSidebarGroup } from '@geonative/ui/shadcn/ui/sidebar';
+
 import type { DropdownMenuType } from '@geonative/ui/types';
 import { ref } from 'vue';
 
