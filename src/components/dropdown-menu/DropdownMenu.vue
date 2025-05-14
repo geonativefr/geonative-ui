@@ -1,5 +1,5 @@
 <template>
-  <ShadcnDropdownMenu >
+  <ShadcnDropdownMenu>
     <ShadcnDropdownMenuTrigger>
       <slot />
     </ShadcnDropdownMenuTrigger>
