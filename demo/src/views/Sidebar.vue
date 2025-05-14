@@ -6,7 +6,6 @@
       </ItemsSwitcher>
     </template>
 
-    <template #content>
       <SidebarMenu />
       <ShadcnSidebarGroup>
         <Accordion :multiple="true">
@@ -35,7 +34,6 @@
           </AccordionItem>
         </Accordion>
       </ShadcnSidebarGroup>
-    </template>
 
     <template #footer>
       <NavbarDropdown :dropdown="dropdownNavbar">

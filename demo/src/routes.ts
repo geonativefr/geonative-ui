@@ -77,11 +77,43 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/icon',
+    name: 'icon',
+    component: () => import('@/views/Icon.vue'),
+    meta: {
+      menuLabel: 'Icon',
+    },
+  }),
+  createRoute({
+    path: '/items-switcher',
+    name: 'items-switcher',
+    component: () => import('@/views/ItemsSwitcher.vue'),
+    meta: {
+      menuLabel: 'Items Switcher',
+    },
+  }),
+  createRoute({
+    path: '/loader',
+    name: 'loader',
+    component: () => import('@/views/Loader.vue'),
+    meta: {
+      menuLabel: 'Loader',
+    },
+  }),
+  createRoute({
     path: '/navbar-dropdown',
     name: 'navbar-dropdown',
     component: () => import('@/views/NavbarDropdown.vue'),
     meta: {
       menuLabel: 'Navbar Dropdown',
+    },
+  }),
+  createRoute({
+    path: '/sidebar',
+    name: 'sidebar',
+    component: () => import('@/views/Sidebar.vue'),
+    meta: {
+      menuLabel: 'Sidebar',
     },
   }),
   createRoute({
@@ -98,30 +130,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Toaster.vue'),
     meta: {
       menuLabel: 'Toaster',
-    },
-  }),
-  createRoute({
-    path: '/itemsSwitcher',
-    name: 'items-switcher',
-    component: () => import('@/views/ItemsSwitcher.vue'),
-    meta: {
-      menuLabel: 'Items Switcher',
-    },
-  }),
-  createRoute({
-    path: '/sidebar',
-    name: 'sidebar',
-    component: () => import('@/views/Sidebar.vue'),
-    meta: {
-      menuLabel: 'Sidebar',
-    },
-  }),
-  createRoute({
-    path: '/sidebar',
-    name: 'sidebar',
-    component: () => import('@/views/Sidebar.vue'),
-    meta: {
-      menuLabel: 'Sidebar',
     },
   }),
   // Catch all unmatched routes
