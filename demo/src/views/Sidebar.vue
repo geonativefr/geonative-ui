@@ -7,7 +7,7 @@
     </template>
 
     <template #footer>
-      <NavbarDropdown :dropdown="dropdownNavbar" class="w-full ">
+      <NavbarDropdown :dropdown="dropdownNavbar" class="w-full">
         <Avatar
           :url="activeUser.icon"
           :is-square="true"
