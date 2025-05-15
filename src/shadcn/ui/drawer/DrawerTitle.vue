@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { DrawerTitleProps } from 'vaul-vue'
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { DrawerTitle } from 'vaul-vue'
 import { computed, type HtmlHTMLAttributes } from 'vue'
 

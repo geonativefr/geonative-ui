@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { HtmlHTMLAttributes } from 'vue'
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 
 const props = defineProps<{
   class?: HtmlHTMLAttributes['class']
