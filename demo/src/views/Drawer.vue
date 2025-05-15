@@ -18,7 +18,7 @@
         <span>This is a Content</span>
 
         <template #footer>
-
+          <span>This a footer</span>
         </template>
 
       </Drawer>
@@ -42,7 +42,7 @@
         <span>This is a Content</span>
 
         <template #footer>
-
+          <span>This a footer</span>
         </template>
 
       </Drawer>
