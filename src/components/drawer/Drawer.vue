@@ -20,7 +20,7 @@
           <slot name="footer" />
           <DrawerClose>
             <Button class="w-auto">
-              Cancel
+              Close
             </Button>
           </DrawerClose>
         </ShadcnDrawerFooter>
