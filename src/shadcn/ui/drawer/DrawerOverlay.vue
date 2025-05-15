@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { DialogOverlayProps } from 'reka-ui'
-import { cn } from '@geonative/lib/utils'
+import { cn } from '@geonative/ui/shadcn/lib/utils'
 import { DrawerOverlay } from 'vaul-vue'
 import { computed, type HtmlHTMLAttributes } from 'vue'
 
