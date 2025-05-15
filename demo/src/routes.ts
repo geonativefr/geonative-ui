@@ -53,6 +53,14 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/drawer',
+    name: 'drawer',
+    component: () => import('@/views/Drawer.vue'),
+    meta: {
+      menuLabel: 'Drawer',
+    },
+  }),
+  createRoute({
     path: '/dropdown-menu',
     name: 'dropdown-menu',
     component: () => import('@/views/DropdownMenu.vue'),
