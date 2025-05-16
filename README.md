@@ -297,3 +297,53 @@ Action is designed to wrap other components:
   <Icon name="arrow-top-right-on-square" source="heroicons" type="solid" class="size-4" />
 </Action>
 ```
+
+## Sidebar 
+
+The Sidebar component provides a collapsible sidebar layout with support for multiple sections and items.
+
+Includes `Sidebar`, `SidebarNav`, `SidebarGroup`, `SidebarInset`, `SidebarTrigger`, and `SidebarProvider` for building a flexible navigation sidebar.
+
+### Basic Usage
+
+```vue
+<template>
+  <SidebarProvider>
+    <Sidebar>
+      <template #header>
+        <span>Header</span>
+      </template>
+      
+      <SidebarNav />
+      
+      <template #footer>
+        <span>Footer</span>
+      </template>
+    </Sidebar>
+  </SidebarProvider>
+</template>
+
+<script setup lang="ts">
+import { SidebarProvider, Sidebar, SidebarNav } from '@geonative/ui/components';
+</script>
+```
+
+### Sidebar Props
+
+| Prop          | Type                                     | Default       | Description                                   |
+| ------------- | ---------------------------------------- | ------------- | --------------------------------------------- |
+| `side`        | `'left'` \| `'right'`                    | `'left'`      | Which side of the screen the sidebar appears. |
+| `variant`     | `'sidebar'` \| `'floating'` \| `'inset'` | `'sidebar'`   | Display style of the sidebar.                 |
+| `collapsible` | `'offcanvas'` \| `'icon'` \| `'none'`    | `'offcanvas'` | Collapse behavior for responsiveness.         |
+| `class`       | `string`                                 | —             | Additional Tailwind classes for styling.      |
+
+### Sidebar Slots
+
+| Slot      | Description                     |
+| --------- | ------------------------------- |
+| `header`  | Slot for custom header content. |
+| `default` | Slot for main sidebar content.  |
+| `footer`  | Slot for custom footer content. |
+
+
+
