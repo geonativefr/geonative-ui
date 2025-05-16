@@ -2,6 +2,23 @@
 
 Shadcn based components library and Tailwind CSS V4
 
+## Section
+
+- [Getting Started](#getting-started)
+- [Adding New Component Demos](#adding-new-component-demos)
+- [Path Aliases](#path-aliases)
+- [Theme Management](#theme-management)
+- [Icon System](#icon-system)
+- [Action Component](#action-component)
+- [Button Component](#button-component)
+- [Accordion Component](#accordion-component)
+- [Avatar Component](#avatar-component)
+- [Breadcrumb Component](#breadcrumb-component)
+- [DropdownMenu Component](#dropdownmenu-component)
+- [Loader Components](#loader-components)
+- [NavbarDropdown Component](#navbardropdown-component)
+- [Toaster Component](#toaster-component)
+
 ## Getting Started
 
 ### Prerequisites
@@ -198,6 +215,17 @@ import { Icon } from '@geonative/ui/components';
 </script>
 ```
 
+### Icon Props
+
+| Prop          | Type                                                 | Description                                                 |
+| ------------- | ---------------------------------------------------- | ----------------------------------------------------------- |
+| `name`        | `string`                                             | Icon name or identifier (e.g. `"antenna"`, `"alice"`)        |
+| `source`      | `'svg'` \| `'lucide'` \| `'heroicons'` \| `'avatar'` | Icon source                                                  |
+| `type`        | `'solid'` \| `'outline'`                             | Icon variant (only for `heroicons`)                          |
+| `class`       | `string`                                             | Additional CSS classes for styling (size, color, etc.)       |
+| `avatarProps` | `AvatarProps`                                        | Avatar customization props (only when `source === 'avatar'`) |
+
+
 ### Supported Icon Sources
 
 The Icon component supports the following sources:
@@ -259,6 +287,15 @@ The Action component provides a unified way to handle different types of actions
 import { Action } from '@geonative/ui/components';
 </script>
 ```
+
+### Action Props
+
+| Prop          | Type                                                  | Description                                                            |
+| ------------- | ----------------------------------------------------- | ---------------------------------------------------------------------- |
+| `actionClick` | `string` \| `() => void` \| `Promise<void>` \| `null` | Action trigger: internal route string, external URL, callback, or null |
+| `disabled`    | `boolean`                                             | Disables the action element                                            |
+| `class`       | `string`                                              | Additional CSS classes applied to the root element                     |
+
 
 ### Action Types
 
@@ -403,9 +440,9 @@ import { Accordion, AccordionItem, Icon, Button } from '@geonative/ui/components
 
 ### AccordionItem Props
 
-| Prop  | Type   | Required | Description                   |
-|-------|--------|----------|-------------------------------|
-| `value` | string | yes      | Unique identifier for the accordion item. Used to control open/close state. |
+| Prop  | Type   | Description                   |
+|-------|--------|-------------------------------|
+| `value` | string | Unique identifier for the accordion item. Used to control open/close state. |
 
 ### About Accordion 
 
@@ -492,9 +529,9 @@ const breadcrumb: BreadcrumbType = {
 
 ### Breadcrumb Props
 
-| Prop         | Type             | Required | Default | Description                                    |
-| ------------ | ---------------- | -------- | ------- | ---------------------------------------------- |
-| `breadcrumb` | `BreadcrumbType` | yes      | —       | Breadcrumb data including items and separator. |
+| Prop         | Type             | Description                                   |
+| ------------ | ---------------- | --------------------------------------------- |
+| `breadcrumb` | `BreadcrumbType` | Breadcrumb data including items and separator. |
 
 ### BreadcrumbItemType
 
@@ -557,12 +594,12 @@ const dropdownMenu: DropdownMenuType = {
 
 ### DropdownMenu Props
 
-| Prop       | Type                                     | Required | Default    | Description                                                     |
-| ---------- | ---------------------------------------- | -------- | ---------- | --------------------------------------------------------------- |
-| `dropdown` | `DropdownMenuType`                       | yes      | —          | Configuration object containing menu sections and label.        |
-| `position` | `'top' \| 'right' \| 'bottom' \| 'left'` | no       | `'bottom'` | The side on which to position the dropdown.                     |
-| `align`    | `'start' \| 'center' \| 'end'`           | no       | `'center'` | Alignment relative to the trigger.                              |
-| `class`    | `string`                                 | no       | —          | Additional Tailwind classes for the dropdown content container. |
+| Prop       | Type                                     | Default    | Description                                                     |
+| ---------- | ---------------------------------------- | ---------- | --------------------------------------------------------------- |
+| `dropdown` | `DropdownMenuType`                       | —          | Configuration object containing menu sections and label.        |
+| `position` | `'top' \| 'right' \| 'bottom' \| 'left'` | `'bottom'` | The side on which to position the dropdown.                     |
+| `align`    | `'start' \| 'center' \| 'end'`           | `'center'` | Alignment relative to the trigger.                              |
+| `class`    | `string`                                 | —          | Additional Tailwind classes for the dropdown content container. |
 
 ### DropdownMenu Slots
 
@@ -620,10 +657,10 @@ Displays a spinning loader icon.
 <Spinner size="md" class="fill-blue-500" />
 ```
 
-| Prop  | Type                       | Required | Default | Description             |
-| ----- | -------------------------- | -------- | ------- | ----------------------- |
-| size  | `'sm'` \| `'md'` \| `'lg'` | no       | `'md'`  | Controls spinner size.  |
-| class | `string`                   | no       | —       | Additional CSS classes. |
+| Prop  | Type                       | Default | Description             |
+| ----- | -------------------------- | ------- | ----------------------- |
+| size  | `'sm'` \| `'md'` \| `'lg'` | `'md'`  | Controls spinner size.  |
+| class | `string`                   | —       | Additional CSS classes. |
 
 ### Progress
 
@@ -633,12 +670,12 @@ Shows a progress bar indicating completion percentage.
 <Progress :progress="50" size="lg" color="bg-green-500" />
 ```
 
-| Prop     | Type                       | Required | Default        | Description                              |
-| -------- | -------------------------- | -------- | -------------- | ---------------------------------------- |
-| progress | `number`                   | yes      | —              | Current progress (0-100).                |
-| size     | `'sm'` \| `'md'` \| `'lg'` | no       | `'md'`         | Height of the progress bar.              |
-| color    | `string`                   | no       | `'bg-primary'` | Tailwind color class for the filled bar. |
-| class    | `string`                   | no       | —              | Additional CSS classes.                  |
+| Prop     | Type                       | Default        | Description                              |
+| -------- | -------------------------- | -------------- | ---------------------------------------- |
+| progress | `number`                   | —              | Current progress (0-100).                |
+| size     | `'sm'` \| `'md'` \| `'lg'` | `'md'`         | Height of the progress bar.              |
+| color    | `string`                   | `'bg-primary'` | Tailwind color class for the filled bar. |
+| class    | `string`                   | —              | Additional CSS classes.                  |
 
 ### Ping
 
@@ -648,10 +685,10 @@ Renders a pulsing dot animation.
 <Ping size="sm" class="bg-red-500" />
 ```
 
-| Prop  | Type                       | Required | Default | Description             |
-| ----- | -------------------------- | -------- | ------- | ----------------------- |
-| size  | `'sm'` \| `'md'` \| `'lg'` | no       | `'md'`  | Controls ping size.     |
-| class | `string`                   | no       | —       | Additional CSS classes. |
+| Prop  | Type                       | Default | Description             |
+| ----- | -------------------------- | ------- | ----------------------- |
+| size  | `'sm'` \| `'md'` \| `'lg'` | `'md'`  | Controls ping size.     |
+| class | `string`                   | —       | Additional CSS classes. |
 
 ### About Loaders
 
@@ -674,3 +711,136 @@ Renders a pulsing dot animation.
 </template>
 ```
 
+## NavbarDropdown Component
+
+The `NavbarDropdown` component displays a user menu dropdown triggered by custom content such as an avatar and user info. It supports sections, icons, shortcuts, and click actions.
+
+### Basic Usage
+
+```vue
+<template>
+  <NavbarDropdown :dropdown="dropdown">
+    <Avatar :url="user.avatar" :is-square="true" class="bg-red-500" :initials="user.name.slice(0, 2)" />
+    <span class="flex flex-col text-left text-sm">
+      <span class="font-semibold">{{ user.name }}</span>
+      <span class="text-xs">{{ user.email }}</span>
+    </span>
+  </NavbarDropdown>
+</template>
+
+<script setup lang="ts">
+import { NavbarDropdown, Avatar } from '@geonative/ui/components';
+import type { DropdownMenuType } from '@geonative/ui/types';
+
+const user = {
+  name: 'alice',
+  email: 'alice@example.com',
+  avatar: 'https://avatars.example',
+};
+
+const dropdown: DropdownMenuType = {
+  sections: [
+    [
+      {
+        label: 'Account',
+        clickAction: '/account',
+        iconProps: { name: 'user', source: 'heroicons', type: 'outline', class: 'h-4 w-4' },
+      },
+    ],
+    [
+      {
+        label: 'Log out',
+        clickAction: '/',
+        iconProps: { 
+          name: 'arrow-left-start-on-rectangle',
+          source: 'heroicons', 
+          type: 'outline', 
+          class: 'h-4 w-4' 
+        },
+      },
+    ],
+  ],
+};
+</script>
+```
+
+### NavbarDropdown Props
+
+| Prop       | Type               | Default | Description                              |
+| ---------- | ------------------ | ------- | ---------------------------------------- |
+| `dropdown` | `DropdownMenuType` | —       | Dropdown configuration with menu items.  |
+| `class`    | `string`           | —       | Additional Tailwind classes for styling. |
+
+### NavbarDropdown Slots
+
+| Slot    | Description                            |
+| ------- | -------------------------------------- |
+| default | Trigger element (e.g., avatar + info). |
+
+### About NavbarDropdown
+
+- Triggered by custom slot content (avatar + user details).
+- Supports dropdown menu with icons, shortcuts, and click actions.
+- Dropdown positioned on the right, aligned to end by default.
+- Uses the `DropdownMenu` component internally.
+
+## Toaster Component
+
+Displays notifications with multiple variants and optional actions.
+
+### Basic Usage
+
+```vue
+<template>
+  <Button :loading="isLoading" @click="showToast">Show toast with action</Button>
+  <Button @click="showSuccess('Success!')">Show success toast</Button>
+  <Toaster />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { Button, Toaster } from '@geonative/ui/components';
+import { useSonner } from '@geonative/ui/composables';
+
+const isLoading = ref(false);
+const { showDefaultSonner, showSuccessSonner } = useSonner();
+
+function showToast() {
+  isLoading.value = true;
+  showDefaultSonner('Action triggered', undefined, {
+    label: 'Undo',
+    clickAction: () => (isLoading.value = false),
+  });
+  setTimeout(() => (isLoading.value = false), 5000);
+}
+
+function showSuccess(msg: string) {
+  showSuccessSonner(msg);
+}
+</script>
+```
+
+### Toaster Props
+
+| Prop            | Type                                                                                                        | Default       | Description                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------- |
+| `richColors`    | `boolean`                                                                                                   | `true`        | Enables richer toast colors.                      |
+| `position`      | `'top-left'` \| `'top-right'` \| `'bottom-left'` \| `'bottom-right'` \| `'top-center'` \| `'bottom-center'` | `'top-right'` | Toast container position on the screen.           |
+| `closeButton`   | `boolean`                                                                                                   | `false`       | Show or hide the close button on toasts.          |
+| `visibleToasts` | `number`                                                                                                    | `3`           | Maximum number of visible toasts at once.         |
+| `expend`        | `boolean`                                                                                                   | `false`       | Expand toasts to full width if true.              |
+| `class`         | `string`                                                                                                    | —             | Additional CSS classes for the toaster container. |
+
+### Toaster Slots
+
+| Slot    | Description                   |
+| ------- | ----------------------------- |
+| default | Custom toast content (optional) |
+
+### About Toaster
+
+- Supports action buttons with loading states.
+- Supports promise-based toasts with undo functionality.
+- Provides several variants: info, success, error, warning.
+- Limits visible toasts with configurable max count.
+- Uses `vue-sonner` internally with tailwind styling.
