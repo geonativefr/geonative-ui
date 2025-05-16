@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import Sidebar from '@/views/Sidebar.vue';
+import { Sidebar } from '@/components';
 import { Breadcrumb, SidebarInset, SidebarTrigger, SidebarProvider } from '@geonative/ui/components';
 import type { BreadcrumbType, BreadcrumbItemType } from '@geonative/ui/types';
 
