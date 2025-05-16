@@ -217,14 +217,13 @@ import { Icon } from '@geonative/ui/components';
 
 ### Icon Props
 
-| Prop          | Type                                                 | Description                                                 |
-| ------------- | ---------------------------------------------------- | ----------------------------------------------------------- |
+| Prop          | Type                                                 | Description                                                  |
+| ------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
 | `name`        | `string`                                             | Icon name or identifier (e.g. `"antenna"`, `"alice"`)        |
 | `source`      | `'svg'` \| `'lucide'` \| `'heroicons'` \| `'avatar'` | Icon source                                                  |
 | `type`        | `'solid'` \| `'outline'`                             | Icon variant (only for `heroicons`)                          |
 | `class`       | `string`                                             | Additional CSS classes for styling (size, color, etc.)       |
 | `avatarProps` | `AvatarProps`                                        | Avatar customization props (only when `source === 'avatar'`) |
-
 
 ### Supported Icon Sources
 
@@ -296,7 +295,6 @@ import { Action } from '@geonative/ui/components';
 | `disabled`    | `boolean`                                             | Disables the action element                                            |
 | `class`       | `string`                                              | Additional CSS classes applied to the root element                     |
 
-
 ### Action Types
 
 The `actionClick` prop accepts different types of values:
@@ -353,28 +351,28 @@ Styled **Button** component with support for loading and disabled states.
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { Button, Icon } from '@geonative/ui/components';
+import { ref } from 'vue';
+import { Button, Icon } from '@geonative/ui/components';
 
-  const isLoading = ref(false);
+const isLoading = ref(false);
 
-  function handleClick() {
-    isLoading.value = true;
-    setTimeout(() => (isLoading.value = false), 3000);
-  }
+function handleClick() {
+  isLoading.value = true;
+  setTimeout(() => (isLoading.value = false), 3000);
+}
 </script>
 ```
 
 ### Button Props
 
-| Prop          | Type                    | Default | Description                   |
-|---------------|-------------------------|---------|-------------------------------|
-| `size`        | `'sm' \| 'md' \| 'lg'`  | `'md'`  | Defines the button size       |
-| `class`       | `string`                | `''`    | Additional CSS classes        |
-| `disabled`    | `boolean`               | `false` | Disables the button           |
-| `loading`     | `boolean`               | `false` | Shows a loading spinner       |
-| `loadingText` | `string`                | `''`    | Text displayed when loading   |
-| `fullWidth`   | `boolean`               | `false` | Makes the button full width   |
+| Prop          | Type                   | Default | Description                 |
+| ------------- | ---------------------- | ------- | --------------------------- |
+| `size`        | `'sm' \| 'md' \| 'lg'` | `'md'`  | Defines the button size     |
+| `class`       | `string`               | `''`    | Additional CSS classes      |
+| `disabled`    | `boolean`              | `false` | Disables the button         |
+| `loading`     | `boolean`              | `false` | Shows a loading spinner     |
+| `loadingText` | `string`               | `''`    | Text displayed when loading |
+| `fullWidth`   | `boolean`              | `false` | Makes the button full width |
 
 ### About Button
 
@@ -430,21 +428,20 @@ import { Accordion, AccordionItem, Icon, Button } from '@geonative/ui/components
 </Accordion>
 ```
 
-
 ### Accordion Props
 
-| Prop         | Type      | Default | Description                                 |
-|--------------|-----------|---------|---------------------------------------------|
-| `multiple`   | boolean   | false   | Allows multiple accordion items to be open simultaneously. |
-| `collapsible`| boolean   | false   | Allows all accordion items to be collapsed (no item opened). |
+| Prop          | Type    | Default | Description                                                  |
+| ------------- | ------- | ------- | ------------------------------------------------------------ |
+| `multiple`    | boolean | false   | Allows multiple accordion items to be open simultaneously.   |
+| `collapsible` | boolean | false   | Allows all accordion items to be collapsed (no item opened). |
 
 ### AccordionItem Props
 
-| Prop  | Type   | Description                   |
-|-------|--------|-------------------------------|
+| Prop    | Type   | Description                                                                 |
+| ------- | ------ | --------------------------------------------------------------------------- |
 | `value` | string | Unique identifier for the accordion item. Used to control open/close state. |
 
-### About Accordion 
+### About Accordion
 
 - Requires a unique `value prop
 - Use `#title` slot to define the clickable header content
@@ -476,19 +473,18 @@ The Avatar component displays a user avatar image, with fallback initials and op
 <script setup lang="ts">
 import { Avatar } from '@geonative/ui/components';
 
-const avatar_url =
-  'https://avatars.example';
+const avatar_url = 'https://avatars.example';
 </script>
 ```
 
 ### Avatar Props
 
-| Prop        | Type      | Default | Description                   |
-|-------------|-----------|---------|-------------------------------|
-| `url`       | string    | `''`    | URL of the avatar image       |
-| `initials`  | string    | `'?'`   | Initials to display if no image is provided |
-| `isSquare`  | boolean   | `false` | If true, the avatar will be square (default is circular) |
-| `class`     | string    | `''`    | Additional CSS classes        |
+| Prop       | Type    | Default | Description                                              |
+| ---------- | ------- | ------- | -------------------------------------------------------- |
+| `url`      | string  | `''`    | URL of the avatar image                                  |
+| `initials` | string  | `'?'`   | Initials to display if no image is provided              |
+| `isSquare` | boolean | `false` | If true, the avatar will be square (default is circular) |
+| `class`    | string  | `''`    | Additional CSS classes                                   |
 
 ### About Avatar
 
@@ -529,8 +525,8 @@ const breadcrumb: BreadcrumbType = {
 
 ### Breadcrumb Props
 
-| Prop         | Type             | Description                                   |
-| ------------ | ---------------- | --------------------------------------------- |
+| Prop         | Type             | Description                                    |
+| ------------ | ---------------- | ---------------------------------------------- |
 | `breadcrumb` | `BreadcrumbType` | Breadcrumb data including items and separator. |
 
 ### BreadcrumbItemType
@@ -751,11 +747,11 @@ const dropdown: DropdownMenuType = {
       {
         label: 'Log out',
         clickAction: '/',
-        iconProps: { 
+        iconProps: {
           name: 'arrow-left-start-on-rectangle',
-          source: 'heroicons', 
-          type: 'outline', 
-          class: 'h-4 w-4' 
+          source: 'heroicons',
+          type: 'outline',
+          class: 'h-4 w-4',
         },
       },
     ],
@@ -833,8 +829,8 @@ function showSuccess(msg: string) {
 
 ### Toaster Slots
 
-| Slot    | Description                   |
-| ------- | ----------------------------- |
+| Slot    | Description                     |
+| ------- | ------------------------------- |
 | default | Custom toast content (optional) |
 
 ### About Toaster
