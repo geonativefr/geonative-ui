@@ -30,7 +30,7 @@ import { twMerge } from 'tailwind-merge';
 
 const props = withDefaults(
   defineProps<{
-    side?: 'left' | 'right' | 'top' | 'bottom';
+    side?: 'left' | 'right';
     variant?: 'sidebar' | 'floating' | 'inset';
     collapsible?: 'offcanvas' | 'icon' | 'none';
     class?: string;

@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import '@geonative/ui/style.css';
 import App from '@/App.vue';
 import routes from '@/routes';
-import { provideSidebarContext } from '@geonative/ui/shadcn/ui/sidebar/utils';
+import { provideSidebarContext } from '@geonative/ui/components/sidebar/utils.ts';
 import { ref, computed } from 'vue';
 
 const router = createRouter({
