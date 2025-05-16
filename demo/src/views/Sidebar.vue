@@ -7,7 +7,7 @@
     </template>
 
       <SidebarNav />
-      <ShadcnSidebarGroup>
+      <SidebarGroup>
         <Accordion :multiple="true">
           <AccordionItem value="item-1">
             <template #title>
@@ -33,7 +33,7 @@
             <p>Content 3</p>
           </AccordionItem>
         </Accordion>
-      </ShadcnSidebarGroup>
+      </SidebarGroup>
 
     <template #footer>
       <NavbarDropdown :dropdown="dropdownNavbar">
@@ -60,10 +60,9 @@ import {
   ItemsSwitcher,
   Accordion,
   AccordionItem,
-  Button,
+  SidebarGroup,
 } from '@geonative/ui/components';
-import { SidebarNav } from '@/components';
-import { SidebarGroup as ShadcnSidebarGroup } from '@geonative/ui/shadcn/ui/sidebar';
+import { SidebarNav } from '@/components/navigation';
 
 import type { DropdownMenuType } from '@geonative/ui/types';
 import { ref } from 'vue';
