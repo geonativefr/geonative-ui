@@ -1,2 +1,2 @@
 export { default as Menu } from './Menu.vue';
-export { default as SidebarMenu } from './SidebarMenu.vue';
+export { default as SidebarNav } from './SidebarNav.vue';

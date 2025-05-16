@@ -6,7 +6,7 @@
       </ItemsSwitcher>
     </template>
 
-      <SidebarMenu />
+      <SidebarNav />
       <ShadcnSidebarGroup>
         <Accordion :multiple="true">
           <AccordionItem value="item-1">
@@ -62,7 +62,7 @@ import {
   AccordionItem,
   Button,
 } from '@geonative/ui/components';
-import { SidebarMenu } from '@/components';
+import { SidebarNav } from '@/components';
 import { SidebarGroup as ShadcnSidebarGroup } from '@geonative/ui/shadcn/ui/sidebar';
 
 import type { DropdownMenuType } from '@geonative/ui/types';

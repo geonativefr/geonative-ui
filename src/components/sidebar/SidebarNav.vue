@@ -2,11 +2,13 @@
   <ShadcnSidebarGroup>
     <Accordion type="single" collapsible defaultValue="item-1">
       <AccordionItem value="item-1">
-        <template #title> Application </template>
-
+        <template #title>{{ props.title }}</template>
         <ShadcnSidebarGroupContent>
           <ShadcnSidebarMenu>
-            <ShadcnSidebarMenuItem v-for="(route, index) in menuRoutes" :key="index">
+            <ShadcnSidebarMenuItem
+              v-for="(route, index) in props.menu"
+              :key="route.name || index"
+            >
               <ShadcnSidebarMenuButton asChild>
                 <router-link :to="{ name: route.name }">
                   <span>{{ route.meta?.menuLabel }}</span>
@@ -21,9 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import routes from '@/routes.ts';
-import { computed } from 'vue';
-import { type RouteRecordRaw, useRoute } from 'vue-router';
+import { Accordion, AccordionItem } from '@geonative/ui/components';
 import {
   SidebarGroup as ShadcnSidebarGroup,
   SidebarMenu as ShadcnSidebarMenu,
@@ -31,17 +31,10 @@ import {
   SidebarMenuButton as ShadcnSidebarMenuButton,
   SidebarMenuItem as ShadcnSidebarMenuItem,
 } from '@geonative/ui/shadcn/ui/sidebar';
-import { AccordionItem, Accordion } from '@geonative/ui/components';
+import type { RouteRecordRaw } from 'vue-router';
 
-const route = useRoute();
-const menuRoutes = routes.filter((route) => route.meta?.showInMenu);
-
-// Use computed property to track the current route dynamically
-const currentRoute = computed(() => {
-  return routes.find((r) => r.name === route.name);
-});
-
-const isActive = (route: RouteRecordRaw) => {
-  return currentRoute.value?.name === route.name;
-};
+const props = defineProps<{
+  title?: string;
+  menu: RouteRecordRaw[];
+}>();
 </script>
