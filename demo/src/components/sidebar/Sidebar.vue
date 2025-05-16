@@ -1,5 +1,9 @@
 <template>
-  <Sidebar>
+  <Sidebar
+    :side="props.side"
+    :variant="props.variant"
+    :collapsible="props.collapsible"
+  >
     <template #header>
       <ItemsSwitcher :items="items" @itemChange="updateActiveUser">
         <span class="flex items-center gap-2 font-bold">Change Account</span>
@@ -63,9 +67,10 @@ import {
   SidebarGroup,
 } from '@geonative/ui/components';
 import { SidebarNav } from '@/components';
-
-import type { DropdownMenuType } from '@geonative/ui/types';
+import type { DropdownMenuType, SidebarProps } from '@geonative/ui/types';
 import { ref } from 'vue';
+
+const props = defineProps<SidebarProps>();
 
 const items = [
   {
