@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import '@geonative/ui/style.css'; // Fixed path
+import '@geonative/ui/style.css';
 import App from '@/App.vue';
 import routes from '@/routes';
 

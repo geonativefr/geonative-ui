@@ -1,7 +1,7 @@
 <template>
   <div class="p-5">
     <div>
-      <h1 class="mt-10 mb-3">Accordion Single :</h1>
+      <h1 class="mb-3">Accordion Single :</h1>
       <Accordion>
         <AccordionItem value="item-1">
           <template #title>

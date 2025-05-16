@@ -13,6 +13,14 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/accordion',
+    name: 'accordion',
+    component: () => import('@/views/Accordion.vue'),
+    meta: {
+      menuLabel: 'Accordion',
+    },
+  }),
+  createRoute({
     path: '/action',
     name: 'action',
     component: () => import('@/views/Action.vue'),
@@ -69,6 +77,30 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/icon',
+    name: 'icon',
+    component: () => import('@/views/Icon.vue'),
+    meta: {
+      menuLabel: 'Icon',
+    },
+  }),
+  createRoute({
+    path: '/items-switcher',
+    name: 'items-switcher',
+    component: () => import('@/views/ItemsSwitcher.vue'),
+    meta: {
+      menuLabel: 'Items Switcher',
+    },
+  }),
+  createRoute({
+    path: '/loader',
+    name: 'loader',
+    component: () => import('@/views/Loader.vue'),
+    meta: {
+      menuLabel: 'Loader',
+    },
+  }),
+  createRoute({
     path: '/navbar-dropdown',
     name: 'navbar-dropdown',
     component: () => import('@/views/NavbarDropdown.vue'),
@@ -90,14 +122,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Toaster.vue'),
     meta: {
       menuLabel: 'Toaster',
-    },
-  }),
-  createRoute({
-    path: '/accordion',
-    name: 'accordion',
-    component: () => import('@/views/Accordion.vue'),
-    meta: {
-      menuLabel: 'Accordion',
     },
   }),
   // Catch all unmatched routes
