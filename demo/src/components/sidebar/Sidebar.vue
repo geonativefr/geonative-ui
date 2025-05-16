@@ -62,7 +62,7 @@ import {
   AccordionItem,
   SidebarGroup,
 } from '@geonative/ui/components';
-import { SidebarNav } from '@/components/navigation';
+import { SidebarNav } from '@/components';
 
 import type { DropdownMenuType } from '@geonative/ui/types';
 import { ref } from 'vue';

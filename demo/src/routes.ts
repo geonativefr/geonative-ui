@@ -93,14 +93,6 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
-    path: '/sidebar',
-    name: 'sidebar',
-    component: () => import('@/views/Sidebar.vue'),
-    meta: {
-      menuLabel: 'Sidebar',
-    },
-  }),
-  createRoute({
     path: '/themes',
     name: 'themes',
     component: () => import('@/views/Themes.vue'),
