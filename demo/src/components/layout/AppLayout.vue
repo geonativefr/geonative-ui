@@ -1,10 +1,10 @@
 <template>
   <SidebarProvider>
-    <Sidebar />
+    <Sidebar :collapsible="collapsible" />
     <SidebarInset>
       <header class="flex h-16 shrink-0 items-center sticky top-0 bg-background">
         <div class="flex items-center gap-2 px-4">
-          <SidebarTrigger orientation="vertical" />
+          <SidebarTrigger v-if="collapsible !== 'none'" orientation="vertical" />
           <Breadcrumb :breadcrumb="breadcrumb" />
         </div>
       </header>
@@ -18,7 +18,15 @@
 <script setup lang="ts">
 import { Sidebar } from '@/components';
 import { Breadcrumb, SidebarInset, SidebarTrigger, SidebarProvider } from '@geonative/ui/components';
-import type { BreadcrumbType, BreadcrumbItemType } from '@geonative/ui/types';
+import type { BreadcrumbType, BreadcrumbItemType, SidebarProps } from '@geonative/ui/types';
+import { ref } from 'vue';
+
+const collapsible = ref<'offcanvas' | 'icon' | 'none' | undefined>('none');
+
+const props = defineProps<
+  SidebarProps
+>();
+console.log(props.collapsible);
 
 const breadcrumb: BreadcrumbType = {
   items: [

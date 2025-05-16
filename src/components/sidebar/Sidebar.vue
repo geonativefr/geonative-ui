@@ -27,14 +27,10 @@ import {
   SidebarFooter as ShadcnSidebarFooter,
 } from '@geonative/ui/shadcn/ui/sidebar';
 import { twMerge } from 'tailwind-merge';
+import type { SidebarProps } from '@geonative/ui/types';
 
 const props = withDefaults(
-  defineProps<{
-    side?: 'left' | 'right';
-    variant?: 'sidebar' | 'floating' | 'inset';
-    collapsible?: 'offcanvas' | 'icon' | 'none';
-    class?: string;
-  }>(),
+  defineProps<SidebarProps>(),
   {
     side: 'left',
     variant: 'sidebar',
