@@ -1,31 +1,24 @@
 <template>
-  <ShadcnSidebarProvider>
+  <SidebarProvider>
     <Sidebar />
-    <ShadcnSidebarInset>
-      <header class="flex h-16 shrink-0 items-center">
+    <SidebarInset>
+      <header class="flex h-16 shrink-0 items-center sticky top-0 bg-background">
         <div class="flex items-center gap-2 px-4">
-          <ShadcnSidebarTrigger />
-          <ShadcnSeparator orientation="vertical" />
+          <SidebarTrigger orientation="vertical" />
           <Breadcrumb :breadcrumb="breadcrumb" />
         </div>
       </header>
       <div id="view" class="flex-1 flex-col">
         <slot />
       </div>
-    </ShadcnSidebarInset>
-  </ShadcnSidebarProvider>
+    </SidebarInset>
+  </SidebarProvider>
 </template>
 
 <script setup lang="ts">
-import Sidebar from '../../views/Sidebar.vue';
-import { Breadcrumb } from '@geonative/ui/components';
+import Sidebar from '@/views/Sidebar.vue';
+import { Breadcrumb, SidebarInset, SidebarTrigger, SidebarProvider } from '@geonative/ui/components';
 import type { BreadcrumbType, BreadcrumbItemType } from '@geonative/ui/types';
-import {
-  SidebarProvider as ShadcnSidebarProvider,
-  SidebarInset as ShadcnSidebarInset,
-  SidebarTrigger as ShadcnSidebarTrigger,
-} from '@geonative/ui/shadcn/ui/sidebar';
-import { Separator as ShadcnSeparator } from '@geonative/ui/shadcn/ui/separator';
 
 const breadcrumb: BreadcrumbType = {
   items: [
