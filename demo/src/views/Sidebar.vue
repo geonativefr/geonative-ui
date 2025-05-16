@@ -1,5 +1,5 @@
 <template>
-  <Sidebar side="left" collapsible="offcanvas">
+  <Sidebar>
     <template #header>
       <ItemsSwitcher :items="items" @itemChange="updateActiveUser">
         <span class="flex items-center gap-2 font-bold">Change Account</span>
