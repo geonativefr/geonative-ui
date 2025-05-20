@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'vue'
 import { cva } from 'class-variance-authority'
 
 export interface SidebarProps {
-  side?: 'left' | 'right' | 'top' | 'bottom'
+  side?: 'left' | 'right'
   variant?: 'sidebar' | 'floating' | 'inset'
   collapsible?: 'offcanvas' | 'icon' | 'none'
   class?: HTMLAttributes['class']
