@@ -17,6 +17,11 @@
         <Button>Alert</Button>
       </Action>
     </div>
+    <div>
+      <Action :actionClick="callback" :disabled="true">
+        <Button>Disabled Action</Button>
+      </Action>
+    </div>
   </div>
 </template>
 
