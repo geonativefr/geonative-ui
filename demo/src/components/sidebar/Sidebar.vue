@@ -91,7 +91,7 @@ const items = [
   },
   {
     id: '4',
-    label: 'dante',
+    label: 'dante with a super long username',
     color: 'bg-yellow-500',
     email: 'superlongmailfordante@example.com',
   },
