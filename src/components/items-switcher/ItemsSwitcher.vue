@@ -1,6 +1,6 @@
 <template>
   <DropdownMenu :dropdown="dropdown" :items="props.items" position="right" align="start">
-    <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
+    <Button size="lg" class="bg-background text-foreground rounded-lg px-2 py-6">
       <div class="flex items-center justify-between gap-2">
         <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
         <span class="flex-1 text-center text-sm">
