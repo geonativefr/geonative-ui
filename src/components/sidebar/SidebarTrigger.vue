@@ -14,4 +14,3 @@ const props = withDefaults(
   { orientation: 'vertical' }
 );
 </script>
-

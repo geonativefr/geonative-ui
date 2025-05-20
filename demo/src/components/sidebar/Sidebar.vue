@@ -1,43 +1,39 @@
 <template>
-  <Sidebar
-    :side="props.side"
-    :variant="props.variant"
-    :collapsible="props.collapsible"
-  >
+  <Sidebar :side="props.side" :variant="props.variant" :collapsible="props.collapsible">
     <template #header>
       <ItemsSwitcher :items="items" @itemChange="updateActiveUser">
         <span class="flex items-center gap-2 font-bold">Change Account</span>
       </ItemsSwitcher>
     </template>
 
-      <SidebarNav />
-      <SidebarGroup>
-        <Accordion :multiple="true">
-          <AccordionItem value="item-1">
-            <template #title>
-              <span>Accordion 1</span>
-            </template>
+    <SidebarNav />
+    <SidebarGroup>
+      <Accordion :multiple="true">
+        <AccordionItem value="item-1">
+          <template #title>
+            <span>Accordion 1</span>
+          </template>
 
-            <p>Content 1</p>
-          </AccordionItem>
+          <p>Content 1</p>
+        </AccordionItem>
 
-          <AccordionItem value="item-2">
-            <template #title>
-              <span>Accordion 2</span>
-            </template>
+        <AccordionItem value="item-2">
+          <template #title>
+            <span>Accordion 2</span>
+          </template>
 
-            <p>Content 2</p>
-          </AccordionItem>
+          <p>Content 2</p>
+        </AccordionItem>
 
-          <AccordionItem value="item-3">
-            <template #title>
-              <span>Accordion 3</span>
-            </template>
+        <AccordionItem value="item-3">
+          <template #title>
+            <span>Accordion 3</span>
+          </template>
 
-            <p>Content 3</p>
-          </AccordionItem>
-        </Accordion>
-      </SidebarGroup>
+          <p>Content 3</p>
+        </AccordionItem>
+      </Accordion>
+    </SidebarGroup>
 
     <template #footer>
       <NavbarDropdown :dropdown="dropdownNavbar">

@@ -29,12 +29,9 @@ import {
 import { twMerge } from 'tailwind-merge';
 import type { SidebarProps } from '@geonative/ui/types';
 
-const props = withDefaults(
-  defineProps<SidebarProps>(),
-  {
-    side: 'left',
-    variant: 'sidebar',
-    collapsible: 'offcanvas',
-  }
-);
+const props = withDefaults(defineProps<SidebarProps>(), {
+  side: 'left',
+  variant: 'sidebar',
+  collapsible: 'offcanvas',
+});
 </script>

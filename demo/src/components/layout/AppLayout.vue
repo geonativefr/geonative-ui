@@ -23,9 +23,7 @@ import { ref } from 'vue';
 
 const collapsible = ref<'offcanvas' | 'icon' | 'none' | undefined>('none');
 
-const props = defineProps<
-  SidebarProps
->();
+const props = defineProps<SidebarProps>();
 console.log(props.collapsible);
 
 const breadcrumb: BreadcrumbType = {
