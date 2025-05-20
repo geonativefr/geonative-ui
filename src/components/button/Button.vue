@@ -3,8 +3,8 @@
     <ShadcnButton
       :class="
         twMerge(
-          `w-full rounded-md bg-background text-foreground shadow-md cursor-pointer ${sizeClass} ${hoverBgClass}`,
-          props.disabled || props.loading ? 'cursor-not-allowed' : 'hover:opacity-80',
+          `w-full rounded-md bg-background text-foreground shadow-md cursor-pointer ${sizeClass}`,
+          props.disabled || props.loading ? 'cursor-not-allowed' : hoverBgClass,
           props.disabled ? 'opacity-80' : '',
           props.class
         )
@@ -77,6 +77,7 @@ const hoverBgClass = computed(() => {
   }
   return '';
 });
+console.log(hoverBgClass.value);
 
 const slotRef = ref<HTMLElement | null>(null);
 const loaderRef = ref<HTMLElement | null>(null);
