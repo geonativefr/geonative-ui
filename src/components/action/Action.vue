@@ -2,7 +2,8 @@
   <component
     :is="action.as"
     v-bind="!props.disabled && action.attr ? { [action.attr]: action.clickAction } : {}"
-    :class="twMerge(props.disabled ? 'pointer-events-none cursor-not-allowed' : '', props.class)">
+    :class="twMerge(props.disabled ? 'pointer-events-none cursor-not-allowed' : '', props.class)"
+  >
     <slot />
   </component>
 </template>
