@@ -302,7 +302,7 @@ Action is designed to wrap other components:
 </Action>
 ```
 
-## Sidebar 
+## Sidebar
 
 The Sidebar component provides a collapsible sidebar layout with support for multiple sections and items.
 
@@ -317,9 +317,9 @@ Includes `Sidebar`, `SidebarNav`, `SidebarGroup`, `SidebarInset`, `SidebarTrigge
       <template #header>
         <span>Header</span>
       </template>
-      
+
       <SidebarNav />
-      
+
       <template #footer>
         <span>Footer</span>
       </template>
@@ -348,6 +348,3 @@ import { SidebarProvider, Sidebar, SidebarNav } from '@geonative/ui/components';
 | `header`  | Slot for custom header content. |
 | `default` | Slot for main sidebar content.  |
 | `footer`  | Slot for custom footer content. |
-
-
-

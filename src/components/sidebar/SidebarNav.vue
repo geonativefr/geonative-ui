@@ -5,10 +5,7 @@
         <template #title>{{ props.title }}</template>
         <ShadcnSidebarGroupContent>
           <ShadcnSidebarMenu>
-            <ShadcnSidebarMenuItem
-              v-for="(route, index) in props.menu"
-              :key="route.name || index"
-            >
+            <ShadcnSidebarMenuItem v-for="(route, index) in props.menu" :key="route.name || index">
               <ShadcnSidebarMenuButton asChild>
                 <router-link :to="{ name: route.name }">
                   <span>{{ route.meta?.menuLabel }}</span>
