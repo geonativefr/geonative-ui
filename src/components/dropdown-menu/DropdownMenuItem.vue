@@ -1,14 +1,17 @@
 <template>
   <div v-if="props.item.label">
-    <Action :actionClick="props.item.clickAction || ''" >
-      <ShadcnDropdownMenuItem :disabled="!props.item.clickAction || props.item.clickAction == '' || props.item.disabled" class="flex justify-between items-center w-full">
-          <div class="flex items-center gap-2">
-            <Icon v-if="props.item.iconProps" v-bind="props.item.iconProps" />
-            <span>{{ props.item.label }}</span>
-          </div>
-          <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
-            {{ props.item.shortcut }}
-          </ShadcnDropdownMenuShortcut>
+    <Action :actionClick="props.item.clickAction || ''">
+      <ShadcnDropdownMenuItem
+        :disabled="!props.item.clickAction || props.item.clickAction == '' || props.item.disabled"
+        class="flex justify-between items-center w-full"
+      >
+        <div class="flex items-center gap-2">
+          <Icon v-if="props.item.iconProps" v-bind="props.item.iconProps" />
+          <span>{{ props.item.label }}</span>
+        </div>
+        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+          {{ props.item.shortcut }}
+        </ShadcnDropdownMenuShortcut>
       </ShadcnDropdownMenuItem>
     </Action>
   </div>
