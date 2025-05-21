@@ -4,7 +4,7 @@
       <slot />
     </ShadcnDropdownMenuTrigger>
     <ShadcnDropdownMenuContent
-      :class="twMerge('w-full min-w-56 rounded-lg', props.class)"
+      :class="twMerge('w-full min-w-56 bg-background text-foreground rounded-lg', props.class)"
       :side="props.position"
       :align="props.align"
       :side-offset="4"

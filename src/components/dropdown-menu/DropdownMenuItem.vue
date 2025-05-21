@@ -1,14 +1,14 @@
 <template>
   <div v-if="props.item.label">
-    <Action :action-click="props.item.clickAction || ''">
+    <Action :disabled="isDisabled" :action-click="props.item.clickAction || ''" class="cursor-not-allowed">
       <ShadcnDropdownMenuItem
-        :disabled="!props.item.clickAction || props.item.clickAction == '' || props.item.disabled"
+        :disabled="isDisabled"
       >
         <div class="flex items-center gap-2">
           <Icon v-if="props.item.iconProps" v-bind="props.item.iconProps" />
           <span>{{ props.item.label }}</span>
         </div>
-        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut" class="ml-10">
+        <ShadcnDropdownMenuShortcut v-if="props.item.shortcut">
           {{ props.item.shortcut }}
         </ShadcnDropdownMenuShortcut>
       </ShadcnDropdownMenuItem>
@@ -27,4 +27,6 @@ import type { DropdownMenuItemType } from '@geonative/ui/types';
 const props = defineProps<{
   item: DropdownMenuItemType;
 }>();
+
+const isDisabled = !props.item.clickAction || props.item.clickAction == '' || props.item.disabled;
 </script>

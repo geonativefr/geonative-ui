@@ -10,7 +10,7 @@
           </div>
         </ShadcnDropdownMenuSubTrigger>
         <ShadcnDropdownMenuPortal>
-          <ShadcnDropdownMenuSubContent>
+          <ShadcnDropdownMenuSubContent class="bg-background text-foreground">
             <div v-for="(section, subIndex) in item.sections" :key="subIndex">
               <DropdownMenuSection :section="section" :show-separator="subIndex !== 0" />
             </div>
