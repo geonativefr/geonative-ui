@@ -5,7 +5,7 @@
      -->
     <Sidebar collapsible="offcanvas" />
     <SidebarInset>
-      <header class="flex h-16 shrink-0 items-center sticky top-0 bg-background">
+      <header class="flex h-16 items-center sticky top-0 bg-background">
         <div class="flex items-center gap-2 px-4">
           <SidebarTrigger orientation="vertical" />
           <Breadcrumb :breadcrumb="breadcrumb" />
