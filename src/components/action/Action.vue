@@ -2,7 +2,7 @@
   <component
     :is="action.as"
     v-bind="!props.disabled && action.attr ? { [action.attr]: action.clickAction } : {}"
-    :class="twMerge(props.disabled ? 'pointer-events-none cursor-not-allowed' : '', props.class)"
+    :class="props.class"
   >
     <slot />
   </component>
@@ -11,7 +11,6 @@
 <script setup lang="ts">
 import type { ActionType, ClickActionType } from '@geonative/ui/types';
 import { startsWithHttp } from '@geonative/ui/helpers';
-import { twMerge } from 'tailwind-merge';
 
 const props = defineProps<{
   actionClick: ClickActionType;

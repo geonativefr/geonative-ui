@@ -19,7 +19,7 @@
     </div>
     <div>
       <Action :actionClick="callback" :disabled="true">
-        <Button>Disabled Action</Button>
+        <Button :disabled="true">Disabled Action</Button>
       </Action>
     </div>
   </div>
