@@ -1,9 +1,8 @@
 <template>
   <div v-if="props.item.label">
-    <Action :disabled="isDisabled" :action-click="props.item.clickAction || ''" class="cursor-not-allowed">
+    <Action :disabled="isDisabled" :action-click="props.item.clickAction || ''" :class="isDisabled ? 'cursor-not-allowed' : ''">
       <ShadcnDropdownMenuItem
         :disabled="isDisabled"
-        class="text-foreground"
       >
         <div class="flex items-center gap-2">
           <Icon
@@ -12,7 +11,7 @@
             :source="props.item.iconProps.source"
             :type="props.item.iconProps.type"
             :avatar-props="props.item.iconProps.avatarProps"
-            :class="twMerge('text-foreground', props.item.iconProps.class)"
+            :class="twMerge('', props.item.iconProps.class)"
           />
           <span>{{ props.item.label }}</span>
         </div>

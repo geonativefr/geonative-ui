@@ -8,13 +8,13 @@
           :source="props.item.iconProps.source"
           :type="props.item.iconProps.type"
           :avatar-props="props.item.iconProps.avatarProps"
-          :class="twMerge('text-foreground', props.item.iconProps.class)"
+          :class="twMerge('', props.item.iconProps.class)"
         />
         <span>{{ props.item.label }}</span>
       </div>
     </ShadcnDropdownMenuSubTrigger>
     <ShadcnDropdownMenuPortal>
-      <ShadcnDropdownMenuSubContent class="bg-background text-foreground">
+      <ShadcnDropdownMenuSubContent class="">
         <div v-for="(section, subIndex) in props.item.sections" :key="subIndex">
           <DropdownMenuSection :section="section" :show-separator="subIndex !== 0" />
         </div>
