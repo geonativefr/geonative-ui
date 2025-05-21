@@ -250,7 +250,7 @@ The Action component provides a unified way to handle different types of actions
 
 ```vue
 <template>
-  <Action actionClick="/about">
+  <Action action-click="/about">
     <span>Go to About</span>
   </Action>
 </template>
@@ -267,18 +267,18 @@ The `actionClick` prop accepts different types of values:
 - **Internal route**: String that doesn't start with `http://` or `https://`
 
   ```vue
-  <Action actionClick="/dashboard">Internal Link</Action>
+  <Action action-click="/dashboard">Internal Link</Action>
   ```
 
 - **External URL**: String starting with `http://` or `https://`
 
   ```vue
-  <Action actionClick="https://github.com">External Link</Action>
+  <Action action-click="https://github.com">External Link</Action>
   ```
 
 - **Function**: Callback function to execute
   ```vue
-  <Action :actionClick="() => alert('Action triggered!')">
+  <Action :action-click="() => alert('Action triggered!')">
     <Button>Click Me</Button>
   </Action>
   ```
@@ -288,11 +288,11 @@ The `actionClick` prop accepts different types of values:
 Action is designed to wrap other components:
 
 ```vue
-<Action actionClick="/profile">
+<Action action-click="/profile">
   <Button>Go to Profile</Button>
 </Action>
 
-<Action actionClick="https://github.com" class="flex gap-1">
+<Action action-click="https://github.com" class="flex gap-1">
   <span>GitHub</span>
   <Icon name="arrow-top-right-on-square" source="heroicons" type="solid" class="size-4" />
 </Action>

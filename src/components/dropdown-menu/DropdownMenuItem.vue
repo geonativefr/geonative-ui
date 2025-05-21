@@ -1,6 +1,6 @@
 <template>
   <div v-if="props.item.label">
-    <Action :actionClick="props.item.clickAction || ''">
+    <Action :action-click="props.item.clickAction || ''">
       <ShadcnDropdownMenuItem
         :disabled="!props.item.clickAction || props.item.clickAction == '' || props.item.disabled"
         class="flex justify-between items-center w-full"
