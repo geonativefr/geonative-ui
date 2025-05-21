@@ -1,8 +1,7 @@
 <template>
   <component
     :is="action.as"
-    v-bind="action.attr ? { [action.attr]: action.clickAction } : {}"
-    :disabled="props.disabled"
+    v-bind="!props.disabled && action.attr ? { [action.attr]: action.clickAction } : {}"
     :class="props.class"
   >
     <slot />
