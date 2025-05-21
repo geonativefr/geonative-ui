@@ -3,7 +3,6 @@
     <Action :action-click="props.item.clickAction || ''">
       <ShadcnDropdownMenuItem
         :disabled="!props.item.clickAction || props.item.clickAction == '' || props.item.disabled"
-        class="flex justify-between items-center w-full"
       >
         <div class="flex items-center gap-2">
           <Icon v-if="props.item.iconProps" v-bind="props.item.iconProps" />
