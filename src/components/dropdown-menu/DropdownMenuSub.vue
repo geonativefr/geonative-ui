@@ -14,7 +14,7 @@
       </div>
     </ShadcnDropdownMenuSubTrigger>
     <ShadcnDropdownMenuPortal>
-      <ShadcnDropdownMenuSubContent class="">
+      <ShadcnDropdownMenuSubContent class="bg-background text-foreground">
         <div v-for="(section, subIndex) in props.item.sections" :key="subIndex">
           <DropdownMenuSection :section="section" :show-separator="subIndex !== 0" />
         </div>
