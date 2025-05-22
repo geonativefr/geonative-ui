@@ -1,14 +1,14 @@
 <template>
   <ShadcnDropdownMenuSub>
     <ShadcnDropdownMenuSubTrigger>
-      <div class="flex items-center gap-2 w-full">
+      <div class="flex items-center gap-2">
         <Icon
           v-if="props.item.iconProps"
           :name="props.item.iconProps.name"
           :source="props.item.iconProps.source"
           :type="props.item.iconProps.type"
           :avatar-props="props.item.iconProps.avatarProps"
-          :class="twMerge('', props.item.iconProps.class)"
+          :class="props.item.iconProps.class"
         />
         <span>{{ props.item.label }}</span>
       </div>
