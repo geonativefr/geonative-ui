@@ -30,7 +30,6 @@ import {
   DropdownMenuShortcut as ShadcnDropdownMenuShortcut,
 } from '@geonative/ui/shadcn/ui/dropdown-menu';
 import type { DropdownMenuItemType } from '@geonative/ui/types';
-import { twMerge } from 'tailwind-merge';
 
 const props = defineProps<{
   item: DropdownMenuItemType;
