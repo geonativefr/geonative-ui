@@ -1,5 +1,11 @@
 <template>
-  <DropdownMenu :dropdown="props.dropdown" :items="props.items" position="right" align="start" @item-select="onItemChange">
+  <DropdownMenu
+    :dropdown="props.dropdown"
+    :items="props.items"
+    position="right"
+    align="start"
+    @item-select="onItemChange"
+  >
     <Button size="lg" class="bg-background text-foreground rounded-lg px-2 py-6">
       <div class="flex items-center justify-between gap-2">
         <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
@@ -31,5 +37,4 @@ const emit = defineEmits(['item-change']);
 function onItemChange(item: Items) {
   emit('item-change', item);
 }
-
 </script>
