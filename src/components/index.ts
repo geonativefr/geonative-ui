@@ -10,5 +10,6 @@ export * from './layout';
 export * from './loader';
 export * from './markdown';
 export * from './navbar';
+export * from './sidebar'
 export * from './sonner';
 export * from './theme';
