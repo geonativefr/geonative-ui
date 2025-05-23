@@ -12,6 +12,13 @@ import { ItemsSwitcher } from '@geonative/ui/components';
 import type { DropdownMenuType } from '@geonative/ui/types';
 import { ref } from 'vue';
 
+interface Item {
+  id: string | number;
+  label: string;
+  icon?: string;
+  color?: string;
+}
+
 const items = [
   {
     id: 1,
