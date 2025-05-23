@@ -9,10 +9,10 @@
 
 <script setup lang="ts">
 import { ItemsSwitcher } from '@geonative/ui/components';
-import type { DropdownMenuType, Item } from '@geonative/ui/types';
+import type { DropdownMenuType } from '@geonative/ui/types';
 import { ref } from 'vue';
 
-const items: Item[] = [
+const items = [
   {
     id: 1,
     label: 'alice',
