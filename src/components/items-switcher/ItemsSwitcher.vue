@@ -25,7 +25,6 @@ import { Avatar, Button, DropdownMenu } from '@geonative/ui/components';
 import type { DropdownMenuType, Item } from '@geonative/ui/types';
 
 const props = withDefaults(defineProps<{
-  items?: Array<Item>;
   dropdown: DropdownMenuType;
   activeItem?: Item;
 }>(), {
