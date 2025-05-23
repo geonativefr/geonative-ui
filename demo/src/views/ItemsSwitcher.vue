@@ -1,7 +1,7 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">Dropdown Switcher:</h1>
-    <ItemsSwitcher :items="items" @item-change="accountHasChange">
+    <ItemsSwitcher :items="items" :dropdown="dropdown" :active-item="activeItem" @item-change="accountHasChange">
       <span class="flex items-center gap-2 font-bold">Change Account</span>
     </ItemsSwitcher>
   </div>
@@ -9,6 +9,8 @@
 
 <script setup lang="ts">
 import { ItemsSwitcher } from '@geonative/ui/components';
+import type { DropdownMenuType, Items } from '@geonative/ui/types';
+import { ref } from 'vue';
 
 const items = [
   {
@@ -34,6 +36,35 @@ const items = [
     color: 'bg-yellow-500',
   },
 ];
+
+const activeItem = ref<Items>(items[0]);
+
+function changeItem(itemId: Items['id']) {
+  activeItem.value = items.find((item) => item.id === itemId) || items[0];
+}
+
+const dropdown: DropdownMenuType = {
+  sections: [
+    items.map((item) => ({
+      label: item.label,
+      class: 'flex items-center gap-2',
+      clickAction: () => changeItem(item.id),
+      iconProps: {
+        name: item.label,
+        source: 'avatar',
+        class: 'size-8',
+        avatarProps: { url: item.icon, initials: item.label.slice(0, 2), class: item.color },
+      },
+    })),
+    [
+      {
+        label: 'Add Account',
+        clickAction: () => alert('Add Account features coming soon'),
+        iconProps: { name: 'plus-circle', source: 'heroicons', type: 'outline', class: 'h-6 w-6' },
+      },
+    ],
+  ],
+};
 
 function accountHasChange(account: { name: string }) {
   console.log(`User ${account.name} has been selected`);
