@@ -22,12 +22,10 @@
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
 import { Avatar, Button, DropdownMenu } from '@geonative/ui/components';
-import type { DropdownMenuType, Item } from '@geonative/ui/types';
+import type { DropdownMenuType } from '@geonative/ui/types';
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   dropdown: DropdownMenuType;
   activeItem?: Item;
-}>(), {
-  items: () => [],
-});
+}>();
 </script>
