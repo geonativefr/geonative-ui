@@ -1,22 +1,26 @@
 <template>
-  <div class="flex h-screen w-screen">
-    <div class="w-1/5 h-full flex items-center justify-center">
-      <Menu />
-    </div>
-    <div class="w-4/5 h-full flex-col">
-      <div class="w-full p-4">
-        <Breadcrumb :breadcrumb="breadcrumb" />
-      </div>
-      <div id="view">
+  <SidebarProvider>
+    <!--
+      If you set `collapsible="none"`, don't forget to remove the SidebarTrigger component (line 10)
+     -->
+    <Sidebar collapsible="offcanvas" />
+    <SidebarInset>
+      <header class="flex h-16 items-center sticky top-0 bg-background">
+        <div class="flex items-center gap-2 px-4">
+          <SidebarTrigger orientation="vertical" />
+          <Breadcrumb :breadcrumb="breadcrumb" />
+        </div>
+      </header>
+      <div id="view" class="flex-1 flex-col">
         <slot />
       </div>
-    </div>
-  </div>
+    </SidebarInset>
+  </SidebarProvider>
 </template>
 
 <script setup lang="ts">
-import { Menu } from '@/components';
-import { Breadcrumb } from '@geonative/ui/components';
+import { Sidebar } from '@/components';
+import { Breadcrumb, SidebarInset, SidebarTrigger, SidebarProvider } from '@geonative/ui/components';
 import type { BreadcrumbType, BreadcrumbItemType } from '@geonative/ui/types';
 
 const breadcrumb: BreadcrumbType = {

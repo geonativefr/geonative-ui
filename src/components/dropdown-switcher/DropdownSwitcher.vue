@@ -1,16 +1,14 @@
 <template>
-  <DropdownMenu :dropdown="props.dropdown" position="right" :class="props.class" align="end">
-    <Button full-width class="py-6 px-1">
-      <div class="flex items-center justify-between gap-2">
-        <div class="flex items-center gap-2 truncate">
-          <slot />
-        </div>
-        <ChevronsUpDown class="size-5" />
+  <DropdownMenu :dropdown="props.dropdown" position="right" align="start">
+    <Button size="lg" class="bg-white hover:bg-gray-100 text-black rounded-lg px-2 py-6">
+      <div class="flex items-center gap-2">
+        <slot />
+        <ChevronsUpDown class="size-5 ml-6" />
       </div>
     </Button>
     <template #header>
       <div class="flex items-center gap-2">
-        <slot />
+        Change Account
       </div>
     </template>
   </DropdownMenu>
@@ -23,6 +21,5 @@ import type { DropdownMenuType } from '@geonative/ui/types';
 
 const props = defineProps<{
   dropdown: DropdownMenuType;
-  class?: string;
 }>();
 </script>

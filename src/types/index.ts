@@ -5,5 +5,7 @@ export * from './breadcrumb';
 export * from './customsize';
 export * from './dropdown-menu';
 export * from './icon';
+export * from './items-switcher';
 export * from './shortcut';
+export * from './sidebar'
 export * from './theme';
