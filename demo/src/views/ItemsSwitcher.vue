@@ -1,7 +1,7 @@
 <template>
   <div class="p-5">
     <h1 class="mb-3">Dropdown Switcher:</h1>
-    <ItemsSwitcher :items="items" :dropdown="dropdown" :active-item="activeItem" @item-change="accountHasChange">
+    <ItemsSwitcher :dropdown="dropdown" :active-item="activeItem">
       <span class="flex items-center gap-2 font-bold">Change Account</span>
     </ItemsSwitcher>
   </div>
@@ -12,7 +12,7 @@ import { ItemsSwitcher } from '@geonative/ui/components';
 import type { DropdownMenuType, Item } from '@geonative/ui/types';
 import { ref } from 'vue';
 
-const items = [
+const items: Item[] = [
   {
     id: 1,
     label: 'alice',
@@ -51,7 +51,10 @@ const dropdown: DropdownMenuType = {
     items.map((item) => ({
       label: item.label,
       class: 'flex items-center gap-2',
-      clickAction: () => changeItem(item.id),
+      clickAction: () => {
+        changeItem(item.id);
+        accountHasChange(item);
+      },
       iconProps: {
         name: item.label,
         source: 'avatar',
