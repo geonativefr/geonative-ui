@@ -1,6 +1,6 @@
 <template>
   <div class="p-5">
-    <h1 class="mb-3">Navbar Dropdown :</h1>
+    <h1 class="mb-3">NAVBAR USER :</h1>
     <p class="mb-3">with avatar:</p>
     <NavbarDropdown :dropdown="dropdown">
       <Avatar :url="user.avatar" :is-square="true" class="bg-red-500" :initials="user.name.slice(0, 2)" />
