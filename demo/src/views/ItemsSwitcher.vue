@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ItemsSwitcher } from '@geonative/ui/components';
-import type { DropdownMenuType, Items } from '@geonative/ui/types';
+import type { DropdownMenuType, Item } from '@geonative/ui/types';
 import { ref } from 'vue';
 
 const items = [
@@ -37,9 +37,9 @@ const items = [
   },
 ];
 
-const activeItem = ref<Items | undefined>(items[0]);
+const activeItem = ref<Item | undefined>(items[0]);
 
-function changeItem(itemId: Items['id']) {
+function changeItem(itemId: Item['id']) {
   const foundItem = items.find((item) => item.id === itemId);
   if (foundItem) {
     activeItem.value = foundItem;
@@ -69,7 +69,7 @@ const dropdown: DropdownMenuType = {
   ],
 };
 
-function accountHasChange(account: { name: string }) {
-  console.log(`User ${account.name} has been selected`);
+function accountHasChange(item: Item) {
+  console.log(`User ${item.label} has been selected`);
 }
 </script>

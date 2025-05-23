@@ -8,9 +8,9 @@
   >
     <Button size="lg" class="bg-background text-foreground rounded-lg px-2 py-6">
       <div class="flex items-center justify-between gap-2">
-        <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
+        <Avatar :url="activeItem?.icon" :class="activeItem?.color" :initials="activeItem?.label.slice(0, 2)" />
         <span class="flex-1 text-center text-sm">
-          <span class="font-semibold">{{ activeItem.label }}</span>
+          <span class="font-semibold">{{ activeItem?.label }}</span>
         </span>
         <ChevronsUpDown class="size-5 ml-6" />
       </div>
@@ -24,19 +24,19 @@
 <script setup lang="ts">
 import { ChevronsUpDown } from 'lucide-vue-next';
 import { Avatar, Button, DropdownMenu } from '@geonative/ui/components';
-import type { DropdownMenuType, Items } from '@geonative/ui/types';
+import type { DropdownMenuType, Item } from '@geonative/ui/types';
 
 const props = defineProps<{
-  items: Array<Items>;
+  items: Array<Item>;
   dropdown: DropdownMenuType;
-  activeItem: Items;
+  activeItem?: Item;
 }>();
 
 const emit = defineEmits<{
-  (e: 'item-change', item: Items): void;
+  (e: 'item-change', item: Item): void;
 }>();
 
-function onItemChange(item: Items) {
+function onItemChange(item: Item) {
   emit('item-change', item);
 }
 </script>
