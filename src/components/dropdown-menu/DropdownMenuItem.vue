@@ -11,7 +11,7 @@
             :source="props.item.iconProps.source"
             :type="props.item.iconProps.type"
             :avatar-props="props.item.iconProps.avatarProps"
-            :class="`[&_svg:not([class*=\'text-\'])]:!text-foreground` + props.item.iconProps.class "
+            :class="`[&_svg:not([class*=\'text-\'])]:!text-foreground ` + props.item.iconProps.class "
           />
           <span>{{ props.item.label }}</span>
         </div>
