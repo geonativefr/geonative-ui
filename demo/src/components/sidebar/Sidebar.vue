@@ -1,7 +1,7 @@
 <template>
   <Sidebar :side="props.side" :variant="props.variant" :collapsible="props.collapsible">
     <template #header>
-      <ItemsSwitcher :items="items" :dropdown="dropdownItemsSwitcher" :active-item="activeUser">
+      <ItemsSwitcher :items="accounts" :dropdown="dropdownItemsSwitcher" :active-item="activeUser">
         <span class="flex items-center gap-2 font-bold">Change Account</span>
       </ItemsSwitcher>
     </template>
@@ -38,14 +38,14 @@
     <template #footer>
       <NavbarDropdown :dropdown="dropdownNavbar">
         <Avatar
-          :url="activeUser.icon"
+          :url="activeUser?.icon"
           :is-square="true"
-          :class="activeUser.color"
-          :initials="activeUser.label.slice(0, 2)"
+          :class="activeUser?.color"
+          :initials="activeUser?.label.slice(0, 2)"
         />
         <span class="flex flex-col text-left text-sm">
-          <span class="font-semibold truncate">{{ activeUser.label }}</span>
-          <span class="text-xs truncate">{{ activeUser.email }}</span>
+          <span class="font-semibold truncate">{{ activeUser?.label }}</span>
+          <span class="text-xs truncate">{{ activeUser?.email }}</span>
         </span>
       </NavbarDropdown>
     </template>
@@ -68,7 +68,15 @@ import { ref } from 'vue';
 
 const props = defineProps<SidebarProps>();
 
-const items = [
+interface Account {
+  id: string | number;
+  label: string;
+  icon?: string;
+  color?: string;
+  email: string;
+}
+
+const accounts : Account[] = [
   {
     id: 1,
     label: 'alice',
@@ -97,15 +105,15 @@ const items = [
   },
 ];
 
-const activeUser = ref(items[0]);
+const activeUser = ref<Account | undefined>(accounts[0]);
 
-function updateActiveUser(newUser: any) {
+function updateActiveUser(newUser: Account) {
   activeUser.value = newUser;
 }
 
 const dropdownItemsSwitcher: DropdownMenuType = {
   sections: [
-    items.map((item) => ({
+    accounts.map((item) => ({
       label: item.label,
       class: 'flex items-center gap-2',
       clickAction: () => updateActiveUser(item),
