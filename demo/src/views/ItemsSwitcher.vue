@@ -37,10 +37,13 @@ const items = [
   },
 ];
 
-const activeItem = ref<Items>(items[0]);
+const activeItem = ref<Items | undefined>(items[0]);
 
 function changeItem(itemId: Items['id']) {
-  activeItem.value = items.find((item) => item.id === itemId) || items[0];
+  const foundItem = items.find((item) => item.id === itemId);
+  if (foundItem) {
+    activeItem.value = foundItem;
+  }
 }
 
 const dropdown: DropdownMenuType = {

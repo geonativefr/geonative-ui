@@ -32,7 +32,9 @@ const props = defineProps<{
   activeItem: Items;
 }>();
 
-const emit = defineEmits(['item-change']);
+const emit = defineEmits<{
+  (e: 'item-change', item: Items): void;
+}>();
 
 function onItemChange(item: Items) {
   emit('item-change', item);
