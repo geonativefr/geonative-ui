@@ -1,12 +1,12 @@
 <template>
   <DropdownMenu :dropdown="dropdown" :items="props.items" position="right" align="start">
-    <Button size="lg" class="bg-background text-foreground rounded-lg px-2 py-6">
+    <Button size="lg" :full-width="true" class="py-6 px-1">
       <div class="flex items-center justify-between gap-2">
-        <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
-        <span class="flex-1 text-center text-sm">
-          <span class="font-semibold">{{ activeItem.label }}</span>
+        <span class="flex items-center gap-2 truncate">
+          <Avatar :url="activeItem.icon" :class="activeItem.color" :initials="activeItem.label.slice(0, 2)" />
+          <span class="text-sm font-semibold">{{ activeItem.label }}</span>
         </span>
-        <ChevronsUpDown class="size-5 ml-6" />
+        <ChevronsUpDown class="size-5" />
       </div>
     </Button>
     <template #header>
