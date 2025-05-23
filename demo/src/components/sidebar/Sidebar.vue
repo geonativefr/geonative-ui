@@ -1,7 +1,7 @@
 <template>
   <Sidebar :side="props.side" :variant="props.variant" :collapsible="props.collapsible">
     <template #header>
-      <ItemsSwitcher :items="items" @itemChange="updateActiveUser">
+      <ItemsSwitcher :items="items" :dropdown="dropdownItemsSwitcher" :active-item="activeUser">
         <span class="flex items-center gap-2 font-bold">Change Account</span>
       </ItemsSwitcher>
     </template>
@@ -102,6 +102,29 @@ const activeUser = ref(items[0]);
 function updateActiveUser(newUser: any) {
   activeUser.value = newUser;
 }
+
+const dropdownItemsSwitcher: DropdownMenuType = {
+  sections: [
+    items.map((item) => ({
+      label: item.label,
+      class: 'flex items-center gap-2',
+      clickAction: () => updateActiveUser(item),
+      iconProps: {
+        name: item.label,
+        source: 'avatar',
+        class: 'size-8',
+        avatarProps: { url: item.icon, initials: item.label.slice(0, 2), class: item.color },
+      },
+    })),
+    [
+      {
+        label: 'Add Account',
+        clickAction: () => alert('Add Account features coming soon'),
+        iconProps: { name: 'plus-circle', source: 'heroicons', type: 'outline', class: 'h-6 w-6' },
+      },
+    ],
+  ],
+};
 
 const dropdownNavbar: DropdownMenuType = {
   sections: [
