@@ -1,9 +1,11 @@
 <template>
   <div v-if="props.item.label">
-    <Action :disabled="isDisabled" :action-click="props.item.clickAction || ''" :class="isDisabled ? 'cursor-not-allowed' : ''">
-      <ShadcnDropdownMenuItem
-        :disabled="isDisabled"
-      >
+    <Action
+      :disabled="isDisabled"
+      :action-click="props.item.clickAction || ''"
+      :class="isDisabled ? 'cursor-not-allowed' : ''"
+    >
+      <ShadcnDropdownMenuItem :disabled="isDisabled">
         <div class="flex items-center gap-2">
           <Icon
             v-if="props.item.iconProps"
@@ -11,7 +13,7 @@
             :source="props.item.iconProps.source"
             :type="props.item.iconProps.type"
             :avatar-props="props.item.iconProps.avatarProps"
-            :class="`[&_svg:not([class*=\'text-\'])]:!text-foreground ` + props.item.iconProps.class "
+            :class="`[&_svg:not([class*=\'text-\'])]:!text-foreground ` + props.item.iconProps.class"
           />
           <span>{{ props.item.label }}</span>
         </div>

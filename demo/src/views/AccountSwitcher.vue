@@ -2,11 +2,11 @@
   <div class="p-5">
     <h1 class="mb-3">Account Switcher:</h1>
     <AccountSwitcher :dropdown="dropdown">
-        <Avatar :url="activeUser.avatar" :is-square="true" class="bg-pink-500" :initials="activeUser.name.slice(0, 2)" />
-        <span class="flex flex-col text-left text-sm">
-          <span class="font-semibold">{{ activeUser.name }}</span>
-          <span class="text-xs">{{ activeUser.email }}</span>
-        </span>
+      <Avatar :url="activeUser.avatar" :is-square="true" class="bg-pink-500" :initials="activeUser.name.slice(0, 2)" />
+      <span class="flex flex-col text-left text-sm">
+        <span class="font-semibold">{{ activeUser.name }}</span>
+        <span class="text-xs">{{ activeUser.email }}</span>
+      </span>
     </AccountSwitcher>
   </div>
 </template>
@@ -33,7 +33,8 @@ const users = [
     name: 'cloud',
     email: 'cloud@example.com',
     avatar:
-      'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Blank&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light'    },
+      'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Blank&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light',
+  },
 ];
 
 const activeUser = ref(users[0]);

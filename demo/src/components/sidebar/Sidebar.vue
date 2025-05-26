@@ -76,7 +76,7 @@ interface Account {
   email: string;
 }
 
-const accounts : Account[] = [
+const accounts: Account[] = [
   {
     id: 1,
     label: 'alice',

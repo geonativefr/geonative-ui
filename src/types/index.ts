@@ -6,5 +6,5 @@ export * from './customsize';
 export * from './dropdown-menu';
 export * from './icon';
 export * from './shortcut';
-export * from './sidebar'
+export * from './sidebar';
 export * from './theme';
