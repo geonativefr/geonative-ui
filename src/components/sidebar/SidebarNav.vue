@@ -7,9 +7,9 @@
           <ShadcnSidebarMenu>
             <ShadcnSidebarMenuItem v-for="(route, index) in props.menu" :key="route.name || index">
               <ShadcnSidebarMenuButton asChild>
-                <router-link :to="{ name: route.name }">
+                <Action :action-click="route.path">
                   <span>{{ route.meta?.menuLabel }}</span>
-                </router-link>
+                </Action>
               </ShadcnSidebarMenuButton>
             </ShadcnSidebarMenuItem>
           </ShadcnSidebarMenu>
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { Accordion, AccordionItem } from '@geonative/ui/components';
+import { Accordion, AccordionItem, Action } from '@geonative/ui/components';
 import {
   SidebarGroup as ShadcnSidebarGroup,
   SidebarMenu as ShadcnSidebarMenu,
