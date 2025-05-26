@@ -3,7 +3,7 @@
     <div>
       <h1 class="mt-10 mb-3">Accordion Single :</h1>
       <Accordion>
-        <AccordionItem value="item-1">
+        <AccordionItem>
           <template #title>
             <div>
               <Icon name="AlertCircle" source="lucide" class="text-pink-700" />
@@ -13,7 +13,7 @@
           <p>this is an alert icon</p>
         </AccordionItem>
 
-        <AccordionItem value="item-2">
+        <AccordionItem>
           <template #title>
             <div>
               <Icon name="antenna" source="svg" class="size-7 fill-blue-500" />
@@ -23,7 +23,7 @@
           <span>this is an antenna icon</span>
         </AccordionItem>
 
-        <AccordionItem value="item-3">
+        <AccordionItem>
           <template #title>
             <span>Click to show a Button</span>
           </template>
@@ -36,7 +36,7 @@
     <div>
       <h1 class="mt-10 mb-3">Accordion Single with collapsible :</h1>
       <Accordion :collapsible="true">
-        <AccordionItem value="item-1">
+        <AccordionItem>
           <template #title>
             <span>Accordion 1</span>
           </template>
@@ -44,7 +44,7 @@
           <p>Content 1</p>
         </AccordionItem>
 
-        <AccordionItem value="item-2">
+        <AccordionItem>
           <template #title>
             <span>Accordion 2</span>
           </template>
@@ -52,7 +52,7 @@
           <p>Content 2</p>
         </AccordionItem>
 
-        <AccordionItem value="item-3">
+        <AccordionItem>
           <template #title>
             <span>Accordion 3</span>
           </template>
@@ -65,7 +65,7 @@
     <div>
       <h1 class="mt-10 mb-3">Accordion Multiple :</h1>
       <Accordion :multiple="true">
-        <AccordionItem value="item-1">
+        <AccordionItem>
           <template #title>
             <span>Accordion 1</span>
           </template>
@@ -73,7 +73,7 @@
           <p>Content 1</p>
         </AccordionItem>
 
-        <AccordionItem value="item-2">
+        <AccordionItem>
           <template #title>
             <span>Accordion 2</span>
           </template>
@@ -81,7 +81,7 @@
           <p>Content 2</p>
         </AccordionItem>
 
-        <AccordionItem value="item-3">
+        <AccordionItem>
           <template #title>
             <span>Accordion 3</span>
           </template>

@@ -19,7 +19,7 @@ interface Item {
   color?: string;
 }
 
-const items = [
+const items: Item[] = [
   {
     id: 1,
     label: 'alice',
@@ -44,7 +44,7 @@ const items = [
   },
 ];
 
-const activeItem = ref<Item | undefined>(items[0]);
+const activeItem = ref<Item>(items[0]);
 
 function changeItem(itemId: Item['id']) {
   const foundItem = items.find((item) => item.id === itemId);
