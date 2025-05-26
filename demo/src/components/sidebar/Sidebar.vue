@@ -105,7 +105,7 @@ const accounts: Account[] = [
   },
 ];
 
-const activeUser = ref<Account | undefined>(accounts[0]);
+const activeUser = ref<Account>(accounts[0]);
 
 function updateActiveUser(newUser: Account) {
   activeUser.value = newUser;

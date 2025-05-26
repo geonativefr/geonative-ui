@@ -44,7 +44,7 @@ const items: Item[] = [
   },
 ];
 
-const activeItem = ref<Item | undefined>(items[0]);
+const activeItem = ref<Item>(items[0]);
 
 function changeItem(itemId: Item['id']) {
   const foundItem = items.find((item) => item.id === itemId);
