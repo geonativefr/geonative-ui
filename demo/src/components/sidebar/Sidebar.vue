@@ -9,7 +9,7 @@
     <SidebarNav />
     <SidebarGroup>
       <Accordion :multiple="true">
-        <AccordionItem value="item-1">
+        <AccordionItem>
           <template #title>
             <span>Accordion 1</span>
           </template>
@@ -17,7 +17,7 @@
           <p>Content 1</p>
         </AccordionItem>
 
-        <AccordionItem value="item-2">
+        <AccordionItem>
           <template #title>
             <span>Accordion 2</span>
           </template>
@@ -25,7 +25,7 @@
           <p>Content 2</p>
         </AccordionItem>
 
-        <AccordionItem value="item-3">
+        <AccordionItem>
           <template #title>
             <span>Accordion 3</span>
           </template>
