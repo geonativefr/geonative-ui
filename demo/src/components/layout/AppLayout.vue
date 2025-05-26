@@ -11,7 +11,7 @@
           <Breadcrumb :breadcrumb="breadcrumb" />
         </div>
       </header>
-      <div id="view" class="flex-1 flex-col">
+      <div>
         <slot />
       </div>
     </SidebarInset>
