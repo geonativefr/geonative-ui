@@ -7,7 +7,12 @@
     <ShadcnDrawerContent>
       <div class="mx-auto w-full max-w-sm">
         <ShadcnDrawerHeader>
-          <slot name="header" />
+          <ShadcnDrawerTitle>
+            <slot name="title" />
+          </ShadcnDrawerTitle>
+          <ShadcnDrawerDescription>
+            <slot name="description" />
+          </ShadcnDrawerDescription>
         </ShadcnDrawerHeader>
 
         <div class="p-4">
@@ -18,9 +23,9 @@
 
         <ShadcnDrawerFooter>
           <slot name="footer" />
-          <DrawerClose>
+          <ShadcnDrawerClose>
             <Button class="w-auto">Close</Button>
-          </DrawerClose>
+          </ShadcnDrawerClose>
         </ShadcnDrawerFooter>
       </div>
     </ShadcnDrawerContent>
@@ -34,7 +39,9 @@ import {
   DrawerFooter as ShadcnDrawerFooter,
   DrawerHeader as ShadcnDrawerHeader,
   DrawerContent as ShadcnDrawerContent,
-  DrawerClose,
+  DrawerClose as ShadcnDrawerClose,
+  DrawerTitle as ShadcnDrawerTitle,
+  DrawerDescription as ShadcnDrawerDescription,
 } from '@geonative/ui/shadcn/ui/drawer';
 import { Button } from '@geonative/ui/components';
 

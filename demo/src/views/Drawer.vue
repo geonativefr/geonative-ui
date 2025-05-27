@@ -6,9 +6,12 @@
           <Button class="bg-amber-500 w-auto" size="lg">Right Drawer</Button>
         </template>
 
-        <template #header>
-          <DrawerTitle> This is a Title </DrawerTitle>
-          <DrawerDescription> This is a Description </DrawerDescription>
+        <template #title>
+          <span>This is a Title</span>
+        </template>
+
+        <template #description>
+          <span>This is a Description</span>
         </template>
 
         <span>This is a Content</span>
@@ -25,9 +28,12 @@
           <Button class="bg-violet-500 w-auto" size="lg">Bottom Drawer</Button>
         </template>
 
-        <template #header>
-          <DrawerTitle> This is a Title </DrawerTitle>
-          <DrawerDescription> This is a Description </DrawerDescription>
+        <template #title>
+          <span>This is a Title</span>
+        </template>
+
+        <template #description>
+          <span>This is a Description</span>
         </template>
 
         <span>This is a Content</span>
@@ -44,9 +50,12 @@
           <Button class="bg-green-500 w-auto" size="lg">Left Drawer</Button>
         </template>
 
-        <template #header>
-          <DrawerTitle> This is a Title </DrawerTitle>
-          <DrawerDescription> This is a Description </DrawerDescription>
+        <template #title>
+          <span>This is a Title</span>
+        </template>
+
+        <template #description>
+          <span>This is a Description</span>
         </template>
 
         <span>This is a Content</span>
@@ -63,9 +72,12 @@
           <Button class="bg-pink-500 w-auto" size="lg">Top Drawer</Button>
         </template>
 
-        <template #header>
-          <DrawerTitle> This is a Title </DrawerTitle>
-          <DrawerDescription> This is a Description </DrawerDescription>
+        <template #title>
+          <span>This is a Title</span>
+        </template>
+
+        <template #description>
+          <span>This is a Description</span>
         </template>
 
         <span>This is a Content</span>
@@ -79,5 +91,5 @@
 </template>
 
 <script setup lang="ts">
-import { Drawer, Button, DrawerTitle, DrawerDescription } from '@geonative/ui/components';
+import { Drawer, Button } from '@geonative/ui/components';
 </script>
