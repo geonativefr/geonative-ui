@@ -51,7 +51,5 @@
 </template>
 
 <script setup lang="ts">
-import { Drawer, Button } from '@geonative/ui/components'
-import { DrawerDescription, DrawerTitle } from '@geonative/ui/shadcn/ui/drawer';
-
+import { Drawer, Button, DrawerTitle, DrawerDescription } from '@geonative/ui/components'
 </script>
