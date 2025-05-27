@@ -46,7 +46,7 @@
     "dompurify": "^3.2.5",
     "lucide-vue-next": "^0.487.0",
     "marked": "^15.0.7",
-    "reka-ui": "^2.2.1",
+    "reka-ui": "^2.2.0",
     "tailwind-merge": "^3.1.0",
     "tailwindcss": "^4.1.1",
     "tw-animate-css": "^1.2.5",
