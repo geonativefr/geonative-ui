@@ -1,5 +1,5 @@
 <template>
-  <ShadcnCard :class="`w-[${cardSize}]`">
+  <ShadcnCard :class="`w-[350px ]`">
     <ShadcnCardHeader>
       <slot name="header" />
     </ShadcnCardHeader>
@@ -17,14 +17,13 @@
 <script setup lang="ts">
 import { Card as ShadcnCard, CardHeader as ShadcnCardHeader, CardContent as ShadcnCardContent, CardFooter as ShadcnCardFooter } from '@geonative/ui/shadcn/ui/card';
 import { computed } from 'vue';
-import type { CustomSize } from '@geonative/ui/types';
 
 const props = withDefaults(
   defineProps<{
-    size?: CustomSize;
+    class?: string;
   }>(),
   {
-    size: 'md',
+    class: ''
   }
 );
 
