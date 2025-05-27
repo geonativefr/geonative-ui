@@ -37,6 +37,44 @@
         </template>
       </Drawer>
     </div>
+
+    <div>
+      <Drawer direction="left">
+        <template #trigger>
+          <Button class="bg-green-500 w-auto" size="lg">Left Drawer</Button>
+        </template>
+
+        <template #header>
+          <DrawerTitle> This is a Title </DrawerTitle>
+          <DrawerDescription> This is a Description </DrawerDescription>
+        </template>
+
+        <span>This is a Content</span>
+
+        <template #footer>
+          <span>This a footer</span>
+        </template>
+      </Drawer>
+    </div>
+
+    <div>
+      <Drawer direction="top">
+        <template #trigger>
+          <Button class="bg-pink-500 w-auto" size="lg">Top Drawer</Button>
+        </template>
+
+        <template #header>
+          <DrawerTitle> This is a Title </DrawerTitle>
+          <DrawerDescription> This is a Description </DrawerDescription>
+        </template>
+
+        <span>This is a Content</span>
+
+        <template #footer>
+          <span>This a footer</span>
+        </template>
+      </Drawer>
+    </div>
   </div>
 </template>
 
