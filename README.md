@@ -176,17 +176,17 @@ interface ThemeConfig {
 }
 ```
 
-## Icon System
+## Icon Component
+
+The `Icon` component allows you to use different icon types:
+
+### Icon System
 
 The library provides a versatile icon system supporting multiple icon sources :
 
 - SVG icons (from src/assets/icons directory of library and src/assets/icons directory of your project)
 - [Lucide icons](https://lucide.dev/)
 - [Heroicons](https://heroicons.com/)
-
-### Icon Component
-
-The `Icon` component allows you to use different icon types:
 
 ```vue
 <template>
@@ -871,7 +871,7 @@ function showSuccess(msg: string) {
 - Limits visible toasts with configurable max count.
 - Uses `vue-sonner` internally with tailwind styling.
 
-## Sidebar
+## Sidebar Component
 
 The Sidebar component provides a collapsible sidebar layout with support for multiple sections and items.
 
