@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import { DrawerTitle as ShadcnDrawerTitle } from '@geonative/ui/shadcn/ui/drawer'
+import { DrawerTitle as ShadcnDrawerTitle } from '@geonative/ui/shadcn/ui/drawer';
 </script>
