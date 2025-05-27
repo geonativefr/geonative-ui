@@ -530,8 +530,8 @@ type BreadcrumbType = {
 ### About Breadcrumb
 
 - Supports links and plain text:
-    - If link is provided and disabled is not true, it renders as a clickable link.
-    - If link is missing or disabled is true, it renders as plain text.
+  - If link is provided and disabled is not true, it renders as a clickable link.
+  - If link is missing or disabled is true, it renders as plain text.
 - Current page: Last item in the list is considered the current page and not rendered as a link.
 - Custom separator: You can define a custom separator (default is >).
 - Add disabled: true to an item to disable navigation even if a link is present.
@@ -870,6 +870,7 @@ function showSuccess(msg: string) {
 - Provides several variants: info, success, error, warning.
 - Limits visible toasts with configurable max count.
 - Uses `vue-sonner` internally with tailwind styling.
+
 ## Sidebar
 
 The Sidebar component provides a collapsible sidebar layout with support for multiple sections and items.
