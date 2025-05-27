@@ -10,7 +10,7 @@
           <slot name="header" />
         </ShadcnDrawerHeader>
 
-        <div class="p-4 pb-0">
+        <div class="p-4">
           <div class="flex items-center justify-center space-x-2">
             <slot />
           </div>
@@ -19,7 +19,7 @@
         <ShadcnDrawerFooter>
           <slot name="footer" />
           <DrawerClose>
-            <Button class="w-auto"> Close </Button>
+            <Button class="w-auto">Close</Button>
           </DrawerClose>
         </ShadcnDrawerFooter>
       </div>
