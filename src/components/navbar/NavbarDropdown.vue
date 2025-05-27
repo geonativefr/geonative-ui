@@ -1,6 +1,6 @@
 <template>
   <DropdownMenu :dropdown="props.dropdown" position="right" :class="props.class" align="end">
-    <Button full-width class="py-6 px-1">
+    <Button :full-width="true" class="px-2 py-6">
       <div class="flex items-center justify-between gap-2">
         <div class="flex items-center gap-2 truncate">
           <slot />

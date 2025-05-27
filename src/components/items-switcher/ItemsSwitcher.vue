@@ -1,6 +1,6 @@
 <template>
   <DropdownMenu :dropdown="props.dropdown" position="right" align="start">
-    <Button :full-width="true" size="lg" class="bg-background text-foreground rounded-lg px-2 py-6">
+    <Button :full-width="true" class="px-2 py-6">
       <div class="flex items-center justify-between gap-2">
         <span class="flex items-center gap-2 truncate">
           <Avatar
