@@ -1,44 +1,36 @@
 <template>
-  <ShadcnCard :class="`w-[350px ]`">
+  <ShadcnCard :class="twMerge('w-full h-full justify-between', props.class)">
     <ShadcnCardHeader>
-      <slot name="header" />
+      <ShadcnCardTitle>
+        <slot name="title" />
+      </ShadcnCardTitle>
+      <ShadcnCardDescription>
+        <slot name="description" />
+      </ShadcnCardDescription>
     </ShadcnCardHeader>
 
-    <ShadcnCardContent>
+    <ShadcnCardContent class="flex items-center justify-center">
       <slot />
     </ShadcnCardContent>
 
-    <ShadcnCardFooter class="flex justify-between px-6 pb-6">
+    <ShadcnCardFooter class="flex items-start ">
       <slot name="footer" />
     </ShadcnCardFooter>
   </ShadcnCard>
 </template>
 
 <script setup lang="ts">
-import { Card as ShadcnCard, CardHeader as ShadcnCardHeader, CardContent as ShadcnCardContent, CardFooter as ShadcnCardFooter } from '@geonative/ui/shadcn/ui/card';
-import { computed } from 'vue';
+import {
+  Card as ShadcnCard,
+  CardHeader as ShadcnCardHeader,
+  CardContent as ShadcnCardContent,
+  CardFooter as ShadcnCardFooter,
+  CardTitle as ShadcnCardTitle,
+  CardDescription as ShadcnCardDescription,
+} from '@geonative/ui/shadcn/ui/card';
+import { twMerge } from 'tailwind-merge';
 
-const props = withDefaults(
-  defineProps<{
-    class?: string;
-  }>(),
-  {
-    class: ''
-  }
-);
-
-const cardSize = computed(() => {
-  switch (props.size) {
-    case 'sm':
-      return '300px';
-    case 'md':
-      return '350px';
-    case 'lg':
-      return '400px';
-    default:
-      return '';
-  }
-});
-
-console.log(`w-${cardSize.value}`);
+const props = defineProps<{
+  class?: string;
+}>();
 </script>
