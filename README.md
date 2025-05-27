@@ -344,7 +344,7 @@ The Drawer component provides a flexible and customizable drawer layout that can
 ### Drawer Slots
 
 | Slot          | Description                          |
-|---------------|--------------------------------------|
+| ------------- | ------------------------------------ |
 | `trigger`     | Slot for the drawer trigger button.  |
 | `title`       | Slot for custom title content.       |
 | `description` | Slot for custom description content. |
