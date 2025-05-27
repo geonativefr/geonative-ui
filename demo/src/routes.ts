@@ -53,6 +53,14 @@ const routes: RouteRecordRaw[] = [
     },
   }),
   createRoute({
+    path: '/card',
+    name: 'card',
+    component: () => import('@/views/Card.vue'),
+    meta: {
+      menuLabel: 'Card',
+    },
+  }),
+  createRoute({
     path: '/drawer',
     name: 'drawer',
     component: () => import('@/views/Drawer.vue'),
