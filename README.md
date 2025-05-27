@@ -316,8 +316,12 @@ The Drawer component provides a flexible and customizable drawer layout that can
       <Button>Drawer</Button>
     </template>
 
-    <template #header>
-      <span>Header</span>
+    <template #title>
+      <span>Title</span>
+    </template>
+
+    <template #description>
+      <span>Description</span>
     </template>
 
     <span>Content</span>
@@ -339,12 +343,13 @@ The Drawer component provides a flexible and customizable drawer layout that can
 
 ### Drawer Slots
 
-| Slot      | Description                         |
-| --------- | ----------------------------------- |
-| `trigger` | Slot for the drawer trigger button. |
-| `header`  | Slot for custom header content.     |
-| `default` | Slot for main drawer content.       |
-| `footer`  | Slot for custom footer content.     |
+| Slot          | Description                          |
+|---------------|--------------------------------------|
+| `trigger`     | Slot for the drawer trigger button.  |
+| `title`       | Slot for custom title content.       |
+| `description` | Slot for custom description content. |
+| `default`     | Slot for main drawer content.        |
+| `footer`      | Slot for custom footer content.      |
 
 ## Sidebar
 
