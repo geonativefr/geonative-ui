@@ -1,5 +1,5 @@
 <template>
-  <ShadcnDrawer :direction="props.direction" :should-scale-background="props.scale" :modal="props.modal" :nested="true">
+  <ShadcnDrawer :direction="props.direction" :should-scale-background="props.scale" :modal="props.modal">
     <ShadcnDrawerTrigger as-child>
       <slot name="trigger" />
     </ShadcnDrawerTrigger>
