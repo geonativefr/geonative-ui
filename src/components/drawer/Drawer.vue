@@ -1,5 +1,9 @@
 <template>
-  <ShadcnDrawer :direction="props.direction" :should-scale-background="props.scale" :modal="props.modal">
+  <ShadcnDrawer
+    v-model:open="isOpen"
+    :direction="props.direction"
+    :dismissible="props.dismissible"
+  >
     <ShadcnDrawerTrigger as-child>
       <slot name="trigger" />
     </ShadcnDrawerTrigger>
@@ -15,9 +19,11 @@
           </ShadcnDrawerDescription>
         </ShadcnDrawerHeader>
 
-        <div class="flex-1 flex items-center justify-center">
-          <slot />
-        </div>
+        <ShadcnSeparator />
+
+        <slot />
+
+        <ShadcnSeparator />
 
         <ShadcnDrawerFooter>
           <slot name="footer" />
@@ -37,17 +43,29 @@ import {
   DrawerTitle as ShadcnDrawerTitle,
   DrawerDescription as ShadcnDrawerDescription,
 } from '@geonative/ui/shadcn/ui/drawer';
+import { ref, readonly } from 'vue';
+import { Separator as ShadcnSeparator } from '@geonative/ui/shadcn/ui/separator';
 
 const props = withDefaults(
   defineProps<{
-    direction?: 'top' | 'bottom' | 'left' | 'right' | undefined;
-    scale?: boolean;
-    modal?: boolean;
+    direction?: 'top' | 'bottom' | 'left' | 'right';
+    dismissible?: boolean;
   }>(),
   {
     direction: 'right',
-    scale: true,
-    modal: true,
+    dismissible: true,
   }
 );
+
+const isOpen = ref(false);
+
+function open() {
+  return isOpen.value = true;
+}
+
+function close() {
+  return isOpen.value = false;
+}
+
+defineExpose({ open, close, isOpen : readonly(isOpen) });
 </script>

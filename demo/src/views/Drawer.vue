@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen p-5 space-y-10">
     <div>
-      <Drawer :open="isOpenDrawerRight">
+      <Drawer ref="drawerRightDissmissibleFalseRef" :dismissible="false">
         <template #trigger>
-          <Button @click="toggleDrawerRight" class="bg-primary w-auto" size="lg">Right Drawer + modal false</Button>
+          <Button @click="drawerRightDissmissibleFalseRef?.open()" class="bg-primary w-auto" size="lg">Right Drawer + dismissible false</Button>
         </template>
 
         <template #title>
@@ -18,15 +18,15 @@
 
         <template #footer>
           <span>This a footer</span>
-          <Button @click="toggleDrawerRight">Close</Button>
+          <Button @click="drawerRightDissmissibleFalseRef?.close()">Close</Button>
         </template>
       </Drawer>
     </div>
 
     <div>
-      <Drawer direction="bottom" :open="isOpenDrawerBottom">
+      <Drawer ref="drawerRightRef">
         <template #trigger>
-          <Button @click="toggleDrawerBottom" class="bg-secondary w-auto" size="lg">Bottom Drawer</Button>
+          <Button @click="drawerRightRef?.open()" class="bg-primary w-auto" size="lg">Right Drawer</Button>
         </template>
 
         <template #title>
@@ -41,15 +41,15 @@
 
         <template #footer>
           <span>This a footer</span>
-          <Button @click="toggleDrawerBottom">Close</Button>
+          <Button @click="drawerRightRef?.close()">Close</Button>
         </template>
       </Drawer>
     </div>
 
     <div>
-      <Drawer direction="left" :open="isOpenDrawerLeft">
+      <Drawer direction="bottom" ref="drawerBottomRef">
         <template #trigger>
-          <Button @click="toggleDrawerLeft" class="bg-primary w-auto" size="lg">Left Drawer</Button>
+          <Button @click="drawerBottomRef?.open()" class="bg-secondary w-auto" size="lg">Bottom Drawer</Button>
         </template>
 
         <template #title>
@@ -64,15 +64,34 @@
 
         <template #footer>
           <span>This a footer</span>
-          <Button @click="toggleDrawerLeft">Close</Button>
+          <Button @click="drawerBottomRef?.close()">Close</Button>
         </template>
       </Drawer>
     </div>
 
     <div>
-      <Drawer direction="top" :open="isOpenDrawerTop">
+      <Drawer direction="left" ref="drawerLeftRef">
         <template #trigger>
-          <Button @click="toggleDrawerTop" class="bg-secondary w-auto" size="lg">Top Drawer</Button>
+          <Button @click="drawerLeftRef?.open()" class="bg-primary w-auto" size="lg">Left Drawer</Button>
+        </template>
+
+        <template #title>
+          <span>This is a Title</span>
+        </template>
+
+        <template #description>
+          <span>This is a Description</span>
+        </template>
+
+        <div>This is a Content</div>
+        <Button @click="drawerLeftRef?.close()">Close</Button>
+      </Drawer>
+    </div>
+
+    <div>
+      <Drawer direction="top" ref="drawerTopRef">
+        <template #trigger>
+          <Button @click="drawerTopRef?.open()" class="bg-secondary w-auto" size="lg">Top Drawer</Button>
         </template>
 
         <template #title>
@@ -87,7 +106,7 @@
 
         <template #footer>
           <span>This a footer</span>
-          <Button @click="toggleDrawerTop">Close</Button>
+          <Button @click="drawerTopRef?.close()">Close</Button>
         </template>
       </Drawer>
     </div>
@@ -96,26 +115,12 @@
 
 <script setup lang="ts">
 import { Drawer, Button } from '@geonative/ui/components';
-import { ref } from 'vue';
+import { useTemplateRef } from 'vue';
 
-const isOpenDrawerRight = ref(false);
-const isOpenDrawerBottom = ref(false);
-const isOpenDrawerLeft = ref(false);
-const isOpenDrawerTop = ref(false);
+const drawerRightDissmissibleFalseRef = useTemplateRef('drawerRightDissmissibleFalseRef')
+const drawerRightRef = useTemplateRef('drawerRightRef')
+const drawerBottomRef = useTemplateRef('drawerBottomRef');
+const drawerLeftRef = useTemplateRef('drawerLeftRef');
+const drawerTopRef = useTemplateRef('drawerTopRef');
 
-function toggleDrawerRight() {
-  isOpenDrawerRight.value = !isOpenDrawerRight.value;
-}
-
-function toggleDrawerBottom() {
-  isOpenDrawerBottom.value = !isOpenDrawerBottom.value;
-}
-
-function toggleDrawerLeft() {
-  isOpenDrawerLeft.value = !isOpenDrawerLeft.value;
-}
-
-function toggleDrawerTop() {
-  isOpenDrawerTop.value = !isOpenDrawerTop.value;
-}
 </script>
