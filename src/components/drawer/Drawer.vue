@@ -1,11 +1,11 @@
 <template>
-  <ShadcnDrawer :direction="props.direction" :should-scale-background="props.scale" :modal="props.modal">
+  <ShadcnDrawer :direction="props.direction" :should-scale-background="props.scale" :modal="props.modal" :nested="true">
     <ShadcnDrawerTrigger as-child>
       <slot name="trigger" />
     </ShadcnDrawerTrigger>
 
     <ShadcnDrawerContent>
-      <div class="mx-auto w-full max-w-sm">
+      <div class="flex flex-col h-full">
         <ShadcnDrawerHeader>
           <ShadcnDrawerTitle>
             <slot name="title" />
@@ -15,17 +15,12 @@
           </ShadcnDrawerDescription>
         </ShadcnDrawerHeader>
 
-        <div class="p-4">
-          <div class="flex items-center justify-center space-x-2">
-            <slot />
-          </div>
+        <div class="flex-1 flex items-center justify-center">
+          <slot />
         </div>
 
         <ShadcnDrawerFooter>
           <slot name="footer" />
-          <ShadcnDrawerClose>
-            <Button class="w-auto">Close</Button>
-          </ShadcnDrawerClose>
         </ShadcnDrawerFooter>
       </div>
     </ShadcnDrawerContent>
@@ -39,11 +34,9 @@ import {
   DrawerFooter as ShadcnDrawerFooter,
   DrawerHeader as ShadcnDrawerHeader,
   DrawerContent as ShadcnDrawerContent,
-  DrawerClose as ShadcnDrawerClose,
   DrawerTitle as ShadcnDrawerTitle,
   DrawerDescription as ShadcnDrawerDescription,
 } from '@geonative/ui/shadcn/ui/drawer';
-import { Button } from '@geonative/ui/components';
 
 const props = withDefaults(
   defineProps<{
