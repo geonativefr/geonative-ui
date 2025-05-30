@@ -335,11 +335,10 @@ The Drawer component provides a flexible and customizable drawer layout that can
 
 ### Drawer Props
 
-| Prop      | Type                                   | Default | Description                                             |
-| --------- | -------------------------------------- | ------- | ------------------------------------------------------- |
-| direction | 'top' \| 'bottom' \| 'left' \| 'right' | 'right' | Direction from which the drawer opens                   |
-| scale     | boolean                                | true    | Blurs and scales the background when the drawer is open |
-| modal     | boolean                                | true    | Enables modal mode (close on outside click, etc.)       |
+| Prop        | Type                                 | Default     | Description                                                        |
+| ----------- | ------------------------------------ | ----------- | ------------------------------------------------------------------ |
+| direction   | 'top' \| 'bottom' \| 'left' \| 'right' | 'right'     | Position d'ouverture du drawer.                                    |
+| dismissible | boolean                              | true        | Permet de fermer le drawer en cliquant à l'extérieur ou via Escape.|
 
 ### Drawer Slots
 
