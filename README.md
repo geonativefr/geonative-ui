@@ -302,6 +302,53 @@ Action is designed to wrap other components:
 </Action>
 ```
 
+## Drawer
+
+The Drawer component provides a flexible and customizable drawer layout that can be used for side navigation, modals, or any off-canvas content.
+
+### Basic Usage
+
+```vue
+<template>
+  <Drawer>
+    <template #trigger>
+      <Button>Drawer</Button>
+    </template>
+
+    <template #title>
+      <span>Title</span>
+    </template>
+
+    <template #description>
+      <span>Description</span>
+    </template>
+
+    <span>Content</span>
+
+    <template #footer>
+      <span>Footer</span>
+    </template>
+  </Drawer>
+</template>
+```
+
+### Drawer Props
+
+| Prop        | Type                                 | Default     | Description                                                        |
+| ----------- | ------------------------------------ | ----------- | ------------------------------------------------------------------ |
+| direction   | 'top' \| 'bottom' \| 'left' \| 'right' | 'right'     | Position d'ouverture du drawer.                                    |
+| dismissible | boolean                              | true        | Permet de fermer le drawer en cliquant à l'extérieur ou via Escape.|
+
+### Drawer Slots
+
+| Slot          | Description                          |
+| ------------- | ------------------------------------ |
+| `trigger`     | Slot for the drawer trigger button.  |
+| `title`       | Slot for custom title content.       |
+| `description` | Slot for custom description content. |
+| `default`     | Slot for main drawer content.        |
+| `footer`      | Slot for custom footer content.      |
+
 ## Sidebar
 
 The Sidebar component provides a collapsible sidebar layout with support for multiple sections and items.
