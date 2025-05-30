@@ -1,5 +1,5 @@
 <template>
-  <ShadcnCard :class="twMerge('w-full h-full justify-between', props.class)">
+  <ShadcnCard :class="props.class">
     <ShadcnCardHeader class="p-0">
       <ShadcnCardTitle class="px-4">
         <slot name="title" />
@@ -33,7 +33,6 @@ import {
   CardDescription as ShadcnCardDescription,
 } from '@geonative/ui/shadcn/ui/card';
 import { Separator as ShadcnSeparator } from '@geonative/ui/shadcn/ui/separator';
-import { twMerge } from 'tailwind-merge';
 
 const props = defineProps<{
   class?: string;
