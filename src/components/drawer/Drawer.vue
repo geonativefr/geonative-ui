@@ -8,25 +8,26 @@
       <slot name="trigger" />
     </ShadcnDrawerTrigger>
 
-    <ShadcnDrawerContent>
-      <div class="flex flex-col h-full">
-        <ShadcnDrawerHeader>
-          <ShadcnDrawerTitle>
-            <slot name="title" />
-          </ShadcnDrawerTitle>
-          <ShadcnDrawerDescription>
-            <slot name="description" />
-          </ShadcnDrawerDescription>
-          <ShadcnSeparator />
-        </ShadcnDrawerHeader>
+    <ShadcnDrawerContent class="flex flex-col h-full">
+      <ShadcnDrawerHeader class="p-0">
+        <ShadcnDrawerTitle class="p-4">
+          <slot name="title" />
+        </ShadcnDrawerTitle>
+        <ShadcnDrawerDescription class="px-4">
+          <slot name="description" />
+        </ShadcnDrawerDescription>
+        <ShadcnSeparator />
+      </ShadcnDrawerHeader>
 
+      <div class="px-4">
         <slot />
-
-        <ShadcnDrawerFooter>
-          <ShadcnSeparator />
-          <slot name="footer" />
-        </ShadcnDrawerFooter>
       </div>
+      <ShadcnDrawerFooter class="p-0">
+        <ShadcnSeparator />
+        <div class="p-4">
+          <slot name="footer" />
+        </div>
+      </ShadcnDrawerFooter>
     </ShadcnDrawerContent>
   </ShadcnDrawer>
 </template>
