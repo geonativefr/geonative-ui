@@ -17,15 +17,13 @@
           <ShadcnDrawerDescription>
             <slot name="description" />
           </ShadcnDrawerDescription>
+          <ShadcnSeparator />
         </ShadcnDrawerHeader>
-
-        <ShadcnSeparator />
 
         <slot />
 
-        <ShadcnSeparator />
-
         <ShadcnDrawerFooter>
+          <ShadcnSeparator />
           <slot name="footer" />
         </ShadcnDrawerFooter>
       </div>
