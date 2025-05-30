@@ -4,7 +4,6 @@ Shadcn based components library and Tailwind CSS V4
 
 ## Section
 
-- [Drawer](#drawer)
 - [Sidebar](#sidebar)
 
 ## Getting Started
