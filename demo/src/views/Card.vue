@@ -19,7 +19,7 @@
     </div>
 
     <div>
-      <Card class="w-[350px]">
+      <Card class="w-[30rem]">
         <template #title>
           <span>This is a title</span>
         </template>
@@ -37,7 +37,7 @@
     </div>
 
     <div>
-    <Card class="w-[250px] h-[500px]">
+    <Card class="w-[25rem] h-[50rem]">
       <template #title>
         <span>This is a title</span>
       </template>
