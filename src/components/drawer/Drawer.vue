@@ -22,6 +22,7 @@
       <div class="px-4">
         <slot />
       </div>
+
       <ShadcnDrawerFooter class="p-0">
         <ShadcnSeparator />
         <div class="p-4">

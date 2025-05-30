@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center min-h-screen p-5 space-y-10">
+  <div class="flex flex-col items-center justify-center min-h-screen space-y-10">
     <div>
       <Drawer ref="drawerRightDissmissibleFalseRef" :dismissible="false">
         <template #trigger>
