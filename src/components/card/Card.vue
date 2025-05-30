@@ -1,20 +1,24 @@
 <template>
   <ShadcnCard :class="twMerge('w-full h-full justify-between', props.class)">
-    <ShadcnCardHeader>
-      <ShadcnCardTitle>
+    <ShadcnCardHeader class="p-0">
+      <ShadcnCardTitle class="px-4">
         <slot name="title" />
       </ShadcnCardTitle>
-      <ShadcnCardDescription>
+      <ShadcnCardDescription class="px-4">
         <slot name="description" />
       </ShadcnCardDescription>
+      <ShadcnSeparator />
     </ShadcnCardHeader>
 
-    <ShadcnCardContent class="flex items-center justify-center">
+    <ShadcnCardContent class="px-4">
       <slot />
     </ShadcnCardContent>
 
-    <ShadcnCardFooter class="flex items-start ">
-      <slot name="footer" />
+    <ShadcnCardFooter class="p-0 flex flex-col items-start">
+      <ShadcnSeparator />
+      <div class="pt-4 px-4">
+        <slot name="footer" />
+      </div>
     </ShadcnCardFooter>
   </ShadcnCard>
 </template>
@@ -28,6 +32,7 @@ import {
   CardTitle as ShadcnCardTitle,
   CardDescription as ShadcnCardDescription,
 } from '@geonative/ui/shadcn/ui/card';
+import { Separator as ShadcnSeparator } from '@geonative/ui/shadcn/ui/separator';
 import { twMerge } from 'tailwind-merge';
 
 const props = defineProps<{
