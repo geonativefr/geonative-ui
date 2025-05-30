@@ -4,8 +4,6 @@ Shadcn based components library and Tailwind CSS V4
 
 ## Section
 
-- [Sidebar](#sidebar)
-
 ## Getting Started
 
 ### Prerequisites
