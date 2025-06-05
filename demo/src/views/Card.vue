@@ -18,26 +18,7 @@
       </Card>
     </div>
 
-    <div>
-      <Card class="w-[30rem]">
-        <template #title>
-          <span>This is a title</span>
-        </template>
-
-        <template #description>
-          <span>This is a description</span>
-        </template>
-
-        <span>This is a Content</span>
-
-        <template #footer>
-          <span>This a footer</span>
-        </template>
-      </Card>
-    </div>
-
-    <div>
-    <Card class="w-[25rem] h-[50rem]">
+    <Card class="w-full max-w-[30rem]">
       <template #title>
         <span>This is a title</span>
       </template>
@@ -52,7 +33,22 @@
         <span>This a footer</span>
       </template>
     </Card>
-    </div>
+
+    <Card class="w-full h-full max-w-[25rem] max-h-[50rem]">
+      <template #title>
+        <span>This is a title</span>
+      </template>
+
+      <template #description>
+        <span>This is a description</span>
+      </template>
+
+      <span>This is a Content</span>
+
+      <template #footer>
+        <span>This a footer</span>
+      </template>
+    </Card>
   </div>
 </template>
 
