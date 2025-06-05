@@ -1,20 +1,20 @@
 <template>
-  <ShadcnCard :class="twMerge('bg-background', props.class)">
+  <ShadcnCard :class="twMerge('bg-card', props.class)">
     <ShadcnCardHeader class="p-0">
-      <ShadcnCardTitle class="px-4 text-foreground">
+      <ShadcnCardTitle class="px-4 text-card-foreground">
         <slot name="title" />
       </ShadcnCardTitle>
-      <ShadcnCardDescription class="px-4 text-foreground/60">
+      <ShadcnCardDescription class="px-4 text-card-foreground/60">
         <slot name="description" />
       </ShadcnCardDescription>
       <ShadcnSeparator />
     </ShadcnCardHeader>
 
-    <ShadcnCardContent class="px-4 text-foreground flex-1">
+    <ShadcnCardContent class="px-4 text-card-foreground flex-1">
       <slot />
     </ShadcnCardContent>
 
-    <ShadcnCardFooter class="p-0 flex-col items-start text-foreground">
+    <ShadcnCardFooter class="p-0 flex-col items-start text-card-foreground">
       <ShadcnSeparator />
       <div class="pt-4 px-4">
         <slot name="footer" />
