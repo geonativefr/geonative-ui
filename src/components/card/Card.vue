@@ -36,6 +36,6 @@ import { Separator as ShadcnSeparator } from '@geonative/ui/shadcn/ui/separator'
 import { twMerge } from 'tailwind-merge';
 
 const props = defineProps<{
-  class?: string;
+  class?: string | object | undefined;
 }>();
 </script>
