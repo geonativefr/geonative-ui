@@ -10,7 +10,7 @@
       <ShadcnSeparator />
     </ShadcnCardHeader>
 
-    <ShadcnCardContent class="px-4 text-card-foreground flex-1">
+    <ShadcnCardContent class="px-4 text-card-foreground">
       <slot />
     </ShadcnCardContent>
 
