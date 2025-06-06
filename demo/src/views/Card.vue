@@ -34,7 +34,7 @@
       </template>
     </Card>
 
-    <Card class="w-full h-full max-w-[25rem] max-h-[50rem]">
+    <Card class="w-full max-w-[25rem] h-[50rem]">
       <template #title>
         <span>This is a title</span>
       </template>
