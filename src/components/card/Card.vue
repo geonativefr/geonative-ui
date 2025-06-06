@@ -10,7 +10,7 @@
       <ShadcnSeparator />
     </ShadcnCardHeader>
 
-    <ShadcnCardContent class="px-4 text-card-foreground">
+    <ShadcnCardContent class="px-4 text-card-foreground flex-1">
       <slot />
     </ShadcnCardContent>
 
@@ -36,6 +36,6 @@ import { Separator as ShadcnSeparator } from '@geonative/ui/shadcn/ui/separator'
 import { twMerge } from 'tailwind-merge';
 
 const props = defineProps<{
-  class?: string | object | undefined;
+  class?: any;
 }>();
 </script>
