@@ -5,6 +5,7 @@ import dts from 'vite-plugin-dts';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/geonative-ui/',
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
@@ -18,14 +19,14 @@ export default defineConfig({
     tailwindcss(),
     dts({
       insertTypesEntry: true,
-      outDir: path.resolve(__dirname, './dist/types'),
-      include: [path.resolve(__dirname, './src')],
+      outDir: path.resolve(__dirname, 'dist/types/'),
+      include: [path.resolve(__dirname, 'src/')],
     }),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@geonative/ui': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, 'src/'),
+      '@geonative/ui': path.resolve(__dirname, 'src/'),
     },
   },
 });

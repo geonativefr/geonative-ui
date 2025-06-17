@@ -35,7 +35,9 @@
     "build:demo": "vite build --config demo/vite.config.ts",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "predeploy": "yarn build:demo",
+    "deploy": "gh-pages -d demo-dist --force"
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
